@@ -16,7 +16,7 @@ class Schema:
         return schema, root, ns
 
     def extract_concepts(self):
-        pass
+        self.schema_concepts = {}
 
     def fragment_generation(self):
         pass
