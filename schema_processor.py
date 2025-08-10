@@ -3,48 +3,62 @@ from lxml import etree as ET
 
 
 # Define element classes
-# TODO: Add cardinality support
 
 class AttributeGroup():
 
-    def __init__(self, name, attributes):
+    def __init__(self, name, attributes, **kwargs):
         self.name = name
         self.attributes = attributes
+
+        for k, v in kwargs.items():
+            setattr(self, k, v)
 
 
 class ComplexTypeElement():
 
-    def __init__(self, name, description, children, attributes, definition):
+    def __init__(self, name, description, children, attributes, definition, **kwargs):
         self.name = name
         self.description = description
         self.children = children
         self.attributes = attributes
         self.definition = definition
 
+        for k, v in kwargs.items():
+            setattr(self, k, v)
+
 
 class SimpleTypeElement():
 
-    def __init__(self, name, description, restriction):
+    def __init__(self, name, description, restriction, **kwargs):
         self.name = name
         self.description = description
         self.restriction = restriction
 
+        for k, v in kwargs.items():
+            setattr(self, k, v)
+
 
 class Attribute():
 
-    def __init__(self, name, description, type_, use):
+    def __init__(self, name, description, type_, use, **kwargs):
         self.name = name
         self.description = description
         self.type_ = type_
         self.use = use
 
+        for k, v in kwargs.items():
+            setattr(self, k, v)
+
 
 class ExternallyDefinedElement():
 
-    def __init__(self, name, description, type_):
+    def __init__(self, name, description, type_, **kwargs):
         self.name = name
         self.description = description
         self.type_ = type_
+
+        for k, v in kwargs.items():
+            setattr(self, k, v)
 
 
 class Schema:
