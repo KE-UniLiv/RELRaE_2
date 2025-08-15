@@ -1,0 +1,9 @@
+version: 1
+prefixes:
+  xsd: "http://www.w3.org/2001/XMLSchema#"
+  xs: "http://www.w3.org/2001/XMLSchema"
+
+rules:
+  # 1) -> xsd:ComplexType -> owl:Class
+  - id: complexType
+    selector: "//xsd:complexType"

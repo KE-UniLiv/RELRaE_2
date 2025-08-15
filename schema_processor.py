@@ -1,4 +1,8 @@
 # Handle the input schema and create objects
+import rdflib
+import jinja2
+import yaml
+from pathlib import Path
 from lxml import etree as ET
 
 
@@ -81,4 +85,8 @@ class Schema:
         pass
 
     def return_fragments(self):
+        pass
+
+    # Method for parsing the XSD and generating RDFs via ruleset
+    def rule_parsing(self):
         pass
