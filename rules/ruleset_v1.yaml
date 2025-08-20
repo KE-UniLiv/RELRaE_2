@@ -2,8 +2,20 @@ version: 1
 prefixes:
   xsd: "http://www.w3.org/2001/XMLSchema#"
   xs: "http://www.w3.org/2001/XMLSchema"
+  rdfs: "http://www.w3.org/2000/01/rdf-schema#"
+  rdf:  "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  owl:  "http://www.w3.org/2002/07/owl#"
+  ex:   "http://example.org/"
 
 rules:
   # 1) -> xsd:ComplexType -> owl:Class
   - id: complexType
     selector: "//xsd:complexType"
+    vars:
+      ct_name: "string(@name)"
+      label: "normalize_space(string(@name))"
+      iri: "concat('http://example.org/', $ct_name)"
+    emit: |
+      <{{ iri }}> a owl:Class ;
+        rdfs:label {{ label|turtle_string }}@en .
+

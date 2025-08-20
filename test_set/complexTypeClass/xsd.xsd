@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by Burkhard Schaefer (BSSN Software) -->
+<!-- This fragment has been extracted from the AnIML Core Schema -->
+<xsd:schema targetNamespace="urn:org:astm:animl:schema:core:draft:0.90" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns="urn:org:astm:animl:schema:core:draft:0.90" elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.90">
+	<!-- $Id$ -->
+	<xsd:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="http://www.w3.org/TR/xmldsig-core/xmldsig-core-schema.xsd"/>
+	<xsd:element name="Sample" type="SampleType">
+		<xsd:annotation>
+			<xsd:documentation>Individual Sample, referenced from other parts of this AnIML document.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="SampleType">
+		<xsd:annotation>
+			<xsd:documentation>Individual Sample, referenced from other parts of this AnIML document.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="TagSet" minOccurs="0"/>
+			<xsd:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="sampleID" type="ShortTokenType" use="required"/>
+		<xsd:attribute name="barcode" type="ShortTokenType" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Value of barcode label that is attached to sample container.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+</xsd:schema>
