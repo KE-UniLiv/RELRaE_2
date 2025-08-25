@@ -9,13 +9,10 @@ prefixes:
 
 rules:
   # 1) -> xsd:ComplexType -> owl:Class
-  - id: complexType
-    selector: "//xsd:complexType"
-    vars:
-      ct_name: "string(@name)"
-      label: "normalize_space(string(@name))"
-      iri: "concat('http://example.org/', $ct_name)"
-    emit: |
-      <{{ iri }}> a owl:Class ;
-        rdfs:label {{ label|turtle_string }}@en .
-
+  - name: complexType -> class
+    selector:
+      kind: "complexType"
+      where:
+        abstract: false
+    emit: 
+      class: "ex:{name}"
