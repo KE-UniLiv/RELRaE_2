@@ -4,7 +4,7 @@
 from pathlib import Path
 from dataclasses import dataclass
 from lxml import etree as ET
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 
 import yaml
 import os
@@ -16,6 +16,7 @@ from rdflib.compare import isomorphic
 
 # -------------- Definitions ---------------
 
+# TODO: If needed, expand the Component class to cover elements
 @dataclass
 class Component:
     kind: str
@@ -33,6 +34,7 @@ NS = {'xs': "http://www.w3.org/2001/XMLSchema",
 
 
 # --------------- Loading Functions -----------------
+
 
 def load_rules():
     rulesets = [f for f in os.listdir(
@@ -53,33 +55,42 @@ def load_rules():
 
 
 def load_components(xsd):
-    pass
+    components = []
+    tree = ET.parse(xsd)
+    root = tree.getroot()
+
+    for concept in tree.iter():
+        print(concept)
+        # TODO: for each element, instantiate a component object
+
+    return components
 
 
 # --------------- Applying rules ---------------------
 
 
 def generate_rdf(rule, component):
+    # TODO: Match components to the appropriate rule
+    #   -> Is this done top-down, bottom-up, or some other way to capture more complex      relationships
     pass
 
 
 def apply_rules(ruleset, components):
-    pass
+    g_base = Graph()
+    # TODO: Generate RDF for the component
+    # TODO: Merge RDF into the base graph
+    return g_base
 
 
 # ------------- "Root" Function ----------------
 
 
 def parse_schema(xsd) -> Graph:
-    g_base = Graph()
     rules = load_rules()
+    components = load_components(xsd)
 
-    # TODO: Extract components from the XML schema
-    # TODO: Match components to the appropriate rule
-    #   -> Is this done top-down, bottom-up, or some other way to capture more complex      relationships
-    # TODO: Generate RDF for the component
-    # TODO: Merge RDF into the base graph
-    return g_base
+    generated_graph = apply_rules(rules, components)
+    return generated_graph
 
 
 # ------------ Testing --------------
