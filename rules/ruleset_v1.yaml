@@ -14,5 +14,6 @@ rules:
       kind: "complexType"
       where:
         abstract: false
-    emit: 
-      class: "ex:{name}"
+    emit: |
+      ex:{name} a owl:Class ;
+        rdfs:label {name} .
