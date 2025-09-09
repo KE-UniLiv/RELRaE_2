@@ -91,6 +91,25 @@ def load_components(xsd):
 # --------------- Applying rules ---------------------
 
 
+def condense_definitions(components):
+
+    for comp in components:
+        if "type" in comp.attributes:
+            for c in components:
+                if c.name == comp.attributes["type"]:
+                    c.name = comp.name
+                    components.pop(components.index(comp))
+
+        # NOTE: I am not 100% sure this will work properly (Expect errors)
+        else:
+            children = list(comp.node)
+            for c in children:
+                if ET.QName(c).localname == "complexType":
+                    comp.kind = c.tag
+                    comp.qname = ET.QName(c).localname
+    return components
+
+
 def generate_rdf(rule, component):
     # TODO: Match components to the appropriate rule
     #   -> Is this done top-down, bottom-up, or some other way to capture more complex      relationships
@@ -99,7 +118,6 @@ def generate_rdf(rule, component):
 
 def apply_rules(ruleset, components):
     g_base = Graph()
-    # TODO: Generate RDF for the component
     # TODO: Merge RDF into the base graph
     return g_base
 
@@ -110,6 +128,7 @@ def apply_rules(ruleset, components):
 def parse_schema(xsd) -> Graph:
     rules = load_rules()
     components = load_components(xsd)
+    components = condense_definitions(components)
 
     generated_graph = apply_rules(rules, components)
     return generated_graph
