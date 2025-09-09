@@ -110,6 +110,7 @@ def condense_definitions(components):
     return components
 
 
+# NOTE: This Function may be redundant
 def generate_rdf(rule, component):
     # TODO: Match components to the appropriate rule
     #   -> Is this done top-down, bottom-up, or some other way to capture more complex      relationships
@@ -118,7 +119,30 @@ def generate_rdf(rule, component):
 
 def apply_rules(ruleset, components):
     g_base = Graph()
+
+    for prefix, namespace in ruleset["prefixes"].items():
+        g_base.bind(prefix, Namespace(namespace))
+
     # TODO: Merge RDF into the base graph
+
+    # NOTE: I think there will be a need to redesign the ruleset's matching component
+    for comp in components:
+        for rule in ruleset["rules"]:
+            if comp.qname == rule["selector"]["qname"]:
+                # Populate emit
+                g = Graph()
+
+                for prefix, namespace in ruleset["prefixes"].items():
+                    g.bind(prefix, Namespace(namespace))
+
+                # TODO: Fix parsing
+
+                name = comp.name
+                g.parse(eval(rule["emit"]))
+                print(f"Matched with rule: {rule["name"]}")
+
+                g_base += g
+
     return g_base
 
 

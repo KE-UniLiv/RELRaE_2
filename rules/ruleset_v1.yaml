@@ -9,11 +9,11 @@ prefixes:
 
 rules:
   # 1) -> xsd:ComplexType -> owl:Class
-  - name: complexType -> class
+  - name: 1) complexType -> class
     selector:
-      kind: "complexType"
+      qname: "complexType"
       where:
         abstract: false
     emit: |
-      ex:{name} a owl:Class ;
-        rdfs:label {name} .
+      f"""ex:{name} a owl:Class ;
+        rdfs:label {name} ."""
