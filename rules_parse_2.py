@@ -16,14 +16,17 @@ from rdflib.compare import isomorphic
 
 # -------------- Definitions ---------------
 
-# TODO: If needed, expand the Component class to cover elements
+
 @dataclass
 class Component:
-    kind: str
-    name: str
-    qname: str
-    props: Dict[str, Any]
     node: Any
+    kind: str
+    qname: str
+    name: str
+    attributes: Dict[str, Any]
+    depth: int
+    # value: Any
+    # NOTE: I don't think value is a required field
 
 
 NS = {'xs': "http://www.w3.org/2001/XMLSchema",
@@ -31,6 +34,10 @@ NS = {'xs': "http://www.w3.org/2001/XMLSchema",
 
 
 # =============== Parsing Functions ================
+
+
+def get_depth(element):
+    return len(list(element.iterancestors()))
 
 
 # --------------- Loading Functions -----------------
@@ -56,12 +63,27 @@ def load_rules():
 
 def load_components(xsd):
     components = []
-    tree = ET.parse(xsd)
+    tree = ET.parse(xsd, parser=ET.XMLParser(remove_comments=True))
     root = tree.getroot()
 
     for concept in tree.iter():
-        print(concept)
-        # TODO: for each element, instantiate a component object
+        if not concept.get("name"):
+            continue
+
+        attributes = dict(concept.attrib)
+        attributes.pop("name", None)
+
+        current_component = Component(
+            node=concept,
+            kind=concept.tag,
+            qname=ET.QName(concept).localname,
+            name=concept.get("name"),
+            attributes=attributes,
+            depth={get_depth(concept)}
+        )
+
+        print(f"Generated object for concept: {current_component.name}")
+        components.append(current_component)
 
     return components
 
