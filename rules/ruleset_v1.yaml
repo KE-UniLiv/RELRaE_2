@@ -16,4 +16,4 @@ rules:
         abstract: false
     emit: |
       f"""ex:{name} a owl:Class ;
-        rdfs:label {name} ."""
+        rdfs:label "{name}" ."""

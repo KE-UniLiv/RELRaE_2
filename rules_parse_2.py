@@ -27,6 +27,7 @@ class Component:
     depth: int
     # value: Any
     # NOTE: I don't think value is a required field
+    # NOTE: Maybe **kwargs can be used to create n arrays for all children at each possible depth?
 
 
 NS = {'xs': "http://www.w3.org/2001/XMLSchema",
@@ -91,6 +92,14 @@ def load_components(xsd):
 # --------------- Applying rules ---------------------
 
 
+def prefix_to_preamble(prefixes):
+    prefix_str = """"""
+    for prefix, namespace in prefixes.items():
+        current_str = f"@prefix {prefix}: <{namespace}> .\n"
+        prefix_str += current_str
+    return prefix_str
+
+
 def condense_definitions(components):
 
     for comp in components:
@@ -113,7 +122,7 @@ def condense_definitions(components):
 # NOTE: This Function may be redundant
 def generate_rdf(rule, component):
     # TODO: Match components to the appropriate rule
-    #   -> Is this done top-down, bottom-up, or some other way to capture more complex      relationships
+    #   -> Is this done top-down, bottom-up, or some other way to capture more complex relationships
     pass
 
 
@@ -132,13 +141,19 @@ def apply_rules(ruleset, components):
                 # Populate emit
                 g = Graph()
 
-                for prefix, namespace in ruleset["prefixes"].items():
-                    g.bind(prefix, Namespace(namespace))
+                # for prefix, namespace in ruleset["prefixes"].items():
+                #    g.bind(prefix, Namespace(namespace))
 
-                # TODO: Fix parsing
+                # FIXME: Parsing error
 
                 name = comp.name
-                g.parse(eval(rule["emit"]))
+
+                # Maybe converting the prefixes into a string would allow this to work
+
+                prefix_str = prefix_to_preamble(ruleset["prefixes"])
+                graph_str = prefix_str + "\n\n" + eval(rule["emit"])
+                print(graph_str)
+                g.parse(data=graph_str, format="turtle")
                 print(f"Matched with rule: {rule["name"]}")
 
                 g_base += g
