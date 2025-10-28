@@ -24,4 +24,72 @@
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
+	<xsd:element name="TagSet" type="TagSetType">
+		<xsd:annotation>
+			<xsd:documentation>Set of Tag elements.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="TagSetType">
+		<xsd:annotation>
+			<xsd:documentation>Set of Tag elements.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="Tag" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="Tag" type="TagType">
+		<xsd:annotation>
+			<xsd:documentation>Tag to mark related data items. When a value is given, it may also serve as a reference to an external data system.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="TagType">
+		<xsd:annotation>
+			<xsd:documentation>Tag to mark related data items. When a value is given, it may also serve as a reference to an external data system.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="name" type="ShortTokenType" use="required"/>
+		<xsd:attribute name="value" type="ShortStringType" use="optional"/>
+	</xsd:complexType>
+	<xsd:element name="Category" type="CategoryType">
+		<xsd:annotation>
+			<xsd:documentation>Defines a category of Parameters and SeriesSets. Used to model hierarchies.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="CategoryType">
+		<xsd:annotation>
+			<xsd:documentation>Defines a category of Parameters and SeriesSets. Used to model hierarchies.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="Parameter" minOccurs="0" maxOccurs="unbounded"/>
+			<!-- <xsd:element ref="SeriesSet" minOccurs="0" maxOccurs="unbounded"/> -->
+			<xsd:element ref="Category" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Contains multiple subcategories of Category.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attributeGroup ref="SignableItemWithName"/>
+	</xsd:complexType>
+	<xsd:element name="Parameter" type="ParameterType">
+		<xsd:annotation>
+			<xsd:documentation>Name/Value Pair.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="ParameterType">
+		<xsd:annotation>
+			<xsd:documentation>Name/Value Pair.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="SingleValueType">
+				<xsd:sequence>
+					<xsd:element ref="Unit" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:attributeGroup ref="SignableItemWithName"/>
+				<xsd:attribute name="parameterType" type="ParameterTypeType" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Data type of this parameter</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
 </xsd:schema>

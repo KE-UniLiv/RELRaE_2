@@ -11,7 +11,6 @@ rules:
   # 1) -> xsd:complexType -> owl:Class
   - name: 1) complexType -> class
     selector:
-      qname: "complexType"
     emit: |
       f"""ex:{name} a owl:Class ;
         rdfs:label "{name}"@en ."""
@@ -19,8 +18,5 @@ rules:
   # 2) -> complexType xsd:documentation -> rdfs:comment
   - name: 2) complexType documentation -> comment
     selector:
-      qname: "complexType"
-      where:
-        has_gchild : "documenation"
       emit: |
         f"""ex{g_parent} rdfs:comment "{content}"@en . """

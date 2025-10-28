@@ -6,6 +6,8 @@ from dataclasses import dataclass
 from lxml import etree as ET
 from typing import List, Dict, Any, Optional
 
+import xmlschema
+
 import yaml
 import os
 import inquirer
@@ -126,31 +128,9 @@ def generate_rdf(rule, component):
     pass
 
 
-def apply_rules(ruleset, components):
+def apply_rules(ruleset, schema):
     g_base = Graph()
-
-    for prefix, namespace in ruleset["prefixes"].items():
-        g_base.bind(prefix, Namespace(namespace))
-
-    # TODO: Merge RDF into the base graph
-
-    # NOTE: I think there will be a need to redesign the ruleset's matching component
-    for comp in components:
-        for rule in ruleset["rules"]:
-            if comp.qname == rule["selector"]["qname"]:
-                # Populate emit
-                g = Graph()
-
-                name = comp.name
-
-                prefix_str = prefix_to_preamble(ruleset["prefixes"])
-                graph_str = prefix_str + "\n\n" + eval(rule["emit"])
-                # print(graph_str)
-                g.parse(data=graph_str, format="turtle")
-                print(f"Matched with rule: {rule["name"]}")
-
-                g_base += g
-
+    # TODO: Implement rules parsing
     return g_base
 
 
@@ -159,31 +139,36 @@ def apply_rules(ruleset, components):
 
 def parse_schema(xsd) -> Graph:
     rules = load_rules()
-    components = load_components(xsd)
-    components = condense_definitions(components)
+    schema = xmlschema.XMLSchema(xsd)
+    print(schema.elements)
 
-    generated_graph = apply_rules(rules, components)
+    generated_graph = apply_rules(rules, schema)
+
     return generated_graph
 
 
 # ------------ Testing --------------
 
+dir = "test_set/fullSchema/"
+test_graph = parse_schema(dir + "animl-core.xsd")
+test_graph.serialize(destination=f"{dir}graph.ttl", format="turtle")
 
-test_xsd = "test_set/"
-responses = []
-dir = next(os.walk(test_xsd))[1]
-for x in dir:
-    generated_fragment = parse_schema(f"test_set/{x}/xsd.xsd")
-    expected_fragment = Graph()
-    expected_fragment.parse(f"test_set/{x}/rdf.ttl", format='turtle')
-    if isomorphic(generated_fragment, expected_fragment):
-        response = "Correct"
-    else:
-        response = "Incorrect"
-    response_row = [x, response]
-    responses.append(response_row)
-    generated_fragment.serialize(
-        destination=f"test_set/{x}/generated_rdf.ttl",
-        format='turtle'
-    )
-print(responses)
+
+# test_xsd = "test_set/"
+# responses = []
+# dir = next(os.walk(test_xsd))[1]
+# for x in dir:
+#     generated_fragment = parse_schema(f"test_set/{x}/xsd.xsd")
+#     expected_fragment = Graph()
+#     expected_fragment.parse(f"test_set/{x}/rdf.ttl", format='turtle')
+#     if isomorphic(generated_fragment, expected_fragment):
+#         response = "Correct"
+#     else:
+#         response = "Incorrect"
+#     response_row = [x, response]
+#     responses.append(response_row)
+#     generated_fragment.serialize(
+#         destination=f"test_set/{x}/generated_rdf.ttl",
+#         format='turtle'
+#     )
+# print(responses)

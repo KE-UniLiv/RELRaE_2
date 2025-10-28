@@ -2,6 +2,18 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
+ex:Category a owl:Class ;
+    rdfs:label "Category"@en .
+
+ex:Parameter a owl:Class ;
+    rdfs:label "Parameter"@en .
+
 ex:Sample a owl:Class ;
     rdfs:label "Sample"@en .
+
+ex:Tag a owl:Class ;
+    rdfs:label "Tag"@en .
+
+ex:TagSet a owl:Class ;
+    rdfs:label "TagSet"@en .
 
