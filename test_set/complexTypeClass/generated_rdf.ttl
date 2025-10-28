@@ -3,5 +3,5 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 ex:Sample a owl:Class ;
-    rdfs:label "Sample" .
+    rdfs:label "Sample"@en .
 
