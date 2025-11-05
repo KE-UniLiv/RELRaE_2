@@ -1,22 +1,12 @@
 version: 1
-prefixes:
-  xsd: "http://www.w3.org/2001/XMLSchema#"
-  xs: "http://www.w3.org/2001/XMLSchema"
-  rdfs: "http://www.w3.org/2000/01/rdf-schema#"
-  rdf:  "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-  owl:  "http://www.w3.org/2002/07/owl#"
-  ex:   "http://example.org/"
-
 rules:
-  # 1) -> xsd:complexType -> owl:Class
-  - name: 1) complexType -> class
-    selector:
+  # Element <x> whose @type is exactly "<name>_type" → ex:x a owl:Class ; rdfs:label "x"@en .
+  - id: element-type-suffix-to-class
+    selector: "//xs:element[@name and @type]"
+    vars:
+      n:   "string(@name)"
+      t:   "string(@type)"
+    when: "$t = concat($n, '_type')"
     emit: |
-      f"""ex:{name} a owl:Class ;
-        rdfs:label "{name}"@en ."""
-
-  # 2) -> complexType xsd:documentation -> rdfs:comment
-  - name: 2) complexType documentation -> comment
-    selector:
-      emit: |
-        f"""ex{g_parent} rdfs:comment "{content}"@en . """
+      ex:{{ n }} a owl:Class ;
+        rdfs:label "{{ n }}"@en .       f"""ex{g_parent} rdfs:comment "{content}"@en . """
