@@ -1,0 +1,31 @@
+version: 1
+prefixes:
+  xsd: "http://www.w3.org/2001/XMLSchema#"
+  xs: "http://www.w3.org/2001/XMLSchema"
+  rdfs: "http://www.w3.org/2000/01/rdf-schema#"
+  rdf:  "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  owl:  "http://www.w3.org/2002/07/owl#"
+  ex:   "http://example.org/"
+
+rules:
+  rule:
+    name: 1) complexType and element ref -> ObjectProperty
+    element_type: "complexType"
+    selector:
+      has_child:
+        id: child_1
+        child_type: sequence
+        relative_depth: 1
+      has_child:
+        id: child_2
+        child_type: element
+        relative_depth: 2
+        has_attribute: "ref"
+    emit: |
+      f"""
+      {prefix}:has{child_2.getattrib("ref")} a owl:ObjectProperty ;
+        rdfs:label 'has{child_2.getattrib("ref")}'@en ;
+        rdfs:domain {prefix}:{element.getattrib("name")} ;
+        rdfs:range {prefix}:{child_2.getattrib("name")} ;
+        {prov_block}
+      """
