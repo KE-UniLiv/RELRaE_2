@@ -15,14 +15,18 @@ TESTING = True
 def generate_graph(schema, rules) -> Graph:
 
     g = Graph()
-    print(rules)
-    print(schema)
+
+    for concept in schema:
+        g = g + rules_parser.rules_parser(concept, rules)
 
     return g
 
 
+# NOTE: Output: Rules-Based Graph
+
 #####################################################
 
+# Testing Code
 
 def load_rules():
     rulesets = [f for f in os.listdir(
@@ -51,5 +55,3 @@ def test():
 
 if TESTING:
     test()
-
-# NOTE: Output: Rules-Based Graph

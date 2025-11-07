@@ -12,11 +12,11 @@ rules:
     name: 1) complexType and element ref -> ObjectProperty
     element_type: "complexType"
     selector:
-      has_child:
+      - pattern: has_child
         id: child_1
         child_type: sequence
         relative_depth: 1
-      has_child:
+      - pattern: has_child
         id: child_2
         child_type: element
         relative_depth: 2

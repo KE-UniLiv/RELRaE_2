@@ -8,7 +8,7 @@ from rules_management_modules import fragment_generator
 def rules_parser(element, ruleset) -> Graph:
     g = Graph()
     for rule in ruleset:
-        rule_match = rules_engine.rules_engine(element, rule)
+        rule_match = rules_engine.rules_engine(element, ruleset[rule])
         if rule_match:
             print(f"Successfully matched with: {rule['name']}")
             print("=================================================")
