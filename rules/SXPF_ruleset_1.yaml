@@ -10,22 +10,17 @@ prefixes:
 rules:
   rule:
     name: 1) complexType and element ref -> ObjectProperty
-    element_type: "complexType"
+    element_type: XsdComplexType
     selector:
       - pattern: has_child
         id: child_1
-        child_type: sequence
+        child_type: XsdComplexType
         relative_depth: 1
-      - pattern: has_child
-        id: child_2
-        child_type: element
-        relative_depth: 2
-        has_attribute: "ref"
     emit: |
       f"""
-      {prefix}:has{child_2.getattrib("ref")} a owl:ObjectProperty ;
-        rdfs:label 'has{child_2.getattrib("ref")}'@en ;
-        rdfs:domain {prefix}:{element.getattrib("name")} ;
-        rdfs:range {prefix}:{child_2.getattrib("name")} ;
+      {PREFIX}:has{get_elem_name(concept)} a owl:ObjectProperty ;
+        rdfs:label 'has{get_elem_name(concept)}'@en ;
+        rdfs:domain {PREFIX}:{get_elem_name(element)} ;
+        rdfs:range {PREFIX}:{get_elem_name(concept)} ;
         {prov_block}
       """

@@ -1,5 +1,6 @@
 from rules_management_modules import rules_parser
-from rdflib import Graph
+from rdflib import Graph, Namespace
+from rdflib.namespace import RDF, RDFS, OWL
 from pathlib import Path
 import yaml
 import xmlschema
@@ -14,7 +15,14 @@ TESTING = True
 
 def generate_graph(schema, rules) -> Graph:
 
+    ANI = Namespace("http://example.org/Anitology")
+
     g = Graph()
+
+    g.bind('ani', ANI)
+    g.bind('rdf', RDF)
+    g.bind('rdfs', RDFS)
+    g.bind('owl', OWL)
 
     for concept in schema:
         g = g + rules_parser.rules_parser(concept, rules)
@@ -50,7 +58,8 @@ def test():
     schema_dir = 'test_set/fullSchema/animl-core.xsd'
     xsd = xmlschema.XMLSchema(schema_dir)
     rules = load_rules().get('rules', [])
-    generate_graph(xsd, rules)
+    test_graph = generate_graph(xsd, rules)
+    test_graph.serialize(destination='output/test_graph.ttl')
 
 
 if TESTING:

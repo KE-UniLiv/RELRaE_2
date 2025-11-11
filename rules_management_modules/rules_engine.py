@@ -1,8 +1,14 @@
 # NOTE: Input: XML concept, rule
 from rules_management_modules import conditionals
+from rules_management_modules import xpath_processors
 from typing import List, Any
 from lxml.etree import QName
 import inspect
+
+
+def get_elem_name(concept):
+    xml_concept = QName(concept.name).localname
+    return xml_concept
 
 
 def pre_process_pattern(pattern):
@@ -12,53 +18,71 @@ def pre_process_pattern(pattern):
 
 def process_pattern(element, pattern):
     # NOTE: This may be a little hacky but should work for now
-    p_type = None
+    p_type = "Unknown"
+    found = []
+
+    id = ""
+    for r in pattern:
+        if "id" in r:
+            id = r[1]
 
     # Find pattern type first
     for i in pattern:
-        # print(pattern)
         if "pattern" in i:
             p_type = i[1]
 
-    # TODO: Do necesarry collection
-    # eg. for has_child find the correct child
-    print(p_type)
+    p_parse = getattr(xpath_processors, p_type)
+    candidates = p_parse(element, pattern)
+
+    # Maybe I don't need this list
+    # patterns = [name for name, obj in inspect.getmembers(xpath_processors, inspect.isfunction)]
 
     # NOTE: Maybe we handle conditionals last
-    conds = [name for name, obj in inspect.getmembers(
+    cond_funcs = [name for name, obj in inspect.getmembers(
         conditionals, inspect.isfunction)]
+    conds = []
     for r in pattern:
-        if r[0] in conds:
-            print(f'-> {r[0]}: {r[1]}')
+        if r[0] in cond_funcs:
+            # FIX: Swap out "id" for element object
+            # Maybe this should be done in post after the Xpath is processed
+            # These indecies are relyed on even though they are redundant
+            cond = [id, r[0], r[1]]
+            conds.append(cond)
+            print(f'->  {cond}')
 
-    return
+    for c in candidates:
+        over_valid = True
+        for cond in conds:
+            test = getattr(conditionals, cond[1])
+            valid = test(c, cond[2])
+            print(valid)
+            if not valid:
+                over_valid = False
+        if over_valid:
+            found.append(c)
+
+    print(found)
+
+    return found
 
 
 def selector_translation(element, selector) -> List[Any]:
     translation = []
+    print(get_elem_name(element))
     for pattern in selector:
-        selector_pattern = []
         pp = pre_process_pattern(pattern)
-        process_pattern(element, pp)
-        translation.append(selector_pattern)
+        translation.append(process_pattern(element, pp))
+    print('')
     return translation
 
 
-def pattern_match(element, selector) -> bool:
-    # Default to False for failsafe
-    match = False
+def rules_engine(element, rule):
+    if type(element.type).__name__ != rule['element_type']:
+        return False, None
+    candidates = selector_translation(element, rule['selector'])
+    result = list(set(candidates[0]).intersection(*candidates[1:]))
+    if not result:
+        return False, None
+    return True, result
 
-    return match
-
-
-def rules_engine(element, rule) -> bool:
-    # xml_concept = schema.elements[QName(concept.name).localname]
-    # xml_tag = xml_concept.elem.tag
-
-    # print(f'element_type={QName(xml_tag).localname} name={
-    #       QName(concept.name).localname} type={concept.type}')
-    new_selector = selector_translation(element, rule['selector'])
-    result = pattern_match(element, new_selector)
-    return result
-
-# NOTE: Output: Boolean|||
+# NOTE: Output: Boolean

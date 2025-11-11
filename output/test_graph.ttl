@@ -1,0 +1,239 @@
+@prefix ani1: <http://example.org/Anitology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ani1:hasAuditTrailEntry a owl:ObjectProperty ;
+    rdfs:label "hasAuditTrailEntry"@en ;
+    rdfs:domain ani1:AuditTrailEntrySet ;
+    rdfs:range ani1:AuditTrailEntry .
+
+ani1:hasAuditTrailEntrySet a owl:ObjectProperty ;
+    rdfs:label "hasAuditTrailEntrySet"@en ;
+    rdfs:domain ani1:AnIML ;
+    rdfs:range ani1:AuditTrailEntrySet .
+
+ani1:hasAuthor a owl:ObjectProperty ;
+    rdfs:label "hasAuthor"@en ;
+    rdfs:domain ani1:AuditTrailEntry,
+        ani1:Method ;
+    rdfs:range ani1:Author .
+
+ani1:hasAutoIncrementedValueSet a owl:ObjectProperty ;
+    rdfs:label "hasAutoIncrementedValueSet"@en ;
+    rdfs:domain ani1:Series ;
+    rdfs:range ani1:AutoIncrementedValueSet .
+
+ani1:hasCategory a owl:ObjectProperty ;
+    rdfs:label "hasCategory"@en ;
+    rdfs:domain ani1:Category,
+        ani1:Method,
+        ani1:Result,
+        ani1:Sample ;
+    rdfs:range ani1:Category .
+
+ani1:hasDevice a owl:ObjectProperty ;
+    rdfs:label "hasDevice"@en ;
+    rdfs:domain ani1:Method ;
+    rdfs:range ani1:Device .
+
+ani1:hasDiff a owl:ObjectProperty ;
+    rdfs:label "hasDiff"@en ;
+    rdfs:domain ani1:AuditTrailEntry ;
+    rdfs:range ani1:Diff .
+
+ani1:hasEncodedValueSet a owl:ObjectProperty ;
+    rdfs:label "hasEncodedValueSet"@en ;
+    rdfs:domain ani1:Series ;
+    rdfs:range ani1:EncodedValueSet .
+
+ani1:hasEndValue a owl:ObjectProperty ;
+    rdfs:label "hasEndValue"@en ;
+    rdfs:domain ani1:ParentDataPointReference ;
+    rdfs:range ani1:EndValue .
+
+ani1:hasExperimentDataBulkReference a owl:ObjectProperty ;
+    rdfs:label "hasExperimentDataBulkReference"@en ;
+    rdfs:domain ani1:ExperimentDataReferenceSet ;
+    rdfs:range ani1:ExperimentDataBulkReference .
+
+ani1:hasExperimentDataReference a owl:ObjectProperty ;
+    rdfs:label "hasExperimentDataReference"@en ;
+    rdfs:domain ani1:ExperimentDataReferenceSet ;
+    rdfs:range ani1:ExperimentDataReference .
+
+ani1:hasExperimentDataReferenceSet a owl:ObjectProperty ;
+    rdfs:label "hasExperimentDataReferenceSet"@en ;
+    rdfs:domain ani1:Infrastructure ;
+    rdfs:range ani1:ExperimentDataReferenceSet .
+
+ani1:hasExperimentStep a owl:ObjectProperty ;
+    rdfs:label "hasExperimentStep"@en ;
+    rdfs:domain ani1:ExperimentStepSet ;
+    rdfs:range ani1:ExperimentStep .
+
+ani1:hasExperimentStepSet a owl:ObjectProperty ;
+    rdfs:label "hasExperimentStepSet"@en ;
+    rdfs:domain ani1:AnIML,
+        ani1:Result ;
+    rdfs:range ani1:ExperimentStepSet .
+
+ani1:hasExtension a owl:ObjectProperty ;
+    rdfs:label "hasExtension"@en ;
+    rdfs:domain ani1:Technique ;
+    rdfs:range ani1:Extension .
+
+ani1:hasIncrement a owl:ObjectProperty ;
+    rdfs:label "hasIncrement"@en ;
+    rdfs:domain ani1:AutoIncrementedValueSet ;
+    rdfs:range ani1:Increment .
+
+ani1:hasIndividualValueSet a owl:ObjectProperty ;
+    rdfs:label "hasIndividualValueSet"@en ;
+    rdfs:domain ani1:Series ;
+    rdfs:range ani1:IndividualValueSet .
+
+ani1:hasInfrastructure a owl:ObjectProperty ;
+    rdfs:label "hasInfrastructure"@en ;
+    rdfs:domain ani1:ExperimentStep,
+        ani1:Template ;
+    rdfs:range ani1:Infrastructure .
+
+ani1:hasKeyInfo a owl:ObjectProperty ;
+    rdfs:label "hasKeyInfo"@en ;
+    rdfs:domain ani1:Signature ;
+    rdfs:range ani1:KeyInfo .
+
+ani1:hasMethod a owl:ObjectProperty ;
+    rdfs:label "hasMethod"@en ;
+    rdfs:domain ani1:ExperimentStep,
+        ani1:Template ;
+    rdfs:range ani1:Method .
+
+ani1:hasObject a owl:ObjectProperty ;
+    rdfs:label "hasObject"@en ;
+    rdfs:domain ani1:Signature ;
+    rdfs:range ani1:Object .
+
+ani1:hasParameter a owl:ObjectProperty ;
+    rdfs:label "hasParameter"@en ;
+    rdfs:domain ani1:Category ;
+    rdfs:range ani1:Parameter .
+
+ani1:hasParentDataPointReference a owl:ObjectProperty ;
+    rdfs:label "hasParentDataPointReference"@en ;
+    rdfs:domain ani1:ParentDataPointReferenceSet ;
+    rdfs:range ani1:ParentDataPointReference .
+
+ani1:hasParentDataPointReferenceSet a owl:ObjectProperty ;
+    rdfs:label "hasParentDataPointReferenceSet"@en ;
+    rdfs:domain ani1:Infrastructure ;
+    rdfs:range ani1:ParentDataPointReferenceSet .
+
+ani1:hasResult a owl:ObjectProperty ;
+    rdfs:label "hasResult"@en ;
+    rdfs:domain ani1:ExperimentStep,
+        ani1:Template ;
+    rdfs:range ani1:Result .
+
+ani1:hasSIUnit a owl:ObjectProperty ;
+    rdfs:label "hasSIUnit"@en ;
+    rdfs:domain ani1:Unit ;
+    rdfs:range ani1:SIUnit .
+
+ani1:hasSample a owl:ObjectProperty ;
+    rdfs:label "hasSample"@en ;
+    rdfs:domain ani1:SampleSet ;
+    rdfs:range ani1:Sample .
+
+ani1:hasSampleInheritance a owl:ObjectProperty ;
+    rdfs:label "hasSampleInheritance"@en ;
+    rdfs:domain ani1:SampleReferenceSet ;
+    rdfs:range ani1:SampleInheritance .
+
+ani1:hasSampleReference a owl:ObjectProperty ;
+    rdfs:label "hasSampleReference"@en ;
+    rdfs:domain ani1:SampleReferenceSet ;
+    rdfs:range ani1:SampleReference .
+
+ani1:hasSampleReferenceSet a owl:ObjectProperty ;
+    rdfs:label "hasSampleReferenceSet"@en ;
+    rdfs:domain ani1:Infrastructure ;
+    rdfs:range ani1:SampleReferenceSet .
+
+ani1:hasSampleSet a owl:ObjectProperty ;
+    rdfs:label "hasSampleSet"@en ;
+    rdfs:domain ani1:AnIML ;
+    rdfs:range ani1:SampleSet .
+
+ani1:hasSeries a owl:ObjectProperty ;
+    rdfs:label "hasSeries"@en ;
+    rdfs:domain ani1:SeriesSet ;
+    rdfs:range ani1:Series .
+
+ani1:hasSeriesSet a owl:ObjectProperty ;
+    rdfs:label "hasSeriesSet"@en ;
+    rdfs:domain ani1:Category,
+        ani1:Result ;
+    rdfs:range ani1:SeriesSet .
+
+ani1:hasSignature a owl:ObjectProperty ;
+    rdfs:label "hasSignature"@en ;
+    rdfs:domain ani1:SignatureSet ;
+    rdfs:range ani1:Signature .
+
+ani1:hasSignatureSet a owl:ObjectProperty ;
+    rdfs:label "hasSignatureSet"@en ;
+    rdfs:domain ani1:AnIML ;
+    rdfs:range ani1:SignatureSet .
+
+ani1:hasSignatureValue a owl:ObjectProperty ;
+    rdfs:label "hasSignatureValue"@en ;
+    rdfs:domain ani1:Signature ;
+    rdfs:range ani1:SignatureValue .
+
+ani1:hasSignedInfo a owl:ObjectProperty ;
+    rdfs:label "hasSignedInfo"@en ;
+    rdfs:domain ani1:Signature ;
+    rdfs:range ani1:SignedInfo .
+
+ani1:hasSoftware a owl:ObjectProperty ;
+    rdfs:label "hasSoftware"@en ;
+    rdfs:domain ani1:AuditTrailEntry,
+        ani1:Method ;
+    rdfs:range ani1:Software .
+
+ani1:hasStartValue a owl:ObjectProperty ;
+    rdfs:label "hasStartValue"@en ;
+    rdfs:domain ani1:AutoIncrementedValueSet,
+        ani1:ParentDataPointReference ;
+    rdfs:range ani1:StartValue .
+
+ani1:hasTag a owl:ObjectProperty ;
+    rdfs:label "hasTag"@en ;
+    rdfs:domain ani1:TagSet ;
+    rdfs:range ani1:Tag .
+
+ani1:hasTagSet a owl:ObjectProperty ;
+    rdfs:label "hasTagSet"@en ;
+    rdfs:domain ani1:ExperimentStep,
+        ani1:Sample,
+        ani1:Template ;
+    rdfs:range ani1:TagSet .
+
+ani1:hasTechnique a owl:ObjectProperty ;
+    rdfs:label "hasTechnique"@en ;
+    rdfs:domain ani1:ExperimentStep,
+        ani1:Template ;
+    rdfs:range ani1:Technique .
+
+ani1:hasTemplate a owl:ObjectProperty ;
+    rdfs:label "hasTemplate"@en ;
+    rdfs:domain ani1:ExperimentStepSet ;
+    rdfs:range ani1:Template .
+
+ani1:hasUnit a owl:ObjectProperty ;
+    rdfs:label "hasUnit"@en ;
+    rdfs:domain ani1:Parameter,
+        ani1:Series ;
+    rdfs:range ani1:Unit .
+
