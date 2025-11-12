@@ -8,7 +8,7 @@ prefixes:
   ex:   "http://example.org/"
 
 rules:
-  rule:
+  - rule:
     name: 1) complexType and element ref -> ObjectProperty
     element_type: XsdComplexType
     selector:
@@ -22,5 +22,15 @@ rules:
         rdfs:label 'has{get_elem_name(concept)}'@en ;
         rdfs:domain {PREFIX}:{get_elem_name(element)} ;
         rdfs:range {PREFIX}:{get_elem_name(concept)} ;
+        {prov_block}
+      """
+
+  - rule:
+    name: 2) complexTpe -> Class
+    element_type: XsdComplexType
+    emit: |
+      f"""
+      {PREFIX}:{get_elem_name(element)} a owl:Class ;
+        rdfs:label '{get_elem_name(element)}'@en ;
         {prov_block}
       """

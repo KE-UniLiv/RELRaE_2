@@ -9,13 +9,13 @@ def rules_parser(element, ruleset) -> Graph:
     g = Graph()
     for rule in ruleset:
         rule_match, concepts = rules_engine.rules_engine(
-            element, ruleset[rule])
+            element, rule)
         if rule_match:
-            print(f"Successfully matched with: {ruleset[rule]['name']}")
+            print(f"Successfully matched with: {rule['name']}")
             print("=================================================")
             for c in concepts:
                 g_frag = fragment_generator.fragment_generator(
-                    element, ruleset[rule], c)
+                    element, rule, c)
                 g = g + g_frag
     return g
 

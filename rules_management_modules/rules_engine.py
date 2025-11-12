@@ -1,6 +1,6 @@
 # NOTE: Input: XML concept, rule
 from rules_management_modules import conditionals
-from rules_management_modules import xpath_processors
+from rules_management_modules import pattern_processor
 from typing import List, Any
 from lxml.etree import QName
 import inspect
@@ -21,6 +21,7 @@ def process_pattern(element, pattern):
     p_type = "Unknown"
     found = []
 
+    # NOTE: Not needed
     id = ""
     for r in pattern:
         if "id" in r:
@@ -31,7 +32,7 @@ def process_pattern(element, pattern):
         if "pattern" in i:
             p_type = i[1]
 
-    p_parse = getattr(xpath_processors, p_type)
+    p_parse = getattr(pattern_processor, p_type)
     candidates = p_parse(element, pattern)
 
     # Maybe I don't need this list
@@ -45,7 +46,7 @@ def process_pattern(element, pattern):
         if r[0] in cond_funcs:
             # FIX: Swap out "id" for element object
             # Maybe this should be done in post after the Xpath is processed
-            # These indecies are relyed on even though they are redundant
+            # These indecies are relied on even though they are redundant
             cond = [id, r[0], r[1]]
             conds.append(cond)
             print(f'->  {cond}')
@@ -79,7 +80,10 @@ def selector_translation(element, selector) -> List[Any]:
 def rules_engine(element, rule):
     if type(element.type).__name__ != rule['element_type']:
         return False, None
-    candidates = selector_translation(element, rule['selector'])
+    if 'selector' in rule:
+        candidates = selector_translation(element, rule['selector'])
+    else:
+        candidates = [[""]]
     result = list(set(candidates[0]).intersection(*candidates[1:]))
     if not result:
         return False, None
