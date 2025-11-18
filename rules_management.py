@@ -1,3 +1,4 @@
+from xmlschema.validators import XsdSimpleType
 from rules_management_modules import rules_parser, fragment_generator
 from rdflib import Graph, Namespace
 from rdflib.namespace import RDF, RDFS, OWL
@@ -25,6 +26,12 @@ def generate_graph(schema, rules) -> Graph:
 
     for concept in schema:
         g = g + rules_parser.rules_parser(concept, rules, preamble)
+
+    # print(schema.simple_types)
+    # for concept in schema:
+    #     print(concept)
+    #     if concept.type == XsdSimpleType:
+    #         print(concept)
 
     return g
 

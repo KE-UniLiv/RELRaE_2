@@ -9,7 +9,7 @@ prefixes:
 
 rules:
   - rule:
-    name: 1) complexType and element ref -> ObjectProperty
+    name: n) complexType and element ref -> ObjectProperty
     element_type: XsdComplexType
     selector:
       - pattern: has_child
@@ -26,12 +26,33 @@ rules:
       """
 
   - rule:
-    name: 2) complexTpe -> Class
+    name: 1) complexType -> Class
     element_type: XsdComplexType
     emit: |
       f"""
       {PREFIX}:{get_elem_name(element)} a owl:Class ;
         rdfs:label '{get_elem_name(element)}'@en ;
+        {prov_block}
+      """
+
+  - rule:
+    name: 2a) simpleType -> Class
+    element_type: XsdSimpleType
+    emit: |
+      f"""
+      {PREFIX}:has{get_elem_name(element)} a owl:DatatypeProperty ;
+        rdfs:label 'has{get_elem_name(element)}'@en ;
+        {prov_block}
+      """
+
+  - rule:
+    name: 2b) simpleType(Restriction) -> Class
+    element_type: XsdAtomicRestriction
+    emit: |
+      f"""
+      {PREFIX}:has{get_elem_name(element)} a owl:DatatypeProperty ;
+        rdfs:label 'has{get_elem_name(element)}'@en ;
+        rdfs:range {check_datatype(element)} ;
         {prov_block}
       """
 
@@ -43,5 +64,6 @@ rules:
       attribute: annotation
     emit: |
       f"""
-      {PREFIX}:{get_elem_name(element)} rdfs:comment '{element.annotation}'@en .
+      {PREFIX}:{get_elem_name(element)} rdfs:comment '{element.annotation}'@en ;
+        {prov_block}
       """
