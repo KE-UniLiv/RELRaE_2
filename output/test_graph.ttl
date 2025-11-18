@@ -238,125 +238,166 @@ ani:hasUnit a owl:ObjectProperty ;
     rdfs:range ani:Unit .
 
 ani:Author a owl:Class ;
-    rdfs:label "Author"@en .
+    rdfs:label "Author"@en ;
+    rdfs:comment "Information about a person, a device or a piece of software authoring AnIML files."@en .
 
 ani:Device a owl:Class ;
-    rdfs:label "Device"@en .
+    rdfs:label "Device"@en ;
+    rdfs:comment "Device used to perform experiment."@en .
 
 ani:Diff a owl:Class ;
-    rdfs:label "Diff"@en .
+    rdfs:label "Diff"@en ;
+    rdfs:comment "Machine-readable description of changes made."@en .
 
 ani:EncodedValueSet a owl:Class ;
-    rdfs:label "EncodedValueSet"@en .
+    rdfs:label "EncodedValueSet"@en ;
+    rdfs:comment "Multiple numeric values encoded as a base64 binary string. Uses little-endian byte order."@en .
 
 ani:EndValue a owl:Class ;
-    rdfs:label "EndValue"@en .
+    rdfs:label "EndValue"@en ;
+    rdfs:comment "Upper boundary of an interval."@en .
 
 ani:ExperimentDataBulkReference a owl:Class ;
-    rdfs:label "ExperimentDataBulkReference"@en .
+    rdfs:label "ExperimentDataBulkReference"@en ;
+    rdfs:comment "Prefix-based reference to a set of Experiment Steps whose data are consumed."@en .
 
 ani:ExperimentDataReference a owl:Class ;
-    rdfs:label "ExperimentDataReference"@en .
+    rdfs:label "ExperimentDataReference"@en ;
+    rdfs:comment "Reference to an Experiment Step whose data are consumed."@en .
 
 ani:Extension a owl:Class ;
-    rdfs:label "Extension"@en .
+    rdfs:label "Extension"@en ;
+    rdfs:comment "Reference to an Extension to amend the active Technique Definition."@en .
 
 ani:Increment a owl:Class ;
-    rdfs:label "Increment"@en .
+    rdfs:label "Increment"@en ;
+    rdfs:comment "Increment value"@en .
 
 ani:IndividualValueSet a owl:Class ;
-    rdfs:label "IndividualValueSet"@en .
+    rdfs:label "IndividualValueSet"@en ;
+    rdfs:comment "Multiple Values explicitly specified."@en .
 
 ani:SIUnit a owl:Class ;
-    rdfs:label "SIUnit"@en .
+    rdfs:label "SIUnit"@en ;
+    rdfs:comment "Combination of SI Units used to represent Scientific Unit."@en .
 
 ani:SampleInheritance a owl:Class ;
-    rdfs:label "SampleInheritance"@en .
+    rdfs:label "SampleInheritance"@en ;
+    rdfs:comment "Indicates that a Sample was inherited from the parent ExperimentStep."@en .
 
 ani:SampleReference a owl:Class ;
-    rdfs:label "SampleReference"@en .
+    rdfs:label "SampleReference"@en ;
+    rdfs:comment "Reference to a Sample used in this Experiment."@en .
 
 ani:Software a owl:Class ;
-    rdfs:label "Software"@en .
+    rdfs:label "Software"@en ;
+    rdfs:comment "Software used to author this."@en .
 
 ani:StartValue a owl:Class ;
-    rdfs:label "StartValue"@en .
+    rdfs:label "StartValue"@en ;
+    rdfs:comment "Lower boundary of an interval or ValueSet."@en .
 
 ani:Tag a owl:Class ;
-    rdfs:label "Tag"@en .
+    rdfs:label "Tag"@en ;
+    rdfs:comment "Tag to mark related data items. When a value is given, it may also serve as a reference to an external data system."@en .
 
 ani:AuditTrailEntrySet a owl:Class ;
-    rdfs:label "AuditTrailEntrySet"@en .
+    rdfs:label "AuditTrailEntrySet"@en ;
+    rdfs:comment "Container for audit trail entries describing changes to this document."@en .
 
 ani:Parameter a owl:Class ;
-    rdfs:label "Parameter"@en .
+    rdfs:label "Parameter"@en ;
+    rdfs:comment "Name/Value Pair."@en .
 
 ani:ParentDataPointReferenceSet a owl:Class ;
-    rdfs:label "ParentDataPointReferenceSet"@en .
+    rdfs:label "ParentDataPointReferenceSet"@en ;
+    rdfs:comment "Contains references to the parent Result."@en .
 
 ani:SampleSet a owl:Class ;
-    rdfs:label "SampleSet"@en .
+    rdfs:label "SampleSet"@en ;
+    rdfs:comment "Container for Samples used in this AnIML document."@en .
 
 ani:SeriesSet a owl:Class ;
-    rdfs:label "SeriesSet"@en .
+    rdfs:label "SeriesSet"@en ;
+    rdfs:comment "Container for n-dimensional Data."@en .
 
 ani:SignatureSet a owl:Class ;
-    rdfs:label "SignatureSet"@en .
+    rdfs:label "SignatureSet"@en ;
+    rdfs:comment "Container for digital signatures covering parts of this AnIML document."@en .
 
 ani:TagSet a owl:Class ;
-    rdfs:label "TagSet"@en .
+    rdfs:label "TagSet"@en ;
+    rdfs:comment "Set of Tag elements."@en .
 
 ani:Technique a owl:Class ;
-    rdfs:label "Technique"@en .
+    rdfs:label "Technique"@en ;
+    rdfs:comment "Reference to Technique Definition used in this Experiment."@en .
 
 ani:Unit a owl:Class ;
-    rdfs:label "Unit"@en .
+    rdfs:label "Unit"@en ;
+    rdfs:comment "Definition of a Scientific Unit."@en .
 
 ani:AutoIncrementedValueSet a owl:Class ;
-    rdfs:label "AutoIncrementedValueSet"@en .
+    rdfs:label "AutoIncrementedValueSet"@en ;
+    rdfs:comment "Multiple values given in form of a start value and an increment."@en .
 
 ani:ExperimentDataReferenceSet a owl:Class ;
-    rdfs:label "ExperimentDataReferenceSet"@en .
+    rdfs:label "ExperimentDataReferenceSet"@en ;
+    rdfs:comment "Set of Experiment Steps consumed by this Experiment Step."@en .
 
 ani:ExperimentStepSet a owl:Class ;
-    rdfs:label "ExperimentStepSet"@en .
+    rdfs:label "ExperimentStepSet"@en ;
+    rdfs:comment "Container for multiple ExperimentSteps that describe the process and results."@en .
 
 ani:ParentDataPointReference a owl:Class ;
-    rdfs:label "ParentDataPointReference"@en .
+    rdfs:label "ParentDataPointReference"@en ;
+    rdfs:comment "Reference to a data point or value range in an independent Series in the parent Result."@en .
 
 ani:Sample a owl:Class ;
-    rdfs:label "Sample"@en .
+    rdfs:label "Sample"@en ;
+    rdfs:comment "Individual Sample, referenced from other parts of this AnIML document."@en .
 
 ani:SampleReferenceSet a owl:Class ;
-    rdfs:label "SampleReferenceSet"@en .
+    rdfs:label "SampleReferenceSet"@en ;
+    rdfs:comment "Set of Samples used in this Experiment."@en .
 
 ani:AnIML a owl:Class ;
-    rdfs:label "AnIML"@en .
+    rdfs:label "AnIML"@en ;
+    rdfs:comment "Root Element for AnIML documents."@en .
 
 ani:AuditTrailEntry a owl:Class ;
-    rdfs:label "AuditTrailEntry"@en .
+    rdfs:label "AuditTrailEntry"@en ;
+    rdfs:comment "Describes a set of changes made to the particular AnIML document by one user at a given time."@en .
 
 ani:Category a owl:Class ;
-    rdfs:label "Category"@en .
+    rdfs:label "Category"@en ;
+    rdfs:comment "Defines a category of Parameters and SeriesSets. Used to model hierarchies."@en .
 
 ani:Infrastructure a owl:Class ;
-    rdfs:label "Infrastructure"@en .
+    rdfs:label "Infrastructure"@en ;
+    rdfs:comment "Contains references to the context of this Experiment."@en .
 
 ani:Result a owl:Class ;
-    rdfs:label "Result"@en .
+    rdfs:label "Result"@en ;
+    rdfs:comment "Container for Data derived from Experiment."@en .
 
 ani:Method a owl:Class ;
-    rdfs:label "Method"@en .
+    rdfs:label "Method"@en ;
+    rdfs:comment "Describes how this Experiment was performed."@en .
 
 ani:Series a owl:Class ;
-    rdfs:label "Series"@en .
+    rdfs:label "Series"@en ;
+    rdfs:comment "Container for multiple Values."@en .
 
 ani:Signature a owl:Class ;
-    rdfs:label "Signature"@en .
+    rdfs:label "Signature"@en ;
+    rdfs:comment "Digital Signature that has been applied to a part of this AnIML document. Uses the W3C XML-DSIG specification."@en .
 
 ani:ExperimentStep a owl:Class ;
-    rdfs:label "ExperimentStep"@en .
+    rdfs:label "ExperimentStep"@en ;
+    rdfs:comment "Container that documents a step in an experiment. Use one ExperimentStep per application of a Technique."@en .
 
 ani:Template a owl:Class ;
-    rdfs:label "Template"@en .
+    rdfs:label "Template"@en ;
+    rdfs:comment "Represents a template for an ExperimentStep."@en .
 

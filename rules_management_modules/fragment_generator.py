@@ -6,6 +6,7 @@ from lxml.etree import QName
 
 # TODO: Implement Constants Properly
 PREFIX = 'ani'
+
 PROV_BLOCK = "To be defined"
 
 PREAMBLE = """
@@ -21,12 +22,28 @@ def get_elem_name(concept):
     return xml_concept
 
 
-def fragment_generator(element, rule, concept) -> Graph:
-    # ANI = Namespace("http://example.org/Anitology/")
+def generate_preamble():
+    preamble = PREAMBLE
+    more_namespaces = True
+    # Define name space
+    while more_namespaces:
+        namespace = input('Enter a namespace URL (Leave blank to skip): ')
+        if namespace == '':
+            more_namespaces = False
+            continue
+        prefix = input('Enter a prefix for this namespace: ')
+        pref_line = f"""
+            @prefix {prefix}: <{namespace}> .
+        """
+        preamble = PREAMBLE + pref_line
+
+    return preamble
+
+
+def fragment_generator(element, rule, concept, preamble) -> Graph:
 
     g = Graph()
 
-    # g.bind('ani', ANI)
     g.bind('rdf', RDF)
     g.bind('rdfs', RDFS)
     g.bind('owl', OWL)
@@ -34,8 +51,8 @@ def fragment_generator(element, rule, concept) -> Graph:
     # TODO: Collect all required info to populate emit
     prov_block = "."
     fragment = eval(rule['emit'])
-    print(PREAMBLE + fragment)
-    g.parse(data=(PREAMBLE + fragment), format='ttl')
+    print(preamble + fragment)
+    g.parse(data=(preamble + fragment), format='ttl')
     # print(fragment)
 
     return g

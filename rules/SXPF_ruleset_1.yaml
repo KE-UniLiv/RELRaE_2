@@ -34,3 +34,14 @@ rules:
         rdfs:label '{get_elem_name(element)}'@en ;
         {prov_block}
       """
+
+  - rule:
+    name: 3a) annotation (complexType) -> comment ;
+    element_type: XsdComplexType
+    selector:
+    - pattern: has_attribute
+      attribute: annotation
+    emit: |
+      f"""
+      {PREFIX}:{get_elem_name(element)} rdfs:comment '{element.annotation}'@en .
+      """

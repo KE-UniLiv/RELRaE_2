@@ -30,3 +30,15 @@ def has_child(element, pattern):
             candidates.append(d)
 
     return candidates
+
+
+def has_attribute(element, pattern):
+    candidates = []
+
+    att = pattern[selector_index(pattern, 'attribute')][1]
+
+    if getattr(element, att, None):
+        candidates.append(element)
+
+    # print(element.annotation)
+    return candidates

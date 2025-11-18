@@ -1,4 +1,4 @@
-from rules_management_modules import rules_parser
+from rules_management_modules import rules_parser, fragment_generator
 from rdflib import Graph, Namespace
 from rdflib.namespace import RDF, RDFS, OWL
 from pathlib import Path
@@ -15,17 +15,16 @@ TESTING = True
 
 def generate_graph(schema, rules) -> Graph:
 
-    ANI = Namespace("http://example.org/Anitology")
+    preamble = fragment_generator.generate_preamble()
 
     g = Graph()
 
-    g.bind('ani', ANI)
     g.bind('rdf', RDF)
     g.bind('rdfs', RDFS)
     g.bind('owl', OWL)
 
     for concept in schema:
-        g = g + rules_parser.rules_parser(concept, rules)
+        g = g + rules_parser.rules_parser(concept, rules, preamble)
 
     return g
 

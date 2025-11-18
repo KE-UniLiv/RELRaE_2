@@ -5,7 +5,7 @@ from rules_management_modules import rules_engine
 from rules_management_modules import fragment_generator
 
 
-def rules_parser(element, ruleset) -> Graph:
+def rules_parser(element, ruleset, preamble) -> Graph:
     g = Graph()
     for rule in ruleset:
         rule_match, concepts = rules_engine.rules_engine(
@@ -15,7 +15,7 @@ def rules_parser(element, ruleset) -> Graph:
             print("=================================================")
             for c in concepts:
                 g_frag = fragment_generator.fragment_generator(
-                    element, rule, c)
+                    element, rule, c, preamble)
                 g = g + g_frag
     return g
 

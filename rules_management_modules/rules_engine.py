@@ -49,27 +49,27 @@ def process_pattern(element, pattern):
             # These indecies are relied on even though they are redundant
             cond = [id, r[0], r[1]]
             conds.append(cond)
-            print(f'->  {cond}')
+            # print(f'->  {cond}')
 
     for c in candidates:
         over_valid = True
         for cond in conds:
             test = getattr(conditionals, cond[1])
             valid = test(c, cond[2])
-            print(valid)
+            # print(valid)
             if not valid:
                 over_valid = False
         if over_valid:
             found.append(c)
 
-    print(found)
+    # print(found)
 
     return found
 
 
 def selector_translation(element, selector) -> List[Any]:
     translation = []
-    print(get_elem_name(element))
+    # print(get_elem_name(element))
     for pattern in selector:
         pp = pre_process_pattern(pattern)
         translation.append(process_pattern(element, pp))
