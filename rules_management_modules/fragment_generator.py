@@ -19,25 +19,47 @@ PREAMBLE = """
     """
 
 
+def get_named_base_type(concept_type):
+    t = concept_type
+    while getattr(t, 'base_type', None) is not None:
+        b = t.base_type
+        if getattr(b, 'name', None):
+            return b
+        t = b
+    return None
+
+
 def get_elem_name(concept):
-    xml_concept = QName(concept.name).localname
+    if concept.name:
+        xml_concept = QName(concept.name).localname
+    else:
+        xml_concept = QName(get_named_base_type(concept).name).localname
     return xml_concept
 
 
-def check_datatype(concept):
-    print(concept.type.base_type)
-    if isinstance(concept.type.base_type, XsdAtomicBuiltin):
-        rdfs_string = f"xsd:{get_elem_name(concept.type.base_type)}"
-        return rdfs_string
-    elif isinstance(concept.type.base_type, XsdAtomicRestriction):
-        # TODO: Add an option to deal with undefined (or nested custom) datatypes (e.g. SVG and EmbeddedXMLType)
-        rdfs_string = f"""{PREFIX}:{get_elem_name(concept.type.base_type)} ;
-            {PROV_BLOCK}
+def is_built_in(concept):
+    if isinstance(concept.base_type, XsdAtomicBuiltin):
+        return get_elem_name(concept.base_type)
+    else:
+        return is_built_in(concept.base_type)
 
-            {PREFIX}:{get_elem_name(concept.type.base_type)} a rdfs:Datatype ;
-                rdfs:label '{get_elem_name(concept.type.base_type)}'@en ;
-                rdfs:subClassOf xsd:{get_elem_name(concept.type.base_type.base_type)}"""
-        return rdfs_string
+
+def check_datatype(concept):
+    # if isinstance(concept.type.base_type, XsdAtomicBuiltin):
+    #     rdfs_string = f"xsd:{get_elem_name(concept.type.base_type)}"
+    #     return rdfs_string
+    # elif isinstance(concept.type.base_type, XsdAtomicRestriction):
+    #     # NOTE: Errors can be caused by falling back on primitives from anonymous simpleTypes
+    #     # TODO: Include handling for constrains and anonymous restrictions
+    #     rdfs_string = f"""{PREFIX}:{get_elem_name(concept.type.base_type)} ;
+    #         {PROV_BLOCK}
+
+    #         {PREFIX}:{get_elem_name(concept.type.base_type)} a rdfs:Datatype ;
+    #             rdfs:label '{get_elem_name(concept.type.base_type)}'@en ;
+    #             owl:equivalentClass xsd:{is_built_in(concept.type)}"""
+    #     return rdfs_string
+    rdfs_string = f"""xsd:{is_built_in(concept.type)}"""
+    return rdfs_string
 
 
 def generate_preamble():
