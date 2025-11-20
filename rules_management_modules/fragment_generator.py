@@ -19,6 +19,8 @@ PREAMBLE = """
     """
 
 
+# TODO: Implement a function for capitalising concepts to allow attributes and elements to correctly line up
+
 def get_named_base_type(concept_type):
     t = concept_type
     while getattr(t, 'base_type', None) is not None:
@@ -38,26 +40,16 @@ def get_elem_name(concept):
 
 
 def is_built_in(concept):
+    # print(concept.base_type)
     if isinstance(concept.base_type, XsdAtomicBuiltin):
         return get_elem_name(concept.base_type)
+    elif isinstance(concept, XsdAtomicBuiltin):
+        return get_elem_name(concept)
     else:
         return is_built_in(concept.base_type)
 
 
 def check_datatype(concept):
-    # if isinstance(concept.type.base_type, XsdAtomicBuiltin):
-    #     rdfs_string = f"xsd:{get_elem_name(concept.type.base_type)}"
-    #     return rdfs_string
-    # elif isinstance(concept.type.base_type, XsdAtomicRestriction):
-    #     # NOTE: Errors can be caused by falling back on primitives from anonymous simpleTypes
-    #     # TODO: Include handling for constrains and anonymous restrictions
-    #     rdfs_string = f"""{PREFIX}:{get_elem_name(concept.type.base_type)} ;
-    #         {PROV_BLOCK}
-
-    #         {PREFIX}:{get_elem_name(concept.type.base_type)} a rdfs:Datatype ;
-    #             rdfs:label '{get_elem_name(concept.type.base_type)}'@en ;
-    #             owl:equivalentClass xsd:{is_built_in(concept.type)}"""
-    #     return rdfs_string
     rdfs_string = f"""xsd:{is_built_in(concept.type)}"""
     return rdfs_string
 

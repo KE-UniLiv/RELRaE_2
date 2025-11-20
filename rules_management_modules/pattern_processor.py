@@ -35,10 +35,21 @@ def has_child(element, pattern):
 def has_attribute(element, pattern):
     candidates = []
 
-    att = pattern[selector_index(pattern, 'attribute')][1]
+    if pattern[selector_index(pattern, 'attribute')][1] != 'All':
+        att = []
+        att.append(pattern[selector_index(pattern, 'attribute')][1])
+    else:
+        att = []
+        for a in element.attributes.values():
+            att.append(a)
 
-    if getattr(element, att, None):
-        candidates.append(element)
+    print(att)
 
-    # print(element.annotation)
+    for a in att:
+        if isinstance(a, str):
+            if getattr(element, a, None):
+                candidates.append(element)
+        else:
+            candidates.append(a)
+
     return candidates
