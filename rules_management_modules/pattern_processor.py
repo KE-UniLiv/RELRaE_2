@@ -40,10 +40,14 @@ def has_attribute(element, pattern):
         att.append(pattern[selector_index(pattern, 'attribute')][1])
     else:
         att = []
-        for a in element.attributes.values():
-            att.append(a)
-
-    print(att)
+        try:
+            for a in element.attributes.values():
+                att.append(a)
+        except Exception:
+            for a in element.values():
+                att.append(a)
+                print(element)
+                print(a)
 
     for a in att:
         if isinstance(a, str):

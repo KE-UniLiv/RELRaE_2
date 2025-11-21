@@ -8,7 +8,6 @@ prefixes:
   ex:   "http://example.org/"
 
 rules:
-
   - rule:
     name: 1) complexType -> Class
     element_type: XsdComplexType
@@ -41,7 +40,7 @@ rules:
       """
 
   - rule:
-    name: 3a) attribute -> DatatypeProperty
+    name: 3) attribute -> DatatypeProperty
     element_type: XsdComplexType
     selector:
     - pattern: has_attribute
@@ -52,6 +51,24 @@ rules:
         rdfs:label 'has{get_elem_name(concept)}'@en ;
         rdfs:domain {PREFIX}:{get_elem_name(element)} ;
         rdfs:range {check_datatype(concept)} ;
+        {prov_block}
+      """
+
+  - rule:
+    name: 4) attributeGroups -> DatatypeProperty (superProperty)
+    element_type: XsdAttributeGroup
+    selector:
+      - pattern: has_attribute
+        attribute: All
+    emit: |
+      f"""
+      {PREFIX}:has{get_elem_name(element)} a owl:DatatypeProperty ;
+        rdfs:label 'has{get_elem_name(element)}'@en ;
+        {prov_block}
+
+      {PREFIX}:has{get_elem_name(concept)} a owl:DatatypeProperty ;
+        rdfs:label 'has{get_elem_name(concept)}'@en ;
+        rdfs:subPropertyOf {PREFIX}:has{get_elem_name(element)};
         {prov_block}
       """
 
@@ -138,7 +155,7 @@ rules:
       """
 
   - rule:
-    name: n+1) complexType and atomicRestriction ref -> ObjectProperty
+    name: n+2) complexType and atomicRestriction ref -> ObjectProperty
     element_type: XsdComplexType
     selector:
       - pattern: has_child

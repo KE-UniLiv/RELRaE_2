@@ -78,8 +78,12 @@ def selector_translation(element, selector) -> List[Any]:
 
 
 def rules_engine(element, rule):
-    if type(element.type).__name__ != rule['element_type']:
-        return False, None
+    try:
+        if type(element.type).__name__ != rule['element_type']:
+            return False, None
+    except Exception:
+        if type(element).__name__ != rule['element_type']:
+            return False, None
     if 'selector' in rule:
         candidates = selector_translation(element, rule['selector'])
     else:

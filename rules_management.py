@@ -27,11 +27,13 @@ def generate_graph(schema, rules) -> Graph:
     for concept in schema:
         g = g + rules_parser.rules_parser(concept, rules, preamble)
 
-    # print(schema.simple_types)
-    # for concept in schema:
-    #     print(concept)
-    #     if concept.type == XsdSimpleType:
-    #         print(concept)
+    for concept in schema.attribute_groups.values():
+        g = g + rules_parser.rules_parser(concept, rules, preamble)
+
+    # print(schema.attribute_groups["ExperimentDataAttributes"])
+    # group = schema.attribute_groups["ExperimentDataAttributes"]
+    # for a in group.values():
+    #     print(a)
 
     return g
 
