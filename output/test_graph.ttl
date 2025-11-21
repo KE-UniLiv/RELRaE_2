@@ -6,11 +6,13 @@
 ani:hasAction a owl:DatatypeProperty ;
     rdfs:label "hasAction"@en ;
     rdfs:comment "Type of change made (created, modified, ...)"@en ;
+    rdfs:domain ani:AuditTrailEntry ;
     rdfs:range xsd:token .
 
 ani:hasAffiliation a owl:DatatypeProperty ;
     rdfs:label "hasAffiliation"@en ;
     rdfs:comment "Organization the Author is affiliated with."@en ;
+    rdfs:domain ani:Author ;
     rdfs:range xsd:string .
 
 ani:hasAuditTrailEntry a owl:ObjectProperty ;
@@ -34,9 +36,16 @@ ani:hasAutoIncrementedValueSet a owl:ObjectProperty ;
     rdfs:domain ani:Series ;
     rdfs:range ani:AutoIncrementedValueSet .
 
+ani:hasBarcode a owl:DatatypeProperty ;
+    rdfs:label "hasBarcode"@en ;
+    rdfs:domain ani:Sample ;
+    rdfs:range xsd:token .
+
 ani:hasBoolean a owl:DatatypeProperty ;
     rdfs:label "hasBoolean"@en ;
     rdfs:comment "Individual boolean value."@en ;
+    rdfs:domain ani:IndividualValueSet,
+        ani:Parameter ;
     rdfs:range xsd:boolean .
 
 ani:hasCategory a owl:ObjectProperty ;
@@ -47,20 +56,61 @@ ani:hasCategory a owl:ObjectProperty ;
         ani:Sample ;
     rdfs:range ani:Category .
 
+ani:hasChangedItem a owl:DatatypeProperty ;
+    rdfs:label "hasChangedItem"@en ;
+    rdfs:domain ani:Diff ;
+    rdfs:range xsd:NCName .
+
 ani:hasComment a owl:DatatypeProperty ;
     rdfs:label "hasComment"@en ;
     rdfs:comment "Human-readable comment further explaining the changes."@en ;
+    rdfs:domain ani:AuditTrailEntry,
+        ani:ExperimentStep,
+        ani:Sample ;
     rdfs:range xsd:string .
+
+ani:hasContainerID a owl:DatatypeProperty ;
+    rdfs:label "hasContainerID"@en ;
+    rdfs:domain ani:Sample ;
+    rdfs:range xsd:token .
+
+ani:hasContainerType a owl:DatatypeProperty ;
+    rdfs:label "hasContainerType"@en ;
+    rdfs:domain ani:Sample ;
+    rdfs:range xsd:token .
 
 ani:hasD a owl:DatatypeProperty ;
     rdfs:label "hasD"@en ;
     rdfs:comment "Individual 64-bit floating point value."@en ;
+    rdfs:domain ani:EndValue,
+        ani:Increment,
+        ani:IndividualValueSet,
+        ani:Parameter,
+        ani:StartValue ;
     rdfs:range xsd:double .
+
+ani:hasDataPurpose a owl:DatatypeProperty ;
+    rdfs:label "hasDataPurpose"@en ;
+    rdfs:domain ani:ExperimentDataBulkReference,
+        ani:ExperimentDataReference ;
+    rdfs:range xsd:token .
 
 ani:hasDateTime a owl:DatatypeProperty ;
     rdfs:label "hasDateTime"@en ;
     rdfs:comment "Individual ISO date/time value."@en ;
+    rdfs:domain ani:IndividualValueSet,
+        ani:Parameter ;
     rdfs:range xsd:dateTime .
+
+ani:hasDependency a owl:DatatypeProperty ;
+    rdfs:label "hasDependency"@en ;
+    rdfs:domain ani:Series ;
+    rdfs:range xsd:token .
+
+ani:hasDerived a owl:DatatypeProperty ;
+    rdfs:label "hasDerived"@en ;
+    rdfs:domain ani:Sample ;
+    rdfs:range xsd:boolean .
 
 ani:hasDevice a owl:ObjectProperty ;
     rdfs:label "hasDevice"@en ;
@@ -70,6 +120,7 @@ ani:hasDevice a owl:ObjectProperty ;
 ani:hasDeviceIdentifier a owl:DatatypeProperty ;
     rdfs:label "hasDeviceIdentifier"@en ;
     rdfs:comment "Unique name or identifier of the device."@en ;
+    rdfs:domain ani:Device ;
     rdfs:range xsd:token .
 
 ani:hasDiff a owl:ObjectProperty ;
@@ -80,17 +131,27 @@ ani:hasDiff a owl:ObjectProperty ;
 ani:hasEmail a owl:DatatypeProperty ;
     rdfs:label "hasEmail"@en ;
     rdfs:comment "RFC822-compliant email address."@en ;
+    rdfs:domain ani:Author ;
     rdfs:range xsd:string .
 
 ani:hasEmbeddedXML a owl:DatatypeProperty ;
     rdfs:label "hasEmbeddedXML"@en ;
     rdfs:comment "Value governed by a different XML Schema."@en ;
+    rdfs:domain ani:IndividualValueSet,
+        ani:Parameter ;
     rdfs:range xsd:string .
 
 ani:hasEncodedValueSet a owl:ObjectProperty ;
     rdfs:label "hasEncodedValueSet"@en ;
     rdfs:domain ani:Series ;
     rdfs:range ani:EncodedValueSet .
+
+ani:hasEndIndex a owl:DatatypeProperty ;
+    rdfs:label "hasEndIndex"@en ;
+    rdfs:domain ani:AutoIncrementedValueSet,
+        ani:EncodedValueSet,
+        ani:IndividualValueSet ;
+    rdfs:range xsd:int .
 
 ani:hasEndValue a owl:ObjectProperty ;
     rdfs:label "hasEndValue"@en ;
@@ -117,11 +178,27 @@ ani:hasExperimentStep a owl:ObjectProperty ;
     rdfs:domain ani:ExperimentStepSet ;
     rdfs:range ani:ExperimentStep .
 
+ani:hasExperimentStepID a owl:DatatypeProperty ;
+    rdfs:label "hasExperimentStepID"@en ;
+    rdfs:domain ani:ExperimentDataReference,
+        ani:ExperimentStep ;
+    rdfs:range xsd:token .
+
+ani:hasExperimentStepIDPrefix a owl:DatatypeProperty ;
+    rdfs:label "hasExperimentStepIDPrefix"@en ;
+    rdfs:domain ani:ExperimentDataBulkReference ;
+    rdfs:range xsd:token .
+
 ani:hasExperimentStepSet a owl:ObjectProperty ;
     rdfs:label "hasExperimentStepSet"@en ;
     rdfs:domain ani:AnIML,
         ani:Result ;
     rdfs:range ani:ExperimentStepSet .
+
+ani:hasExponent a owl:DatatypeProperty ;
+    rdfs:label "hasExponent"@en ;
+    rdfs:domain ani:SIUnit ;
+    rdfs:range xsd:double .
 
 ani:hasExtension a owl:ObjectProperty ;
     rdfs:label "hasExtension"@en ;
@@ -131,21 +208,59 @@ ani:hasExtension a owl:ObjectProperty ;
 ani:hasF a owl:DatatypeProperty ;
     rdfs:label "hasF"@en ;
     rdfs:comment "Individual 32-bit floating point value."@en ;
+    rdfs:domain ani:EndValue,
+        ani:Increment,
+        ani:IndividualValueSet,
+        ani:Parameter,
+        ani:StartValue ;
     rdfs:range xsd:float .
+
+ani:hasFactor a owl:DatatypeProperty ;
+    rdfs:label "hasFactor"@en ;
+    rdfs:domain ani:SIUnit ;
+    rdfs:range xsd:double .
 
 ani:hasFirmwareVersion a owl:DatatypeProperty ;
     rdfs:label "hasFirmwareVersion"@en ;
     rdfs:comment "Version identifier of firmware release."@en ;
+    rdfs:domain ani:Device ;
     rdfs:range xsd:token .
 
 ani:hasI a owl:DatatypeProperty ;
     rdfs:label "hasI"@en ;
     rdfs:comment "Individual integer value (32 bits, signed)."@en ;
+    rdfs:domain ani:EndValue,
+        ani:Increment,
+        ani:IndividualValueSet,
+        ani:Parameter,
+        ani:StartValue ;
     rdfs:range xsd:int .
 
 ani:hasId a owl:DatatypeProperty ;
     rdfs:label "hasId"@en ;
-    rdfs:domain ani:Signature ;
+    rdfs:domain ani:AuditTrailEntry,
+        ani:AuditTrailEntrySet,
+        ani:Category,
+        ani:ExperimentDataBulkReference,
+        ani:ExperimentDataReference,
+        ani:ExperimentDataReferenceSet,
+        ani:ExperimentStep,
+        ani:ExperimentStepSet,
+        ani:Infrastructure,
+        ani:Method,
+        ani:Parameter,
+        ani:ParentDataPointReference,
+        ani:Result,
+        ani:Sample,
+        ani:SampleInheritance,
+        ani:SampleReference,
+        ani:SampleReferenceSet,
+        ani:SampleSet,
+        ani:Series,
+        ani:SeriesSet,
+        ani:Signature,
+        ani:Technique,
+        ani:Template ;
     rdfs:range xsd:NCName .
 
 ani:hasIncrement a owl:ObjectProperty ;
@@ -172,16 +287,39 @@ ani:hasKeyInfo a owl:ObjectProperty ;
 ani:hasL a owl:DatatypeProperty ;
     rdfs:label "hasL"@en ;
     rdfs:comment "Individual long integer value (64 bits, signed)."@en ;
+    rdfs:domain ani:EndValue,
+        ani:Increment,
+        ani:IndividualValueSet,
+        ani:Parameter,
+        ani:StartValue ;
     rdfs:range xsd:long .
+
+ani:hasLabel a owl:DatatypeProperty ;
+    rdfs:label "hasLabel"@en ;
+    rdfs:domain ani:Unit ;
+    rdfs:range xsd:token .
+
+ani:hasLength a owl:DatatypeProperty ;
+    rdfs:label "hasLength"@en ;
+    rdfs:domain ani:SeriesSet ;
+    rdfs:range xsd:int .
 
 ani:hasLocation a owl:DatatypeProperty ;
     rdfs:label "hasLocation"@en ;
     rdfs:comment "Location or physical address."@en ;
+    rdfs:domain ani:Author ;
     rdfs:range xsd:string .
+
+ani:hasLocationInContainer a owl:DatatypeProperty ;
+    rdfs:label "hasLocationInContainer"@en ;
+    rdfs:domain ani:Sample ;
+    rdfs:range xsd:token .
 
 ani:hasManufacturer a owl:DatatypeProperty ;
     rdfs:label "hasManufacturer"@en ;
     rdfs:comment "Company name."@en ;
+    rdfs:domain ani:Device,
+        ani:Software ;
     rdfs:range xsd:token .
 
 ani:hasMethod a owl:ObjectProperty ;
@@ -193,27 +331,56 @@ ani:hasMethod a owl:ObjectProperty ;
 ani:hasName a owl:DatatypeProperty ;
     rdfs:label "hasName"@en ;
     rdfs:comment "Common name."@en ;
-    rdfs:range xsd:string .
+    rdfs:domain ani:Author,
+        ani:Category,
+        ani:Device,
+        ani:ExperimentStep,
+        ani:Extension,
+        ani:Method,
+        ani:Parameter,
+        ani:Result,
+        ani:Sample,
+        ani:Series,
+        ani:SeriesSet,
+        ani:Software,
+        ani:Tag,
+        ani:Technique,
+        ani:Template ;
+    rdfs:range xsd:string,
+        xsd:token .
 
 ani:hasObject a owl:ObjectProperty ;
     rdfs:label "hasObject"@en ;
     rdfs:domain ani:Signature ;
     rdfs:range ani:Object .
 
+ani:hasOffset a owl:DatatypeProperty ;
+    rdfs:label "hasOffset"@en ;
+    rdfs:domain ani:SIUnit ;
+    rdfs:range xsd:double .
+
 ani:hasOperatingSystem a owl:DatatypeProperty ;
     rdfs:label "hasOperatingSystem"@en ;
     rdfs:comment "Operating system the software was running on."@en ;
+    rdfs:domain ani:Software ;
     rdfs:range xsd:token .
 
 ani:hasPNG a owl:DatatypeProperty ;
     rdfs:label "hasPNG"@en ;
     rdfs:comment "Base 64 encoded PNG image."@en ;
+    rdfs:domain ani:IndividualValueSet,
+        ani:Parameter ;
     rdfs:range xsd:base64Binary .
 
 ani:hasParameter a owl:ObjectProperty ;
     rdfs:label "hasParameter"@en ;
     rdfs:domain ani:Category ;
     rdfs:range ani:Parameter .
+
+ani:hasParameterType a owl:DatatypeProperty ;
+    rdfs:label "hasParameterType"@en ;
+    rdfs:domain ani:Parameter ;
+    rdfs:range xsd:token .
 
 ani:hasParentDataPointReference a owl:ObjectProperty ;
     rdfs:label "hasParentDataPointReference"@en ;
@@ -228,16 +395,29 @@ ani:hasParentDataPointReferenceSet a owl:ObjectProperty ;
 ani:hasPhone a owl:DatatypeProperty ;
     rdfs:label "hasPhone"@en ;
     rdfs:comment "Phone number."@en ;
+    rdfs:domain ani:Author ;
     rdfs:range xsd:string .
+
+ani:hasPlotScale a owl:DatatypeProperty ;
+    rdfs:label "hasPlotScale"@en ;
+    rdfs:domain ani:Series ;
+    rdfs:range xsd:token .
+
+ani:hasQuantity a owl:DatatypeProperty ;
+    rdfs:label "hasQuantity"@en ;
+    rdfs:domain ani:Unit ;
+    rdfs:range xsd:token .
 
 ani:hasReason a owl:DatatypeProperty ;
     rdfs:label "hasReason"@en ;
     rdfs:comment "Explanation why changes were made."@en ;
+    rdfs:domain ani:AuditTrailEntry ;
     rdfs:range xsd:string .
 
 ani:hasReference a owl:DatatypeProperty ;
     rdfs:label "hasReference"@en ;
     rdfs:comment "ID of the SignableItem that was affected. If none is specified, entire document is covered."@en ;
+    rdfs:domain ani:AuditTrailEntry ;
     rdfs:range xsd:IDREF .
 
 ani:hasResult a owl:ObjectProperty ;
@@ -249,11 +429,19 @@ ani:hasResult a owl:ObjectProperty ;
 ani:hasRole a owl:DatatypeProperty ;
     rdfs:label "hasRole"@en ;
     rdfs:comment "Role the Author plays within the organization."@en ;
-    rdfs:range xsd:string .
+    rdfs:domain ani:Author,
+        ani:ExperimentDataBulkReference,
+        ani:ExperimentDataReference,
+        ani:SampleInheritance,
+        ani:SampleReference ;
+    rdfs:range xsd:string,
+        xsd:token .
 
 ani:hasS a owl:DatatypeProperty ;
     rdfs:label "hasS"@en ;
     rdfs:comment "Individual string value."@en ;
+    rdfs:domain ani:IndividualValueSet,
+        ani:Parameter ;
     rdfs:range xsd:string .
 
 ani:hasSIUnit a owl:ObjectProperty ;
@@ -264,6 +452,8 @@ ani:hasSIUnit a owl:ObjectProperty ;
 ani:hasSVG a owl:DatatypeProperty ;
     rdfs:label "hasSVG"@en ;
     rdfs:comment "Value governed by the SVG DTD. Used to represent vector graphic images."@en ;
+    rdfs:domain ani:IndividualValueSet,
+        ani:Parameter ;
     rdfs:range xsd:string .
 
 ani:hasSample a owl:ObjectProperty ;
@@ -271,10 +461,22 @@ ani:hasSample a owl:ObjectProperty ;
     rdfs:domain ani:SampleSet ;
     rdfs:range ani:Sample .
 
+ani:hasSampleID a owl:DatatypeProperty ;
+    rdfs:label "hasSampleID"@en ;
+    rdfs:domain ani:Sample,
+        ani:SampleReference ;
+    rdfs:range xsd:token .
+
 ani:hasSampleInheritance a owl:ObjectProperty ;
     rdfs:label "hasSampleInheritance"@en ;
     rdfs:domain ani:SampleReferenceSet ;
     rdfs:range ani:SampleInheritance .
+
+ani:hasSamplePurpose a owl:DatatypeProperty ;
+    rdfs:label "hasSamplePurpose"@en ;
+    rdfs:domain ani:SampleInheritance,
+        ani:SampleReference ;
+    rdfs:range xsd:token .
 
 ani:hasSampleReference a owl:ObjectProperty ;
     rdfs:label "hasSampleReference"@en ;
@@ -291,9 +493,15 @@ ani:hasSampleSet a owl:ObjectProperty ;
     rdfs:domain ani:AnIML ;
     rdfs:range ani:SampleSet .
 
+ani:hasScope a owl:DatatypeProperty ;
+    rdfs:label "hasScope"@en ;
+    rdfs:domain ani:Diff ;
+    rdfs:range xsd:token .
+
 ani:hasSerialNumber a owl:DatatypeProperty ;
     rdfs:label "hasSerialNumber"@en ;
     rdfs:comment "Unique serial number of device."@en ;
+    rdfs:domain ani:Device ;
     rdfs:range xsd:token .
 
 ani:hasSeries a owl:ObjectProperty ;
@@ -301,11 +509,28 @@ ani:hasSeries a owl:ObjectProperty ;
     rdfs:domain ani:SeriesSet ;
     rdfs:range ani:Series .
 
+ani:hasSeriesID a owl:DatatypeProperty ;
+    rdfs:label "hasSeriesID"@en ;
+    rdfs:domain ani:ParentDataPointReference,
+        ani:Series ;
+    rdfs:range xsd:token .
+
 ani:hasSeriesSet a owl:ObjectProperty ;
     rdfs:label "hasSeriesSet"@en ;
     rdfs:domain ani:Category,
         ani:Result ;
     rdfs:range ani:SeriesSet .
+
+ani:hasSeriesType a owl:DatatypeProperty ;
+    rdfs:label "hasSeriesType"@en ;
+    rdfs:domain ani:Series ;
+    rdfs:range xsd:token .
+
+ani:hasSha256 a owl:DatatypeProperty ;
+    rdfs:label "hasSha256"@en ;
+    rdfs:domain ani:Extension,
+        ani:Technique ;
+    rdfs:range xsd:normalizedString .
 
 ani:hasSignature a owl:ObjectProperty ;
     rdfs:label "hasSignature"@en ;
@@ -332,6 +557,20 @@ ani:hasSoftware a owl:ObjectProperty ;
     rdfs:domain ani:AuditTrailEntry,
         ani:Method ;
     rdfs:range ani:Software .
+
+ani:hasSourceDataLocation a owl:DatatypeProperty ;
+    rdfs:label "hasSourceDataLocation"@en ;
+    rdfs:domain ani:ExperimentStep,
+        ani:Sample,
+        ani:Template ;
+    rdfs:range xsd:string .
+
+ani:hasStartIndex a owl:DatatypeProperty ;
+    rdfs:label "hasStartIndex"@en ;
+    rdfs:domain ani:AutoIncrementedValueSet,
+        ani:EncodedValueSet,
+        ani:IndividualValueSet ;
+    rdfs:range xsd:int .
 
 ani:hasStartValue a owl:ObjectProperty ;
     rdfs:label "hasStartValue"@en ;
@@ -362,9 +601,21 @@ ani:hasTemplate a owl:ObjectProperty ;
     rdfs:domain ani:ExperimentStepSet ;
     rdfs:range ani:Template .
 
+ani:hasTemplateID a owl:DatatypeProperty ;
+    rdfs:label "hasTemplateID"@en ;
+    rdfs:domain ani:Template ;
+    rdfs:range xsd:token .
+
+ani:hasTemplateUsed a owl:DatatypeProperty ;
+    rdfs:label "hasTemplateUsed"@en ;
+    rdfs:domain ani:ExperimentStep ;
+    rdfs:range xsd:token .
+
 ani:hasTimestamp a owl:DatatypeProperty ;
     rdfs:label "hasTimestamp"@en ;
     rdfs:comment "Date and time of modification."@en ;
+    rdfs:domain ani:AuditTrailEntry,
+        ani:Infrastructure ;
     rdfs:range xsd:dateTime .
 
 ani:hasUnit a owl:ObjectProperty ;
@@ -373,273 +624,34 @@ ani:hasUnit a owl:ObjectProperty ;
         ani:Series ;
     rdfs:range ani:Unit .
 
-ani:hasVersion a owl:DatatypeProperty ;
-    rdfs:label "hasVersion"@en ;
-    rdfs:comment "Version identifier of software release."@en ;
-    rdfs:range xsd:token .
-
-ani:hasbarcode a owl:DatatypeProperty ;
-    rdfs:label "hasbarcode"@en ;
-    rdfs:domain ani:Sample ;
-    rdfs:range xsd:token .
-
-ani:haschangedItem a owl:DatatypeProperty ;
-    rdfs:label "haschangedItem"@en ;
-    rdfs:domain ani:Diff ;
-    rdfs:range xsd:NCName .
-
-ani:hascomment a owl:DatatypeProperty ;
-    rdfs:label "hascomment"@en ;
-    rdfs:domain ani:ExperimentStep,
-        ani:Sample ;
-    rdfs:range xsd:string .
-
-ani:hascontainerID a owl:DatatypeProperty ;
-    rdfs:label "hascontainerID"@en ;
-    rdfs:domain ani:Sample ;
-    rdfs:range xsd:token .
-
-ani:hascontainerType a owl:DatatypeProperty ;
-    rdfs:label "hascontainerType"@en ;
-    rdfs:domain ani:Sample ;
-    rdfs:range xsd:token .
-
-ani:hasdataPurpose a owl:DatatypeProperty ;
-    rdfs:label "hasdataPurpose"@en ;
-    rdfs:domain ani:ExperimentDataBulkReference,
-        ani:ExperimentDataReference ;
-    rdfs:range xsd:token .
-
-ani:hasdependency a owl:DatatypeProperty ;
-    rdfs:label "hasdependency"@en ;
-    rdfs:domain ani:Series ;
-    rdfs:range xsd:token .
-
-ani:hasderived a owl:DatatypeProperty ;
-    rdfs:label "hasderived"@en ;
-    rdfs:domain ani:Sample ;
-    rdfs:range xsd:boolean .
-
-ani:hasendIndex a owl:DatatypeProperty ;
-    rdfs:label "hasendIndex"@en ;
-    rdfs:domain ani:AutoIncrementedValueSet,
-        ani:EncodedValueSet,
-        ani:IndividualValueSet ;
-    rdfs:range xsd:int .
-
-ani:hasexperimentStepID a owl:DatatypeProperty ;
-    rdfs:label "hasexperimentStepID"@en ;
-    rdfs:domain ani:ExperimentDataReference,
-        ani:ExperimentStep ;
-    rdfs:range xsd:token .
-
-ani:hasexperimentStepIDPrefix a owl:DatatypeProperty ;
-    rdfs:label "hasexperimentStepIDPrefix"@en ;
-    rdfs:domain ani:ExperimentDataBulkReference ;
-    rdfs:range xsd:token .
-
-ani:hasexponent a owl:DatatypeProperty ;
-    rdfs:label "hasexponent"@en ;
-    rdfs:domain ani:SIUnit ;
-    rdfs:range xsd:double .
-
-ani:hasfactor a owl:DatatypeProperty ;
-    rdfs:label "hasfactor"@en ;
-    rdfs:domain ani:SIUnit ;
-    rdfs:range xsd:double .
-
-ani:hasid a owl:DatatypeProperty ;
-    rdfs:label "hasid"@en ;
-    rdfs:domain ani:AuditTrailEntry,
-        ani:AuditTrailEntrySet,
-        ani:Category,
-        ani:ExperimentDataBulkReference,
-        ani:ExperimentDataReference,
-        ani:ExperimentDataReferenceSet,
-        ani:ExperimentStep,
-        ani:ExperimentStepSet,
-        ani:Infrastructure,
-        ani:Method,
-        ani:Parameter,
-        ani:ParentDataPointReference,
-        ani:Result,
-        ani:Sample,
-        ani:SampleInheritance,
-        ani:SampleReference,
-        ani:SampleReferenceSet,
-        ani:SampleSet,
-        ani:Series,
-        ani:SeriesSet,
-        ani:Technique,
-        ani:Template ;
-    rdfs:range xsd:NCName .
-
-ani:haslabel a owl:DatatypeProperty ;
-    rdfs:label "haslabel"@en ;
-    rdfs:domain ani:Unit ;
-    rdfs:range xsd:token .
-
-ani:haslength a owl:DatatypeProperty ;
-    rdfs:label "haslength"@en ;
-    rdfs:domain ani:SeriesSet ;
-    rdfs:range xsd:int .
-
-ani:haslocationInContainer a owl:DatatypeProperty ;
-    rdfs:label "haslocationInContainer"@en ;
-    rdfs:domain ani:Sample ;
-    rdfs:range xsd:token .
-
-ani:hasname a owl:DatatypeProperty ;
-    rdfs:label "hasname"@en ;
-    rdfs:domain ani:Category,
-        ani:ExperimentStep,
-        ani:Extension,
-        ani:Method,
-        ani:Parameter,
-        ani:Result,
-        ani:Sample,
-        ani:Series,
-        ani:SeriesSet,
-        ani:Tag,
-        ani:Technique,
-        ani:Template ;
-    rdfs:range xsd:token .
-
-ani:hasoffset a owl:DatatypeProperty ;
-    rdfs:label "hasoffset"@en ;
-    rdfs:domain ani:SIUnit ;
-    rdfs:range xsd:double .
-
-ani:hasparameterType a owl:DatatypeProperty ;
-    rdfs:label "hasparameterType"@en ;
-    rdfs:domain ani:Parameter ;
-    rdfs:range xsd:token .
-
-ani:hasplotScale a owl:DatatypeProperty ;
-    rdfs:label "hasplotScale"@en ;
-    rdfs:domain ani:Series ;
-    rdfs:range xsd:token .
-
-ani:hasquantity a owl:DatatypeProperty ;
-    rdfs:label "hasquantity"@en ;
-    rdfs:domain ani:Unit ;
-    rdfs:range xsd:token .
-
-ani:hasrole a owl:DatatypeProperty ;
-    rdfs:label "hasrole"@en ;
-    rdfs:domain ani:ExperimentDataBulkReference,
-        ani:ExperimentDataReference,
-        ani:SampleInheritance,
-        ani:SampleReference ;
-    rdfs:range xsd:token .
-
-ani:hassampleID a owl:DatatypeProperty ;
-    rdfs:label "hassampleID"@en ;
-    rdfs:domain ani:Sample,
-        ani:SampleReference ;
-    rdfs:range xsd:token .
-
-ani:hassamplePurpose a owl:DatatypeProperty ;
-    rdfs:label "hassamplePurpose"@en ;
-    rdfs:domain ani:SampleInheritance,
-        ani:SampleReference ;
-    rdfs:range xsd:token .
-
-ani:hasscope a owl:DatatypeProperty ;
-    rdfs:label "hasscope"@en ;
-    rdfs:domain ani:Diff ;
-    rdfs:range xsd:token .
-
-ani:hasseriesID a owl:DatatypeProperty ;
-    rdfs:label "hasseriesID"@en ;
-    rdfs:domain ani:ParentDataPointReference,
-        ani:Series ;
-    rdfs:range xsd:token .
-
-ani:hasseriesType a owl:DatatypeProperty ;
-    rdfs:label "hasseriesType"@en ;
-    rdfs:domain ani:Series ;
-    rdfs:range xsd:token .
-
-ani:hassha256 a owl:DatatypeProperty ;
-    rdfs:label "hassha256"@en ;
-    rdfs:domain ani:Extension,
-        ani:Technique ;
-    rdfs:range xsd:normalizedString .
-
-ani:hassourceDataLocation a owl:DatatypeProperty ;
-    rdfs:label "hassourceDataLocation"@en ;
-    rdfs:domain ani:ExperimentStep,
-        ani:Sample,
-        ani:Template ;
-    rdfs:range xsd:string .
-
-ani:hasstartIndex a owl:DatatypeProperty ;
-    rdfs:label "hasstartIndex"@en ;
-    rdfs:domain ani:AutoIncrementedValueSet,
-        ani:EncodedValueSet,
-        ani:IndividualValueSet ;
-    rdfs:range xsd:int .
-
-ani:hastemplateID a owl:DatatypeProperty ;
-    rdfs:label "hastemplateID"@en ;
-    rdfs:domain ani:Template ;
-    rdfs:range xsd:token .
-
-ani:hastemplateUsed a owl:DatatypeProperty ;
-    rdfs:label "hastemplateUsed"@en ;
-    rdfs:domain ani:ExperimentStep ;
-    rdfs:range xsd:token .
-
-ani:hasuri a owl:DatatypeProperty ;
-    rdfs:label "hasuri"@en ;
+ani:hasUri a owl:DatatypeProperty ;
+    rdfs:label "hasUri"@en ;
     rdfs:domain ani:Extension,
         ani:Technique ;
     rdfs:range xsd:anyURI .
 
-ani:hasuserType a owl:DatatypeProperty ;
-    rdfs:label "hasuserType"@en ;
+ani:hasUserType a owl:DatatypeProperty ;
+    rdfs:label "hasUserType"@en ;
     rdfs:domain ani:Author ;
     rdfs:range xsd:token .
 
-ani:hasvalue a owl:DatatypeProperty ;
-    rdfs:label "hasvalue"@en ;
+ani:hasValue a owl:DatatypeProperty ;
+    rdfs:label "hasValue"@en ;
     rdfs:domain ani:Tag ;
     rdfs:range xsd:string .
 
-ani:hasversion a owl:DatatypeProperty ;
-    rdfs:label "hasversion"@en ;
-    rdfs:domain ani:AnIML ;
-    rdfs:range xsd:string .
+ani:hasVersion a owl:DatatypeProperty ;
+    rdfs:label "hasVersion"@en ;
+    rdfs:comment "Version identifier of software release."@en ;
+    rdfs:domain ani:AnIML,
+        ani:Software ;
+    rdfs:range xsd:string,
+        xsd:token .
 
-ani:hasvisible a owl:DatatypeProperty ;
-    rdfs:label "hasvisible"@en ;
+ani:hasVisible a owl:DatatypeProperty ;
+    rdfs:label "hasVisible"@en ;
     rdfs:domain ani:Series ;
     rdfs:range xsd:boolean .
-
-ani:Device a owl:Class ;
-    rdfs:label "Device"@en ;
-    rdfs:comment "Device used to perform experiment."@en .
-
-ani:EndValue a owl:Class ;
-    rdfs:label "EndValue"@en ;
-    rdfs:comment "Upper boundary of an interval."@en .
-
-ani:Increment a owl:Class ;
-    rdfs:label "Increment"@en ;
-    rdfs:comment "Increment value"@en .
-
-ani:Software a owl:Class ;
-    rdfs:label "Software"@en ;
-    rdfs:comment "Software used to author this."@en .
-
-ani:StartValue a owl:Class ;
-    rdfs:label "StartValue"@en ;
-    rdfs:comment "Lower boundary of an interval or ValueSet."@en .
-
-ani:Author a owl:Class ;
-    rdfs:label "Author"@en ;
-    rdfs:comment "Information about a person, a device or a piece of software authoring AnIML files."@en .
 
 ani:ParentDataPointReferenceSet a owl:Class ;
     rdfs:label "ParentDataPointReferenceSet"@en ;
@@ -664,10 +676,6 @@ ani:Diff a owl:Class ;
 ani:EncodedValueSet a owl:Class ;
     rdfs:label "EncodedValueSet"@en ;
     rdfs:comment "Multiple numeric values encoded as a base64 binary string. Uses little-endian byte order."@en .
-
-ani:IndividualValueSet a owl:Class ;
-    rdfs:label "IndividualValueSet"@en ;
-    rdfs:comment "Multiple Values explicitly specified."@en .
 
 ani:SampleSet a owl:Class ;
     rdfs:label "SampleSet"@en ;
@@ -709,13 +717,13 @@ ani:AnIML a owl:Class ;
     rdfs:label "AnIML"@en ;
     rdfs:comment "Root Element for AnIML documents."@en .
 
-ani:AuditTrailEntry a owl:Class ;
-    rdfs:label "AuditTrailEntry"@en ;
-    rdfs:comment "Describes a set of changes made to the particular AnIML document by one user at a given time."@en .
-
 ani:AutoIncrementedValueSet a owl:Class ;
     rdfs:label "AutoIncrementedValueSet"@en ;
     rdfs:comment "Multiple values given in form of a start value and an increment."@en .
+
+ani:EndValue a owl:Class ;
+    rdfs:label "EndValue"@en ;
+    rdfs:comment "Upper boundary of an interval."@en .
 
 ani:ExperimentDataBulkReference a owl:Class ;
     rdfs:label "ExperimentDataBulkReference"@en ;
@@ -725,13 +733,9 @@ ani:ExperimentDataReference a owl:Class ;
     rdfs:label "ExperimentDataReference"@en ;
     rdfs:comment "Reference to an Experiment Step whose data are consumed."@en .
 
-ani:Infrastructure a owl:Class ;
-    rdfs:label "Infrastructure"@en ;
-    rdfs:comment "Contains references to the context of this Experiment."@en .
-
-ani:Parameter a owl:Class ;
-    rdfs:label "Parameter"@en ;
-    rdfs:comment "Name/Value Pair."@en .
+ani:Increment a owl:Class ;
+    rdfs:label "Increment"@en ;
+    rdfs:comment "Increment value"@en .
 
 ani:ParentDataPointReference a owl:Class ;
     rdfs:label "ParentDataPointReference"@en ;
@@ -745,9 +749,25 @@ ani:SeriesSet a owl:Class ;
     rdfs:label "SeriesSet"@en ;
     rdfs:comment "Container for n-dimensional Data."@en .
 
+ani:Software a owl:Class ;
+    rdfs:label "Software"@en ;
+    rdfs:comment "Software used to author this."@en .
+
+ani:StartValue a owl:Class ;
+    rdfs:label "StartValue"@en ;
+    rdfs:comment "Lower boundary of an interval or ValueSet."@en .
+
 ani:Category a owl:Class ;
     rdfs:label "Category"@en ;
     rdfs:comment "Defines a category of Parameters and SeriesSets. Used to model hierarchies."@en .
+
+ani:Device a owl:Class ;
+    rdfs:label "Device"@en ;
+    rdfs:comment "Device used to perform experiment."@en .
+
+ani:Infrastructure a owl:Class ;
+    rdfs:label "Infrastructure"@en ;
+    rdfs:comment "Contains references to the context of this Experiment."@en .
 
 ani:Result a owl:Class ;
     rdfs:label "Result"@en ;
@@ -765,6 +785,14 @@ ani:Method a owl:Class ;
     rdfs:label "Method"@en ;
     rdfs:comment "Describes how this Experiment was performed."@en .
 
+ani:Author a owl:Class ;
+    rdfs:label "Author"@en ;
+    rdfs:comment "Information about a person, a device or a piece of software authoring AnIML files."@en .
+
+ani:AuditTrailEntry a owl:Class ;
+    rdfs:label "AuditTrailEntry"@en ;
+    rdfs:comment "Describes a set of changes made to the particular AnIML document by one user at a given time."@en .
+
 ani:Template a owl:Class ;
     rdfs:label "Template"@en ;
     rdfs:comment "Represents a template for an ExperimentStep."@en .
@@ -777,7 +805,15 @@ ani:Series a owl:Class ;
     rdfs:label "Series"@en ;
     rdfs:comment "Container for multiple Values."@en .
 
+ani:IndividualValueSet a owl:Class ;
+    rdfs:label "IndividualValueSet"@en ;
+    rdfs:comment "Multiple Values explicitly specified."@en .
+
 ani:Sample a owl:Class ;
     rdfs:label "Sample"@en ;
     rdfs:comment "Individual Sample, referenced from other parts of this AnIML document."@en .
+
+ani:Parameter a owl:Class ;
+    rdfs:label "Parameter"@en ;
+    rdfs:comment "Name/Value Pair."@en .
 

@@ -8,22 +8,6 @@ prefixes:
   ex:   "http://example.org/"
 
 rules:
-  - rule:
-    name: n) complexType and element ref -> ObjectProperty
-    element_type: XsdComplexType
-    selector:
-      - pattern: has_child
-        id: child_1
-        child_type: XsdComplexType
-        relative_depth: 1
-    emit: |
-      f"""
-      {PREFIX}:has{get_elem_name(concept)} a owl:ObjectProperty ;
-        rdfs:label 'has{get_elem_name(concept)}'@en ;
-        rdfs:domain {PREFIX}:{get_elem_name(element)} ;
-        rdfs:range {PREFIX}:{get_elem_name(concept)} ;
-        {prov_block}
-      """
 
   - rule:
     name: 1) complexType -> Class
@@ -116,5 +100,56 @@ rules:
     emit: |
       f"""
       {PREFIX}:has{get_elem_name(element)} rdfs:comment '{element.annotation}'@en ;
+        {prov_block}
+      """
+
+  - rule:
+    name: n) complexType and element ref -> ObjectProperty
+    element_type: XsdComplexType
+    selector:
+      - pattern: has_child
+        id: child_1
+        child_type: XsdComplexType
+        relative_depth: 1
+    emit: |
+      f"""
+      {PREFIX}:has{get_elem_name(concept)} a owl:ObjectProperty ;
+        rdfs:label 'has{get_elem_name(concept)}'@en ;
+        rdfs:domain {PREFIX}:{get_elem_name(element)} ;
+        rdfs:range {PREFIX}:{get_elem_name(concept)} ;
+        {prov_block}
+      """
+
+  - rule:
+    name: n+1) complexType and simple element ref -> ObjectProperty
+    element_type: XsdComplexType
+    selector:
+      - pattern: has_child
+        id: child_1
+        child_type: XsdSimpleType
+        relative_depth: 1
+    emit: |
+      f"""
+      {PREFIX}:has{get_elem_name(concept)} a owl:DatatypeProperty ;
+        rdfs:label 'has{get_elem_name(concept)}'@en ;
+        rdfs:domain {PREFIX}:{get_elem_name(element)} ;
+        rdfs:range {check_datatype(concept)} ;
+        {prov_block}
+      """
+
+  - rule:
+    name: n+1) complexType and atomicRestriction ref -> ObjectProperty
+    element_type: XsdComplexType
+    selector:
+      - pattern: has_child
+        id: child_1
+        child_type: XsdAtomicRestriction
+        relative_depth: 1
+    emit: |
+      f"""
+      {PREFIX}:has{get_elem_name(concept)} a owl:DatatypeProperty ;
+        rdfs:label 'has{get_elem_name(concept)}'@en ;
+        rdfs:domain {PREFIX}:{get_elem_name(element)} ;
+        rdfs:range {check_datatype(concept)} ;
         {prov_block}
       """

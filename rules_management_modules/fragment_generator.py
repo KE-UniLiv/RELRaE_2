@@ -19,7 +19,22 @@ PREAMBLE = """
     """
 
 
-# TODO: Implement a function for capitalising concepts to allow attributes and elements to correctly line up
+def capitalise_first_char(label):
+    first_char = label[0]
+    back_label = label[1:]
+    processed_label = first_char.upper() + back_label
+    return processed_label
+
+
+def lower_first_char(label):
+    first_char = label[0]
+    back_label = label[1:]
+    if back_label[0] != back_label[0].upper():
+        processed_label = first_char.lower() + back_label
+    else:
+        processed_label = label
+    return processed_label
+
 
 def get_named_base_type(concept_type):
     t = concept_type
@@ -36,7 +51,7 @@ def get_elem_name(concept):
         xml_concept = QName(concept.name).localname
     else:
         xml_concept = QName(get_named_base_type(concept).name).localname
-    return xml_concept
+    return capitalise_first_char(xml_concept)
 
 
 def is_built_in(concept):
@@ -50,7 +65,7 @@ def is_built_in(concept):
 
 
 def check_datatype(concept):
-    rdfs_string = f"""xsd:{is_built_in(concept.type)}"""
+    rdfs_string = f"""xsd:{lower_first_char(is_built_in(concept.type))}"""
     return rdfs_string
 
 
