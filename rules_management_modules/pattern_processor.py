@@ -1,5 +1,6 @@
 # Set of functions for generating XPath from patterns
 from lxml.etree import QName
+from xmlschema.validators import XsdElement, XsdGroup
 
 
 def elements_at_depth(elem, depth):
@@ -15,6 +16,38 @@ def selector_index(selector, attribute):
     for r in selector:
         if attribute in r:
             return (selector.index(r))
+
+
+def has_choice(element, pattern):
+    candidates = []
+
+    group = element.type.model_group or element.type.content
+    if not isinstance(group, XsdGroup):
+        return candidates
+
+    def walk(component, choice_seen):
+        if isinstance(component, XsdElement):
+            return choice_seen
+        if isinstance(component, XsdGroup):
+            # print(component.model)
+            # print(component.model == 'choice')
+            choice_seen = choice_seen or (component.model == 'choice')
+            for item in component:
+                if walk(item, choice_seen):
+                    return True
+        return False
+
+    if not walk(group, False):
+        return candidates
+    else:
+        pot_candidates = has_child(element, pattern)
+
+    for c in pot_candidates:
+        parent = c.parent
+        if isinstance(parent, XsdGroup) and parent.model == 'choice':
+            candidates.append(c)
+
+    return candidates
 
 
 def has_child(element, pattern):
@@ -46,17 +79,12 @@ def has_attribute(element, pattern):
         except Exception:
             for a in element.values():
                 att.append(a)
-                print(element)
-                print(a)
 
     for a in att:
-        print(a)
         if isinstance(a, str):
             if getattr(element, a, None):
-                print(element.annotation)
                 candidates.append(element)
         else:
             candidates.append(a)
-        print("====")
 
     return candidates

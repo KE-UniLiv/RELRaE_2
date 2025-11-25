@@ -706,7 +706,8 @@ ani:Diff a owl:Class ;
 
 ani:EncodedValueSet a owl:Class ;
     rdfs:label "EncodedValueSet"@en ;
-    rdfs:comment "Multiple numeric values encoded as a base64 binary string. Uses little-endian byte order."@en .
+    rdfs:comment "Multiple numeric values encoded as a base64 binary string. Uses little-endian byte order."@en ;
+    rdfs:subClassOf ani:Series .
 
 ani:SampleSet a owl:Class ;
     rdfs:label "SampleSet"@en ;
@@ -750,7 +751,8 @@ ani:AnIML a owl:Class ;
 
 ani:AutoIncrementedValueSet a owl:Class ;
     rdfs:label "AutoIncrementedValueSet"@en ;
-    rdfs:comment "Multiple values given in form of a start value and an increment."@en .
+    rdfs:comment "Multiple values given in form of a start value and an increment."@en ;
+    rdfs:subClassOf ani:Series .
 
 ani:EndValue a owl:Class ;
     rdfs:label "EndValue"@en ;
@@ -832,13 +834,10 @@ ani:ExperimentStep a owl:Class ;
     rdfs:label "ExperimentStep"@en ;
     rdfs:comment "Container that documents a step in an experiment. Use one ExperimentStep per application of a Technique."@en .
 
-ani:Series a owl:Class ;
-    rdfs:label "Series"@en ;
-    rdfs:comment "Container for multiple Values."@en .
-
 ani:IndividualValueSet a owl:Class ;
     rdfs:label "IndividualValueSet"@en ;
-    rdfs:comment "Multiple Values explicitly specified."@en .
+    rdfs:comment "Multiple Values explicitly specified."@en ;
+    rdfs:subClassOf ani:Series .
 
 ani:Sample a owl:Class ;
     rdfs:label "Sample"@en ;
@@ -847,4 +846,8 @@ ani:Sample a owl:Class ;
 ani:Parameter a owl:Class ;
     rdfs:label "Parameter"@en ;
     rdfs:comment "Name/Value Pair."@en .
+
+ani:Series a owl:Class ;
+    rdfs:label "Series"@en ;
+    rdfs:comment "Container for multiple Values."@en .
 

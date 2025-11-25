@@ -150,7 +150,7 @@ rules:
       """
 
   - rule:
-    name: 7) complexType and simple element ref -> ObjectProperty
+    name: 7) complexType and simple element ref -> DatatypeProperty
     element_type: XsdComplexType
     selector:
       - pattern: has_child
@@ -167,7 +167,7 @@ rules:
       """
 
   - rule:
-    name: 8) complexType and atomicRestriction ref -> ObjectProperty
+    name: 8) complexType and atomicRestriction ref -> DataypeProperty
     element_type: XsdComplexType
     selector:
       - pattern: has_child
@@ -182,3 +182,19 @@ rules:
         rdfs:range {check_datatype(concept)} ;
         {prov_block}
       """
+
+  - rule:
+    name: 9) complexType with choice -> subClassOf ;
+    element_type: XsdComplexType
+    selector:
+      - pattern: has_choice
+        child_type: XsdComplexType
+        relative_depth: 1
+    emit: |
+      f"""
+      {PREFIX}:{get_elem_name(concept)} a owl:Class ;
+        rdfs:label '{get_elem_name(concept)}'@en ;
+        rdfs:subClassOf {PREFIX}:{get_elem_name(element)} ;
+        {prov_block}
+      """
+
