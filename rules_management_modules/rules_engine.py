@@ -8,6 +8,7 @@ import inspect
 
 
 def get_elem_name(concept):
+    print(concept)
     xml_concept = QName(concept.name).localname
     return xml_concept
 

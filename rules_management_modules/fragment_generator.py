@@ -50,6 +50,7 @@ def get_elem_name(concept):
     if concept.name:
         xml_concept = QName(concept.name).localname
     else:
+        print(concept)
         xml_concept = QName(get_named_base_type(concept).name).localname
     return capitalise_first_char(xml_concept)
 
