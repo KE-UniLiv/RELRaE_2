@@ -73,7 +73,7 @@ rules:
       """
 
   - rule:
-    name: 3a) annotation (complexType) -> comment 
+    name: 5a) annotation (complexType) -> comment 
     element_type: XsdComplexType
     selector:
     - pattern: has_attribute
@@ -85,7 +85,7 @@ rules:
       """
 
   - rule:
-    name: 3b.a) annotation (simpleType) -> comment 
+    name: 5b.a) annotation (simpleType) -> comment 
     element_type: XsdSimpleType
     selector:
     - pattern: has_attribute
@@ -97,7 +97,7 @@ rules:
       """
 
   - rule:
-    name: 3b.b) annotation (simpleType) -> comment 
+    name: 5b.b) annotation (simpleType) -> comment 
     element_type: XsdAtomicRestriction
     selector:
     - pattern: has_attribute
@@ -109,7 +109,7 @@ rules:
       """
 
   - rule:
-    name: 3c) annotation (attribute) -> comment 
+    name: 5c) annotation (attribute) -> comment 
     element_type: XsdAttribute
     selector:
     - pattern: has_attribute
@@ -121,7 +121,19 @@ rules:
       """
 
   - rule:
-    name: n) complexType and element ref -> ObjectProperty
+    name: 5d) annotation (attributeGroup) -> comment 
+    element_type: XsdAttributeGroup
+    selector:
+    - pattern: has_attribute
+      attribute: annotation
+    emit: |
+      f"""
+      {PREFIX}:has{get_elem_name(element)} rdfs:comment '{element.annotation}'@en ;
+        {prov_block}
+      """
+
+  - rule:
+    name: 6) complexType and element ref -> ObjectProperty
     element_type: XsdComplexType
     selector:
       - pattern: has_child
@@ -138,7 +150,7 @@ rules:
       """
 
   - rule:
-    name: n+1) complexType and simple element ref -> ObjectProperty
+    name: 7) complexType and simple element ref -> ObjectProperty
     element_type: XsdComplexType
     selector:
       - pattern: has_child
@@ -155,7 +167,7 @@ rules:
       """
 
   - rule:
-    name: n+2) complexType and atomicRestriction ref -> ObjectProperty
+    name: 8) complexType and atomicRestriction ref -> ObjectProperty
     element_type: XsdComplexType
     selector:
       - pattern: has_child

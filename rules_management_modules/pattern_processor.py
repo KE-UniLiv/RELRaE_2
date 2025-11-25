@@ -50,10 +50,13 @@ def has_attribute(element, pattern):
                 print(a)
 
     for a in att:
+        print(a)
         if isinstance(a, str):
             if getattr(element, a, None):
+                print(element.annotation)
                 candidates.append(element)
         else:
             candidates.append(a)
+        print("====")
 
     return candidates

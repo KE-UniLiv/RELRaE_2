@@ -656,10 +656,12 @@ ani:hasVisible a owl:DatatypeProperty ;
     rdfs:range xsd:boolean .
 
 ani:hasSignableItem a owl:DatatypeProperty ;
-    rdfs:label "hasSignableItem"@en .
+    rdfs:label "hasSignableItem"@en ;
+    rdfs:comment "ID for Signable Items."@en .
 
 ani:hasSourceDataLocation a owl:DatatypeProperty ;
     rdfs:label "hasSourceDataLocation"@en ;
+    rdfs:comment "Attribute group which points to the original data source."@en ;
     rdfs:domain ani:ExperimentStep,
         ani:Sample,
         ani:Template ;
@@ -679,16 +681,20 @@ ani:TagSet a owl:Class ;
     rdfs:comment "Set of Tag elements."@en .
 
 ani:hasExperimentDataAttributes a owl:DatatypeProperty ;
-    rdfs:label "hasExperimentDataAttributes"@en .
+    rdfs:label "hasExperimentDataAttributes"@en ;
+    rdfs:comment "Common attributes for experiment data references"@en .
 
 ani:hasSampleAttributes a owl:DatatypeProperty ;
-    rdfs:label "hasSampleAttributes"@en .
+    rdfs:label "hasSampleAttributes"@en ;
+    rdfs:comment "Common attributes for sample references."@en .
 
 ani:hasSignableItemWithName a owl:DatatypeProperty ;
-    rdfs:label "hasSignableItemWithName"@en .
+    rdfs:label "hasSignableItemWithName"@en ;
+    rdfs:comment "ID and Name attribute for Signable Items."@en .
 
 ani:hasValueSet a owl:DatatypeProperty ;
-    rdfs:label "hasValueSet"@en .
+    rdfs:label "hasValueSet"@en ;
+    rdfs:comment "Start and End Index for this Set of Values (zero-based)."@en .
 
 ani:AuditTrailEntrySet a owl:Class ;
     rdfs:label "AuditTrailEntrySet"@en ;

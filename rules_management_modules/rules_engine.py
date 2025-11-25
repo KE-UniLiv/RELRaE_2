@@ -3,6 +3,7 @@ from rules_management_modules import conditionals
 from rules_management_modules import pattern_processor
 from typing import List, Any
 from lxml.etree import QName
+from xmlschema.validators import XsdAttributeGroup
 import inspect
 
 
@@ -78,6 +79,7 @@ def selector_translation(element, selector) -> List[Any]:
 
 
 def rules_engine(element, rule):
+    result = None
     try:
         if type(element.type).__name__ != rule['element_type']:
             return False, None
@@ -88,7 +90,11 @@ def rules_engine(element, rule):
         candidates = selector_translation(element, rule['selector'])
     else:
         candidates = [[""]]
-    result = list(set(candidates[0]).intersection(*candidates[1:]))
+    try:
+        result = list(set(candidates[0]).intersection(*candidates[1:]))
+    except Exception:
+        if isinstance(candidates[0][0], XsdAttributeGroup):
+            result = candidates
     if not result:
         return False, None
     return True, result
