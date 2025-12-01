@@ -6,7 +6,7 @@ from lxml.etree import QName
 from xmlschema.validators import XsdAtomicBuiltin, XsdAtomicRestriction
 
 # TODO: Implement Constants Properly
-PREFIX = 'ani'
+PREFIX = 'min'
 
 PROV_BLOCK = "."
 
@@ -15,7 +15,7 @@ PREAMBLE = """
     @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
     @prefix owl: <http://www.w3.org/2002/07/owl#> .
     @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-    @prefix ani: <http://example.org/Anitology/> .
+    @prefix min: <http://example.org/MINimology/> .
     """
 
 
