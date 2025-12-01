@@ -1,0 +1,324 @@
+@prefix ani: <http://example.org/Anitology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ani:hasAccession a owl:ObjectProperty ;
+    rdfs:label "hasAccession"@en ;
+    rdfs:domain ani:Platform,
+        ani:Sample,
+        ani:Series ;
+    rdfs:range ani:Accession .
+
+ani:hasAddress a owl:ObjectProperty ;
+    rdfs:label "hasAddress"@en ;
+    rdfs:domain ani:Contributor,
+        ani:Organization ;
+    rdfs:range ani:Address .
+
+ani:hasBarcode a owl:DatatypeProperty ;
+    rdfs:label "hasBarcode"@en ;
+    rdfs:domain ani:Sample ;
+    rdfs:range xsd:string .
+
+ani:hasChannel a owl:ObjectProperty ;
+    rdfs:label "hasChannel"@en ;
+    rdfs:domain ani:Sample ;
+    rdfs:range ani:Channel .
+
+ani:hasCoating a owl:DatatypeProperty ;
+    rdfs:label "hasCoating"@en ;
+    rdfs:domain ani:Platform ;
+    rdfs:range xsd:token .
+
+ani:hasContact a owl:ObjectProperty ;
+    rdfs:label "hasContact"@en ;
+    rdfs:domain ani:Platform,
+        ani:Sample,
+        ani:Series ;
+    rdfs:range ani:Contact .
+
+ani:hasContact-Ref a owl:ObjectProperty ;
+    rdfs:label "hasContact-Ref"@en ;
+    rdfs:domain ani:Platform,
+        ani:Sample,
+        ani:Series ;
+    rdfs:range ani:Contact-Ref .
+
+ani:hasContributor a owl:ObjectProperty ;
+    rdfs:label "hasContributor"@en ;
+    rdfs:domain ani:MINiML,
+        ani:Platform,
+        ani:Series ;
+    rdfs:range ani:Contributor .
+
+ani:hasContributor-Ref a owl:ObjectProperty ;
+    rdfs:label "hasContributor-Ref"@en ;
+    rdfs:domain ani:Platform,
+        ani:Series ;
+    rdfs:range ani:Contributor-Ref .
+
+ani:hasData-Processing a owl:DatatypeProperty ;
+    rdfs:label "hasData-Processing"@en ;
+    rdfs:domain ani:Sample ;
+    rdfs:range xsd:string .
+
+ani:hasData-Table a owl:ObjectProperty ;
+    rdfs:label "hasData-Table"@en ;
+    rdfs:domain ani:Platform,
+        ani:Sample,
+        ani:Series ;
+    rdfs:range ani:Data-Table .
+
+ani:hasDatabase a owl:ObjectProperty ;
+    rdfs:label "hasDatabase"@en ;
+    rdfs:domain ani:MINiML ;
+    rdfs:range ani:Database .
+
+ani:hasDescription a owl:DatatypeProperty ;
+    rdfs:label "hasDescription"@en ;
+    rdfs:domain ani:Sample ;
+    rdfs:range xsd:string .
+
+ani:hasDistribution a owl:DatatypeProperty ;
+    rdfs:label "hasDistribution"@en ;
+    rdfs:domain ani:Platform ;
+    rdfs:range xsd:token .
+
+ani:hasEmail a owl:DatatypeProperty ;
+    rdfs:label "hasEmail"@en ;
+    rdfs:domain ani:Contributor,
+        ani:Database ;
+    rdfs:range xsd:token .
+
+ani:hasIid a owl:DatatypeProperty ;
+    rdfs:label "hasIid"@en ;
+    rdfs:domain ani:Contributor,
+        ani:Database,
+        ani:Organization,
+        ani:Platform,
+        ani:Sample,
+        ani:Series ;
+    rdfs:range xsd:NCName .
+
+ani:hasInstrument-Model a owl:ObjectProperty ;
+    rdfs:label "hasInstrument-Model"@en ;
+    rdfs:domain ani:Sample ;
+    rdfs:range ani:Instrument-Model .
+
+ani:hasLibrary-Selection a owl:DatatypeProperty ;
+    rdfs:label "hasLibrary-Selection"@en ;
+    rdfs:domain ani:Sample ;
+    rdfs:range xsd:token .
+
+ani:hasLibrary-Source a owl:DatatypeProperty ;
+    rdfs:label "hasLibrary-Source"@en ;
+    rdfs:domain ani:Sample ;
+    rdfs:range xsd:token .
+
+ani:hasLibrary-Strategy a owl:DatatypeProperty ;
+    rdfs:label "hasLibrary-Strategy"@en ;
+    rdfs:domain ani:Sample ;
+    rdfs:range xsd:token .
+
+ani:hasManufacture-Protocol a owl:DatatypeProperty ;
+    rdfs:label "hasManufacture-Protocol"@en ;
+    rdfs:domain ani:Platform ;
+    rdfs:range xsd:string .
+
+ani:hasManufacturer a owl:DatatypeProperty ;
+    rdfs:label "hasManufacturer"@en ;
+    rdfs:domain ani:Platform ;
+    rdfs:range xsd:token .
+
+ani:hasOrganism a owl:ObjectProperty ;
+    rdfs:label "hasOrganism"@en ;
+    rdfs:domain ani:Platform ;
+    rdfs:range ani:Organism .
+
+ani:hasOrganization a owl:ObjectProperty ;
+    rdfs:label "hasOrganization"@en ;
+    rdfs:domain ani:MINiML ;
+    rdfs:range ani:Organization .
+
+ani:hasOrganization-Ref a owl:ObjectProperty ;
+    rdfs:label "hasOrganization-Ref"@en ;
+    rdfs:domain ani:Contributor,
+        ani:Database ;
+    rdfs:range ani:Organization-Ref .
+
+ani:hasOverall-Design a owl:DatatypeProperty ;
+    rdfs:label "hasOverall-Design"@en ;
+    rdfs:domain ani:Series ;
+    rdfs:range xsd:string .
+
+ani:hasPerson a owl:ObjectProperty ;
+    rdfs:label "hasPerson"@en ;
+    rdfs:domain ani:Contributor ;
+    rdfs:range ani:Person .
+
+ani:hasPlatform a owl:ObjectProperty ;
+    rdfs:label "hasPlatform"@en ;
+    rdfs:domain ani:MINiML ;
+    rdfs:range ani:Platform .
+
+ani:hasPlatform-Ref a owl:ObjectProperty ;
+    rdfs:label "hasPlatform-Ref"@en ;
+    rdfs:domain ani:Sample ;
+    rdfs:range ani:Platform-Ref .
+
+ani:hasRaw-Data a owl:ObjectProperty ;
+    rdfs:label "hasRaw-Data"@en ;
+    rdfs:domain ani:Sample ;
+    rdfs:range ani:Raw-Data .
+
+ani:hasRelation a owl:ObjectProperty ;
+    rdfs:label "hasRelation"@en ;
+    rdfs:domain ani:Platform,
+        ani:Sample,
+        ani:Series ;
+    rdfs:range ani:Relation .
+
+ani:hasRepeats a owl:ObjectProperty ;
+    rdfs:label "hasRepeats"@en ;
+    rdfs:domain ani:Series ;
+    rdfs:range ani:Repeats .
+
+ani:hasSample a owl:ObjectProperty ;
+    rdfs:label "hasSample"@en ;
+    rdfs:domain ani:MINiML ;
+    rdfs:range ani:Sample .
+
+ani:hasSample-Ref a owl:ObjectProperty ;
+    rdfs:label "hasSample-Ref"@en ;
+    rdfs:domain ani:Series ;
+    rdfs:range ani:Sample-Ref .
+
+ani:hasSeries a owl:ObjectProperty ;
+    rdfs:label "hasSeries"@en ;
+    rdfs:domain ani:MINiML ;
+    rdfs:range ani:Series .
+
+ani:hasStatus a owl:ObjectProperty ;
+    rdfs:label "hasStatus"@en ;
+    rdfs:domain ani:Platform,
+        ani:Sample,
+        ani:Series ;
+    rdfs:range ani:Status .
+
+ani:hasSummary a owl:DatatypeProperty ;
+    rdfs:label "hasSummary"@en ;
+    rdfs:domain ani:Series ;
+    rdfs:range xsd:string .
+
+ani:hasSupplementary-Data a owl:ObjectProperty ;
+    rdfs:label "hasSupplementary-Data"@en ;
+    rdfs:domain ani:Platform,
+        ani:Sample,
+        ani:Series ;
+    rdfs:range ani:Supplementary-Data .
+
+ani:hasSupport a owl:DatatypeProperty ;
+    rdfs:label "hasSupport"@en ;
+    rdfs:domain ani:Platform ;
+    rdfs:range xsd:token .
+
+ani:hasTechnology a owl:DatatypeProperty ;
+    rdfs:label "hasTechnology"@en ;
+    rdfs:domain ani:Platform ;
+    rdfs:range xsd:token .
+
+ani:hasTitle a owl:DatatypeProperty ;
+    rdfs:label "hasTitle"@en ;
+    rdfs:domain ani:Platform,
+        ani:Sample,
+        ani:Series ;
+    rdfs:range xsd:token .
+
+ani:hasType a owl:DatatypeProperty ;
+    rdfs:label "hasType"@en ;
+    rdfs:domain ani:Sample ;
+    rdfs:range xsd:token .
+
+ani:hasVariable a owl:ObjectProperty ;
+    rdfs:label "hasVariable"@en ;
+    rdfs:domain ani:Series ;
+    rdfs:range ani:Variable .
+
+ani:hasVersion a owl:DatatypeProperty ;
+    rdfs:label "hasVersion"@en ;
+    rdfs:domain ani:MINiML ;
+    rdfs:range xsd:normalizedString .
+
+ani:hasWeb-Link a owl:DatatypeProperty ;
+    rdfs:label "hasWeb-Link"@en ;
+    rdfs:domain ani:Contributor,
+        ani:Database,
+        ani:Platform,
+        ani:Series ;
+    rdfs:range xsd:anyURI .
+
+ani:Accession a owl:Class ;
+    rdfs:label "Accession"@en ;
+    rdfs:subClassOf ani:Platform,
+        ani:Sample,
+        ani:Series .
+
+ani:Contact a owl:Class ;
+    rdfs:label "Contact"@en ;
+    rdfs:subClassOf ani:Platform,
+        ani:Sample,
+        ani:Series .
+
+ani:Contact-Ref a owl:Class ;
+    rdfs:label "Contact-Ref"@en ;
+    rdfs:subClassOf ani:Platform,
+        ani:Sample,
+        ani:Series .
+
+ani:Contributor-Ref a owl:Class ;
+    rdfs:label "Contributor-Ref"@en ;
+    rdfs:subClassOf ani:Platform,
+        ani:Series .
+
+ani:Organization-Ref a owl:Class ;
+    rdfs:label "Organization-Ref"@en ;
+    rdfs:subClassOf ani:Contributor,
+        ani:Database .
+
+ani:Person a owl:Class ;
+    rdfs:label "Person"@en ;
+    rdfs:subClassOf ani:Contributor .
+
+ani:Organization a owl:Class ;
+    rdfs:label "Organization"@en ;
+    rdfs:comment "      The Organization element provides a central location for defining the      organization to which one or more of the the contributors belong. An      organaztion only needs to be defined once in the document.    "@en .
+
+ani:Database a owl:Class ;
+    rdfs:label "Database"@en ;
+    rdfs:comment "       The database element is used to define the databases which give        context to the accessions.    "@en .
+
+ani:Contributor a owl:Class ;
+    rdfs:label "Contributor"@en ;
+    rdfs:subClassOf ani:Platform,
+        ani:Series .
+
+ani:MINiML a owl:Class ;
+    rdfs:label "MINiML"@en ;
+    rdfs:comment "      This is the top element of an MINiML document. For easier processing,      elements should be arranged so that each is defined before it is      referenced. This order is enforced for the Database, Organization and      Contributor elements, but not for the Platform, Sample and Series      elements.      This element is extensible with vendor or application specific elements.      These may appear after the standard elements. If possible, these elements      will be validated as conforming to their schema.    "@en .
+
+ani:Series a owl:Class ;
+    rdfs:label "Series"@en ;
+    rdfs:comment "      An series is a collection of related samples and a description of      how they form an series.      This element is extensible with vendor or application specific elements.      These may appear after the standard elements. If possible, these elements      will be validated as conforming to their schema. Additionally, vender and       application specific attributes may be added.    "@en ;
+    rdfs:subClassOf ani:MINiML .
+
+ani:Sample a owl:Class ;
+    rdfs:label "Sample"@en ;
+    rdfs:comment "      A Sample describes the properties of one sample. A sample has      one or more channels and a data table of measured values.      This element is extensible with vendor or application specific      elements. These may appear after the standard elements. If      possible, these elements will be validated as conforming to      their schema. Additionally, vender and application specific      attributes may be added.    "@en ;
+    rdfs:subClassOf ani:MINiML .
+
+ani:Platform a owl:Class ;
+    rdfs:label "Platform"@en ;
+    rdfs:comment "      A platform describes the platform that forms the basis of a Sample. Some      platforms are virtual and do not phyiscal exists, e.g. SAGE platforms.      This element is extensible with vendor or application specific elements.      These may appear after the standard elements. If possible, these elements      will be validated as conforming to their schema. Additionally, vender and       application specific attributes may be added.    "@en ;
+    rdfs:subClassOf ani:MINiML .
+

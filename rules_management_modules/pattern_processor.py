@@ -1,6 +1,6 @@
 # Set of functions for generating XPath from patterns
 from lxml.etree import QName
-from xmlschema.validators import XsdElement, XsdGroup
+from xmlschema.validators import XsdAnyAttribute, XsdElement, XsdGroup
 
 
 def elements_at_depth(elem, depth):
@@ -85,6 +85,8 @@ def has_attribute(element, pattern):
             if getattr(element, a, None):
                 candidates.append(element)
         else:
+            if isinstance(a, XsdAnyAttribute):
+                continue
             candidates.append(a)
 
     return candidates

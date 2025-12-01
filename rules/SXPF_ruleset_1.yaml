@@ -80,7 +80,7 @@ rules:
       attribute: annotation
     emit: |
       f"""
-      {PREFIX}:{get_elem_name(element)} rdfs:comment '{element.annotation}'@en ;
+      {PREFIX}:{get_elem_name(element)} rdfs:comment '{str(element.annotation).replace("\n","")}'@en ;
         {prov_block}
       """
 
@@ -92,7 +92,7 @@ rules:
       attribute: annotation
     emit: |
       f"""
-      {PREFIX}:has{get_elem_name(element)} rdfs:comment '{element.annotation}'@en ;
+      {PREFIX}:has{get_elem_name(element)} rdfs:comment '{str(element.annotation).replace("\n","")}'@en ;
         {prov_block}
       """
 
@@ -104,7 +104,7 @@ rules:
       attribute: annotation
     emit: |
       f"""
-      {PREFIX}:has{get_elem_name(element)} rdfs:comment '{element.annotation}'@en ;
+      {PREFIX}:has{get_elem_name(element)} rdfs:comment '{str(element.annotation).replace("\n","")}'@en ;
         {prov_block}
       """
 
@@ -116,7 +116,7 @@ rules:
       attribute: annotation
     emit: |
       f"""
-      {PREFIX}:has{get_elem_name(element)} rdfs:comment '{element.annotation}'@en ;
+      {PREFIX}:has{get_elem_name(element)} rdfs:comment '{str(element.annotation).replace("\n","")}'@en ;
         {prov_block}
       """
 
@@ -128,7 +128,7 @@ rules:
       attribute: annotation
     emit: |
       f"""
-      {PREFIX}:has{get_elem_name(element)} rdfs:comment '{element.annotation}'@en ;
+      {PREFIX}:has{get_elem_name(element)} rdfs:comment '{str(element.annotation).replace("\n","")}'@en ;
         {prov_block}
       """
 

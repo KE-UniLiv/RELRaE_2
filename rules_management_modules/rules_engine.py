@@ -3,12 +3,11 @@ from rules_management_modules import conditionals
 from rules_management_modules import pattern_processor
 from typing import List, Any
 from lxml.etree import QName
-from xmlschema.validators import XsdAttributeGroup
+from xmlschema.validators import XsdAnyAttribute, XsdAttributeGroup
 import inspect
 
 
 def get_elem_name(concept):
-    print(concept)
     xml_concept = QName(concept.name).localname
     return xml_concept
 
@@ -71,7 +70,6 @@ def process_pattern(element, pattern):
 
 def selector_translation(element, selector) -> List[Any]:
     translation = []
-    # print(get_elem_name(element))
     for pattern in selector:
         pp = pre_process_pattern(pattern)
         translation.append(process_pattern(element, pp))
@@ -100,4 +98,3 @@ def rules_engine(element, rule):
         return False, None
     return True, result
 
-# NOTE: Output: Boolean
