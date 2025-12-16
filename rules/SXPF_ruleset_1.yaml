@@ -184,7 +184,7 @@ rules:
       """
 
   - rule:
-    name: 9) complexType with choice -> subClassOf ;
+    name: 9) complexType with choice -> subClassOf
     element_type: XsdComplexType
     selector:
       - pattern: has_choice
@@ -198,3 +198,122 @@ rules:
         {prov_block}
       """
 
+  - rule:
+    name: 10a) complexType with minOccurs complexType child -> minCardinality Restriction
+    element_type: XsdComplexType
+    selector:
+      - pattern: has_min_occurs
+        child_type: XsdComplexType
+        relative_depth: 1
+    emit: |
+      f"""
+      {PREFIX}:{get_elem_name(element)} a owl:Class ;
+        rdfs:label '{get_elem_name(element)}'@en ;
+        rdfs:subClassOf [
+          a owl:Restriction ;
+          owl:onProperty {PREFIX}:has{get_elem_name(concept)} ;
+          owl:onClass {PREFIX}:{get_elem_name(concept)} ;
+          owl:minCardinality {get_elem_occurs("min", concept)}
+        ] ;
+        {prov_block}
+      """
+
+  - rule:
+    name: 10b) complexType with minOccurs simpleType child -> minCardinality Restriction
+    element_type: XsdComplexType
+    selector:
+      - pattern: has_min_occurs
+        child_type: XsdSimpleType
+        relative_depth: 1
+    emit: |
+      f"""
+      {PREFIX}:{get_elem_name(element)} a owl:Class ;
+        rdfs:label '{get_elem_name(element)}'@en ;
+        rdfs:subClassOf [
+          a owl:Restriction ;
+          owl:onProperty {PREFIX}:{is_boolean(concept)}{get_elem_name(concept)} ;
+          owl:onClass {check_datatype(concept)} ;
+          owl:minCardinality {get_elem_occurs("min", concept)}
+        ] ;
+        {prov_block}
+      """
+      
+  - rule:
+    name: 10c) complexType with minOccurs atomicRestriction child -> minCardinality Restriction
+    element_type: XsdComplexType
+    selector:
+      - pattern: has_min_occurs
+        child_type: XsdAtomicRestriction
+        relative_depth: 1
+    emit: |
+      f"""
+      {PREFIX}:{get_elem_name(element)} a owl:Class ;
+        rdfs:label '{get_elem_name(element)}'@en ;
+        rdfs:subClassOf [
+          a owl:Restriction ;
+          owl:onProperty {PREFIX}:{is_boolean(concept)}{get_elem_name(concept)} ;
+          owl:onClass {check_datatype(concept)} ;
+          owl:minCardinality {get_elem_occurs("min", concept)}
+        ] ;
+        {prov_block}
+      """
+
+  - rule:
+    name: 11a) complexType with maxOccurs complexType child -> maxCardinality Restriction
+    element_type: XsdComplexType
+    selector:
+      - pattern: has_max_occurs
+        child_type: XsdComplexType
+        relative_depth: 1
+    emit: |
+      f"""
+      {PREFIX}:{get_elem_name(element)} a owl:Class ;
+        rdfs:label '{get_elem_name(element)}'@en ;
+        rdfs:subClassOf [
+          a owl:Restriction ;
+          owl:onProperty {PREFIX}:has{get_elem_name(concept)} ;
+          owl:onClass {PREFIX}:{get_elem_name(concept)} ;
+          owl:maxCardinality {get_elem_occurs("max", concept)}
+        ] ;
+        {prov_block}
+      """
+      
+  - rule:
+    name: 11b) complexType with maxOccurs simpleType child -> maxCardinality Restriction
+    element_type: XsdComplexType
+    selector:
+      - pattern: has_max_occurs
+        child_type: XsdSimpleType
+        relative_depth: 1
+    emit: |
+      f"""
+      {PREFIX}:{get_elem_name(element)} a owl:Class ;
+        rdfs:label '{get_elem_name(element)}'@en ;
+        rdfs:subClassOf [
+          a owl:Restriction ;
+          owl:onProperty {PREFIX}:{is_boolean(concept)}{get_elem_name(concept)} ;
+          owl:onClass {check_datatype(concept)} ;
+          owl:maxCardinality {get_elem_occurs("max", concept)}
+        ] ;
+        {prov_block}
+      """
+
+  - rule:
+    name: 11c) complexType with maxOccurs atomicRestriction child -> maxCardinality Restriction
+    element_type: XsdComplexType
+    selector:
+      - pattern: has_max_occurs
+        child_type: XsdAtomicRestriction
+        relative_depth: 1
+    emit: |
+      f"""
+      {PREFIX}:{get_elem_name(element)} a owl:Class ;
+        rdfs:label '{get_elem_name(element)}'@en ;
+        rdfs:subClassOf [
+          a owl:Restriction ;
+          owl:onProperty {PREFIX}:{is_boolean(concept)}{get_elem_name(concept)} ;
+          owl:onClass {check_datatype(concept)} ;
+          owl:maxCardinality {get_elem_occurs("max", concept)}
+        ] ;
+        {prov_block}
+      """

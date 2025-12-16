@@ -80,6 +80,16 @@ def is_boolean(concept):
         return "has"
 
 
+def get_elem_occurs(side, concept):
+    if side == "max":
+        ind = 1
+    else:
+        ind = 0
+
+    cardinality = concept.occurs[ind]
+    return cardinality
+
+
 def generate_preamble():
     preamble = PREAMBLE
     more_namespaces = True

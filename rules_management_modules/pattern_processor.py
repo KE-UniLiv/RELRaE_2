@@ -90,3 +90,31 @@ def has_attribute(element, pattern):
             candidates.append(a)
 
     return candidates
+
+
+def has_min_occurs(element, pattern):
+    candidates = []
+    has_children = has_child(element, pattern)
+
+    if not has_children:
+        return candidates
+    else:
+        for c in has_children:
+            if c.occurs is not None:
+                candidates.append(c)
+    return candidates
+
+
+def has_max_occurs(element, pattern):
+    candidates = []
+    has_children = has_child(element, pattern)
+
+    if not has_child:
+        return candidates
+    else:
+        for c in has_children:
+            if c.occurs is not None:
+                if c.occurs[1] is None:
+                    continue
+                candidates.append(c)
+    return candidates
