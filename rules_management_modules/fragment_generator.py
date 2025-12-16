@@ -6,7 +6,7 @@ from lxml.etree import QName
 from xmlschema.validators import XsdAtomicBuiltin, XsdAtomicRestriction
 
 # TODO: Implement Constants Properly
-PREFIX = 'min'
+PREFIX = 'ani'
 
 PROV_BLOCK = "."
 
@@ -15,7 +15,7 @@ PREAMBLE = """
     @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
     @prefix owl: <http://www.w3.org/2002/07/owl#> .
     @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-    @prefix min: <http://example.org/MINimology/> .
+    @prefix ani: <http://example.org/anitology/> .
     """
 
 
@@ -68,6 +68,16 @@ def is_built_in(concept):
 def check_datatype(concept):
     rdfs_string = f"""xsd:{lower_first_char(is_built_in(concept.type))}"""
     return rdfs_string
+
+
+def is_boolean(concept):
+    # FIX: This may cause issues if a relationship is inteneded to be boolean
+    # but is not given a specific restriction
+    datatype = is_built_in(concept.type)
+    if datatype == "Boolean":
+        return "is"
+    else:
+        return "has"
 
 
 def generate_preamble():

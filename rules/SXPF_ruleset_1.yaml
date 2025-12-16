@@ -33,8 +33,8 @@ rules:
     element_type: XsdAtomicRestriction
     emit: |
       f"""
-      {PREFIX}:has{get_elem_name(element)} a owl:DatatypeProperty ;
-        rdfs:label 'has{get_elem_name(element)}'@en ;
+      {PREFIX}:{is_boolean(element)}{get_elem_name(element)} a owl:DatatypeProperty ;
+        rdfs:label '{is_boolean(element)}{get_elem_name(element)}'@en ;
         rdfs:range {check_datatype(element)} ;
         {prov_block}
       """
@@ -47,8 +47,8 @@ rules:
       attribute: All
     emit: |
       f"""
-      {PREFIX}:has{get_elem_name(concept)} a owl:DatatypeProperty ;
-        rdfs:label 'has{get_elem_name(concept)}'@en ;
+      {PREFIX}:{is_boolean(concept)}{get_elem_name(concept)} a owl:DatatypeProperty ;
+        rdfs:label '{is_boolean(concept)}{get_elem_name(concept)}'@en ;
         rdfs:domain {PREFIX}:{get_elem_name(element)} ;
         rdfs:range {check_datatype(concept)} ;
         {prov_block}
@@ -176,8 +176,8 @@ rules:
         relative_depth: 1
     emit: |
       f"""
-      {PREFIX}:has{get_elem_name(concept)} a owl:DatatypeProperty ;
-        rdfs:label 'has{get_elem_name(concept)}'@en ;
+      {PREFIX}:{is_boolean(concept)}{get_elem_name(concept)} a owl:DatatypeProperty ;
+        rdfs:label '{is_boolean(concept)}{get_elem_name(concept)}'@en ;
         rdfs:domain {PREFIX}:{get_elem_name(element)} ;
         rdfs:range {check_datatype(concept)} ;
         {prov_block}

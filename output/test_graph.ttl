@@ -1,4 +1,4 @@
-@prefix ani: <http://example.org/Anitology/> .
+@prefix ani: <http://example.org/anitology/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -41,12 +41,7 @@ ani:hasBarcode a owl:DatatypeProperty ;
     rdfs:domain ani:Sample ;
     rdfs:range xsd:token .
 
-ani:hasBoolean a owl:DatatypeProperty ;
-    rdfs:label "hasBoolean"@en ;
-    rdfs:comment "Individual boolean value."@en ;
-    rdfs:domain ani:IndividualValueSet,
-        ani:Parameter ;
-    rdfs:range xsd:boolean .
+ani:hasBoolean rdfs:comment "Individual boolean value."@en .
 
 ani:hasCategory a owl:ObjectProperty ;
     rdfs:label "hasCategory"@en ;
@@ -107,11 +102,6 @@ ani:hasDependency a owl:DatatypeProperty ;
     rdfs:label "hasDependency"@en ;
     rdfs:domain ani:Series ;
     rdfs:range xsd:token .
-
-ani:hasDerived a owl:DatatypeProperty ;
-    rdfs:label "hasDerived"@en ;
-    rdfs:domain ani:Sample ;
-    rdfs:range xsd:boolean .
 
 ani:hasDevice a owl:ObjectProperty ;
     rdfs:label "hasDevice"@en ;
@@ -650,8 +640,19 @@ ani:hasVersion a owl:DatatypeProperty ;
     rdfs:range xsd:string,
         xsd:token .
 
-ani:hasVisible a owl:DatatypeProperty ;
-    rdfs:label "hasVisible"@en ;
+ani:isBoolean a owl:DatatypeProperty ;
+    rdfs:label "isBoolean"@en ;
+    rdfs:domain ani:IndividualValueSet,
+        ani:Parameter ;
+    rdfs:range xsd:boolean .
+
+ani:isDerived a owl:DatatypeProperty ;
+    rdfs:label "isDerived"@en ;
+    rdfs:domain ani:Sample ;
+    rdfs:range xsd:boolean .
+
+ani:isVisible a owl:DatatypeProperty ;
+    rdfs:label "isVisible"@en ;
     rdfs:domain ani:Series ;
     rdfs:range xsd:boolean .
 
