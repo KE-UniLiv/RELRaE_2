@@ -118,3 +118,16 @@ def has_max_occurs(element, pattern):
                     continue
                 candidates.append(c)
     return candidates
+
+
+def has_required_attribute(element, pattern):
+    candidates = []
+    has_attributes = has_attribute(element, pattern)
+
+    if not has_attributes:
+        return candidates
+    else:
+        for a in has_attributes:
+            if a.use == 'required':
+                candidates.append(a)
+    return candidates

@@ -317,3 +317,29 @@ rules:
         ] ;
         {prov_block}
       """
+
+  - rule:
+    name: 12) complexType with required attribute -> cardinality restriction
+    element_type: XsdComplexType
+    selector:
+      - pattern: has_required_attribute
+        attribute: All
+    emit: |
+      f"""
+      {PREFIX}:{get_elem_name(element)} a owl:Class ;
+        rdfs:label '{get_elem_name(element)}'@en ;
+        rdfs:subClassOf [
+          a owl:Restriction ;
+          owl:onProperty {PREFIX}:{is_boolean(concept)}{get_elem_name(concept)} ;
+          owl:onClass {check_datatype(concept)} ;
+          owl:minCardinality 1
+        ] ;
+        rdfs:subClassOf [
+          a owl:Restriction ;
+          owl:onProperty {PREFIX}:{is_boolean(concept)}{get_elem_name(concept)} ;
+          owl:onClass {check_datatype(concept)} ;
+          owl:maxCardinality 1
+        ] ;
+        {prov_block}
+      """
+

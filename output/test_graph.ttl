@@ -10,11 +10,6 @@ ani:hasBarcode a owl:DatatypeProperty ;
 
 ani:hasBoolean rdfs:comment "Individual boolean value."@en .
 
-ani:hasChangedItem a owl:DatatypeProperty ;
-    rdfs:label "hasChangedItem"@en ;
-    rdfs:domain ani:Diff ;
-    rdfs:range xsd:NCName .
-
 ani:hasContainerID a owl:DatatypeProperty ;
     rdfs:label "hasContainerID"@en ;
     rdfs:domain ani:Sample ;
@@ -25,18 +20,6 @@ ani:hasContainerType a owl:DatatypeProperty ;
     rdfs:domain ani:Sample ;
     rdfs:range xsd:token .
 
-ani:hasDataPurpose a owl:DatatypeProperty ;
-    rdfs:label "hasDataPurpose"@en ;
-    rdfs:domain ani:ExperimentDataBulkReference,
-        ani:ExperimentDataReference ;
-    rdfs:range xsd:token ;
-    rdfs:subPropertyOf ani:hasExperimentDataAttributes .
-
-ani:hasDependency a owl:DatatypeProperty ;
-    rdfs:label "hasDependency"@en ;
-    rdfs:domain ani:Series ;
-    rdfs:range xsd:token .
-
 ani:hasEndIndex a owl:DatatypeProperty ;
     rdfs:label "hasEndIndex"@en ;
     rdfs:domain ani:AutoIncrementedValueSet,
@@ -44,17 +27,6 @@ ani:hasEndIndex a owl:DatatypeProperty ;
         ani:IndividualValueSet ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ani:hasValueSet .
-
-ani:hasExperimentStepID a owl:DatatypeProperty ;
-    rdfs:label "hasExperimentStepID"@en ;
-    rdfs:domain ani:ExperimentDataReference,
-        ani:ExperimentStep ;
-    rdfs:range xsd:token .
-
-ani:hasExperimentStepIDPrefix a owl:DatatypeProperty ;
-    rdfs:label "hasExperimentStepIDPrefix"@en ;
-    rdfs:domain ani:ExperimentDataBulkReference ;
-    rdfs:range xsd:token .
 
 ani:hasExponent a owl:DatatypeProperty ;
     rdfs:label "hasExponent"@en ;
@@ -95,16 +67,6 @@ ani:hasId a owl:DatatypeProperty ;
     rdfs:subPropertyOf ani:hasSignableItem,
         ani:hasSignableItemWithName .
 
-ani:hasLabel a owl:DatatypeProperty ;
-    rdfs:label "hasLabel"@en ;
-    rdfs:domain ani:Unit ;
-    rdfs:range xsd:token .
-
-ani:hasLength a owl:DatatypeProperty ;
-    rdfs:label "hasLength"@en ;
-    rdfs:domain ani:SeriesSet ;
-    rdfs:range xsd:int .
-
 ani:hasLocationInContainer a owl:DatatypeProperty ;
     rdfs:label "hasLocationInContainer"@en ;
     rdfs:domain ani:Sample ;
@@ -115,11 +77,6 @@ ani:hasOffset a owl:DatatypeProperty ;
     rdfs:domain ani:SIUnit ;
     rdfs:range xsd:double .
 
-ani:hasParameterType a owl:DatatypeProperty ;
-    rdfs:label "hasParameterType"@en ;
-    rdfs:domain ani:Parameter ;
-    rdfs:range xsd:token .
-
 ani:hasPlotScale a owl:DatatypeProperty ;
     rdfs:label "hasPlotScale"@en ;
     rdfs:domain ani:Series ;
@@ -128,35 +85,6 @@ ani:hasPlotScale a owl:DatatypeProperty ;
 ani:hasQuantity a owl:DatatypeProperty ;
     rdfs:label "hasQuantity"@en ;
     rdfs:domain ani:Unit ;
-    rdfs:range xsd:token .
-
-ani:hasSampleID a owl:DatatypeProperty ;
-    rdfs:label "hasSampleID"@en ;
-    rdfs:domain ani:Sample,
-        ani:SampleReference ;
-    rdfs:range xsd:token .
-
-ani:hasSamplePurpose a owl:DatatypeProperty ;
-    rdfs:label "hasSamplePurpose"@en ;
-    rdfs:domain ani:SampleInheritance,
-        ani:SampleReference ;
-    rdfs:range xsd:token ;
-    rdfs:subPropertyOf ani:hasSampleAttributes .
-
-ani:hasScope a owl:DatatypeProperty ;
-    rdfs:label "hasScope"@en ;
-    rdfs:domain ani:Diff ;
-    rdfs:range xsd:token .
-
-ani:hasSeriesID a owl:DatatypeProperty ;
-    rdfs:label "hasSeriesID"@en ;
-    rdfs:domain ani:ParentDataPointReference,
-        ani:Series ;
-    rdfs:range xsd:token .
-
-ani:hasSeriesType a owl:DatatypeProperty ;
-    rdfs:label "hasSeriesType"@en ;
-    rdfs:domain ani:Series ;
     rdfs:range xsd:token .
 
 ani:hasSha256 a owl:DatatypeProperty ;
@@ -173,25 +101,9 @@ ani:hasStartIndex a owl:DatatypeProperty ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf ani:hasValueSet .
 
-ani:hasTemplateID a owl:DatatypeProperty ;
-    rdfs:label "hasTemplateID"@en ;
-    rdfs:domain ani:Template ;
-    rdfs:range xsd:token .
-
 ani:hasTemplateUsed a owl:DatatypeProperty ;
     rdfs:label "hasTemplateUsed"@en ;
     rdfs:domain ani:ExperimentStep ;
-    rdfs:range xsd:token .
-
-ani:hasUri a owl:DatatypeProperty ;
-    rdfs:label "hasUri"@en ;
-    rdfs:domain ani:Extension,
-        ani:Technique ;
-    rdfs:range xsd:anyURI .
-
-ani:hasUserType a owl:DatatypeProperty ;
-    rdfs:label "hasUserType"@en ;
-    rdfs:domain ani:Author ;
     rdfs:range xsd:token .
 
 ani:hasValue a owl:DatatypeProperty ;
@@ -345,6 +257,11 @@ ani:hasAuditTrailEntrySet a owl:ObjectProperty ;
     rdfs:domain ani:AnIML ;
     rdfs:range ani:AuditTrailEntrySet .
 
+ani:hasChangedItem a owl:DatatypeProperty ;
+    rdfs:label "hasChangedItem"@en ;
+    rdfs:domain ani:Diff ;
+    rdfs:range xsd:NCName .
+
 ani:hasComment a owl:DatatypeProperty ;
     rdfs:label "hasComment"@en ;
     rdfs:comment "Human-readable comment further explaining the changes."@en ;
@@ -352,6 +269,11 @@ ani:hasComment a owl:DatatypeProperty ;
         ani:ExperimentStep,
         ani:Sample ;
     rdfs:range xsd:string .
+
+ani:hasDependency a owl:DatatypeProperty ;
+    rdfs:label "hasDependency"@en ;
+    rdfs:domain ani:Series ;
+    rdfs:range xsd:token .
 
 ani:hasDevice a owl:ObjectProperty ;
     rdfs:label "hasDevice"@en ;
@@ -384,6 +306,11 @@ ani:hasExperimentDataReferenceSet a owl:ObjectProperty ;
     rdfs:domain ani:Infrastructure ;
     rdfs:range ani:ExperimentDataReferenceSet .
 
+ani:hasExperimentStepIDPrefix a owl:DatatypeProperty ;
+    rdfs:label "hasExperimentStepIDPrefix"@en ;
+    rdfs:domain ani:ExperimentDataBulkReference ;
+    rdfs:range xsd:token .
+
 ani:hasFirmwareVersion a owl:DatatypeProperty ;
     rdfs:label "hasFirmwareVersion"@en ;
     rdfs:comment "Version identifier of firmware release."@en ;
@@ -400,6 +327,16 @@ ani:hasKeyInfo a owl:ObjectProperty ;
     rdfs:domain ani:Signature ;
     rdfs:range ani:KeyInfo .
 
+ani:hasLabel a owl:DatatypeProperty ;
+    rdfs:label "hasLabel"@en ;
+    rdfs:domain ani:Unit ;
+    rdfs:range xsd:token .
+
+ani:hasLength a owl:DatatypeProperty ;
+    rdfs:label "hasLength"@en ;
+    rdfs:domain ani:SeriesSet ;
+    rdfs:range xsd:int .
+
 ani:hasLocation a owl:DatatypeProperty ;
     rdfs:label "hasLocation"@en ;
     rdfs:comment "Location or physical address."@en ;
@@ -410,6 +347,11 @@ ani:hasOperatingSystem a owl:DatatypeProperty ;
     rdfs:label "hasOperatingSystem"@en ;
     rdfs:comment "Operating system the software was running on."@en ;
     rdfs:domain ani:Software ;
+    rdfs:range xsd:token .
+
+ani:hasParameterType a owl:DatatypeProperty ;
+    rdfs:label "hasParameterType"@en ;
+    rdfs:domain ani:Parameter ;
     rdfs:range xsd:token .
 
 ani:hasParentDataPointReferenceSet a owl:ObjectProperty ;
@@ -435,19 +377,6 @@ ani:hasResult a owl:ObjectProperty ;
         ani:Template ;
     rdfs:range ani:Result .
 
-ani:hasRole a owl:DatatypeProperty ;
-    rdfs:label "hasRole"@en ;
-    rdfs:comment "Role the Author plays within the organization."@en ;
-    rdfs:domain ani:Author,
-        ani:ExperimentDataBulkReference,
-        ani:ExperimentDataReference,
-        ani:SampleInheritance,
-        ani:SampleReference ;
-    rdfs:range xsd:string,
-        xsd:token ;
-    rdfs:subPropertyOf ani:hasExperimentDataAttributes,
-        ani:hasSampleAttributes .
-
 ani:hasSampleAttributes a owl:DatatypeProperty ;
     rdfs:label "hasSampleAttributes"@en ;
     rdfs:comment "Common attributes for sample references."@en .
@@ -462,10 +391,20 @@ ani:hasSampleSet a owl:ObjectProperty ;
     rdfs:domain ani:AnIML ;
     rdfs:range ani:SampleSet .
 
+ani:hasScope a owl:DatatypeProperty ;
+    rdfs:label "hasScope"@en ;
+    rdfs:domain ani:Diff ;
+    rdfs:range xsd:token .
+
 ani:hasSerialNumber a owl:DatatypeProperty ;
     rdfs:label "hasSerialNumber"@en ;
     rdfs:comment "Unique serial number of device."@en ;
     rdfs:domain ani:Device ;
+    rdfs:range xsd:token .
+
+ani:hasSeriesType a owl:DatatypeProperty ;
+    rdfs:label "hasSeriesType"@en ;
+    rdfs:domain ani:Series ;
     rdfs:range xsd:token .
 
 ani:hasSignableItemWithName a owl:DatatypeProperty ;
@@ -487,17 +426,19 @@ ani:hasSignedInfo a owl:ObjectProperty ;
     rdfs:domain ani:Signature ;
     rdfs:range ani:SignedInfo .
 
+ani:hasTemplateID a owl:DatatypeProperty ;
+    rdfs:label "hasTemplateID"@en ;
+    rdfs:domain ani:Template ;
+    rdfs:range xsd:token .
+
+ani:hasUserType a owl:DatatypeProperty ;
+    rdfs:label "hasUserType"@en ;
+    rdfs:domain ani:Author ;
+    rdfs:range xsd:token .
+
 ani:hasValueSet a owl:DatatypeProperty ;
     rdfs:label "hasValueSet"@en ;
     rdfs:comment "Start and End Index for this Set of Values (zero-based)."@en .
-
-ani:hasVersion a owl:DatatypeProperty ;
-    rdfs:label "hasVersion"@en ;
-    rdfs:comment "Version identifier of software release."@en ;
-    rdfs:domain ani:AnIML,
-        ani:Software ;
-    rdfs:range xsd:string,
-        xsd:token .
 
 ani:hasSeriesSet a owl:ObjectProperty ;
     rdfs:label "hasSeriesSet"@en ;
@@ -507,7 +448,23 @@ ani:hasSeriesSet a owl:ObjectProperty ;
 
 ani:Diff a owl:Class ;
     rdfs:label "Diff"@en ;
-    rdfs:comment "Machine-readable description of changes made."@en .
+    rdfs:comment "Machine-readable description of changes made."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasScope ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasScope ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:NCName ;
+            owl:onProperty ani:hasChangedItem ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:NCName ;
+            owl:onProperty ani:hasChangedItem ] .
 
 ani:EncodedValueSet a owl:Class ;
     rdfs:label "EncodedValueSet"@en ;
@@ -532,7 +489,15 @@ ani:SignatureSet a owl:Class ;
 
 ani:Tag a owl:Class ;
     rdfs:label "Tag"@en ;
-    rdfs:comment "Tag to mark related data items. When a value is given, it may also serve as a reference to an external data system."@en .
+    rdfs:comment "Tag to mark related data items. When a value is given, it may also serve as a reference to an external data system."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasName ] .
 
 ani:hasAuthor a owl:ObjectProperty ;
     rdfs:label "hasAuthor"@en ;
@@ -548,6 +513,13 @@ ani:hasCategory a owl:ObjectProperty ;
         ani:Sample ;
     rdfs:range ani:Category .
 
+ani:hasDataPurpose a owl:DatatypeProperty ;
+    rdfs:label "hasDataPurpose"@en ;
+    rdfs:domain ani:ExperimentDataBulkReference,
+        ani:ExperimentDataReference ;
+    rdfs:range xsd:token ;
+    rdfs:subPropertyOf ani:hasExperimentDataAttributes .
+
 ani:hasDateTime a owl:DatatypeProperty ;
     rdfs:label "hasDateTime"@en ;
     rdfs:comment "Individual ISO date/time value."@en ;
@@ -561,6 +533,12 @@ ani:hasEmbeddedXML a owl:DatatypeProperty ;
     rdfs:domain ani:IndividualValueSet,
         ani:Parameter ;
     rdfs:range xsd:string .
+
+ani:hasExperimentStepID a owl:DatatypeProperty ;
+    rdfs:label "hasExperimentStepID"@en ;
+    rdfs:domain ani:ExperimentDataReference,
+        ani:ExperimentStep ;
+    rdfs:range xsd:token .
 
 ani:hasExperimentStepSet a owl:ObjectProperty ;
     rdfs:label "hasExperimentStepSet"@en ;
@@ -608,6 +586,25 @@ ani:hasSVG a owl:DatatypeProperty ;
         ani:Parameter ;
     rdfs:range xsd:string .
 
+ani:hasSampleID a owl:DatatypeProperty ;
+    rdfs:label "hasSampleID"@en ;
+    rdfs:domain ani:Sample,
+        ani:SampleReference ;
+    rdfs:range xsd:token .
+
+ani:hasSamplePurpose a owl:DatatypeProperty ;
+    rdfs:label "hasSamplePurpose"@en ;
+    rdfs:domain ani:SampleInheritance,
+        ani:SampleReference ;
+    rdfs:range xsd:token ;
+    rdfs:subPropertyOf ani:hasSampleAttributes .
+
+ani:hasSeriesID a owl:DatatypeProperty ;
+    rdfs:label "hasSeriesID"@en ;
+    rdfs:domain ani:ParentDataPointReference,
+        ani:Series ;
+    rdfs:range xsd:token .
+
 ani:hasSoftware a owl:ObjectProperty ;
     rdfs:label "hasSoftware"@en ;
     rdfs:domain ani:AuditTrailEntry,
@@ -639,6 +636,20 @@ ani:hasUnit a owl:ObjectProperty ;
         ani:Series ;
     rdfs:range ani:Unit .
 
+ani:hasUri a owl:DatatypeProperty ;
+    rdfs:label "hasUri"@en ;
+    rdfs:domain ani:Extension,
+        ani:Technique ;
+    rdfs:range xsd:anyURI .
+
+ani:hasVersion a owl:DatatypeProperty ;
+    rdfs:label "hasVersion"@en ;
+    rdfs:comment "Version identifier of software release."@en ;
+    rdfs:domain ani:AnIML,
+        ani:Software ;
+    rdfs:range xsd:string,
+        xsd:token .
+
 ani:isBoolean a owl:DatatypeProperty ;
     rdfs:label "isBoolean"@en ;
     rdfs:domain ani:IndividualValueSet,
@@ -649,31 +660,39 @@ ani:AnIML a owl:Class ;
     rdfs:label "AnIML"@en ;
     rdfs:comment "Root Element for AnIML documents."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass ani:SampleSet ;
+            owl:onProperty ani:hasSampleSet ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onClass ani:SignatureSet ;
             owl:onProperty ani:hasSignatureSet ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onClass ani:SampleSet ;
-            owl:onProperty ani:hasSampleSet ],
+            owl:onClass ani:ExperimentStepSet ;
+            owl:onProperty ani:hasExperimentStepSet ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:string ;
+            owl:onProperty ani:hasVersion ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:string ;
+            owl:onProperty ani:hasVersion ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onClass ani:ExperimentStepSet ;
             owl:onProperty ani:hasExperimentStepSet ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass ani:SignatureSet ;
+            owl:onProperty ani:hasSignatureSet ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onClass ani:AuditTrailEntrySet ;
             owl:onProperty ani:hasAuditTrailEntrySet ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass ani:SignatureSet ;
-            owl:onProperty ani:hasSignatureSet ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onClass ani:ExperimentStepSet ;
-            owl:onProperty ani:hasExperimentStepSet ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onClass ani:SampleSet ;
             owl:onProperty ani:hasSampleSet ],
         [ a owl:Restriction ;
@@ -691,7 +710,23 @@ ani:AuditTrailEntrySet a owl:Class ;
 
 ani:Extension a owl:Class ;
     rdfs:label "Extension"@en ;
-    rdfs:comment "Reference to an Extension to amend the active Technique Definition."@en .
+    rdfs:comment "Reference to an Extension to amend the active Technique Definition."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:anyURI ;
+            owl:onProperty ani:hasUri ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:anyURI ;
+            owl:onProperty ani:hasUri ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasName ] .
 
 ani:SIUnit a owl:Class ;
     rdfs:label "SIUnit"@en ;
@@ -699,7 +734,23 @@ ani:SIUnit a owl:Class ;
 
 ani:SampleInheritance a owl:Class ;
     rdfs:label "SampleInheritance"@en ;
-    rdfs:comment "Indicates that a Sample was inherited from the parent ExperimentStep."@en .
+    rdfs:comment "Indicates that a Sample was inherited from the parent ExperimentStep."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasSamplePurpose ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasSamplePurpose ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasRole ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasRole ] .
 
 ani:SampleSet a owl:Class ;
     rdfs:label "SampleSet"@en ;
@@ -713,30 +764,78 @@ ani:AutoIncrementedValueSet a owl:Class ;
     rdfs:label "AutoIncrementedValueSet"@en ;
     rdfs:comment "Multiple values given in form of a start value and an increment."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass ani:Increment ;
+            owl:onProperty ani:hasIncrement ],
+        [ a owl:Restriction ;
             owl:minCardinality 1 ;
+            owl:onClass ani:Increment ;
+            owl:onProperty ani:hasIncrement ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onClass ani:StartValue ;
             owl:onProperty ani:hasStartValue ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onClass ani:Increment ;
-            owl:onProperty ani:hasIncrement ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass ani:Increment ;
-            owl:onProperty ani:hasIncrement ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onClass ani:StartValue ;
             owl:onProperty ani:hasStartValue ],
         ani:Series .
 
 ani:ExperimentDataBulkReference a owl:Class ;
     rdfs:label "ExperimentDataBulkReference"@en ;
-    rdfs:comment "Prefix-based reference to a set of Experiment Steps whose data are consumed."@en .
+    rdfs:comment "Prefix-based reference to a set of Experiment Steps whose data are consumed."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasExperimentStepIDPrefix ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasExperimentStepIDPrefix ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasRole ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasRole ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasDataPurpose ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasDataPurpose ] .
 
 ani:ExperimentDataReference a owl:Class ;
     rdfs:label "ExperimentDataReference"@en ;
-    rdfs:comment "Reference to an Experiment Step whose data are consumed."@en .
+    rdfs:comment "Reference to an Experiment Step whose data are consumed."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasDataPurpose ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasDataPurpose ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasRole ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasRole ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasExperimentStepID ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasExperimentStepID ] .
 
 ani:ExperimentDataReferenceSet a owl:Class ;
     rdfs:label "ExperimentDataReferenceSet"@en ;
@@ -754,59 +853,69 @@ ani:ParentDataPointReference a owl:Class ;
     rdfs:label "ParentDataPointReference"@en ;
     rdfs:comment "Reference to a data point or value range in an independent Series in the parent Result."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass ani:EndValue ;
+            owl:onProperty ani:hasEndValue ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onClass ani:EndValue ;
             owl:onProperty ani:hasEndValue ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onClass ani:EndValue ;
-            owl:onProperty ani:hasEndValue ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
             owl:onClass ani:StartValue ;
             owl:onProperty ani:hasStartValue ],
         [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasSeriesID ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasSeriesID ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
             owl:onClass ani:StartValue ;
             owl:onProperty ani:hasStartValue ] .
 
 ani:SampleReference a owl:Class ;
     rdfs:label "SampleReference"@en ;
-    rdfs:comment "Reference to a Sample used in this Experiment."@en .
+    rdfs:comment "Reference to a Sample used in this Experiment."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasSampleID ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasSampleID ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasRole ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasRole ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasSamplePurpose ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasSamplePurpose ] .
 
 ani:SampleReferenceSet a owl:Class ;
     rdfs:label "SampleReferenceSet"@en ;
     rdfs:comment "Set of Samples used in this Experiment."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onClass ani:SampleReference ;
-            owl:onProperty ani:hasSampleReference ],
+            owl:onClass ani:SampleInheritance ;
+            owl:onProperty ani:hasSampleInheritance ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onClass ani:SampleInheritance ;
-            owl:onProperty ani:hasSampleInheritance ] .
-
-ani:hasName a owl:DatatypeProperty ;
-    rdfs:label "hasName"@en ;
-    rdfs:comment "Common name."@en ;
-    rdfs:domain ani:Author,
-        ani:Category,
-        ani:Device,
-        ani:ExperimentStep,
-        ani:Extension,
-        ani:Method,
-        ani:Parameter,
-        ani:Result,
-        ani:Sample,
-        ani:Series,
-        ani:SeriesSet,
-        ani:Software,
-        ani:Tag,
-        ani:Technique,
-        ani:Template ;
-    rdfs:range xsd:string,
-        xsd:token ;
-    rdfs:subPropertyOf ani:hasSignableItemWithName .
+            owl:onClass ani:SampleReference ;
+            owl:onProperty ani:hasSampleReference ] .
 
 ani:hasTagSet a owl:ObjectProperty ;
     rdfs:label "hasTagSet"@en ;
@@ -819,27 +928,19 @@ ani:EndValue a owl:Class ;
     rdfs:label "EndValue"@en ;
     rdfs:comment "Upper boundary of an interval."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass xsd:double ;
-            owl:onProperty ani:hasD ],
+            owl:minCardinality 1 ;
+            owl:onClass xsd:int ;
+            owl:onProperty ani:hasI ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onClass xsd:long ;
             owl:onProperty ani:hasL ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onClass xsd:int ;
-            owl:onProperty ani:hasI ],
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:long ;
+            owl:onProperty ani:hasL ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onClass xsd:float ;
-            owl:onProperty ani:hasF ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass xsd:int ;
-            owl:onProperty ani:hasI ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
             owl:onClass xsd:float ;
             owl:onProperty ani:hasF ],
         [ a owl:Restriction ;
@@ -847,89 +948,113 @@ ani:EndValue a owl:Class ;
             owl:onClass xsd:double ;
             owl:onProperty ani:hasD ],
         [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:float ;
+            owl:onProperty ani:hasF ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onClass xsd:long ;
-            owl:onProperty ani:hasL ] .
+            owl:onClass xsd:double ;
+            owl:onProperty ani:hasD ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:int ;
+            owl:onProperty ani:hasI ] .
 
 ani:Increment a owl:Class ;
     rdfs:label "Increment"@en ;
     rdfs:comment "Increment value"@en ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onClass xsd:int ;
-            owl:onProperty ani:hasI ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onClass xsd:long ;
-            owl:onProperty ani:hasL ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onClass xsd:long ;
-            owl:onProperty ani:hasL ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass xsd:int ;
-            owl:onProperty ani:hasI ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onClass xsd:float ;
-            owl:onProperty ani:hasF ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass xsd:float ;
-            owl:onProperty ani:hasF ],
+            owl:onClass xsd:double ;
+            owl:onProperty ani:hasD ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onClass xsd:double ;
             owl:onProperty ani:hasD ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onClass xsd:double ;
-            owl:onProperty ani:hasD ] .
+            owl:onClass xsd:long ;
+            owl:onProperty ani:hasL ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:float ;
+            owl:onProperty ani:hasF ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:long ;
+            owl:onProperty ani:hasL ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:int ;
+            owl:onProperty ani:hasI ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:float ;
+            owl:onProperty ani:hasF ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:int ;
+            owl:onProperty ani:hasI ] .
 
 ani:Signature a owl:Class ;
     rdfs:label "Signature"@en ;
     rdfs:comment "Digital Signature that has been applied to a part of this AnIML document. Uses the W3C XML-DSIG specification."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass ani:KeyInfo ;
+            owl:onProperty ani:hasKeyInfo ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass ani:SignatureValue ;
+            owl:onProperty ani:hasSignatureValue ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onClass ani:Object ;
             owl:onProperty ani:hasObject ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass ani:SignedInfo ;
+            owl:onProperty ani:hasSignedInfo ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass ani:SignatureValue ;
+            owl:onProperty ani:hasSignatureValue ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onClass ani:KeyInfo ;
             owl:onProperty ani:hasKeyInfo ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onClass ani:SignatureValue ;
-            owl:onProperty ani:hasSignatureValue ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onClass ani:SignatureValue ;
-            owl:onProperty ani:hasSignatureValue ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onClass ani:SignedInfo ;
-            owl:onProperty ani:hasSignedInfo ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onClass ani:SignedInfo ;
-            owl:onProperty ani:hasSignedInfo ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass ani:KeyInfo ;
-            owl:onProperty ani:hasKeyInfo ] .
+            owl:onProperty ani:hasSignedInfo ] .
 
 ani:Device a owl:Class ;
     rdfs:label "Device"@en ;
     rdfs:comment "Device used to perform experiment."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onClass xsd:token ;
-            owl:onProperty ani:hasDeviceIdentifier ],
+            owl:onProperty ani:hasManufacturer ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onClass xsd:token ;
+            owl:onProperty ani:hasFirmwareVersion ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasDeviceIdentifier ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:string ;
+            owl:onProperty ani:hasName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
             owl:onProperty ani:hasSerialNumber ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasDeviceIdentifier ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onClass xsd:string ;
@@ -939,61 +1064,53 @@ ani:Device a owl:Class ;
             owl:onClass xsd:token ;
             owl:onProperty ani:hasFirmwareVersion ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass xsd:token ;
-            owl:onProperty ani:hasSerialNumber ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass xsd:string ;
-            owl:onProperty ani:hasName ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onClass xsd:token ;
             owl:onProperty ani:hasManufacturer ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onClass xsd:token ;
-            owl:onProperty ani:hasFirmwareVersion ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onClass xsd:token ;
-            owl:onProperty ani:hasManufacturer ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass xsd:token ;
-            owl:onProperty ani:hasDeviceIdentifier ] .
+            owl:onProperty ani:hasSerialNumber ] .
 
 ani:ExperimentStepSet a owl:Class ;
     rdfs:label "ExperimentStepSet"@en ;
     rdfs:comment "Container for multiple ExperimentSteps that describe the process and results."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onClass ani:Template ;
-            owl:onProperty ani:hasTemplate ],
-        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onClass ani:ExperimentStep ;
-            owl:onProperty ani:hasExperimentStep ] .
+            owl:onProperty ani:hasExperimentStep ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onClass ani:Template ;
+            owl:onProperty ani:hasTemplate ] .
 
 ani:Result a owl:Class ;
     rdfs:label "Result"@en ;
     rdfs:comment "Container for Data derived from Experiment."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onClass ani:Category ;
-            owl:onProperty ani:hasCategory ],
+            owl:onClass ani:ExperimentStepSet ;
+            owl:onProperty ani:hasExperimentStepSet ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onClass ani:SeriesSet ;
             owl:onProperty ani:hasSeriesSet ],
         [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasName ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onClass ani:SeriesSet ;
             owl:onProperty ani:hasSeriesSet ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onClass ani:ExperimentStepSet ;
-            owl:onProperty ani:hasExperimentStepSet ],
+            owl:onClass ani:Category ;
+            owl:onProperty ani:hasCategory ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onClass ani:ExperimentStepSet ;
@@ -1005,7 +1122,23 @@ ani:SeriesSet a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onClass ani:Series ;
-            owl:onProperty ani:hasSeries ] .
+            owl:onProperty ani:hasSeries ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:int ;
+            owl:onProperty ani:hasLength ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:int ;
+            owl:onProperty ani:hasLength ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasName ] .
 
 ani:TagSet a owl:Class ;
     rdfs:label "TagSet"@en ;
@@ -1021,7 +1154,15 @@ ani:Unit a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onClass ani:SIUnit ;
-            owl:onProperty ani:hasSIUnit ] .
+            owl:onProperty ani:hasSIUnit ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasLabel ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasLabel ] .
 
 ani:Software a owl:Class ;
     rdfs:label "Software"@en ;
@@ -1029,23 +1170,23 @@ ani:Software a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onClass xsd:token ;
-            owl:onProperty ani:hasOperatingSystem ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onClass xsd:token ;
-            owl:onProperty ani:hasVersion ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass xsd:token ;
-            owl:onProperty ani:hasVersion ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass xsd:token ;
-            owl:onProperty ani:hasOperatingSystem ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onClass xsd:token ;
             owl:onProperty ani:hasManufacturer ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasOperatingSystem ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:string ;
+            owl:onProperty ani:hasName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasVersion ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasOperatingSystem ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onClass xsd:string ;
@@ -1053,29 +1194,37 @@ ani:Software a owl:Class ;
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onClass xsd:token ;
-            owl:onProperty ani:hasManufacturer ],
+            owl:onProperty ani:hasVersion ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onClass xsd:string ;
-            owl:onProperty ani:hasName ] .
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasManufacturer ] .
 
 ani:StartValue a owl:Class ;
     rdfs:label "StartValue"@en ;
     rdfs:comment "Lower boundary of an interval or ValueSet."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:double ;
+            owl:onProperty ani:hasD ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
             owl:onClass xsd:float ;
             owl:onProperty ani:hasF ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:long ;
+            owl:onProperty ani:hasL ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:int ;
+            owl:onProperty ani:hasI ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onClass xsd:long ;
             owl:onProperty ani:hasL ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onClass xsd:double ;
-            owl:onProperty ani:hasD ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
+            owl:maxCardinality 1 ;
             owl:onClass xsd:int ;
             owl:onProperty ani:hasI ],
         [ a owl:Restriction ;
@@ -1084,16 +1233,8 @@ ani:StartValue a owl:Class ;
             owl:onProperty ani:hasD ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onClass xsd:int ;
-            owl:onProperty ani:hasI ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
             owl:onClass xsd:float ;
-            owl:onProperty ani:hasF ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass xsd:long ;
-            owl:onProperty ani:hasL ] .
+            owl:onProperty ani:hasF ] .
 
 ani:Category a owl:Class ;
     rdfs:label "Category"@en ;
@@ -1109,41 +1250,49 @@ ani:Category a owl:Class ;
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onClass ani:Category ;
-            owl:onProperty ani:hasCategory ] .
+            owl:onProperty ani:hasCategory ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasName ] .
 
 ani:Infrastructure a owl:Class ;
     rdfs:label "Infrastructure"@en ;
     rdfs:comment "Contains references to the context of this Experiment."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onClass ani:ExperimentDataReferenceSet ;
             owl:onProperty ani:hasExperimentDataReferenceSet ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass xsd:dateTime ;
-            owl:onProperty ani:hasTimestamp ],
+            owl:minCardinality 0 ;
+            owl:onClass ani:ParentDataPointReferenceSet ;
+            owl:onProperty ani:hasParentDataPointReferenceSet ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onClass ani:ParentDataPointReferenceSet ;
             owl:onProperty ani:hasParentDataPointReferenceSet ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onClass xsd:dateTime ;
+            owl:onProperty ani:hasTimestamp ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onClass xsd:dateTime ;
+            owl:onProperty ani:hasTimestamp ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onClass ani:SampleReferenceSet ;
             owl:onProperty ani:hasSampleReferenceSet ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onClass ani:ParentDataPointReferenceSet ;
-            owl:onProperty ani:hasParentDataPointReferenceSet ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onClass xsd:dateTime ;
-            owl:onProperty ani:hasTimestamp ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onClass ani:ExperimentDataReferenceSet ;
             owl:onProperty ani:hasExperimentDataReferenceSet ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onClass ani:SampleReferenceSet ;
             owl:onProperty ani:hasSampleReferenceSet ] .
 
@@ -1151,6 +1300,22 @@ ani:Technique a owl:Class ;
     rdfs:label "Technique"@en ;
     rdfs:comment "Reference to Technique Definition used in this Experiment."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:anyURI ;
+            owl:onProperty ani:hasUri ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:anyURI ;
+            owl:onProperty ani:hasUri ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasName ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onClass ani:Extension ;
             owl:onProperty ani:hasExtension ] .
@@ -1195,21 +1360,62 @@ ani:hasL a owl:DatatypeProperty ;
         ani:StartValue ;
     rdfs:range xsd:long .
 
+ani:hasRole a owl:DatatypeProperty ;
+    rdfs:label "hasRole"@en ;
+    rdfs:comment "Role the Author plays within the organization."@en ;
+    rdfs:domain ani:Author,
+        ani:ExperimentDataBulkReference,
+        ani:ExperimentDataReference,
+        ani:SampleInheritance,
+        ani:SampleReference ;
+    rdfs:range xsd:string,
+        xsd:token ;
+    rdfs:subPropertyOf ani:hasExperimentDataAttributes,
+        ani:hasSampleAttributes .
+
 ani:AuditTrailEntry a owl:Class ;
     rdfs:label "AuditTrailEntry"@en ;
     rdfs:comment "Describes a set of changes made to the particular AnIML document by one user at a given time."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onClass xsd:IDREF ;
+            owl:onProperty ani:hasReference ],
+        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onClass xsd:dateTime ;
             owl:onProperty ani:hasTimestamp ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
+            owl:maxCardinality 1 ;
             owl:onClass xsd:token ;
             owl:onProperty ani:hasAction ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onClass xsd:string ;
             owl:onProperty ani:hasComment ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass ani:Author ;
+            owl:onProperty ani:hasAuthor ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:string ;
+            owl:onProperty ani:hasReason ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasAction ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass ani:Software ;
+            owl:onProperty ani:hasSoftware ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:dateTime ;
+            owl:onProperty ani:hasTimestamp ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onClass ani:Software ;
+            owl:onProperty ani:hasSoftware ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onClass ani:Diff ;
@@ -1219,63 +1425,35 @@ ani:AuditTrailEntry a owl:Class ;
             owl:onClass ani:Author ;
             owl:onProperty ani:hasAuthor ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onClass ani:Software ;
-            owl:onProperty ani:hasSoftware ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass ani:Author ;
-            owl:onProperty ani:hasAuthor ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onClass xsd:IDREF ;
-            owl:onProperty ani:hasReference ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass ani:Software ;
-            owl:onProperty ani:hasSoftware ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass xsd:token ;
-            owl:onProperty ani:hasAction ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass xsd:string ;
-            owl:onProperty ani:hasReason ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onClass xsd:string ;
-            owl:onProperty ani:hasReason ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onClass xsd:string ;
             owl:onProperty ani:hasComment ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass xsd:dateTime ;
-            owl:onProperty ani:hasTimestamp ] .
+            owl:minCardinality 0 ;
+            owl:onClass xsd:string ;
+            owl:onProperty ani:hasReason ] .
 
 ani:Method a owl:Class ;
     rdfs:label "Method"@en ;
     rdfs:comment "Describes how this Experiment was performed."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onClass ani:Author ;
+            owl:onProperty ani:hasAuthor ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onClass ani:Device ;
             owl:onProperty ani:hasDevice ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onClass ani:Category ;
+            owl:onProperty ani:hasCategory ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onClass ani:Software ;
             owl:onProperty ani:hasSoftware ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onClass ani:Author ;
-            owl:onProperty ani:hasAuthor ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onClass ani:Category ;
-            owl:onProperty ani:hasCategory ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onClass ani:Device ;
             owl:onProperty ani:hasDevice ],
         [ a owl:Restriction ;
@@ -1291,71 +1469,63 @@ ani:Template a owl:Class ;
     rdfs:label "Template"@en ;
     rdfs:comment "Represents a template for an ExperimentStep."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onClass ani:Infrastructure ;
+            owl:onProperty ani:hasInfrastructure ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onClass ani:TagSet ;
+            owl:onProperty ani:hasTagSet ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass ani:Technique ;
+            owl:onProperty ani:hasTechnique ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasTemplateID ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasTemplateID ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onClass ani:Method ;
             owl:onProperty ani:hasMethod ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasName ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onClass ani:Result ;
             owl:onProperty ani:hasResult ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onClass ani:TagSet ;
+            owl:onProperty ani:hasTagSet ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onClass ani:Technique ;
+            owl:onProperty ani:hasTechnique ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onClass ani:Infrastructure ;
             owl:onProperty ani:hasInfrastructure ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onClass ani:Technique ;
-            owl:onProperty ani:hasTechnique ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onClass ani:Technique ;
-            owl:onProperty ani:hasTechnique ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onClass ani:Method ;
-            owl:onProperty ani:hasMethod ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onClass ani:TagSet ;
-            owl:onProperty ani:hasTagSet ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass ani:TagSet ;
-            owl:onProperty ani:hasTagSet ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass ani:Infrastructure ;
-            owl:onProperty ani:hasInfrastructure ] .
+            owl:onProperty ani:hasMethod ] .
 
 ani:Author a owl:Class ;
     rdfs:label "Author"@en ;
     rdfs:comment "Information about a person, a device or a piece of software authoring AnIML files."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onClass xsd:string ;
-            owl:onProperty ani:hasName ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onClass xsd:string ;
-            owl:onProperty ani:hasPhone ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onClass xsd:string ;
-            owl:onProperty ani:hasEmail ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onClass xsd:string ;
-            owl:onProperty ani:hasName ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass xsd:string ;
-            owl:onProperty ani:hasPhone ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass xsd:string ;
-            owl:onProperty ani:hasEmail ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onClass xsd:string ;
             owl:onProperty ani:hasAffiliation ],
         [ a owl:Restriction ;
@@ -1363,27 +1533,75 @@ ani:Author a owl:Class ;
             owl:onClass xsd:string ;
             owl:onProperty ani:hasLocation ],
         [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasUserType ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasUserType ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:string ;
+            owl:onProperty ani:hasName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onClass xsd:string ;
+            owl:onProperty ani:hasEmail ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:string ;
+            owl:onProperty ani:hasEmail ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onClass xsd:string ;
+            owl:onProperty ani:hasRole ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:string ;
+            owl:onProperty ani:hasPhone ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:string ;
+            owl:onProperty ani:hasRole ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onClass xsd:string ;
+            owl:onProperty ani:hasLocation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onClass xsd:string ;
             owl:onProperty ani:hasAffiliation ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onClass xsd:string ;
-            owl:onProperty ani:hasRole ],
+            owl:onProperty ani:hasName ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onClass xsd:string ;
-            owl:onProperty ani:hasRole ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onClass xsd:string ;
-            owl:onProperty ani:hasLocation ] .
+            owl:onProperty ani:hasPhone ] .
 
 ani:ExperimentStep a owl:Class ;
     rdfs:label "ExperimentStep"@en ;
     rdfs:comment "Container that documents a step in an experiment. Use one ExperimentStep per application of a Technique."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onClass ani:Infrastructure ;
+            owl:onProperty ani:hasInfrastructure ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onClass ani:Method ;
+            owl:onProperty ani:hasMethod ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onClass ani:Technique ;
             owl:onProperty ani:hasTechnique ],
         [ a owl:Restriction ;
@@ -1391,33 +1609,33 @@ ani:ExperimentStep a owl:Class ;
             owl:onClass ani:Method ;
             owl:onProperty ani:hasMethod ],
         [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasExperimentStepID ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasExperimentStepID ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onClass ani:Result ;
             owl:onProperty ani:hasResult ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onClass ani:TagSet ;
+            owl:onProperty ani:hasTagSet ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onClass ani:Infrastructure ;
+            owl:onProperty ani:hasInfrastructure ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onClass ani:TagSet ;
             owl:onProperty ani:hasTagSet ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onClass ani:TagSet ;
-            owl:onProperty ani:hasTagSet ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onClass ani:Technique ;
-            owl:onProperty ani:hasTechnique ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass ani:Infrastructure ;
-            owl:onProperty ani:hasInfrastructure ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onClass ani:Infrastructure ;
-            owl:onProperty ani:hasInfrastructure ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onClass ani:Method ;
-            owl:onProperty ani:hasMethod ] .
+            owl:onProperty ani:hasTechnique ] .
 
 ani:IndividualValueSet a owl:Class ;
     rdfs:label "IndividualValueSet"@en ;
@@ -1427,17 +1645,9 @@ ani:IndividualValueSet a owl:Class ;
             owl:onClass xsd:double ;
             owl:onProperty ani:hasD ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onClass xsd:string ;
-            owl:onProperty ani:hasS ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onClass xsd:dateTime ;
-            owl:onProperty ani:hasDateTime ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onClass xsd:float ;
-            owl:onProperty ani:hasF ],
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:int ;
+            owl:onProperty ani:hasI ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onClass xsd:int ;
@@ -1445,172 +1655,212 @@ ani:IndividualValueSet a owl:Class ;
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onClass xsd:string ;
-            owl:onProperty ani:hasS ],
+            owl:onProperty ani:hasSVG ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:float ;
+            owl:onProperty ani:hasF ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:string ;
+            owl:onProperty ani:hasSVG ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:float ;
+            owl:onProperty ani:hasF ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:string ;
+            owl:onProperty ani:hasEmbeddedXML ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:string ;
+            owl:onProperty ani:hasEmbeddedXML ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onClass xsd:double ;
             owl:onProperty ani:hasD ],
         [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:boolean ;
+            owl:onProperty ani:isBoolean ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onClass xsd:long ;
-            owl:onProperty ani:hasL ],
+            owl:onClass xsd:base64Binary ;
+            owl:onProperty ani:hasPNG ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onClass xsd:string ;
-            owl:onProperty ani:hasSVG ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onClass xsd:boolean ;
-            owl:onProperty ani:isBoolean ],
+            owl:onProperty ani:hasS ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onClass xsd:boolean ;
             owl:onProperty ani:isBoolean ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onClass xsd:long ;
-            owl:onProperty ani:hasL ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onClass xsd:dateTime ;
             owl:onProperty ani:hasDateTime ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onClass xsd:string ;
-            owl:onProperty ani:hasSVG ],
+            owl:onProperty ani:hasS ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onClass xsd:base64Binary ;
-            owl:onProperty ani:hasPNG ],
+            owl:onClass xsd:dateTime ;
+            owl:onProperty ani:hasDateTime ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:long ;
+            owl:onProperty ani:hasL ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onClass xsd:base64Binary ;
             owl:onProperty ani:hasPNG ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onClass xsd:int ;
-            owl:onProperty ani:hasI ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass xsd:float ;
-            owl:onProperty ani:hasF ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass xsd:string ;
-            owl:onProperty ani:hasEmbeddedXML ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onClass xsd:string ;
-            owl:onProperty ani:hasEmbeddedXML ],
+            owl:onClass xsd:long ;
+            owl:onProperty ani:hasL ],
         ani:Series .
 
 ani:Sample a owl:Class ;
     rdfs:label "Sample"@en ;
     rdfs:comment "Individual Sample, referenced from other parts of this AnIML document."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasSampleID ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasSampleID ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onClass ani:TagSet ;
+            owl:onProperty ani:hasTagSet ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onClass ani:TagSet ;
             owl:onProperty ani:hasTagSet ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onClass ani:Category ;
-            owl:onProperty ani:hasCategory ],
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasName ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onClass ani:TagSet ;
-            owl:onProperty ani:hasTagSet ] .
+            owl:onClass ani:Category ;
+            owl:onProperty ani:hasCategory ] .
 
 ani:Parameter a owl:Class ;
     rdfs:label "Parameter"@en ;
     rdfs:comment "Name/Value Pair."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onClass ani:Unit ;
-            owl:onProperty ani:hasUnit ],
+            owl:onClass xsd:int ;
+            owl:onProperty ani:hasI ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onClass xsd:boolean ;
-            owl:onProperty ani:isBoolean ],
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasName ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onClass xsd:float ;
-            owl:onProperty ani:hasF ],
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:base64Binary ;
+            owl:onProperty ani:hasPNG ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onClass xsd:string ;
-            owl:onProperty ani:hasS ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onClass xsd:long ;
-            owl:onProperty ani:hasL ],
+            owl:onProperty ani:hasSVG ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onClass xsd:string ;
             owl:onProperty ani:hasSVG ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:int ;
+            owl:onProperty ani:hasI ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onClass ani:Unit ;
             owl:onProperty ani:hasUnit ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onClass xsd:string ;
-            owl:onProperty ani:hasSVG ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass xsd:string ;
-            owl:onProperty ani:hasEmbeddedXML ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass xsd:base64Binary ;
-            owl:onProperty ani:hasPNG ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onClass xsd:boolean ;
             owl:onProperty ani:isBoolean ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass ani:Unit ;
+            owl:onProperty ani:hasUnit ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:string ;
+            owl:onProperty ani:hasEmbeddedXML ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:dateTime ;
+            owl:onProperty ani:hasDateTime ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onClass xsd:float ;
             owl:onProperty ani:hasF ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onClass xsd:long ;
-            owl:onProperty ani:hasL ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onClass xsd:double ;
-            owl:onProperty ani:hasD ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass xsd:double ;
-            owl:onProperty ani:hasD ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onClass xsd:string ;
-            owl:onProperty ani:hasEmbeddedXML ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onClass xsd:int ;
-            owl:onProperty ani:hasI ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onClass xsd:dateTime ;
-            owl:onProperty ani:hasDateTime ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onClass xsd:string ;
             owl:onProperty ani:hasS ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:double ;
+            owl:onProperty ani:hasD ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:boolean ;
+            owl:onProperty ani:isBoolean ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:double ;
+            owl:onProperty ani:hasD ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:dateTime ;
+            owl:onProperty ani:hasDateTime ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onClass xsd:base64Binary ;
             owl:onProperty ani:hasPNG ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onClass xsd:dateTime ;
-            owl:onProperty ani:hasDateTime ],
+            owl:onClass xsd:string ;
+            owl:onProperty ani:hasEmbeddedXML ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onClass xsd:int ;
-            owl:onProperty ani:hasI ] .
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasParameterType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasParameterType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:float ;
+            owl:onProperty ani:hasF ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:long ;
+            owl:onProperty ani:hasL ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:string ;
+            owl:onProperty ani:hasS ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:long ;
+            owl:onProperty ani:hasL ] .
 
 ani:Series a owl:Class ;
     rdfs:label "Series"@en ;
@@ -1621,6 +1871,22 @@ ani:Series a owl:Class ;
             owl:onProperty ani:hasUnit ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasSeriesType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasSeriesType ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasName ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
             owl:onClass ani:IndividualValueSet ;
             owl:onProperty ani:hasIndividualValueSet ],
         [ a owl:Restriction ;
@@ -1628,11 +1894,49 @@ ani:Series a owl:Class ;
             owl:onClass ani:EncodedValueSet ;
             owl:onProperty ani:hasEncodedValueSet ],
         [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasSeriesID ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasSeriesID ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onClass ani:Unit ;
             owl:onProperty ani:hasUnit ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onClass ani:AutoIncrementedValueSet ;
-            owl:onProperty ani:hasAutoIncrementedValueSet ] .
+            owl:onProperty ani:hasAutoIncrementedValueSet ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasDependency ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onClass xsd:token ;
+            owl:onProperty ani:hasDependency ] .
+
+ani:hasName a owl:DatatypeProperty ;
+    rdfs:label "hasName"@en ;
+    rdfs:comment "Common name."@en ;
+    rdfs:domain ani:Author,
+        ani:Category,
+        ani:Device,
+        ani:ExperimentStep,
+        ani:Extension,
+        ani:Method,
+        ani:Parameter,
+        ani:Result,
+        ani:Sample,
+        ani:Series,
+        ani:SeriesSet,
+        ani:Software,
+        ani:Tag,
+        ani:Technique,
+        ani:Template ;
+    rdfs:range xsd:string,
+        xsd:token ;
+    rdfs:subPropertyOf ani:hasSignableItemWithName .
 
