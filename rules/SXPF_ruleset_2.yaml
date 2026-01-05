@@ -1,4 +1,4 @@
-version: 1.1
+version: 1
 prefixes:
   xsd: "http://www.w3.org/2001/XMLSchema#"
   xs: "http://www.w3.org/2001/XMLSchema"
@@ -196,37 +196,150 @@ rules:
         rdfs:label '{get_elem_name(concept)}'@en ;
         rdfs:subClassOf {PREFIX}:{get_elem_name(element)} ;
         {prov_block}
+  - rule:
+    name: 10a) complexType with minOccurs complexType child -> minCardinality Restriction
+    element_type: XsdComplexType
+    selector:
+      - pattern: has_min_occurs
+        child_type: XsdComplexType
+        relative_depth: 1
+    emit: |
+      f"""
+      {PREFIX}:{get_elem_name(element)} a owl:Class ;
+        rdfs:label '{get_elem_name(element)}'@en ;
+        rdfs:subClassOf [
+          a owl:Restriction ;
+          owl:onProperty {PREFIX}:has{get_elem_name(concept)} ;
+          owl:onClass {PREFIX}:{get_elem_name(concept)} ;
+          owl:minCardinality {get_elem_occurs("min", concept)}
+        ] ;
+        {prov_block}
       """
-
-# ------- MINiML.xsd Parsing Extension -------
 
   - rule:
-    name: 10) New element defined as child -> datatypeProperty
+    name: 10b) complexType with minOccurs simpleType child -> minCardinality Restriction
     element_type: XsdComplexType
     selector:
-      - pattern: has_new_child
-        child_type: XsdElement
+      - pattern: has_min_occurs
+        child_type: XsdSimpleType
         relative_depth: 1
     emit: |
       f"""
-      {PREFIX}:{is_boolean(concept)}{get_elem_name(concept)} a owl:DatatypeProperty ;
-        rdfs:label '{is_boolean(concept)}{get_elem_name(concept)}'@en ;
-        rdfs:domain {PREFIX}:{get_elem_name(element)} ;
-        rdfs:range {check_datatype(concept)} ;
+      {PREFIX}:{get_elem_name(element)} a owl:Class ;
+        rdfs:label '{get_elem_name(element)}'@en ;
+        rdfs:subClassOf [
+          a owl:Restriction ;
+          owl:onProperty {PREFIX}:{is_boolean(concept)}{get_elem_name(concept)} ;
+          owl:onClass {check_datatype(concept)} ;
+          owl:minCardinality {get_elem_occurs("min", concept)}
+        ] ;
+        {prov_block}
+      """
+      
+  - rule:
+    name: 10c) complexType with minOccurs atomicRestriction child -> minCardinality Restriction
+    element_type: XsdComplexType
+    selector:
+      - pattern: has_min_occurs
+        child_type: XsdAtomicRestriction
+        relative_depth: 1
+    emit: |
+      f"""
+      {PREFIX}:{get_elem_name(element)} a owl:Class ;
+        rdfs:label '{get_elem_name(element)}'@en ;
+        rdfs:subClassOf [
+          a owl:Restriction ;
+          owl:onProperty {PREFIX}:{is_boolean(concept)}{get_elem_name(concept)} ;
+          owl:onClass {check_datatype(concept)} ;
+          owl:minCardinality {get_elem_occurs("min", concept)}
+        ] ;
         {prov_block}
       """
 
-  - rule: 11) Existing element weakly referenced through new definition -> objectProperty
+  - rule:
+    name: 11a) complexType with maxOccurs complexType child -> maxCardinality Restriction
     element_type: XsdComplexType
     selector:
-      - pattern: has_existing_child
-        child_type: XsdElement
+      - pattern: has_max_occurs
+        child_type: XsdComplexType
         relative_depth: 1
     emit: |
       f"""
-      {PREFIX}:has{get_elem_name(concept)} a owl:ObjectProperty ;
-        rdfs:label 'has{get_elem_name(concept)}'@en ;
-        rdfs:domain {PREFIX}:{get_elem_name(element)} ;
-        rdfs:range {PREFIX}:{get_elem_name(concept)} ;
+      {PREFIX}:{get_elem_name(element)} a owl:Class ;
+        rdfs:label '{get_elem_name(element)}'@en ;
+        rdfs:subClassOf [
+          a owl:Restriction ;
+          owl:onProperty {PREFIX}:has{get_elem_name(concept)} ;
+          owl:onClass {PREFIX}:{get_elem_name(concept)} ;
+          owl:maxCardinality {get_elem_occurs("max", concept)}
+        ] ;
         {prov_block}
       """
+      
+  - rule:
+    name: 11b) complexType with maxOccurs simpleType child -> maxCardinality Restriction
+    element_type: XsdComplexType
+    selector:
+      - pattern: has_max_occurs
+        child_type: XsdSimpleType
+        relative_depth: 1
+    emit: |
+      f"""
+      {PREFIX}:{get_elem_name(element)} a owl:Class ;
+        rdfs:label '{get_elem_name(element)}'@en ;
+        rdfs:subClassOf [
+          a owl:Restriction ;
+          owl:onProperty {PREFIX}:{is_boolean(concept)}{get_elem_name(concept)} ;
+          owl:onClass {check_datatype(concept)} ;
+          owl:maxCardinality {get_elem_occurs("max", concept)}
+        ] ;
+        {prov_block}
+      """
+
+  - rule:
+    name: 11c) complexType with maxOccurs atomicRestriction child -> maxCardinality Restriction
+    element_type: XsdComplexType
+    selector:
+      - pattern: has_max_occurs
+        child_type: XsdAtomicRestriction
+        relative_depth: 1
+    emit: |
+      f"""
+      {PREFIX}:{get_elem_name(element)} a owl:Class ;
+        rdfs:label '{get_elem_name(element)}'@en ;
+        rdfs:subClassOf [
+          a owl:Restriction ;
+          owl:onProperty {PREFIX}:{is_boolean(concept)}{get_elem_name(concept)} ;
+          owl:onClass {check_datatype(concept)} ;
+          owl:maxCardinality {get_elem_occurs("max", concept)}
+        ] ;
+        {prov_block}
+      """
+
+  - rule:
+    name: 12) complexType with required attribute -> cardinality restriction
+    element_type: XsdComplexType
+    selector:
+      - pattern: has_required_attribute
+        attribute: All
+    emit: |
+      f"""
+      {PREFIX}:{get_elem_name(element)} a owl:Class ;
+        rdfs:label '{get_elem_name(element)}'@en ;
+        rdfs:subClassOf [
+          a owl:Restriction ;
+          owl:onProperty {PREFIX}:{is_boolean(concept)}{get_elem_name(concept)} ;
+          owl:onClass {check_datatype(concept)} ;
+          owl:minCardinality 1
+        ] ;
+        rdfs:subClassOf [
+          a owl:Restriction ;
+          owl:onProperty {PREFIX}:{is_boolean(concept)}{get_elem_name(concept)} ;
+          owl:onClass {check_datatype(concept)} ;
+          owl:maxCardinality 1
+        ] ;
+        {prov_block}
+      """
+
+      """
+

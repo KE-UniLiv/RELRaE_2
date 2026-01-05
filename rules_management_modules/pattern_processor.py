@@ -131,3 +131,15 @@ def has_required_attribute(element, pattern):
             if a.use == 'required':
                 candidates.append(a)
     return candidates
+
+
+# TODO: Populate Function
+def has_new_child(element, pattern):
+    candidates = []
+    return candidates
+
+
+# TODO: Populate Function
+def has_existing_child(element, pattern):
+    candidates = []
+    return candidates
