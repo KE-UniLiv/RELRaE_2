@@ -64,11 +64,11 @@ def load_rules():
 
 def test():
     schema_dir = 'test_set/fullSchema/animl-core.xsd'
-    # schema_dir = 'test_set/fullSchema/MINiML.xsd'
+    schema_dir = 'test_set/fullSchema/MINiML.xsd'
     xsd = xmlschema.XMLSchema(schema_dir)
     rules = load_rules().get('rules', [])
     test_graph = generate_graph(xsd, rules)
-    test_graph.serialize(destination='output/test_graph.ttl')
+    test_graph.serialize(destination='output/test_graph_miniml.ttl')
 
 
 if TESTING:

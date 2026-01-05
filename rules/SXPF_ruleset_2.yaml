@@ -1,0 +1,200 @@
+version: 1
+prefixes:
+  xsd: "http://www.w3.org/2001/XMLSchema#"
+  xs: "http://www.w3.org/2001/XMLSchema"
+  rdfs: "http://www.w3.org/2000/01/rdf-schema#"
+  rdf:  "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  owl:  "http://www.w3.org/2002/07/owl#"
+  ex:   "http://example.org/"
+
+rules:
+  - rule:
+    name: 1) complexType -> Class
+    element_type: XsdComplexType
+    emit: |
+      f"""
+      {PREFIX}:{get_elem_name(element)} a owl:Class ;
+        rdfs:label '{get_elem_name(element)}'@en ;
+        {prov_block}
+      """
+
+  - rule:
+    name: 2a) simpleType -> DatatypeProperty
+    element_type: XsdSimpleType
+    emit: |
+      f"""
+      {PREFIX}:has{get_elem_name(element)} a owl:DatatypeProperty ;
+        rdfs:label 'has{get_elem_name(element)}'@en ;
+        {prov_block}
+      """
+
+  - rule:
+    name: 2b) simpleType(Restriction) -> DatatypeProperty
+    element_type: XsdAtomicRestriction
+    emit: |
+      f"""
+      {PREFIX}:{is_boolean(element)}{get_elem_name(element)} a owl:DatatypeProperty ;
+        rdfs:label '{is_boolean(element)}{get_elem_name(element)}'@en ;
+        rdfs:range {check_datatype(element)} ;
+        {prov_block}
+      """
+
+  - rule:
+    name: 3) attribute -> DatatypeProperty
+    element_type: XsdComplexType
+    selector:
+    - pattern: has_attribute
+      attribute: All
+    emit: |
+      f"""
+      {PREFIX}:{is_boolean(concept)}{get_elem_name(concept)} a owl:DatatypeProperty ;
+        rdfs:label '{is_boolean(concept)}{get_elem_name(concept)}'@en ;
+        rdfs:domain {PREFIX}:{get_elem_name(element)} ;
+        rdfs:range {check_datatype(concept)} ;
+        {prov_block}
+      """
+
+  - rule:
+    name: 4) attributeGroups -> DatatypeProperty (superProperty)
+    element_type: XsdAttributeGroup
+    selector:
+      - pattern: has_attribute
+        attribute: All
+    emit: |
+      f"""
+      {PREFIX}:has{get_elem_name(element)} a owl:DatatypeProperty ;
+        rdfs:label 'has{get_elem_name(element)}'@en ;
+        {prov_block}
+
+      {PREFIX}:has{get_elem_name(concept)} a owl:DatatypeProperty ;
+        rdfs:label 'has{get_elem_name(concept)}'@en ;
+        rdfs:subPropertyOf {PREFIX}:has{get_elem_name(element)};
+        {prov_block}
+      """
+
+  - rule:
+    name: 5a) annotation (complexType) -> comment 
+    element_type: XsdComplexType
+    selector:
+    - pattern: has_attribute
+      attribute: annotation
+    emit: |
+      f"""
+      {PREFIX}:{get_elem_name(element)} rdfs:comment '{str(element.annotation).replace("\n","")}'@en ;
+        {prov_block}
+      """
+
+  - rule:
+    name: 5b.a) annotation (simpleType) -> comment 
+    element_type: XsdSimpleType
+    selector:
+    - pattern: has_attribute
+      attribute: annotation
+    emit: |
+      f"""
+      {PREFIX}:has{get_elem_name(element)} rdfs:comment '{str(element.annotation).replace("\n","")}'@en ;
+        {prov_block}
+      """
+
+  - rule:
+    name: 5b.b) annotation (simpleType) -> comment 
+    element_type: XsdAtomicRestriction
+    selector:
+    - pattern: has_attribute
+      attribute: annotation
+    emit: |
+      f"""
+      {PREFIX}:has{get_elem_name(element)} rdfs:comment '{str(element.annotation).replace("\n","")}'@en ;
+        {prov_block}
+      """
+
+  - rule:
+    name: 5c) annotation (attribute) -> comment 
+    element_type: XsdAttribute
+    selector:
+    - pattern: has_attribute
+      attribute: annotation
+    emit: |
+      f"""
+      {PREFIX}:has{get_elem_name(element)} rdfs:comment '{str(element.annotation).replace("\n","")}'@en ;
+        {prov_block}
+      """
+
+  - rule:
+    name: 5d) annotation (attributeGroup) -> comment 
+    element_type: XsdAttributeGroup
+    selector:
+    - pattern: has_attribute
+      attribute: annotation
+    emit: |
+      f"""
+      {PREFIX}:has{get_elem_name(element)} rdfs:comment '{str(element.annotation).replace("\n","")}'@en ;
+        {prov_block}
+      """
+
+  - rule:
+    name: 6) complexType and element ref -> ObjectProperty
+    element_type: XsdComplexType
+    selector:
+      - pattern: has_child
+        id: child_1
+        child_type: XsdComplexType
+        relative_depth: 1
+    emit: |
+      f"""
+      {PREFIX}:has{get_elem_name(concept)} a owl:ObjectProperty ;
+        rdfs:label 'has{get_elem_name(concept)}'@en ;
+        rdfs:domain {PREFIX}:{get_elem_name(element)} ;
+        rdfs:range {PREFIX}:{get_elem_name(concept)} ;
+        {prov_block}
+      """
+
+  - rule:
+    name: 7) complexType and simple element ref -> DatatypeProperty
+    element_type: XsdComplexType
+    selector:
+      - pattern: has_child
+        id: child_1
+        child_type: XsdSimpleType
+        relative_depth: 1
+    emit: |
+      f"""
+      {PREFIX}:has{get_elem_name(concept)} a owl:DatatypeProperty ;
+        rdfs:label 'has{get_elem_name(concept)}'@en ;
+        rdfs:domain {PREFIX}:{get_elem_name(element)} ;
+        rdfs:range {check_datatype(concept)} ;
+        {prov_block}
+      """
+
+  - rule:
+    name: 8) complexType and atomicRestriction ref -> DataypeProperty
+    element_type: XsdComplexType
+    selector:
+      - pattern: has_child
+        id: child_1
+        child_type: XsdAtomicRestriction
+        relative_depth: 1
+    emit: |
+      f"""
+      {PREFIX}:{is_boolean(concept)}{get_elem_name(concept)} a owl:DatatypeProperty ;
+        rdfs:label '{is_boolean(concept)}{get_elem_name(concept)}'@en ;
+        rdfs:domain {PREFIX}:{get_elem_name(element)} ;
+        rdfs:range {check_datatype(concept)} ;
+        {prov_block}
+      """
+
+  - rule:
+    name: 9) complexType with choice -> subClassOf
+    element_type: XsdComplexType
+    selector:
+      - pattern: has_choice
+        child_type: XsdComplexType
+        relative_depth: 1
+    emit: |
+      f"""
+      {PREFIX}:{get_elem_name(concept)} a owl:Class ;
+        rdfs:label '{get_elem_name(concept)}'@en ;
+        rdfs:subClassOf {PREFIX}:{get_elem_name(element)} ;
+        {prov_block}
+      """
+
