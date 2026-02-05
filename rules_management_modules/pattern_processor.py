@@ -136,6 +136,7 @@ def has_required_attribute(element, pattern):
 # TODO: Populate Function
 def has_new_child(element, pattern):
     candidates = []
+
     return candidates
 
 
