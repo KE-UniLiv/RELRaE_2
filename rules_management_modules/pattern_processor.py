@@ -12,6 +12,13 @@ def elements_at_depth(elem, depth):
     return elem.findall(path)
 
 
+def elements(xsd_element):
+    t = xsd_element.type
+    if not t.is_complex() or t.content is None:
+        return []
+    return list(t.content.iter_elements())
+
+
 def selector_index(selector, attribute):
     for r in selector:
         if attribute in r:
@@ -52,12 +59,11 @@ def has_choice(element, pattern):
 
 def has_child(element, pattern):
     candidates = []
-    match = False
 
     c_type = pattern[selector_index(pattern, 'child_type')][1]
-    r_depth = pattern[selector_index(pattern, 'relative_depth')][1]
+    # r_depth = pattern[selector_index(pattern, 'relative_depth')][1]
 
-    descendents = elements_at_depth(element, r_depth)
+    descendents = elements(element)
     for d in descendents:
         if type(d.type).__name__ == c_type:
             candidates.append(d)
@@ -136,6 +142,13 @@ def has_required_attribute(element, pattern):
 # TODO: Populate Function
 def has_new_child(element, pattern):
     candidates = []
+
+    c_type = pattern[selector_index(pattern, 'child_type')][1]
+    # r_depth = pattern[selector_index(pattern, 'relative_depth')][1]
+
+    descendents = elements(element)
+    for d in descendents:
+        print(d)
 
     return candidates
 

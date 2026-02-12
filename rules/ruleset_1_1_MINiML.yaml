@@ -206,7 +206,7 @@ rules:
     selector:
       - pattern: has_new_child
         child_type: XsdElement
-        relative_depth: 1
+        relative_depth: 2
     emit: |
       f"""
       {PREFIX}:{is_boolean(concept)}{get_elem_name(concept)} a owl:DatatypeProperty ;
