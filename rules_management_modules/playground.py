@@ -23,12 +23,11 @@ def has_child(element):
 
     # c_type = pattern[selector_index(pattern, 'child_type')][1]
     # r_depth = pattern[selector_index(pattern, 'relative_depth')][1]
-    c_type = 'XsdComplexType'
+    c_type = 'XsdElement'
 
     descendents = elements(element)
-    print(descendents)
     for d in descendents:
-        if type(d.type).__name__ == c_type:
+        if type(d).__name__ == c_type:
             candidates.append(d)
             print(d)
 

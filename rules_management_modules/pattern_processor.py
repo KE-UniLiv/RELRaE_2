@@ -1,6 +1,6 @@
 # Set of functions for generating XPath from patterns
 from lxml.etree import QName
-from xmlschema.validators import XsdAnyAttribute, XsdElement, XsdGroup
+from xmlschema.validators import XsdAnyAttribute, XsdElement, XsdGroup, XsdComplexType
 
 
 def elements_at_depth(elem, depth):
@@ -138,22 +138,45 @@ def has_required_attribute(element, pattern):
                 candidates.append(a)
     return candidates
 
+def global_is_complex(xsd_element):
+    schema = xsd_element.schema
+    qname = xsd_element.qualified_name
+
+    # Check if a global element with same name exists
+    global_elem = schema.maps.elements.get(qname)
+    if global_elem is None:
+        return False
+
+    # Check if its type is complex
+    return isinstance(global_elem.type, XsdComplexType)
 
 # TODO: Populate Function
 def has_new_child(element, pattern):
     candidates = []
 
     c_type = pattern[selector_index(pattern, 'child_type')][1]
-    # r_depth = pattern[selector_index(pattern, 'relative_depth')][1]
 
     descendents = elements(element)
     for d in descendents:
-        print(d)
+        if type(d).__name__ == c_type:
+            # NOTE: Check if element is defined anywhere else in the schema
+            if not global_is_complex(d):
+                candidates.append(d)
+                print(d)
 
     return candidates
-
 
 # TODO: Populate Function
 def has_existing_child(element, pattern):
     candidates = []
+
+    c_type = pattern[selector_index(pattern, 'child_type')][1]
+
+    descendents = elements(element)
+    for d in descendents:
+        if type(d).__name__ == c_type:
+            if global_is_complex(d):
+                candidates.append(d)
+                print(d)
+
     return candidates

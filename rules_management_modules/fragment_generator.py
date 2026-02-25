@@ -56,7 +56,8 @@ def get_elem_name(concept):
 
 
 def is_built_in(concept):
-    # print(concept.base_type)
+    print(concept)
+    print("++++++")
     if isinstance(concept.base_type, XsdAtomicBuiltin):
         return get_elem_name(concept.base_type)
     elif isinstance(concept, XsdAtomicBuiltin):
@@ -74,6 +75,7 @@ def is_boolean(concept):
     # FIX: This may cause issues if a relationship is inteneded to be boolean
     # but is not given a specific restriction
     datatype = is_built_in(concept.type)
+    print(datatype)
     if datatype == "Boolean":
         return "is"
     else:
