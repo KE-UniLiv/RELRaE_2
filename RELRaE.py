@@ -10,12 +10,18 @@ from modules.human_fix import human_fix
 class RELRaE:
 
     def __init__(self, schema):
-        self.schema = xmlschema.XMLSchema(open(schema))
+        self.schema = xmlschema.XMLSchema(open(f"schema/{schema}"))
         self.onto = Graph()
+        self.errors = []
 
     def RuBREx(self):
         # TODO:
-        RuBREx()
+        m_rubrex = RuBREx(self.schema, self.onto)
+        m_rubrex.match_concepts()
+
+        # NOTE: Consider the module complete
+        self.onto = self.onto + m_rubrex.onto
+        self.errors.append(m_rubrex.errors)
 
     def LLM_Refinement_Loop(self):
         # TODO:

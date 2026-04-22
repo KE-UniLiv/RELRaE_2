@@ -24,8 +24,11 @@ CONFIG = "config/pipeline_conf.txt"
 
 
 def run_pipeline(pipeline, modules):
+    if modules[0] != "RuBREx":
+        print("WARNING!!! RuBREx is a required 1st module, running your pipeline without this may lead to unseen errors")
     for m in modules:
-        pipeline.eval(m)
+        getattr(pipeline, m)()
+
 
 
 def main():
