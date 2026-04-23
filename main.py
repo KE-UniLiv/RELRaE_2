@@ -25,17 +25,18 @@ CONFIG = "config/pipeline_conf.txt"
 
 def run_pipeline(pipeline, modules):
     if modules[0] != "RuBREx":
-        print("WARNING!!! RuBREx is a required 1st module, running your pipeline without this may lead to unseen errors")
+        print("WARNING!!! RuBREx is required as the 1st module, running your pipeline without this may lead to unseen errors")
     for m in modules:
         getattr(pipeline, m)()
-
 
 
 def main():
     config = parse_config(CONFIG)
     modules = config["modules"]
     schema = config["schema"]
-    pipeline = RELRaE(schema)
+    namespace = config["namespace"]
+    prefix = config["prefix"]
+    pipeline = RELRaE(schema, namespace, prefix)
     run_pipeline(pipeline, modules)
 
 

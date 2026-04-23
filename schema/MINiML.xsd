@@ -1,0 +1,1494 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<xs:schema
+ targetNamespace="http://www.ncbi.nlm.nih.gov/geo/info/MINiML"
+ elementFormDefault="qualified" attributeFormDefault="unqualified"
+ xmlns="http://www.ncbi.nlm.nih.gov/geo/info/MINiML"
+ xmlns:MINiML="http://www.ncbi.nlm.nih.gov/geo/info/MINiML"
+ xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:annotation>
+  <xs:documentation>
+    MIame Notation In Markup Language (MINiML) version 0.5.4
+
+    Dennis B. Troup
+
+    Note that all elements are defined within the MINiML namespace.
+
+    Many of the top level elements have an "iid" (internal identifier)
+    attribute. These identifiers are only intended to be unique within the
+    document. They are not meant to be globally unique identifers. Accessions
+    should be used to identify elements globally.
+  </xs:documentation>
+</xs:annotation>
+
+<!--===================-->
+<!-- Top Level Element -->
+<!--===================-->
+
+<xs:element name="MINiML">
+  <xs:annotation>
+    <xs:documentation>
+      This is the top element of an MINiML document. For easier processing,
+      elements should be arranged so that each is defined before it is
+      referenced. This order is enforced for the Database, Organization and
+      Contributor elements, but not for the Platform, Sample and Series
+      elements.
+
+      This element is extensible with vendor or application specific elements.
+      These may appear after the standard elements. If possible, these elements
+      will be validated as conforming to their schema.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="Organization" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element ref="Contributor" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element ref="Database" minOccurs="0" maxOccurs="unbounded" />
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="Platform" />
+        <xs:element ref="Sample" />
+        <xs:element ref="Series" />
+      </xs:choice>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0"
+       maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="version" type="xs:token" />
+  </xs:complexType>
+
+  <!-- uniqueness  constraints -->
+
+  <xs:unique name="PlatformTitle">
+    <xs:selector xpath="MINiML:Platform" />
+    <xs:field xpath="MINiML:Title" />
+  </xs:unique>
+  <xs:unique name="SampleTitle">
+    <xs:selector xpath="MINiML:Sample" />
+    <xs:field xpath="MINiML:Title" />
+  </xs:unique>
+  <xs:unique name="SeriesTitle">
+    <xs:selector xpath="MINiML:Series" />
+    <xs:field xpath="MINiML:Title" />
+  </xs:unique>
+
+  <xs:unique name="DatabaseAccession">
+    <xs:selector xpath="*/MINiML:Accession" />
+    <xs:field xpath="@database" />
+    <xs:field xpath="." />
+  </xs:unique>
+
+  <xs:unique name="DatabasePublicID">
+    <xs:selector xpath="Database" />
+    <xs:field xpath="Public-ID" />
+  </xs:unique>
+
+  <!-- cross reference constraints -->
+
+  <xs:key name="DatabaseIID">
+    <xs:selector xpath="MINiML:Database" />
+    <xs:field xpath="@iid" />
+  </xs:key>
+  <xs:keyref name="AccessionRef" refer="DatabaseIID">
+    <xs:selector xpath="*/MINiML:Accession" />
+    <xs:field xpath="@database" />
+  </xs:keyref>
+  <xs:keyref name="StatusRef" refer="DatabaseIID">
+    <xs:selector xpath="*/MINiML:Status" />
+    <xs:field xpath="@database" />
+  </xs:keyref>
+
+  <xs:key name="ContributorIID">
+    <xs:selector xpath="MINiML:Contributor" />
+    <xs:field xpath="@iid" />
+  </xs:key>
+  <xs:keyref name="ContactRef" refer="ContributorIID">
+    <xs:selector xpath="*/MINiML:Contact-Ref" />
+    <xs:field xpath="@ref" />
+  </xs:keyref>
+  <xs:keyref name="ContributorRef" refer="ContributorIID">
+    <xs:selector xpath="*/MINiML:Contributor-Ref" />
+    <xs:field xpath="@ref" />
+  </xs:keyref>
+
+  <xs:key name="PlatformIID">
+    <xs:selector xpath="MINiML:Platform" />
+    <xs:field xpath="@iid" />
+  </xs:key>
+  <xs:keyref name="PlatformRef" refer="PlatformIID">
+    <xs:selector xpath="MINiML:Sample/MINiML:Platform-Ref" />
+    <xs:field xpath="@ref" />
+  </xs:keyref>
+  
+  <xs:key name="SampleIID">
+    <xs:selector xpath="MINiML:Sample" />
+    <xs:field xpath="@iid" />
+  </xs:key>
+  <xs:keyref name="SampleRef" refer="SampleIID">
+    <xs:selector xpath="MINiML:Series/MINiML:Sample-Ref" />
+    <xs:field xpath="@ref" />
+  </xs:keyref>
+  
+</xs:element>
+
+<!--===========================-->
+<!-- Useful Elements and Types -->
+<!--===========================-->
+
+<xs:simpleType name="TitleType">
+  <xs:annotation>
+    <xs:documentation>
+       Titles can't be empty, nor too long.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:token">
+    <xs:minLength value="1" />
+    <xs:maxLength value="120" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="ShortDescriptionType">
+  <xs:annotation>
+    <xs:documentation>
+       Short descriptions can't be empty, nor too long.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:token">
+    <xs:minLength value="1" />
+    <xs:maxLength value="255" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="RequiredToken">
+  <xs:annotation>
+    <xs:documentation>
+       Required tokens can't be empty.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:token">
+    <xs:minLength value="1" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="RequiredString">
+  <xs:annotation>
+    <xs:documentation>
+       Required strings can't be empty
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+    <xs:minLength value="1" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="WebURIType">
+  <xs:annotation>
+    <xs:documentation>
+       A web link.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:anyURI">
+    <xs:pattern value="http://.+" />
+    <xs:pattern value="https://.+" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="DelimiterType">
+  <xs:annotation>
+    <xs:documentation>
+       Delimiters are a single character.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+    <xs:length value="1" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="MD5Checksum">
+  <xs:annotation>
+    <xs:documentation>
+      An MD5 128-bit checksum expressed in hexidecimal.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+    <xs:pattern value="[0-9a-fA-F]{32}" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="SupplementLinkType">
+  <xs:annotation>
+    <xs:documentation>
+       A link to supplementary data.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:simpleContent>
+    <xs:extension base="xs:anyURI">
+      <xs:attribute name="type" type="xs:token" use="required" />
+      <xs:attribute name="checksum" type="MD5Checksum" />
+      <xs:attribute name="build" type="xs:token" />
+    </xs:extension>
+  </xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="OrganismType">
+  <xs:simpleContent>
+    <xs:extension base="RequiredToken">
+      <xs:attribute name="taxid" type="xs:positiveInteger" />
+    </xs:extension>
+  </xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name = "RelationType">
+  <xs:attribute name="type" type="xs:token" use="required" />
+  <xs:attribute name="target" type="xs:token"  use="required" />
+  <xs:attribute name="comment" type="xs:token" />
+</xs:complexType>
+
+<!-- Reference Types -->
+
+<xs:complexType name="RefType">
+  <xs:annotation>
+    <xs:documentation>
+      RefType allows references to other elements 
+    </xs:documentation>
+  </xs:annotation>
+  <xs:attribute name="ref" type="xs:IDREF" use="required" />
+</xs:complexType>
+
+<xs:complexType name="OrderedRefType">
+  <xs:annotation>
+    <xs:documentation>
+      OrderedRefType allows references to other elements with an optional
+      position specification. This allows the order of the references to be
+      specified independently of the lexical order of the elements. The lexcical
+      order, though, should be considered the default order if the position is
+      not specified.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:attribute name="ref" type="xs:IDREF" use="required" />
+  <xs:attribute name="position" type="xs:nonNegativeInteger" />
+</xs:complexType>
+
+<!-- Database and Releated Elements and Types -->
+
+<xs:element name="Database">
+  <xs:annotation>
+    <xs:documentation>
+       The database element is used to define the databases which give 
+       context to the accessions.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="Name" type="xs:token" />
+      <xs:element name="Public-ID" type="xs:NMTOKEN" minOccurs="0" />
+      <xs:choice minOccurs="0" >
+       <xs:element name="Organization-Ref" type="RefType" />
+       <xs:element name="Organization" type="xs:token" />
+      </xs:choice>
+      <xs:element name="Web-Link" type="WebURIType" minOccurs="0" />
+      <xs:element name="Email" type="EmailAddressType" minOccurs="0" />
+     </xs:sequence>
+    <xs:attribute name="iid" type="xs:ID" use="required" />
+  </xs:complexType>
+</xs:element>
+
+<xs:complexType name="AccessionType">
+  <xs:annotation>
+    <xs:documentation>
+      The accession type defines an identify in an external database. The ref 
+      attribute should contain the value of the iid of a database element.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:simpleContent>
+    <xs:extension base="xs:token">
+      <xs:attribute name="database" type="xs:IDREF" />
+    </xs:extension>
+  </xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="StatusType">
+  <xs:annotation>
+    <xs:documentation>
+      A record of an entity'status. The status can be specified with
+      respect to a particular database.
+
+      This element is extensible with vendor or application specific elements.
+      These may appear after the standard elements. If possible, these elements
+      will be validated as conforming to their schema. Additionally, vender and 
+      application specific attributes may be added.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="Submission-Date" type="xs:date" minOccurs="0" />
+    <xs:element name="Release-Date" type="xs:date" minOccurs="0" />
+    <xs:element name="Last-Update-Date" type="xs:date" minOccurs="0" />
+    <xs:element name="Comment" type="xs:string" minOccurs="0"
+     maxOccurs="unbounded" />
+    <xs:any namespace="##other" processContents="lax" minOccurs="0"
+     maxOccurs="unbounded" />
+  </xs:sequence>
+  <xs:attribute name="database" type="xs:IDREF" />
+  <xs:anyAttribute namespace="##other" processContents="lax" />
+</xs:complexType>
+
+<!-- Contributor Information Elements and Types -->
+
+<xs:simpleType name="EmailAddressType">
+  <xs:restriction base="xs:token">
+    <xs:pattern value=".+@.+" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="ZipCodeType">
+  <xs:restriction base="xs:token">
+    <xs:pattern value="[0-9]{5}(-[0-9]{4}(-[0-9]{2})?)?" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="AddressType">
+  <xs:annotation>
+    <xs:documentation>
+      The standard definition of an address.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="Line" type="xs:token"
+     minOccurs="0" maxOccurs="unbounded" />
+    <xs:element name="City" type="xs:token" />
+    <xs:choice minOccurs="0">
+      <xs:element name="State" type="xs:token" />
+      <xs:element name="Province" type="xs:token" />
+    </xs:choice>
+    <xs:choice>
+      <xs:element name="Zip-Code" type="ZipCodeType" />
+      <xs:element name="Postal-Code" type="xs:token" />
+    </xs:choice>
+    <xs:element name="Country" type="xs:token" />
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="PersonType">
+  <xs:annotation>
+    <xs:documentation>
+      The standard defintion of a person's name.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="First" type="xs:token" />
+    <xs:element name="Middle" type="xs:token" minOccurs="0" />
+    <xs:element name="Last" type="xs:token" />
+  </xs:sequence>
+</xs:complexType>
+
+<xs:element name="Organization">
+  <xs:annotation>
+    <xs:documentation>
+      The Organization element provides a central location for defining the
+      organization to which one or more of the the contributors belong. An
+      organaztion only needs to be defined once in the document.
+    </xs:documentation>
+  </xs:annotation> 
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="Name" type="xs:token" />
+      <xs:element name="Address" type="AddressType" />
+    </xs:sequence>
+    <xs:attribute name="iid" type="xs:ID" use="required" />
+  </xs:complexType>
+</xs:element>
+
+<xs:complexType name="ContributorType">
+  <xs:annotation>
+    <xs:documentation>
+      A Contributor is a person or organization that contributes in some role
+      to the production of a Platform, Sample, or Series. It may be as an
+      author of the paper describing the series, a person that processes
+      the microarray, the organization that sponsored the research, the person
+      who analyzes the data, etc.
+
+      This element is extensible with vendor or application specific elements.
+      These may appear after the standard elements. If possible, these elements
+      will be validated as conforming to their schema. Additionally, vender and 
+      application specific attributes may be added.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:choice>
+      <xs:element name="Person" type="PersonType" />
+      <xs:element name="Organization" type="xs:token" />
+      <xs:element name="Company" type="xs:token" />
+    </xs:choice>
+    <xs:element name="Email" type="EmailAddressType" minOccurs="0" />
+    <xs:element name="Phone" type="xs:token" minOccurs="0" />
+    <xs:element name="Fax" type="xs:token" minOccurs="0" />
+    <xs:element name="Laboratory" type="xs:token" minOccurs="0" />
+    <xs:element name="Department" type="xs:token" minOccurs="0" />
+    <xs:choice>
+      <xs:sequence>
+        <xs:element name="Organization" type="xs:token" minOccurs="0" />
+        <xs:element name="Address" type="AddressType" />
+      </xs:sequence>
+      <xs:element name="Organization-Ref" type="RefType" minOccurs="0" />
+    </xs:choice>
+    <xs:element name="Web-Link" type="WebURIType" minOccurs="0" />
+    <xs:any namespace="##other" processContents="lax" minOccurs="0"
+     maxOccurs="unbounded" />
+  </xs:sequence>
+  <xs:attribute name="iid" type="xs:ID" use="required" />
+  <xs:anyAttribute namespace="##other" processContents="lax" />
+</xs:complexType>
+
+<xs:complexType name="OrderedContributorType">
+  <xs:annotation>
+    <xs:documentation>
+       OrderedContributorType allows contributors to be defined in a 
+       specific order.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:complexContent>
+    <xs:extension base="ContributorType">
+      <xs:attribute name="position" type="xs:nonNegativeInteger" />
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:element name="Contributor" type="ContributorType" />
+
+<!-- Data Table Types -->
+
+<xs:complexType name="InternalDataType">
+  <xs:simpleContent>
+    <xs:extension base="xs:string">
+      <xs:attribute name="rows" type="xs:positiveInteger" />
+    </xs:extension>
+  </xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="ExternalDataType">
+  <xs:simpleContent>
+    <xs:extension base="xs:token">
+      <xs:attribute name="rows" type="xs:positiveInteger" />
+    </xs:extension>
+  </xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="TableType">
+  <xs:annotation>
+    <xs:documentation>
+      The TableType defines a data table. The column subelements describe the
+      columns in the table. The number of Column subelements should match the
+      number of columns in the data table. The Columns may have their position
+      within the table explicitly specified.
+
+      This type is extensible with vendor or application specific elements.
+      These may appear after the standard elements. If possible, these elements
+      will be validated as conforming to their schema. Additionally, vender and 
+      application specific attributes may be added.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:choice>
+    <xs:element name="External-File" type="SupplementLinkType" />
+    <xs:sequence>
+      <xs:element name="Title" type="TitleType" minOccurs="0" />
+      <xs:element name="Column" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Name" type="xs:token" />
+            <xs:element name="Type" type="xs:token" minOccurs="0" />
+            <xs:element name="Unit" type="xs:token" minOccurs="0" />
+            <xs:element name="Description" type="xs:string"  minOccurs="0" />
+            <xs:element name="Link-Prefix" type="xs:token" minOccurs="0" />
+            <xs:element name="Link-Suffix" type="xs:token" minOccurs="0" />
+            <xs:element name="Link-Delimiter" type="xs:token" minOccurs="0" />
+          </xs:sequence>
+          <xs:attribute name="position" type="xs:nonNegativeInteger" />
+        </xs:complexType>
+      </xs:element>
+      <xs:choice>
+        <xs:annotation>
+          <xs:documentation>
+            The data table may either be included within via the
+            Internal-Data subelement, or be external. How external
+            data tables are associated with a data table definition is
+            beyond the scope of this schema. It is highly suggested
+            that the value of the External-Data element be used as an
+            reference that is dynamically bound, in an implementation-
+            specific manner, by each application. Expecting the value
+            to be a path to an external file, or specific URI is not
+            portable and not recommended.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:element name="Internal-Data" type="InternalDataType" />
+        <xs:element name="External-Data" type="ExternalDataType" />
+      </xs:choice>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0"
+        maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:any namespace="##other" processContents="lax" minOccurs="0"
+       maxOccurs="unbounded" />
+  </xs:choice>
+  <xs:anyAttribute namespace="##other" processContents="lax" />
+</xs:complexType>
+
+<!--=============================-->
+<!-- Platform Elements and Types -->
+<!--=============================-->
+
+<xs:simpleType name="TechnologyType">
+  <xs:annotation>
+    <xs:documentation>
+      The predefined platform technology types.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:token">
+    <xs:enumeration value="high-throughput sequencing" />
+    <xs:enumeration value="in situ oligonucleotide" />
+    <xs:enumeration value="spotted oligonucleotide" />
+    <xs:enumeration value="mixed spotted oligonucleotide" />
+    <xs:enumeration value="spotted DNA/cDNA" />
+    <xs:enumeration value="spotted peptide or protein" />
+    <xs:enumeration value="antibody" />
+    <xs:enumeration value="tissue" />
+    <xs:enumeration value="oligonucleotide beads" />
+    <xs:enumeration value="MS" />
+    <xs:enumeration value="SAGE NlaIII" />
+    <xs:enumeration value="SAGE Sau3A" />
+    <xs:enumeration value="SAGE RsaI" />
+    <xs:enumeration value="SARST" />
+    <xs:enumeration value="MPSS" />
+    <xs:enumeration value="RT-PCR" />
+    <xs:enumeration value="other" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="DistributionType">
+  <xs:annotation>
+    <xs:documentation>
+      The predefined platform distribution types.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:token">
+    <xs:enumeration value="commercial" />
+    <xs:enumeration value="non-commercial" />
+    <xs:enumeration value="custom-commercial" />
+    <xs:enumeration value="virtual" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:element name="Platform">
+  <xs:annotation>
+    <xs:documentation>
+      A platform describes the platform that forms the basis of a Sample. Some
+      platforms are virtual and do not phyiscal exists, e.g. SAGE platforms.
+
+      This element is extensible with vendor or application specific elements.
+      These may appear after the standard elements. If possible, these elements
+      will be validated as conforming to their schema. Additionally, vender and 
+      application specific attributes may be added.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:complexType>
+    <xs:choice>
+      <xs:element name="Accession" type="AccessionType" />
+      <xs:sequence>
+        <xs:element name="Status" type="StatusType" minOccurs="0"
+         maxOccurs="unbounded" />
+        <xs:element name="Title"  type="TitleType" >
+          <xs:annotation>
+            <xs:documentation>
+              Submission Guidelines: Provide a unique title that describes your 
+              Platform. We suggest that you use the system 
+              [institution/lab][species][number of features][version], 
+              e.g., 'FHCRC Mouse 15K v1.0'.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="Accession" type="AccessionType" minOccurs="0"
+         maxOccurs="unbounded" />
+        <xs:element name="Technology" type="TechnologyType" >
+          <xs:annotation>
+            <xs:documentation>
+              Submission Guidelines: Select the category that best
+              describes the Platform technology.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="Distribution" type="DistributionType" >
+          <xs:annotation>
+            <xs:documentation>
+              Submission Guidelines: Microarrays are commercial,
+              non-commercial, or custom-commercial in accordance with
+              how the array was manufactured. Use virtual only if
+              creating a virtual definition for
+              MS, MPSS, SARST, or RT-PCR data.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="Organism" type="OrganismType" maxOccurs="unbounded" >
+          <xs:annotation>
+            <xs:documentation>
+              Submission Guidelines: Identify the organism(s) from which the 
+              features on the Platform were designed or derived. Use standard 
+              NCBI Taxonomy nomenclature.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="Manufacturer" type="ShortDescriptionType" >          
+          <xs:annotation>
+            <xs:documentation>
+              Submission Guidelines: Provide the name of the company, facility 
+              or laboratory where the Platform was manufactured or produced.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="Manufacture-Protocol" type="RequiredString" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>
+              Submission Guidelines: Describe the Platform manufacture
+              protocol Include as much detail as possible, e.g.,
+              clone/primer set identification and preparation,
+              strandedness/length, arrayer hardware/software, spotting
+              protocols. It is strongly recommended that complete
+              protocol descriptions are provided within your
+              submission. References to published protocol
+              descriptions are acceptable - please provide complete
+              citation information. Links to web sites that provide
+              protocol information are not recommended since web
+              addresses and content often change.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="Catalog-Number" type="xs:token" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>
+              Submission Guidelines: Provide the manufacturer catalog number 
+              for commercially-available Platforms.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="Support" type="ShortDescriptionType" minOccurs="0" >
+          <xs:annotation>
+            <xs:documentation>
+              Submission Guidelines: Provide the surface type of the Platform, 
+              e.g., glass, nitrocellulose, nylon, silicon, unknown.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="Coating" type="ShortDescriptionType" minOccurs="0" >  
+          <xs:annotation>
+            <xs:documentation>
+              Submission Guidelines: Provide the coating of the Platform,
+              e.g., aminosilane, quartz, polysine, unknown.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="Description" type="xs:string" minOccurs="0" >
+          <xs:annotation>
+            <xs:documentation>
+              Submission Guidelines: Provide any additional descriptive 
+              information not captured in another field, e.g., array and/or 
+              feature physical dimensions, element grid system.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="Web-Link" type="WebURIType" minOccurs="0" 
+         maxOccurs="unbounded" >
+          <xs:annotation>
+            <xs:documentation>
+              Submission Guidelines: Specify a web link(s) that directs 
+              users to supplementary information about the Platform. Please 
+              restrict to web sites that you know are stable. 
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="Pubmed-ID" type="xs:nonNegativeInteger"
+         minOccurs="0" maxOccurs="unbounded" >          
+          <xs:annotation>
+            <xs:documentation>
+              Submission Guidelines: Specify a valid PubMed identifier 
+              (PMID) that references a published article that describes the 
+              Platform. 
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="Citation" type="xs:string" minOccurs="0"
+         maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>
+              Submission Guidelines: When a published article that
+              describes the Platform does not have a PubMed identifier, cite it
+              here.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Contributor-Ref" type="OrderedRefType" />
+          <xs:element name="Contributor" type="OrderedContributorType" />
+        </xs:choice>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Contact-Ref" type="OrderedRefType" />
+          <xs:element name="Contact" type="OrderedContributorType" />
+        </xs:choice>
+        <xs:element name="Supplementary-Data" type="SupplementLinkType"
+         minOccurs="0" maxOccurs="unbounded" >         
+          <xs:annotation>
+            <xs:documentation>
+              Submission Guidelines: Examples of Platform supplementary 
+              data include original GAL and CSV files. Supplementary files 
+              can be zipped or tarred together with the MINiML file at time 
+              of submission. 
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element  name="Relation" type="RelationType" minOccurs="0"
+          maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>
+              A relation defines a relationship this platform has with
+              another object.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="Data-Table" type="TableType" minOccurs="0" />
+        <xs:any namespace="##other" processContents="lax" minOccurs="0"
+         maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:choice>
+    <xs:attribute name="iid" type="xs:ID" use="required" />
+    <xs:anyAttribute namespace="##other" processContents="lax" />
+  </xs:complexType>
+
+  <!-- uniqueness constraints -->
+
+  <xs:unique name="PlatformTableTitle">
+    <xs:selector xpath="MINiML:Data-Table" />
+    <xs:field xpath="Title" />
+  </xs:unique>
+
+</xs:element>
+
+<!--=============================-->
+<!-- Sample Elements and Types -->
+<!--=============================-->
+
+<xs:simpleType name="SampleType">
+  <xs:annotation>
+     <xs:documentation>
+       The predefined sample types.
+     </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:token">
+    <xs:enumeration value="RNA" />
+    <xs:enumeration value="genomic" />
+    <xs:enumeration value="protein" />
+    <xs:enumeration value="SAGE" />
+    <xs:enumeration value="MPSS" />
+    <xs:enumeration value="SARST" />
+    <xs:enumeration value="mixed" />
+    <xs:enumeration value="other" />
+    <xs:enumeration value="SRA" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="MoleculeType">
+  <xs:annotation>
+    <xs:documentation>
+      The predefined Sample molecules.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:token">
+    <xs:enumeration value="genomic DNA" />
+    <xs:enumeration value="polyA RNA" />
+    <xs:enumeration value="total RNA" />
+    <xs:enumeration value="cytoplasmic RNA" />
+    <xs:enumeration value="nuclear RNA" />
+    <xs:enumeration value="protein" />
+    <xs:enumeration value="other" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="LibraryStrategyType">
+  <xs:annotation>
+    <xs:documentation>
+      The predefined SRA library strategies.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:token">
+    <xs:enumeration value="ChIP-Seq" />
+    <xs:enumeration value="MNase-Seq" />
+    <xs:enumeration value="EST" />
+    <xs:enumeration value="FL-cDNA" />
+    <xs:enumeration value="CTS" />
+    <xs:enumeration value="BARCODE" />
+    <xs:enumeration value="CLONEEND" />
+    <xs:enumeration value="WGS" />
+    <xs:enumeration value="WCS" />
+    <xs:enumeration value="CLONE" />
+    <xs:enumeration value="POOLCLONE" />
+    <xs:enumeration value="AMPLICON" />
+    <xs:enumeration value="FINISHING" />
+    <xs:enumeration value="OTHER" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="LibrarySourceType">
+  <xs:annotation>
+    <xs:documentation>
+      The predefined SRA library sources.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:token">
+    <xs:enumeration value="genomic" />
+    <xs:enumeration value="non-genomic" />
+    <xs:enumeration value="synthetic" />
+    <xs:enumeration value="viral RNA" />
+    <xs:enumeration value="other" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="LibrarySelectionType">
+  <xs:annotation>
+    <xs:documentation>
+      The predefined SRA library selections.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:token">
+    <xs:enumeration value="ChIP" />
+    <xs:enumeration value="MNase" />
+    <xs:enumeration value="RANDOM" />
+    <xs:enumeration value="MF" />
+    <xs:enumeration value="MSLL" />
+    <xs:enumeration value="HMPR" />
+    <xs:enumeration value="cDNA" />
+    <xs:enumeration value="PCR" />
+    <xs:enumeration value="RANDOM PCR" />
+    <xs:enumeration value="RT-PCR" />
+    <xs:enumeration value="CF-S" />
+    <xs:enumeration value="CF-M" />
+    <xs:enumeration value="CF-H" />
+    <xs:enumeration value="CF-T" />
+    <xs:enumeration value="other" />
+    <xs:enumeration value="unspecified" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="PredefinedInstrumentModelType">
+  <xs:annotation>
+    <xs:documentation>
+      The predefined instrument models.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:token">
+    <xs:enumeration value="Illumina Genome Analyzer" />
+    <xs:enumeration value="Illumina Genome Analyzer II" />
+    <xs:enumeration value="Illumina Genome Analyzer IIx" />
+    <xs:enumeration value="Illumina HiSeq 2000" />
+    <xs:enumeration value="Illumina HiSeq 1000" />
+    <xs:enumeration value="Illumina MiSeq" />
+    <xs:enumeration value="AB SOLiD System" />
+    <xs:enumeration value="AB SOLiD System 2.0" />
+    <xs:enumeration value="AB SOLiD System 3.0" />
+    <xs:enumeration value="AB SOLiD 4 System" />
+    <xs:enumeration value="AB SOLiD 4hq System" />
+    <xs:enumeration value="AB SOLiD PI System" />
+    <xs:enumeration value="AB SOLiD 5500xl SOLiD System" />
+    <xs:enumeration value="AB SOLiD 5500 SOLiD System" />
+    <xs:enumeration value="454 GS" />
+    <xs:enumeration value="454 GS 20" />
+    <xs:enumeration value="454 GS FLX" />
+    <xs:enumeration value="454 GS Junior" />
+    <xs:enumeration value="454 GS FLX Titanium" />
+    <xs:enumeration value="Helicos HeliScope" />
+    <xs:enumeration value="PacBio RS" />
+    <xs:enumeration value="Complete Genomics" />
+    <xs:enumeration value="Ion Torrent PGM" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="InstrumentModelType">
+  <xs:annotation>
+    <xs:documentation>
+      SRA Instrument model.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:choice>
+    <xs:element name="Predefined" type="PredefinedInstrumentModelType" />      
+    <xs:element name="Other" type="xs:token" />
+  </xs:choice>
+</xs:complexType>
+
+<xs:complexType name="CharacteristicsType">
+  <xs:simpleContent>
+    <xs:extension base="RequiredString">
+      <xs:attribute name="tag" type="RequiredToken" />
+    </xs:extension>
+  </xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="ChannelType">
+  <xs:annotation>
+    <xs:documentation>
+      Channels exists within a Sample.
+
+      This type is extensible with vendor or application specific elements.
+      These may appear after the standard elements. If possible, these elements
+      will be validated as conforming to their schema. Additionally, vender and 
+      application specific attributes may be added.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="Source" type="ShortDescriptionType" >      
+    <xs:annotation>
+        <xs:documentation>
+          Submission Guidelines: Briefly identify the biological
+          material and the experimental variable(s) for this Sample,
+          e.g., vastus lateralis muscle, exercised, 60 min.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="Organism" type="OrganismType"  minOccurs="0" 
+      maxOccurs="unbounded" >      
+      <xs:annotation>
+        <xs:documentation>
+          Submission Guidelines: Identify the organism(s) from which
+          the biological material was derived. Use standard NCBI
+          Taxonomy nomenclature.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="Characteristics" type="CharacteristicsType" minOccurs="0"
+      maxOccurs="unbounded" >
+      <xs:annotation>
+        <xs:documentation>
+          Submission Guidelines: List all available characteristics of the 
+          biological source, e.g.,
+          Strain: C57BL/6 
+          Gender: female 
+          Age: 45 days
+          Tissue: bladder tumor
+          Tumor stage: Ta
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="Biomaterial-Provider" type="xs:token" minOccurs="0"
+     maxOccurs="unbounded" >
+      <xs:annotation>
+        <xs:documentation>
+          Submission Guidelines: Specify the name of the company, laboratory or 
+          person that provided the biological material.
+        </xs:documentation>      
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="Treatment-Protocol" type="xs:string" minOccurs="0" >
+      <xs:annotation>
+        <xs:documentation>
+          Submission Guidelines: Describe any treatments applied to
+          the biological material prior to extract preparation. It is
+          strongly recommended that complete protocol descriptions are
+          provided within your submission. References to published
+          protocol descriptions are acceptable - please provide
+          complete citation information. Links to web sites that
+          provide protocol information are not recommended since web
+          addresses and content often change.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="Growth-Protocol" type="xs:string" minOccurs="0" >
+      <xs:annotation>
+        <xs:documentation>
+          Submission Guidelines: Describe the conditions that were
+          used to grow or maintain organisms or cells prior to extract
+          preparation.  It is strongly recommended that complete
+          protocol descriptions are provided within your
+          submission. References to published protocol descriptions
+          are acceptable - please provide complete citation
+          information. Links to web sites that provide protocol
+          information are not recommended since web addresses and
+          content often change.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="Molecule" type="MoleculeType" >
+      <xs:annotation>
+        <xs:documentation>
+          Submission Guidelines: Specify the type of molecule that was
+          extracted from the biological material.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="Extract-Protocol" type="xs:string" minOccurs="0" >
+      <xs:annotation>
+        <xs:documentation>
+          Submission Guidelines: Describe the protocol used to isolate
+          the extract material. It is strongly recommended that
+          complete protocol descriptions are provided within your
+          submission. References to published protocol descriptions
+          are acceptable - please provide complete citation
+          information. Links to web sites that provide protocol
+          information are not recommended since web addresses and
+          content often change.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="Label" type="ShortDescriptionType" minOccurs="0" >
+      <xs:annotation>
+        <xs:documentation>
+          Submission Guidelines: Specify the compound used to label
+          the extract e.g., biotin, Cy3, Cy5, 33P.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="Label-Protocol" type="xs:string" minOccurs="0" >
+      <xs:annotation>
+        <xs:documentation>
+          Submission Guidelines: Describe the protocol used to label
+          the extract. It is strongly recommended that complete
+          protocol descriptions are provided within your
+          submission. References to published protocol descriptions
+          are acceptable - please provide complete citation
+          information. Links to web sites that provide protocol
+          information are not recommended since web addresses and
+          content often change.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:element>
+  </xs:sequence>
+  <xs:attribute name="position" type="xs:nonNegativeInteger" />
+  <xs:anyAttribute namespace="##other" processContents="lax" />
+</xs:complexType>
+
+<xs:element name="Sample">
+  <xs:annotation>
+    <xs:documentation>
+      A Sample describes the properties of one sample. A sample has
+      one or more channels and a data table of measured values.
+
+      This element is extensible with vendor or application specific
+      elements. These may appear after the standard elements. If
+      possible, these elements will be validated as conforming to
+      their schema. Additionally, vender and application specific
+      attributes may be added.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:complexType>
+    <xs:choice>
+      <xs:element name="Accession" type="AccessionType" />
+      <xs:sequence>
+        <xs:element name="Status" type="StatusType" minOccurs="0"
+         maxOccurs="unbounded" />
+        <xs:element name="Title" type="TitleType" >
+         <xs:annotation>
+           <xs:documentation>
+             Submission Guidelines: Provide a unique title that
+             describes this Sample. We suggest that you use the system
+             [biomaterial][condition(s)][replicate number] e.g.,
+             Muscle_exercised_60min_rep2.
+           </xs:documentation>
+         </xs:annotation>
+        </xs:element>
+        <xs:element name="Accession" type="AccessionType" minOccurs="0"
+         maxOccurs="unbounded" />
+        <xs:element name="Type" type="SampleType" minOccurs="0" >
+         <xs:annotation>
+           <xs:documentation>
+             Submission Guidelines: Supply for SAGE submissions only
+             (this field is derived automatically for other Sample
+             types using the Molecule type).
+           </xs:documentation>
+         </xs:annotation>
+        </xs:element>
+        <xs:element name="Anchor" type="xs:token" minOccurs="0" >
+         <xs:annotation>
+           <xs:documentation>
+             Submission Guidelines: Supply for SAGE submissions
+             only. State the enzyme anchor, usually NlaIII or Sau3A
+           </xs:documentation>
+         </xs:annotation>
+        </xs:element>
+        <xs:element name="Tag-Length" type="xs:positiveInteger" minOccurs="0">
+         <xs:annotation>
+           <xs:documentation>
+             Submission Guidelines: Supply for SAGE submissions only. State the 
+             base pair length of the SAGE tags, excluding anchor sequence.
+           </xs:documentation>
+         </xs:annotation>
+        </xs:element>
+        <xs:element name="Tag-Count" type="xs:positiveInteger" minOccurs="0" >
+         <xs:annotation>
+           <xs:documentation>
+             Submission Guidelines: Supply for SAGE submissions
+             only. State the sum number of tags quantified in this
+             Sample.
+           </xs:documentation>
+         </xs:annotation>
+        </xs:element>
+        <xs:element name="Channel-Count" type="xs:positiveInteger" >
+         <xs:annotation>
+           <xs:documentation>
+             Submission Guidelines: State the number of channels in
+             the experiment, e.g., two-color hybridizations are
+             typically 2-channel, Affymetrix hybridizations are
+             typically 1-channel.
+           </xs:documentation>
+         </xs:annotation>
+        </xs:element>
+        <xs:element name="Channel" type="ChannelType" maxOccurs="unbounded" />
+        <xs:element name="Hybridization-Protocol" type="xs:string"
+         minOccurs="0" >
+         <xs:annotation>
+           <xs:documentation>
+             Submission Guidelines: Describe the protocols used for
+             hybridization, blocking and washing, and any
+             post-processing steps such as staining. It is strongly
+             recommended that complete protocol descriptions are
+             provided within your submission. References to published
+             protocol descriptions are acceptable - please provide
+             complete citation information. Links to web sites that
+             provide protocol information are not recommended since
+             web addresses and content often change.
+           </xs:documentation>
+         </xs:annotation>
+        </xs:element>
+        <xs:element name="Scan-Protocol" type="xs:string" minOccurs="0" >
+         <xs:annotation>
+           <xs:documentation>
+             Submission Guidelines: Describe the scanning and image 
+             acquisition protocols, hardware, and software. It is strongly 
+             recommended that complete protocol descriptions are provided 
+             within your submission. References to published protocol 
+             descriptions are acceptable - please provide complete citation 
+             information. Links to web sites that provide protocol information 
+             are not recommended since web addresses and content often change.
+           </xs:documentation>
+         </xs:annotation>
+        </xs:element>
+        <xs:element name="Description" type="RequiredString" minOccurs="0">
+         <xs:annotation>
+           <xs:documentation>
+             Submission Guidelines: Include any additional information not 
+             provided in the other fields, or paste in broad descriptions 
+             that cannot be easily dissected into the other fields.
+           </xs:documentation>
+         </xs:annotation>
+        </xs:element>
+        <xs:element name="Data-Processing" type="RequiredString" minOccurs="0">
+         <xs:annotation>
+           <xs:documentation>
+             Submission Guidelines: Provide details of how data in the 
+             VALUE column of your data table were generated and calculated, 
+             i.e., normalization method, data selection procedures and 
+             parameters, transformation algorithm and scaling parameters. 
+           </xs:documentation>
+         </xs:annotation>
+        </xs:element>
+        <xs:element name="Platform-Ref" type="RefType" minOccurs="0" >
+         <xs:annotation>
+           <xs:documentation>
+             Submission Guidelines: Reference the Platform iid upon which 
+             this Sample is based.
+           </xs:documentation>
+         </xs:annotation>
+        </xs:element>
+        <xs:sequence minOccurs="0">
+         <xs:element name="Library-Strategy" type="LibraryStrategyType" minOccurs="0"/>
+         <xs:element name="Library-Source" type="LibrarySourceType" />
+         <xs:element name="Library-Selection" type="LibrarySelectionType" />
+         <xs:element name="Instrument-Model" type="InstrumentModelType" />
+         <xs:element name="Barcode" type="RequiredString" minOccurs="0" />
+        </xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Contact-Ref" type="OrderedRefType" />
+        <xs:element name="Contact" type="OrderedContributorType" />
+        </xs:choice>
+        <xs:element name="Supplementary-Data" type="SupplementLinkType"
+         minOccurs="0" maxOccurs="unbounded" >
+         <xs:annotation>
+           <xs:documentation>
+             Submission Guidelines: Examples of Sample supplementary 
+             data include original GPR, CEL, EXP, RPT, CAB, and TIFF 
+             files. Supplementary files can be zipped or tarred together 
+             with the MINiML file at time of submission. 
+           </xs:documentation>
+         </xs:annotation>
+        </xs:element>
+        <xs:element name="Raw-Data" type="SupplementLinkType"
+         minOccurs="0" maxOccurs="unbounded" >
+         <xs:annotation>
+           <xs:documentation>
+             Submission Guidelines: SRA raw data files.
+           </xs:documentation>
+         </xs:annotation>
+        </xs:element>
+        <xs:element  name="Relation" type="RelationType" minOccurs="0"
+         maxOccurs="unbounded">
+         <xs:annotation>
+           <xs:documentation>
+             A relation defines a relationship this sample has with
+             another object.
+           </xs:documentation>
+         </xs:annotation>
+        </xs:element>
+        <xs:element name="Data-Table" type="TableType" minOccurs="0" />
+        <xs:any namespace="##other" processContents="lax" minOccurs="0"
+         maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:choice>
+    <xs:attribute name="iid" type="xs:ID" use="required" />
+    <xs:anyAttribute namespace="##other" processContents="lax" />
+  </xs:complexType>
+
+  <!-- uniqueness constraints -->
+
+  <xs:unique name="UniqueSourceNames">
+    <xs:selector xpath="MINiML:Channel" />
+    <xs:field xpath="MINiML:Source" />
+  </xs:unique>
+  <xs:unique name="SampleTableTitle">
+    <xs:selector xpath="MINiML:Data-Table" />
+    <xs:field xpath="Title" />
+  </xs:unique>
+
+</xs:element>
+
+<!--===============================-->
+<!-- Series Elements and Types -->
+<!--===============================-->
+
+<!-- Variable Subset Types -->
+
+<xs:simpleType name="VariableFactorIDType">
+  <xs:annotation>
+    <xs:documentation>
+      Series variable types.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:token">
+    <xs:enumeration value="dose" />
+    <xs:enumeration value="time" />
+    <xs:enumeration value="tissue" />
+    <xs:enumeration value="strain" />
+    <xs:enumeration value="gender" />
+    <xs:enumeration value="cell line" />
+    <xs:enumeration value="development stage" />
+    <xs:enumeration value="age" />
+    <xs:enumeration value="agent" />
+    <xs:enumeration value="cell type" />
+    <xs:enumeration value="infection" />
+    <xs:enumeration value="isolate" />
+    <xs:enumeration value="metabolism" />
+    <xs:enumeration value="shock" />
+    <xs:enumeration value="stress" />
+    <xs:enumeration value="temperature" />
+    <xs:enumeration value="speciman" />
+    <xs:enumeration value="disease state" />
+    <xs:enumeration value="protocol" />
+    <xs:enumeration value="growth protocol" />
+    <xs:enumeration value="other" />
+    <xs:enumeration value="genotype/variation" />
+    <xs:enumeration value="species" />
+    <xs:enumeration value="individual" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="VariableType">
+  <xs:annotation>
+    <xs:documentation>
+      A description of one variable of an series and its associated
+      samples.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="Factor" type="VariableFactorIDType"/>
+    <xs:element name="Description" type="xs:string" />
+    <xs:element name="Sample-Ref" type="OrderedRefType"
+     maxOccurs="unbounded" />
+  </xs:sequence>
+  <xs:attribute name="position" type="xs:nonNegativeInteger" />
+</xs:complexType>
+
+<!-- Repeats Subset Types -->
+
+<xs:simpleType name="RepeatsFactorIDType">
+  <xs:annotation>
+    <xs:documentation>
+      Series repeats types.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:token">
+    <xs:enumeration value="biological replicate" />
+    <xs:enumeration value="technical replicate - extract" />
+    <xs:enumeration value="technical replicate - labeled-extract" />
+    <xs:enumeration value="none" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="RepeatsType">
+  <xs:annotation>
+    <xs:documentation>
+      A description of an repeats of an series and its associated
+      samples.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:sequence>
+    <xs:element name="Factor" type="RepeatsFactorIDType" />
+    <xs:element name="Sample-Ref" type="OrderedRefType"
+     maxOccurs="unbounded" />
+  </xs:sequence>
+  <xs:attribute name="position" type="xs:nonNegativeInteger" />
+</xs:complexType>
+
+
+<!-- The Series Element -->
+
+<xs:element name="Series">
+  <xs:annotation>
+    <xs:documentation>
+      An series is a collection of related samples and a description of
+      how they form an series.
+
+      This element is extensible with vendor or application specific elements.
+      These may appear after the standard elements. If possible, these elements
+      will be validated as conforming to their schema. Additionally, vender and 
+      application specific attributes may be added.
+    </xs:documentation>
+  </xs:annotation>
+  <xs:complexType>
+    <xs:choice>
+      <xs:element name="Accession" type="AccessionType" />
+      <xs:sequence>
+        <xs:element name="Status" type="StatusType" minOccurs="0"
+         maxOccurs="unbounded" />
+        <xs:element name="Title" type="TitleType" >
+         <xs:annotation>
+           <xs:documentation>
+             Submission Guidelines: Provide a unique title that describes 
+             the overall study.
+           </xs:documentation>
+         </xs:annotation>
+        </xs:element>
+        <xs:element name="Accession" type="AccessionType" minOccurs="0"
+         maxOccurs="unbounded" />
+        <xs:element name="Pubmed-ID" type="xs:nonNegativeInteger" minOccurs="0"
+         maxOccurs="unbounded" >
+         <xs:annotation>
+           <xs:documentation>
+             Submission Guidelines: Specify valid PubMed identifier(s) (PMID) 
+             that reference a published article describing this study. Most 
+             commonly, this information is not available at the time of 
+             submission - it can be added later once the data are published.
+           </xs:documentation>
+         </xs:annotation>
+        </xs:element>
+        <xs:element name="Citation" type="xs:string" minOccurs="0"
+         maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>
+              Submission Guidelines: When a published article that
+              describes this study does not have a PubMed identifier, cite it
+              here.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="Web-Link" type="WebURIType" minOccurs="0"
+         maxOccurs="unbounded" >
+         <xs:annotation>
+           <xs:documentation>
+             Submission Guidelines: Specify a web link(s) that directs users 
+             to supplementary information about the study. Please restrict to 
+             web sites that you know are stable. 
+           </xs:documentation>
+         </xs:annotation>
+        </xs:element>
+        <xs:element name="Summary" type="RequiredString" >
+         <xs:annotation>
+           <xs:documentation>
+             Submission Guidelines: Summarize the goals and objectives of 
+             this study. The abstract from the associated publication may be 
+             suitable.
+           </xs:documentation>
+         </xs:annotation>
+        </xs:element>
+        <xs:element name="Overall-Design" type="RequiredString" minOccurs="0">
+         <xs:annotation>
+           <xs:documentation>
+             Submission Guidelines:  Provide a brief description of the 
+             experimental design. Indicate how many Samples are analyzed, 
+             if replicates are included, are there control and/or reference 
+             Samples, dye-swaps, etc.
+           </xs:documentation>
+         </xs:annotation>
+        </xs:element>
+        <xs:element name="Type" type="xs:string" minOccurs = "0" 
+           maxOccurs="unbounded" />
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Contributor-Ref" type="OrderedRefType" />
+          <xs:element name="Contributor" type="OrderedContributorType" />
+        </xs:choice>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Contact-Ref" type="OrderedRefType" />
+        <xs:element name="Contact" type="OrderedContributorType" />
+        </xs:choice>
+        <xs:element name="Sample-Ref" type="OrderedRefType"
+         maxOccurs="unbounded" >
+         <xs:annotation>
+           <xs:documentation>
+             Submission Guidelines: Reference all the Sample iid that make 
+             up this Series.
+           </xs:documentation>
+         </xs:annotation>
+        </xs:element>
+        <xs:element name="Variable" type="VariableType" minOccurs="0"
+         maxOccurs="unbounded" />
+        <xs:element name="Repeats" type="RepeatsType" minOccurs="0"
+         maxOccurs="unbounded" />
+        <xs:element name="Supplementary-Data" type="SupplementLinkType"
+         minOccurs="0" maxOccurs="unbounded" >
+         <xs:annotation>
+           <xs:documentation>
+             Submission Guidelines: Series supplementary data is usually 
+             a TAR file that GEO staff generate from all Platform and 
+             Sample supplementary files associated with this Series. 
+             It is not necessary for submitters to generate this TAR file.
+           </xs:documentation>
+         </xs:annotation>
+        </xs:element>
+        <xs:element  name="Relation" type="RelationType" minOccurs="0"
+          maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>
+              A relation defines a relationship this series has with
+              another object.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="Data-Table" type="TableType" minOccurs="0"
+          maxOccurs="unbounded" />
+        <xs:any namespace="##other" processContents="lax" minOccurs="0"
+          maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:choice>
+    <xs:attribute name="iid" type="xs:ID" use="required" />
+    <xs:anyAttribute namespace="##other" processContents="lax" />
+  </xs:complexType>
+
+  <!-- uniqueness constraints -->
+
+  <xs:unique name="SeriesTableTitle">
+    <xs:selector xpath="MINiML:Data-Table" />
+    <xs:field xpath="Title" />
+  </xs:unique>
+
+  <!-- cross reference constraints -->
+
+  <xs:key name="SampleRefs">
+    <xs:selector xpath="MINiML:Sample-Ref" />
+    <xs:field xpath="@ref" />
+  </xs:key>
+  <xs:keyref name="SubsetRefs" refer="SampleRefs">
+     <xs:selector xpath="MINiML:Variable/Sample-Ref|MINiML:Repeats/Sample-Ref" />
+     <xs:field xpath="@ref" />
+  </xs:keyref>
+
+</xs:element>
+
+</xs:schema>

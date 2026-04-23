@@ -9,8 +9,10 @@ from modules.human_fix import human_fix
 
 class RELRaE:
 
-    def __init__(self, schema):
+    def __init__(self, schema, namespace, prefix):
         self.schema = xmlschema.XMLSchema(open(f"schema/{schema}"))
+        self.namespace = namespace
+        self.prefix = prefix
         self.onto = Graph()
         self.errors = []
 
