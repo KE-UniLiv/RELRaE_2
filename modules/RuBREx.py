@@ -1,16 +1,20 @@
 import yaml
+from lxml.etree import QName
 from rdflib import Graph
-from utils import clean_namespace, parse_config
-from xmlschema.validators import XsdAnyAttribute, XsdGroup, XsdElement
+from rdflib.namespace import RDF, RDFS, OWL
+from utils import clean_namespace, parse_config, generate_provenance, lower_first_char, capitalise_first_char
+from xmlschema.validators import XsdAnyAttribute, XsdGroup, XsdElement, XsdAtomicBuiltin
 
 
 class RuBREx:
 
-    def __init__(self, schema, onto):
+    def __init__(self, schema, onto, prefix, namespace):
         self.load_config()
         self.errors = []
         self.schema = schema
         self.onto = onto
+        self.prefix = prefix
+        self.namespace = namespace
 
     def load_config(self):
         CONFIG = "config/RuBREx_conf.txt"
@@ -43,11 +47,13 @@ class RuBREx:
         for a in attributes:
             if isinstance(a, str):
                 if getattr(concept, a, None):
-                    self.generate_fragment(concept, {"attribute": a})
+                    self.generate_fragment(
+                        concept, {"attribute": a}, rule["emit"])
             else:
                 if isinstance(a, XsdAnyAttribute):
                     continue
-                self.generate_fragment(concept, {"attribute": a})
+                self.generate_fragment(
+                    concept, {"attribute": a}, rule["emit"])
 
     def fetch_children(self, concept, selector):
         children = []
@@ -71,7 +77,7 @@ class RuBREx:
         if children is not None:
             print(f"Matched with rule {rule["name"]}")
         for c in children:
-            self.generate_fragment(concept, {"child": c})
+            self.generate_fragment(concept, {"child": c}, rule["emit"])
 
     def has_choice(self, concept, rule):
         def walk(component, choice_seen):
@@ -102,7 +108,7 @@ class RuBREx:
         if child_choice is not None and child_choice != []:
             print(f"Matched with rule {rule["name"]}")
         for c in child_choice:
-            self.generate_fragment(concept, {"child": c})
+            self.generate_fragment(concept, {"child": c}, rule["emit"])
 
     def process_concept(self, concept, concept_type):
         for rule in self.rules:
@@ -112,10 +118,58 @@ class RuBREx:
                             ["pattern"])(concept, rule)
                 else:
                     print(f"Matched with rule {rule["name"]}")
+                    self.generate_fragment(concept, {}, rule["emit"])
 
-    def generate_fragment(self, concept, parts):
+    def get_named_base_type(self, concept):
+        t = concept
+        while getattr(t, 'base_type', None) is not None:
+            b = t.base_type
+            if getattr(b, 'name', None):
+                return b
+            t = b
+        return None
+
+    def get_elem_name(self, concept):
+        if concept.name:
+            xml_concept = QName(concept.name).localname
+        else:
+            xml_concept = QName(
+                self.get_named_base_type(concept).name).localname
+        return capitalise_first_char(xml_concept)
+
+    def is_built_in(self, concept):
+        if isinstance(concept.base_type, XsdAtomicBuiltin):
+            return self.get_elem_name(concept.base_type)
+        elif isinstance(concept, XsdAtomicBuiltin):
+            return self.get_elem_name(concept)
+        else:
+            return self.is_built_in(concept.base_type)
+
+    def is_boolean(self, concept):
+        datatype = self.is_built_in(concept.type)
+        if datatype == "Boolean":
+            return "is"
+        else:
+            return "has"
+
+    def check_datatype(self, concept):
+        rdfs_string = f"""xsd:{lower_first_char(
+            self.is_built_in(concept.type))}"""
+        return rdfs_string
+
+    def generate_fragment(self, concept, parts, emit):
         print(f"{clean_namespace(concept.name)} is linked to {
               parts}")
+        local_graph = Graph()
+        local_graph.bind("rdf", RDF)
+        local_graph.bind("rdfs", RDFS)
+        local_graph.bind("owl", OWL)
+        local_graph.bind(self.prefix, self.namespace)
+
+        prov_block = generate_provenance(
+            self.prefix, "Rubrex", concept.local_name)
+
+        graph_str = eval(emit)
 
     def match_concepts(self):
         # NOTE: Only XML 1.0 supported currently

@@ -1,4 +1,5 @@
-from rdflib import Graph
+from rdflib import Graph, Namespace
+from rdflib.namespace import RDF, RDFS, OWL
 import xmlschema
 
 
@@ -11,14 +12,19 @@ class RELRaE:
 
     def __init__(self, schema, namespace, prefix):
         self.schema = xmlschema.XMLSchema(open(f"schema/{schema}"))
-        self.namespace = namespace
+        self.namespace = Namespace(namespace)
         self.prefix = prefix
         self.onto = Graph()
         self.errors = []
 
+        self.onto.bind('rdf', RDF)
+        self.onto.bind('rdfs', RDFS)
+        self.onto.bind('owl', OWL)
+        self.onto.bind(self.prefix, self.namespace)
+
     def RuBREx(self):
         # TODO:
-        m_rubrex = RuBREx(self.schema, self.onto)
+        m_rubrex = RuBREx(self.schema, self.onto, self.prefix, self.namespace)
         m_rubrex.match_concepts()
 
         # NOTE: Consider the module complete

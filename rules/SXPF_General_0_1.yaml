@@ -13,8 +13,8 @@ rules:
     element_type: XsdComplexType
     emit: |
       f"""
-      {PREFIX}:{get_elem_name(element)} a owl:Class ;
-        rdfs:label '{get_elem_name(element)}'@en ;
+      {self.prefix}:{self.get_elem_name(concept)} a owl:Class ;
+        rdfs:label '{self.get_elem_name(concept)}'@en ;
         {prov_block}
       """
 
@@ -23,8 +23,8 @@ rules:
     element_type: XsdSimpleType
     emit: |
       f"""
-      {PREFIX}:has{get_elem_name(element)} a owl:DatatypeProperty ;
-        rdfs:label 'has{get_elem_name(element)}'@en ;
+      {self.prefix}:has{self.get_elem_name(concept)} a owl:DatatypeProperty ;
+        rdfs:label 'has{self.get_elem_name(concept)}'@en ;
         {prov_block}
       """
 
@@ -33,9 +33,9 @@ rules:
     element_type: XsdAtomicRestriction
     emit: |
       f"""
-      {PREFIX}:{is_boolean(element)}{get_elem_name(element)} a owl:DatatypeProperty ;
-        rdfs:label '{is_boolean(element)}{get_elem_name(element)}'@en ;
-        rdfs:range {check_datatype(element)} ;
+      {self.prefix}:{self.is_boolean(concept)}{self.get_elem_name(concept)} a owl:DatatypeProperty ;
+        rdfs:label '{self.is_boolean(concept)}{self.get_elem_name(concept)}'@en ;
+        rdfs:range {self.check_datatype(concept)} ;
         {prov_block}
       """
 
@@ -47,10 +47,10 @@ rules:
       attribute: All
     emit: |
       f"""
-      {PREFIX}:{is_boolean(concept)}{get_elem_name(concept)} a owl:DatatypeProperty ;
-        rdfs:label '{is_boolean(concept)}{get_elem_name(concept)}'@en ;
-        rdfs:domain {PREFIX}:{get_elem_name(element)} ;
-        rdfs:range {check_datatype(concept)} ;
+      {self.prefix}:{self.is_boolean(parts["attribute"])}{self.get_elem_name(parts["attribute"])} a owl:DatatypeProperty ;
+        rdfs:label '{self.is_boolean(parts["attribute"])}{self.get_elem_name(parts["attribute"])}'@en ;
+        rdfs:domain {self.prefix}:{self.get_elem_name(concept)} ;
+        rdfs:range {self.check_datatype(parts["attribute"])} ;
         {prov_block}
       """
 
@@ -62,13 +62,13 @@ rules:
         attribute: All
     emit: |
       f"""
-      {PREFIX}:has{get_elem_name(element)} a owl:DatatypeProperty ;
-        rdfs:label 'has{get_elem_name(element)}'@en ;
+      {self.prefix}:has{self.get_elem_name(concept)} a owl:DatatypeProperty ;
+        rdfs:label 'has{self.get_elem_name(concept)}'@en ;
         {prov_block}
 
-      {PREFIX}:has{get_elem_name(concept)} a owl:DatatypeProperty ;
-        rdfs:label 'has{get_elem_name(concept)}'@en ;
-        rdfs:subPropertyOf {PREFIX}:has{get_elem_name(element)};
+      {self.prefix}:has{self.get_elem_name(parts["attribute"])} a owl:DatatypeProperty ;
+        rdfs:label 'has{self.get_elem_name(parts["attribute"])}'@en ;
+        rdfs:subPropertyOf {self.prefix}:has{self.get_elem_name(concept)};
         {prov_block}
       """
 
@@ -80,7 +80,7 @@ rules:
       attribute: annotation
     emit: |
       f"""
-      {PREFIX}:{get_elem_name(element)} rdfs:comment '{str(element.annotation).replace("\n","")}'@en ;
+      {self.prefix}:{self.get_elem_name(concept)} rdfs:comment '{str(concept.annotation).replace("\n","")}'@en ;
         {prov_block}
       """
 
@@ -92,7 +92,7 @@ rules:
       attribute: annotation
     emit: |
       f"""
-      {PREFIX}:has{get_elem_name(element)} rdfs:comment '{str(element.annotation).replace("\n","")}'@en ;
+      {self.prefix}:has{self.get_elem_name(concept)} rdfs:comment '{str(concept.annotation).replace("\n","")}'@en ;
         {prov_block}
       """
 
@@ -104,7 +104,7 @@ rules:
       attribute: annotation
     emit: |
       f"""
-      {PREFIX}:has{get_elem_name(element)} rdfs:comment '{str(element.annotation).replace("\n","")}'@en ;
+      {self.prefix}:has{self.get_elem_name(concept)} rdfs:comment '{str(concept.annotation).replace("\n","")}'@en ;
         {prov_block}
       """
 
@@ -116,7 +116,7 @@ rules:
       attribute: annotation
     emit: |
       f"""
-      {PREFIX}:has{get_elem_name(element)} rdfs:comment '{str(element.annotation).replace("\n","")}'@en ;
+      {self.prefix}:has{self.get_elem_name(concept)} rdfs:comment '{str(concept.annotation).replace("\n","")}'@en ;
         {prov_block}
       """
 
@@ -128,7 +128,7 @@ rules:
       attribute: annotation
     emit: |
       f"""
-      {PREFIX}:has{get_elem_name(element)} rdfs:comment '{str(element.annotation).replace("\n","")}'@en ;
+      {self.prefix}:has{self.get_elem_name(concept)} rdfs:comment '{str(concept.annotation).replace("\n","")}'@en ;
         {prov_block}
       """
 
@@ -142,10 +142,10 @@ rules:
         relative_depth: 1
     emit: |
       f"""
-      {PREFIX}:has{get_elem_name(concept)} a owl:ObjectProperty ;
-        rdfs:label 'has{get_elem_name(concept)}'@en ;
-        rdfs:domain {PREFIX}:{get_elem_name(element)} ;
-        rdfs:range {PREFIX}:{get_elem_name(concept)} ;
+      {self.prefix}:has{self.get_elem_name(parts["child"])} a owl:ObjectProperty ;
+      rdfs:label 'has{self.get_elem_name(parts["child"])}'@en ;
+        rdfs:domain {self.prefix}:{self.get_elem_name(concept)} ;
+        rdfs:range {self.prefix}:{self.get_elem_name(parts["child"])} ;
         {prov_block}
       """
 
@@ -159,10 +159,10 @@ rules:
         relative_depth: 1
     emit: |
       f"""
-      {PREFIX}:has{get_elem_name(concept)} a owl:DatatypeProperty ;
-        rdfs:label 'has{get_elem_name(concept)}'@en ;
-        rdfs:domain {PREFIX}:{get_elem_name(element)} ;
-        rdfs:range {check_datatype(concept)} ;
+      {self.prefix}:has{self.get_elem_name(parts["child"])} a owl:DatatypeProperty ;
+        rdfs:label 'has{self.get_elem_name(parts["child"])}'@en ;
+        rdfs:domain {self.prefix}:{self.get_elem_name(concept)} ;
+        rdfs:range {self.check_datatype(parts["child"])} ;
         {prov_block}
       """
 
@@ -176,10 +176,10 @@ rules:
         relative_depth: 1
     emit: |
       f"""
-      {PREFIX}:{is_boolean(concept)}{get_elem_name(concept)} a owl:DatatypeProperty ;
-        rdfs:label '{is_boolean(concept)}{get_elem_name(concept)}'@en ;
-        rdfs:domain {PREFIX}:{get_elem_name(element)} ;
-        rdfs:range {check_datatype(concept)} ;
+      {self.prefix}:{self.is_boolean(parts["child"])}{self.get_elem_name(parts["child"])} a owl:DatatypeProperty ;
+        rdfs:label '{self.is_boolean(parts["child"])}{self.get_elem_name(parts["child"])}'@en ;
+        rdfs:domain {self.prefix}:{self.get_elem_name(concept)} ;
+        rdfs:range {self.check_datatype(parts["child"])} ;
         {prov_block}
       """
 
@@ -192,9 +192,9 @@ rules:
         relative_depth: 1
     emit: |
       f"""
-      {PREFIX}:{get_elem_name(concept)} a owl:Class ;
-        rdfs:label '{get_elem_name(concept)}'@en ;
-        rdfs:subClassOf {PREFIX}:{get_elem_name(element)} ;
+      {self.prefix}:{self.get_elem_name(parts["child"])} a owl:Class ;
+        rdfs:label '{self.get_elem_name(parts["child"])}'@en ;
+        rdfs:subClassOf {self.prefix}:{self.get_elem_name(concept)} ;
         {prov_block}
       """
 
