@@ -2,30 +2,34 @@ import yaml
 from lxml.etree import QName
 from rdflib import Graph
 from rdflib.namespace import RDF, RDFS, OWL
-from utils import clean_namespace, parse_config, generate_provenance, lower_first_char, capitalise_first_char
+from utils import clean_namespace, parse_config, generate_provenance, lower_first_char, capitalise_first_char, generate_preamble, normalise_string, get_now
 from xmlschema.validators import XsdAnyAttribute, XsdGroup, XsdElement, XsdAtomicBuiltin
+
+CONFIG = "config/RuBREx_conf.txt"
 
 
 class RuBREx:
 
     def __init__(self, schema, onto, prefix, namespace):
-        self.load_config()
+        self.log = []
+        self.load_rules()
+        self.config = parse_config(CONFIG)
         self.errors = []
         self.schema = schema
         self.onto = onto
         self.prefix = prefix
         self.namespace = namespace
 
-    def load_config(self):
-        CONFIG = "config/RuBREx_conf.txt"
+    def load_rules(self):
         self.rules = None
         rulset_path = f"rules/{parse_config(CONFIG)["ruleset"]}"
         with open(rulset_path) as file:
             try:
                 self.rules = yaml.safe_load(file).get("rules", [])
-                print(f"Ruleset {rulset_path} succesfully loaded")
+                self.log.append(f"{get_now()} Ruleset {
+                                rulset_path} succesfully loaded")
             except Exception as exc:
-                print(exc)
+                self.log.append(exc)
         if self.rules is None:
             raise Exception
 
@@ -43,7 +47,7 @@ class RuBREx:
                     for a in concept.values():
                         attributes.append(a)
         if attributes is not None:
-            print(f"Matched with rule {rule["name"]}")
+            self.log.append(f"{get_now()} Matched with rule {rule["name"]}")
         for a in attributes:
             if isinstance(a, str):
                 if getattr(concept, a, None):
@@ -75,7 +79,7 @@ class RuBREx:
             children = self.fetch_children(concept, selector)
 
         if children is not None:
-            print(f"Matched with rule {rule["name"]}")
+            self.log.append(f"{get_now()} Matched with rule {rule["name"]}")
         for c in children:
             self.generate_fragment(concept, {"child": c}, rule["emit"])
 
@@ -106,7 +110,7 @@ class RuBREx:
                 child_choice.append(c)
 
         if child_choice is not None and child_choice != []:
-            print(f"Matched with rule {rule["name"]}")
+            self.log.append(f"{get_now()} Matched with rule {rule["name"]}")
         for c in child_choice:
             self.generate_fragment(concept, {"child": c}, rule["emit"])
 
@@ -117,7 +121,8 @@ class RuBREx:
                     getattr(self, rule["selector"][0]
                             ["pattern"])(concept, rule)
                 else:
-                    print(f"Matched with rule {rule["name"]}")
+                    self.log.append(
+                        f"{get_now()} Matched with rule {rule["name"]}")
                     self.generate_fragment(concept, {}, rule["emit"])
 
     def get_named_base_type(self, concept):
@@ -158,18 +163,16 @@ class RuBREx:
         return rdfs_string
 
     def generate_fragment(self, concept, parts, emit):
-        print(f"{clean_namespace(concept.name)} is linked to {
-              parts}")
+        self.log.append(f"{get_now()} {clean_namespace(concept.name)} is linked to {
+            parts}")
         local_graph = Graph()
-        local_graph.bind("rdf", RDF)
-        local_graph.bind("rdfs", RDFS)
-        local_graph.bind("owl", OWL)
-        local_graph.bind(self.prefix, self.namespace)
 
         prov_block = generate_provenance(
             self.prefix, "Rubrex", concept.local_name)
 
-        graph_str = eval(emit)
+        graph_str = generate_preamble(self.prefix, self.namespace) + eval(emit)
+        local_graph.parse(data=graph_str, format="ttl")
+        self.onto = self.onto + local_graph
 
     def match_concepts(self):
         # NOTE: Only XML 1.0 supported currently
@@ -179,17 +182,21 @@ class RuBREx:
 
             if concept_type == "XsdElement":
                 clean_type = type(concept.type).__name__
-                print(concept_type)
-                print("--> " + type(concept.type).__name__)
-                print("--> " + clean_namespace(concept.name))
+                self.log.append(concept_type)
+                self.log.append(get_now() + " --> " +
+                                type(concept.type).__name__)
+                self.log.append(get_now() + " --> " +
+                                clean_namespace(concept.name))
                 self.process_concept(concept, clean_type)
 
             if concept_type == "XsdAttribute":
-                print(concept_type)
-                print("--> " + clean_namespace(concept.name))
+                self.log.append(concept_type)
+                self.log.append(get_now() + " --> " +
+                                clean_namespace(concept.name))
                 self.process_concept(concept, concept_type)
 
             if concept_type == "XsdAttributeGroup" and concept.name is not None:
-                print(concept_type)
-                print("--> " + clean_namespace(concept.name))
+                self.log.append(concept_type)
+                self.log.append(get_now() + " --> " +
+                                clean_namespace(concept.name))
                 self.process_concept(concept, concept_type)

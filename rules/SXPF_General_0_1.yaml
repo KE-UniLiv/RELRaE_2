@@ -80,7 +80,7 @@ rules:
       attribute: annotation
     emit: |
       f"""
-      {self.prefix}:{self.get_elem_name(concept)} rdfs:comment '{str(concept.annotation).replace("\n","")}'@en ;
+      {self.prefix}:{self.get_elem_name(concept)} rdfs:comment '{normalise_string(str(concept.annotation))}'@en ;
         {prov_block}
       """
 
@@ -92,7 +92,7 @@ rules:
       attribute: annotation
     emit: |
       f"""
-      {self.prefix}:has{self.get_elem_name(concept)} rdfs:comment '{str(concept.annotation).replace("\n","")}'@en ;
+      {self.prefix}:has{self.get_elem_name(concept)} rdfs:comment '{normalise_string(str(concept.annotation))}'@en ;
         {prov_block}
       """
 
@@ -104,7 +104,7 @@ rules:
       attribute: annotation
     emit: |
       f"""
-      {self.prefix}:has{self.get_elem_name(concept)} rdfs:comment '{str(concept.annotation).replace("\n","")}'@en ;
+      {self.prefix}:has{self.get_elem_name(concept)} rdfs:comment '{normalise_string(str(concept.annotation))}'@en ;
         {prov_block}
       """
 
@@ -116,7 +116,7 @@ rules:
       attribute: annotation
     emit: |
       f"""
-      {self.prefix}:has{self.get_elem_name(concept)} rdfs:comment '{str(concept.annotation).replace("\n","")}'@en ;
+      {self.prefix}:has{self.get_elem_name(concept)} rdfs:comment '{normalise_string(str(concept.annotation))}'@en ;
         {prov_block}
       """
 
@@ -128,7 +128,7 @@ rules:
       attribute: annotation
     emit: |
       f"""
-      {self.prefix}:has{self.get_elem_name(concept)} rdfs:comment '{str(concept.annotation).replace("\n","")}'@en ;
+      {self.prefix}:has{self.get_elem_name(concept)} rdfs:comment '{normalise_string(str(concept.annotation))}'@en ;
         {prov_block}
       """
 
@@ -194,7 +194,6 @@ rules:
       f"""
       {self.prefix}:{self.get_elem_name(parts["child"])} a owl:Class ;
         rdfs:label '{self.get_elem_name(parts["child"])}'@en ;
-        rdfs:subClassOf {self.prefix}:{self.get_elem_name(concept)} ;
-        {prov_block}
+        rdfs:subClassOf {self.prefix}:{self.get_elem_name(concept)} .
       """
 

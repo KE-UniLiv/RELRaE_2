@@ -29,12 +29,27 @@ def clean_namespace(label):
 
 def generate_provenance(prefix, tool, source):
     prov_block = f"""
-        {prefix}:generatedBy {prefix}:{tool} ;
-        {prefix}:hasXSDSource '{source}'@en ;
-        {prefix}:createdAt '{datetime.now(pytz.utc).isoformat()}'^^xsd:dateTimeStamp ;
-        {prefix}:lastEditied '{datetime.now(pytz.utc).isoformat()}'^^xsd:dateTimeStamp .
+        {prefix}:generatedBy '{tool}'@en ;
+        {prefix}:hasXSDSource '{source}'@en .
     """
+    # FIX: sort out temporal tracking
+    #   {prefix}:createdAt '{get_now()}'^^xsd:dateTimeStamp ;
+    #   {prefix}:lastEditied '{get_now()}'^^xsd:dateTimeStamp .
+    # """
     return prov_block
+
+
+def generate_preamble(prefix, namespace):
+    preamble = f"""
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+    @prefix xs: <http://www.w3.org/2001/XMLSchema/> .
+    @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+    @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix owl: <http://www.w3.org/2002/07/owl#> .
+    @prefix {prefix}: <{str(namespace)}> .
+
+    """
+    return preamble
 
 
 def lower_first_char(label):
@@ -52,3 +67,13 @@ def capitalise_first_char(label):
     back_label = label[1:]
     processed_label = first_char.upper() + back_label
     return processed_label
+
+
+def normalise_string(string):
+    norm_str = string.replace("\\", "\\\\").replace(
+        "\n", "\\n").replace("'", '"')
+    return norm_str
+
+
+def get_now():
+    return datetime.now(pytz.utc).isoformat()

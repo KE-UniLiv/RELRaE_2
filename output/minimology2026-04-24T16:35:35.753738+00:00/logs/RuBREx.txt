@@ -1,0 +1,1432 @@
+2026-04-24T16:35:34.142703+00:00 Ruleset rules/SXPF_General_0_1.yaml succesfully loaded
+XsdAttribute
+2026-04-24T16:35:34.142761+00:00 --> type
+2026-04-24T16:35:34.142767+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-04-24T16:35:34.142773+00:00 --> checksum
+2026-04-24T16:35:34.142777+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-04-24T16:35:34.142781+00:00 --> build
+2026-04-24T16:35:34.142784+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-04-24T16:35:34.142789+00:00 --> taxid
+2026-04-24T16:35:34.142792+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-04-24T16:35:34.142796+00:00 --> type
+2026-04-24T16:35:34.142798+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-04-24T16:35:34.142801+00:00 --> target
+2026-04-24T16:35:34.142803+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-04-24T16:35:34.142806+00:00 --> comment
+2026-04-24T16:35:34.142808+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-04-24T16:35:34.142813+00:00 --> ref
+2026-04-24T16:35:34.142815+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-04-24T16:35:34.142819+00:00 --> ref
+2026-04-24T16:35:34.142822+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-04-24T16:35:34.142824+00:00 --> position
+2026-04-24T16:35:34.142826+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-04-24T16:35:34.142830+00:00 --> database
+2026-04-24T16:35:34.142833+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-04-24T16:35:34.142837+00:00 --> database
+2026-04-24T16:35:34.142840+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdElement
+2026-04-24T16:35:34.142844+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.142846+00:00 --> Submission-Date
+XsdElement
+2026-04-24T16:35:34.142849+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.142851+00:00 --> Release-Date
+XsdElement
+2026-04-24T16:35:34.142854+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.142856+00:00 --> Last-Update-Date
+XsdElement
+2026-04-24T16:35:34.142859+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.142860+00:00 --> Comment
+XsdElement
+2026-04-24T16:35:34.142866+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.142868+00:00 --> Line
+XsdElement
+2026-04-24T16:35:34.142871+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.142872+00:00 --> City
+XsdElement
+2026-04-24T16:35:34.142875+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.142877+00:00 --> State
+XsdElement
+2026-04-24T16:35:34.142879+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.142881+00:00 --> Province
+XsdElement
+2026-04-24T16:35:34.142884+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:34.142886+00:00 --> Zip-Code
+2026-04-24T16:35:34.142888+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:34.142890+00:00 Zip-Code is linked to {}
+2026-04-24T16:35:34.144813+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-04-24T16:35:34.144820+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.144823+00:00 --> Postal-Code
+XsdElement
+2026-04-24T16:35:34.144827+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.144829+00:00 --> Country
+XsdElement
+2026-04-24T16:35:34.144835+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.144837+00:00 --> First
+XsdElement
+2026-04-24T16:35:34.144840+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.144842+00:00 --> Middle
+XsdElement
+2026-04-24T16:35:34.144845+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.144846+00:00 --> Last
+XsdAttribute
+2026-04-24T16:35:34.144852+00:00 --> iid
+2026-04-24T16:35:34.144855+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdElement
+2026-04-24T16:35:34.144860+00:00 --> XsdComplexType
+2026-04-24T16:35:34.144862+00:00 --> Person
+2026-04-24T16:35:34.144864+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.144866+00:00 Person is linked to {}
+2026-04-24T16:35:34.145540+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.145543+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.145552+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.145558+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.145562+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:34.145569+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.145571+00:00 --> Organization
+XsdElement
+2026-04-24T16:35:34.145574+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.145576+00:00 --> Company
+XsdElement
+2026-04-24T16:35:34.145579+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:34.145580+00:00 --> Email
+2026-04-24T16:35:34.145582+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:34.145584+00:00 Email is linked to {}
+2026-04-24T16:35:34.146221+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-04-24T16:35:34.146226+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.146228+00:00 --> Phone
+XsdElement
+2026-04-24T16:35:34.146231+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.146233+00:00 --> Fax
+XsdElement
+2026-04-24T16:35:34.146235+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.146237+00:00 --> Laboratory
+XsdElement
+2026-04-24T16:35:34.146239+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.146241+00:00 --> Department
+XsdElement
+2026-04-24T16:35:34.146245+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.146246+00:00 --> Organization
+XsdElement
+2026-04-24T16:35:34.146249+00:00 --> XsdComplexType
+2026-04-24T16:35:34.146250+00:00 --> Address
+2026-04-24T16:35:34.146252+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.146254+00:00 Address is linked to {}
+2026-04-24T16:35:34.146917+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.146920+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.146929+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.146935+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.146940+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-04-24T16:35:34.146942+00:00 Address is linked to {'child': XsdElement(name='MINiML:Zip-Code', occurs=[1, 1])}
+XsdElement
+2026-04-24T16:35:34.147661+00:00 --> XsdComplexType
+2026-04-24T16:35:34.147664+00:00 --> Organization-Ref
+2026-04-24T16:35:34.147666+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.147668+00:00 Organization-Ref is linked to {}
+2026-04-24T16:35:34.148325+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.148328+00:00 Organization-Ref is linked to {'attribute': XsdAttribute(name='ref')}
+2026-04-24T16:35:34.149101+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.149108+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.149111+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.149115+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:34.149120+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:34.149122+00:00 --> Web-Link
+2026-04-24T16:35:34.149124+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:34.149126+00:00 Web-Link is linked to {}
+2026-04-24T16:35:34.149862+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdAttribute
+2026-04-24T16:35:34.149872+00:00 --> iid
+2026-04-24T16:35:34.149875+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-04-24T16:35:34.149877+00:00 --> position
+2026-04-24T16:35:34.149880+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-04-24T16:35:34.149886+00:00 --> rows
+2026-04-24T16:35:34.149888+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-04-24T16:35:34.149893+00:00 --> rows
+2026-04-24T16:35:34.149895+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdElement
+2026-04-24T16:35:34.149901+00:00 --> XsdComplexType
+2026-04-24T16:35:34.149903+00:00 --> External-File
+2026-04-24T16:35:34.149905+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.149907+00:00 External-File is linked to {}
+2026-04-24T16:35:34.151018+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.151021+00:00 External-File is linked to {'attribute': XsdAttribute(name='type')}
+2026-04-24T16:35:34.151868+00:00 External-File is linked to {'attribute': XsdAttribute(name='checksum')}
+2026-04-24T16:35:34.152765+00:00 External-File is linked to {'attribute': XsdAttribute(name='build')}
+2026-04-24T16:35:34.153621+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.153630+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.153633+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.153636+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:34.153640+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:34.153642+00:00 --> Title
+2026-04-24T16:35:34.153644+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:34.153646+00:00 Title is linked to {}
+2026-04-24T16:35:34.154575+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-04-24T16:35:34.154580+00:00 --> XsdComplexType
+2026-04-24T16:35:34.154582+00:00 --> Column
+2026-04-24T16:35:34.154585+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.154586+00:00 Column is linked to {}
+2026-04-24T16:35:34.155493+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.155496+00:00 Column is linked to {'attribute': XsdAttribute(name='position')}
+2026-04-24T16:35:34.156504+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.156517+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.156522+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.156528+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdAttribute
+2026-04-24T16:35:34.156535+00:00 --> position
+2026-04-24T16:35:34.156538+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdElement
+2026-04-24T16:35:34.156542+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.156544+00:00 --> Name
+XsdElement
+2026-04-24T16:35:34.156547+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.156549+00:00 --> Type
+XsdElement
+2026-04-24T16:35:34.156552+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.156553+00:00 --> Unit
+XsdElement
+2026-04-24T16:35:34.156556+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.156557+00:00 --> Description
+XsdElement
+2026-04-24T16:35:34.156560+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.156562+00:00 --> Link-Prefix
+XsdElement
+2026-04-24T16:35:34.156564+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.156566+00:00 --> Link-Suffix
+XsdElement
+2026-04-24T16:35:34.156568+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.156570+00:00 --> Link-Delimiter
+XsdElement
+2026-04-24T16:35:34.156574+00:00 --> XsdComplexType
+2026-04-24T16:35:34.156576+00:00 --> Internal-Data
+2026-04-24T16:35:34.156578+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.156580+00:00 Internal-Data is linked to {}
+2026-04-24T16:35:34.157512+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.157515+00:00 Internal-Data is linked to {'attribute': XsdAttribute(name='rows')}
+2026-04-24T16:35:34.158534+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.158542+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.158545+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.158547+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:34.158551+00:00 --> XsdComplexType
+2026-04-24T16:35:34.158553+00:00 --> External-Data
+2026-04-24T16:35:34.158556+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.158557+00:00 External-Data is linked to {}
+2026-04-24T16:35:34.159546+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.159549+00:00 External-Data is linked to {'attribute': XsdAttribute(name='rows')}
+2026-04-24T16:35:34.160674+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.160681+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.160683+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.160686+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:34.160699+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:34.160701+00:00 --> Predefined
+2026-04-24T16:35:34.160703+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:34.160705+00:00 Predefined is linked to {}
+2026-04-24T16:35:34.161782+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-04-24T16:35:34.161787+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.161789+00:00 --> Other
+XsdAttribute
+2026-04-24T16:35:34.161795+00:00 --> tag
+2026-04-24T16:35:34.161798+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-04-24T16:35:34.161804+00:00 --> position
+2026-04-24T16:35:34.161807+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdElement
+2026-04-24T16:35:34.161811+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:34.161813+00:00 --> Source
+2026-04-24T16:35:34.161815+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:34.161818+00:00 Source is linked to {}
+2026-04-24T16:35:34.162882+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-04-24T16:35:34.162890+00:00 Source is linked to {'attribute': 'annotation'}
+XsdElement
+2026-04-24T16:35:34.164830+00:00 --> XsdComplexType
+2026-04-24T16:35:34.164833+00:00 --> Organism
+2026-04-24T16:35:34.164835+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.164837+00:00 Organism is linked to {}
+2026-04-24T16:35:34.165915+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.165918+00:00 Organism is linked to {'attribute': XsdAttribute(name='taxid')}
+2026-04-24T16:35:34.167064+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.167072+00:00 Organism is linked to {'attribute': 'annotation'}
+2026-04-24T16:35:34.168854+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.168858+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.168861+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:34.168865+00:00 --> XsdComplexType
+2026-04-24T16:35:34.168867+00:00 --> Characteristics
+2026-04-24T16:35:34.168870+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.168871+00:00 Characteristics is linked to {}
+2026-04-24T16:35:34.170013+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.170016+00:00 Characteristics is linked to {'attribute': XsdAttribute(name='tag')}
+2026-04-24T16:35:34.171199+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.171206+00:00 Characteristics is linked to {'attribute': 'annotation'}
+2026-04-24T16:35:34.172467+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.172471+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.172474+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:34.172478+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.172480+00:00 --> Biomaterial-Provider
+XsdElement
+2026-04-24T16:35:34.172482+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.172484+00:00 --> Treatment-Protocol
+XsdElement
+2026-04-24T16:35:34.172487+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.172488+00:00 --> Growth-Protocol
+XsdElement
+2026-04-24T16:35:34.172491+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:34.172492+00:00 --> Molecule
+2026-04-24T16:35:34.172494+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:34.172496+00:00 Molecule is linked to {}
+2026-04-24T16:35:34.173681+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-04-24T16:35:34.173688+00:00 Molecule is linked to {'attribute': 'annotation'}
+XsdElement
+2026-04-24T16:35:34.174963+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.174966+00:00 --> Extract-Protocol
+XsdElement
+2026-04-24T16:35:34.174969+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:34.174971+00:00 --> Label
+2026-04-24T16:35:34.174973+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:34.174975+00:00 Label is linked to {}
+2026-04-24T16:35:34.176186+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-04-24T16:35:34.176194+00:00 Label is linked to {'attribute': 'annotation'}
+XsdElement
+2026-04-24T16:35:34.177468+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.177470+00:00 --> Label-Protocol
+XsdAttribute
+2026-04-24T16:35:34.177479+00:00 --> position
+2026-04-24T16:35:34.177482+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdElement
+2026-04-24T16:35:34.177487+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:34.177489+00:00 --> Factor
+2026-04-24T16:35:34.177491+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:34.177493+00:00 Factor is linked to {}
+2026-04-24T16:35:34.178802+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-04-24T16:35:34.178807+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.178809+00:00 --> Description
+XsdElement
+2026-04-24T16:35:34.178813+00:00 --> XsdComplexType
+2026-04-24T16:35:34.178814+00:00 --> Sample-Ref
+2026-04-24T16:35:34.178816+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.178818+00:00 Sample-Ref is linked to {}
+2026-04-24T16:35:34.180060+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.180064+00:00 Sample-Ref is linked to {'attribute': XsdAttribute(name='ref')}
+2026-04-24T16:35:34.181392+00:00 Sample-Ref is linked to {'attribute': XsdAttribute(name='position')}
+2026-04-24T16:35:34.182735+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.182742+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.182746+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.182749+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdAttribute
+2026-04-24T16:35:34.182758+00:00 --> position
+2026-04-24T16:35:34.182761+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdElement
+2026-04-24T16:35:34.182765+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:34.182767+00:00 --> Factor
+2026-04-24T16:35:34.182769+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:34.182771+00:00 Factor is linked to {}
+2026-04-24T16:35:34.184103+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-04-24T16:35:34.184108+00:00 --> XsdComplexType
+2026-04-24T16:35:34.184109+00:00 --> Sample-Ref
+2026-04-24T16:35:34.184112+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.184114+00:00 Sample-Ref is linked to {}
+2026-04-24T16:35:34.186147+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.186150+00:00 Sample-Ref is linked to {'attribute': XsdAttribute(name='ref')}
+2026-04-24T16:35:34.187530+00:00 Sample-Ref is linked to {'attribute': XsdAttribute(name='position')}
+2026-04-24T16:35:34.188879+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.188886+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.188890+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.188893+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:34.188911+00:00 --> XsdComplexType
+2026-04-24T16:35:34.188913+00:00 --> MINiML
+2026-04-24T16:35:34.188915+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.188917+00:00 MINiML is linked to {}
+2026-04-24T16:35:34.190231+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.190234+00:00 MINiML is linked to {'attribute': XsdAttribute(name='version')}
+2026-04-24T16:35:34.191626+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.191634+00:00 MINiML is linked to {'attribute': 'annotation'}
+2026-04-24T16:35:34.193020+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.193023+00:00 MINiML is linked to {'child': XsdElement(ref='MINiML:Organization', occurs=[0, None])}
+2026-04-24T16:35:34.194427+00:00 MINiML is linked to {'child': XsdElement(ref='MINiML:Contributor', occurs=[0, None])}
+2026-04-24T16:35:34.195846+00:00 MINiML is linked to {'child': XsdElement(ref='MINiML:Database', occurs=[0, None])}
+2026-04-24T16:35:34.197282+00:00 MINiML is linked to {'child': XsdElement(ref='MINiML:Platform', occurs=[1, 1])}
+2026-04-24T16:35:34.198773+00:00 MINiML is linked to {'child': XsdElement(ref='MINiML:Sample', occurs=[1, 1])}
+2026-04-24T16:35:34.200272+00:00 MINiML is linked to {'child': XsdElement(ref='MINiML:Series', occurs=[1, 1])}
+2026-04-24T16:35:34.202628+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.202635+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-04-24T16:35:34.202645+00:00 Matched with rule 9) complexType with choice -> subClassOf
+2026-04-24T16:35:34.202648+00:00 MINiML is linked to {'child': XsdElement(ref='MINiML:Platform', occurs=[1, 1])}
+2026-04-24T16:35:34.204132+00:00 MINiML is linked to {'child': XsdElement(ref='MINiML:Sample', occurs=[1, 1])}
+2026-04-24T16:35:34.205619+00:00 MINiML is linked to {'child': XsdElement(ref='MINiML:Series', occurs=[1, 1])}
+XsdAttribute
+2026-04-24T16:35:34.207108+00:00 --> version
+2026-04-24T16:35:34.207112+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdElement
+2026-04-24T16:35:34.207117+00:00 --> XsdComplexType
+2026-04-24T16:35:34.207119+00:00 --> Organization
+2026-04-24T16:35:34.207121+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.207122+00:00 Organization is linked to {}
+2026-04-24T16:35:34.208661+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.208664+00:00 Organization is linked to {'attribute': XsdAttribute(name='iid')}
+2026-04-24T16:35:34.210260+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.210268+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.210271+00:00 Organization is linked to {'child': XsdElement(name='MINiML:Address', occurs=[1, 1])}
+2026-04-24T16:35:34.212008+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.212013+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:34.212018+00:00 --> XsdComplexType
+2026-04-24T16:35:34.212020+00:00 --> Contributor
+2026-04-24T16:35:34.212022+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.212024+00:00 Contributor is linked to {}
+2026-04-24T16:35:34.213647+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.213650+00:00 Contributor is linked to {'attribute': XsdAttribute(name='iid')}
+2026-04-24T16:35:34.215382+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.215393+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.215396+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Person', occurs=[1, 1])}
+2026-04-24T16:35:34.217111+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Address', occurs=[1, 1])}
+2026-04-24T16:35:34.219643+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Organization-Ref', occurs=[0, 1])}
+2026-04-24T16:35:34.221464+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.221471+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-04-24T16:35:34.221474+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Email', occurs=[0, 1])}
+2026-04-24T16:35:34.223309+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Web-Link', occurs=[0, 1])}
+2026-04-24T16:35:34.225111+00:00 Matched with rule 9) complexType with choice -> subClassOf
+2026-04-24T16:35:34.225114+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Person', occurs=[1, 1])}
+2026-04-24T16:35:34.226801+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Organization-Ref', occurs=[0, 1])}
+XsdElement
+2026-04-24T16:35:34.228561+00:00 --> XsdComplexType
+2026-04-24T16:35:34.228564+00:00 --> Database
+2026-04-24T16:35:34.228566+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.228568+00:00 Database is linked to {}
+2026-04-24T16:35:34.230286+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.230289+00:00 Database is linked to {'attribute': XsdAttribute(name='iid')}
+2026-04-24T16:35:34.232148+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.232157+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.232159+00:00 Database is linked to {'child': XsdElement(name='MINiML:Organization-Ref', occurs=[1, 1])}
+2026-04-24T16:35:34.233998+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.234004+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-04-24T16:35:34.234006+00:00 Database is linked to {'child': XsdElement(name='MINiML:Web-Link', occurs=[0, 1])}
+2026-04-24T16:35:34.236702+00:00 Database is linked to {'child': XsdElement(name='MINiML:Email', occurs=[0, 1])}
+2026-04-24T16:35:34.238626+00:00 Matched with rule 9) complexType with choice -> subClassOf
+2026-04-24T16:35:34.238628+00:00 Database is linked to {'child': XsdElement(name='MINiML:Organization-Ref', occurs=[1, 1])}
+XsdElement
+2026-04-24T16:35:34.240388+00:00 --> XsdComplexType
+2026-04-24T16:35:34.240391+00:00 --> Platform
+2026-04-24T16:35:34.240393+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.240395+00:00 Platform is linked to {}
+2026-04-24T16:35:34.242249+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.242252+00:00 Platform is linked to {'attribute': XsdAttribute(name='iid')}
+2026-04-24T16:35:34.244127+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.244141+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.244143+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Accession', occurs=[1, 1])}
+2026-04-24T16:35:34.246061+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Status', occurs=[0, None])}
+2026-04-24T16:35:34.247999+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Accession', occurs=[0, None])}
+2026-04-24T16:35:34.249978+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Organism', occurs=[1, None])}
+2026-04-24T16:35:34.252779+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Contributor-Ref', occurs=[1, 1])}
+2026-04-24T16:35:34.254804+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Contributor', occurs=[1, 1])}
+2026-04-24T16:35:34.256809+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Contact-Ref', occurs=[1, 1])}
+2026-04-24T16:35:34.258817+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Contact', occurs=[1, 1])}
+2026-04-24T16:35:34.260817+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Supplementary-Data', occurs=[0, None])}
+2026-04-24T16:35:34.262932+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Relation', occurs=[0, None])}
+2026-04-24T16:35:34.265029+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Data-Table', occurs=[0, 1])}
+2026-04-24T16:35:34.267196+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.267206+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-04-24T16:35:34.267208+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Title', occurs=[1, 1])}
+2026-04-24T16:35:34.270258+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Technology', occurs=[1, 1])}
+2026-04-24T16:35:34.272500+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Distribution', occurs=[1, 1])}
+2026-04-24T16:35:34.274711+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Manufacturer', occurs=[1, 1])}
+2026-04-24T16:35:34.276944+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Manufacture-Protocol', occurs=[0, 1])}
+2026-04-24T16:35:34.279270+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Support', occurs=[0, 1])}
+2026-04-24T16:35:34.281573+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Coating', occurs=[0, 1])}
+2026-04-24T16:35:34.284806+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Web-Link', occurs=[0, None])}
+2026-04-24T16:35:34.293152+00:00 Matched with rule 9) complexType with choice -> subClassOf
+2026-04-24T16:35:34.293157+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Accession', occurs=[1, 1])}
+2026-04-24T16:35:34.295542+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Contributor-Ref', occurs=[1, 1])}
+2026-04-24T16:35:34.297848+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Contributor', occurs=[1, 1])}
+2026-04-24T16:35:34.300182+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Contact-Ref', occurs=[1, 1])}
+2026-04-24T16:35:34.302500+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Contact', occurs=[1, 1])}
+XsdElement
+2026-04-24T16:35:34.305485+00:00 --> XsdComplexType
+2026-04-24T16:35:34.305489+00:00 --> Sample
+2026-04-24T16:35:34.305491+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.305493+00:00 Sample is linked to {}
+2026-04-24T16:35:34.307884+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.307888+00:00 Sample is linked to {'attribute': XsdAttribute(name='iid')}
+2026-04-24T16:35:34.310288+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.310303+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.310305+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Accession', occurs=[1, 1])}
+2026-04-24T16:35:34.312818+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Status', occurs=[0, None])}
+2026-04-24T16:35:34.315282+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Accession', occurs=[0, None])}
+2026-04-24T16:35:34.317693+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Channel', occurs=[1, None])}
+2026-04-24T16:35:34.320914+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Platform-Ref', occurs=[0, 1])}
+2026-04-24T16:35:34.323445+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Instrument-Model', occurs=[1, 1])}
+2026-04-24T16:35:34.325947+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Contact-Ref', occurs=[1, 1])}
+2026-04-24T16:35:34.328461+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Contact', occurs=[1, 1])}
+2026-04-24T16:35:34.330972+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Supplementary-Data', occurs=[0, None])}
+2026-04-24T16:35:34.333519+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Raw-Data', occurs=[0, None])}
+2026-04-24T16:35:34.336891+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Relation', occurs=[0, None])}
+2026-04-24T16:35:34.339512+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Data-Table', occurs=[0, 1])}
+2026-04-24T16:35:34.342113+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.342123+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-04-24T16:35:34.342126+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Title', occurs=[1, 1])}
+2026-04-24T16:35:34.344799+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Type', occurs=[0, 1])}
+2026-04-24T16:35:34.347429+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Description', occurs=[0, 1])}
+2026-04-24T16:35:34.350069+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Data-Processing', occurs=[0, 1])}
+2026-04-24T16:35:34.353563+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Library-Strategy', occurs=[0, 1])}
+2026-04-24T16:35:34.356291+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Library-Source', occurs=[1, 1])}
+2026-04-24T16:35:34.358984+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Library-Selection', occurs=[1, 1])}
+2026-04-24T16:35:34.361727+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Barcode', occurs=[0, 1])}
+2026-04-24T16:35:34.364505+00:00 Matched with rule 9) complexType with choice -> subClassOf
+2026-04-24T16:35:34.364508+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Accession', occurs=[1, 1])}
+2026-04-24T16:35:34.368015+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Contact-Ref', occurs=[1, 1])}
+2026-04-24T16:35:34.370731+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Contact', occurs=[1, 1])}
+XsdElement
+2026-04-24T16:35:34.373485+00:00 --> XsdComplexType
+2026-04-24T16:35:34.373487+00:00 --> Series
+2026-04-24T16:35:34.373490+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.373492+00:00 Series is linked to {}
+2026-04-24T16:35:34.376278+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.376281+00:00 Series is linked to {'attribute': XsdAttribute(name='iid')}
+2026-04-24T16:35:34.379158+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.379171+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.379174+00:00 Series is linked to {'child': XsdElement(name='MINiML:Accession', occurs=[1, 1])}
+2026-04-24T16:35:34.382790+00:00 Series is linked to {'child': XsdElement(name='MINiML:Status', occurs=[0, None])}
+2026-04-24T16:35:34.385659+00:00 Series is linked to {'child': XsdElement(name='MINiML:Accession', occurs=[0, None])}
+2026-04-24T16:35:34.388521+00:00 Series is linked to {'child': XsdElement(name='MINiML:Contributor-Ref', occurs=[1, 1])}
+2026-04-24T16:35:34.391352+00:00 Series is linked to {'child': XsdElement(name='MINiML:Contributor', occurs=[1, 1])}
+2026-04-24T16:35:34.394209+00:00 Series is linked to {'child': XsdElement(name='MINiML:Contact-Ref', occurs=[1, 1])}
+2026-04-24T16:35:34.397085+00:00 Series is linked to {'child': XsdElement(name='MINiML:Contact', occurs=[1, 1])}
+2026-04-24T16:35:34.400788+00:00 Series is linked to {'child': XsdElement(name='MINiML:Sample-Ref', occurs=[1, None])}
+2026-04-24T16:35:34.403694+00:00 Series is linked to {'child': XsdElement(name='MINiML:Variable', occurs=[0, None])}
+2026-04-24T16:35:34.406675+00:00 Series is linked to {'child': XsdElement(name='MINiML:Repeats', occurs=[0, None])}
+2026-04-24T16:35:34.409630+00:00 Series is linked to {'child': XsdElement(name='MINiML:Supplementary-Data', occurs=[0, None])}
+2026-04-24T16:35:34.412609+00:00 Series is linked to {'child': XsdElement(name='MINiML:Relation', occurs=[0, None])}
+2026-04-24T16:35:34.416441+00:00 Series is linked to {'child': XsdElement(name='MINiML:Data-Table', occurs=[0, None])}
+2026-04-24T16:35:34.419495+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.419505+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-04-24T16:35:34.419507+00:00 Series is linked to {'child': XsdElement(name='MINiML:Title', occurs=[1, 1])}
+2026-04-24T16:35:34.422567+00:00 Series is linked to {'child': XsdElement(name='MINiML:Web-Link', occurs=[0, None])}
+2026-04-24T16:35:34.425599+00:00 Series is linked to {'child': XsdElement(name='MINiML:Summary', occurs=[1, 1])}
+2026-04-24T16:35:34.428676+00:00 Series is linked to {'child': XsdElement(name='MINiML:Overall-Design', occurs=[0, 1])}
+2026-04-24T16:35:34.432504+00:00 Matched with rule 9) complexType with choice -> subClassOf
+2026-04-24T16:35:34.432507+00:00 Series is linked to {'child': XsdElement(name='MINiML:Accession', occurs=[1, 1])}
+2026-04-24T16:35:34.435490+00:00 Series is linked to {'child': XsdElement(name='MINiML:Contributor-Ref', occurs=[1, 1])}
+2026-04-24T16:35:34.438562+00:00 Series is linked to {'child': XsdElement(name='MINiML:Contributor', occurs=[1, 1])}
+2026-04-24T16:35:34.441659+00:00 Series is linked to {'child': XsdElement(name='MINiML:Contact-Ref', occurs=[1, 1])}
+2026-04-24T16:35:34.444733+00:00 Series is linked to {'child': XsdElement(name='MINiML:Contact', occurs=[1, 1])}
+XsdElement
+2026-04-24T16:35:34.448535+00:00 --> XsdComplexType
+2026-04-24T16:35:34.448538+00:00 --> Database
+2026-04-24T16:35:34.448541+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.448543+00:00 Database is linked to {}
+2026-04-24T16:35:34.451587+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.451590+00:00 Database is linked to {'attribute': XsdAttribute(name='iid')}
+2026-04-24T16:35:34.454721+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.454731+00:00 Database is linked to {'attribute': 'annotation'}
+2026-04-24T16:35:34.457973+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.457976+00:00 Database is linked to {'child': XsdElement(name='MINiML:Organization-Ref', occurs=[1, 1])}
+2026-04-24T16:35:34.461133+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.461139+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-04-24T16:35:34.461141+00:00 Database is linked to {'child': XsdElement(name='MINiML:Web-Link', occurs=[0, 1])}
+2026-04-24T16:35:34.473552+00:00 Database is linked to {'child': XsdElement(name='MINiML:Email', occurs=[0, 1])}
+2026-04-24T16:35:34.476767+00:00 Matched with rule 9) complexType with choice -> subClassOf
+2026-04-24T16:35:34.476771+00:00 Database is linked to {'child': XsdElement(name='MINiML:Organization-Ref', occurs=[1, 1])}
+XsdAttribute
+2026-04-24T16:35:34.479832+00:00 --> iid
+2026-04-24T16:35:34.479837+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdElement
+2026-04-24T16:35:34.479843+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.479845+00:00 --> Name
+XsdElement
+2026-04-24T16:35:34.479848+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.479850+00:00 --> Public-ID
+XsdElement
+2026-04-24T16:35:34.479854+00:00 --> XsdComplexType
+2026-04-24T16:35:34.479855+00:00 --> Organization-Ref
+2026-04-24T16:35:34.479857+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.479859+00:00 Organization-Ref is linked to {}
+2026-04-24T16:35:34.482936+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.482939+00:00 Organization-Ref is linked to {'attribute': XsdAttribute(name='ref')}
+2026-04-24T16:35:34.486655+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.486663+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.486667+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.486671+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:34.486676+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.486678+00:00 --> Organization
+XsdElement
+2026-04-24T16:35:34.486682+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:34.486683+00:00 --> Web-Link
+2026-04-24T16:35:34.486686+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:34.486687+00:00 Web-Link is linked to {}
+2026-04-24T16:35:34.489863+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-04-24T16:35:34.489868+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:34.489870+00:00 --> Email
+2026-04-24T16:35:34.489873+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:34.489875+00:00 Email is linked to {}
+2026-04-24T16:35:34.492922+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-04-24T16:35:34.492929+00:00 --> XsdComplexType
+2026-04-24T16:35:34.492931+00:00 --> Organization
+2026-04-24T16:35:34.492933+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.492935+00:00 Organization is linked to {}
+2026-04-24T16:35:34.496021+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.496024+00:00 Organization is linked to {'attribute': XsdAttribute(name='iid')}
+2026-04-24T16:35:34.499110+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.499119+00:00 Organization is linked to {'attribute': 'annotation'}
+2026-04-24T16:35:34.502991+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.502994+00:00 Organization is linked to {'child': XsdElement(name='MINiML:Address', occurs=[1, 1])}
+2026-04-24T16:35:34.506120+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.506125+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdAttribute
+2026-04-24T16:35:34.506132+00:00 --> iid
+2026-04-24T16:35:34.506135+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdElement
+2026-04-24T16:35:34.506140+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.506141+00:00 --> Name
+XsdElement
+2026-04-24T16:35:34.506144+00:00 --> XsdComplexType
+2026-04-24T16:35:34.506146+00:00 --> Address
+2026-04-24T16:35:34.506148+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.506150+00:00 Address is linked to {}
+2026-04-24T16:35:34.509259+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.509262+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.509270+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.509276+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.509281+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-04-24T16:35:34.509283+00:00 Address is linked to {'child': XsdElement(name='MINiML:Zip-Code', occurs=[1, 1])}
+XsdElement
+2026-04-24T16:35:34.512427+00:00 --> XsdComplexType
+2026-04-24T16:35:34.512430+00:00 --> Contributor
+2026-04-24T16:35:34.512433+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.512434+00:00 Contributor is linked to {}
+2026-04-24T16:35:34.515472+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.515475+00:00 Contributor is linked to {'attribute': XsdAttribute(name='iid')}
+2026-04-24T16:35:34.519396+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.519407+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.519410+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Person', occurs=[1, 1])}
+2026-04-24T16:35:34.522537+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Address', occurs=[1, 1])}
+2026-04-24T16:35:34.525631+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Organization-Ref', occurs=[0, 1])}
+2026-04-24T16:35:34.528731+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.528739+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-04-24T16:35:34.528742+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Email', occurs=[0, 1])}
+2026-04-24T16:35:34.532660+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Web-Link', occurs=[0, 1])}
+2026-04-24T16:35:34.535805+00:00 Matched with rule 9) complexType with choice -> subClassOf
+2026-04-24T16:35:34.535808+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Person', occurs=[1, 1])}
+2026-04-24T16:35:34.538835+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Organization-Ref', occurs=[0, 1])}
+XsdElement
+2026-04-24T16:35:34.541897+00:00 --> XsdComplexType
+2026-04-24T16:35:34.541900+00:00 --> Platform
+2026-04-24T16:35:34.541903+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.541905+00:00 Platform is linked to {}
+2026-04-24T16:35:34.544997+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.545000+00:00 Platform is linked to {'attribute': XsdAttribute(name='iid')}
+2026-04-24T16:35:34.548921+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.548929+00:00 Platform is linked to {'attribute': 'annotation'}
+2026-04-24T16:35:34.552059+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.552061+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Accession', occurs=[1, 1])}
+2026-04-24T16:35:34.555165+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Status', occurs=[0, None])}
+2026-04-24T16:35:34.558316+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Accession', occurs=[0, None])}
+2026-04-24T16:35:34.561454+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Organism', occurs=[1, None])}
+2026-04-24T16:35:34.565354+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Contributor-Ref', occurs=[1, 1])}
+2026-04-24T16:35:34.568446+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Contributor', occurs=[1, 1])}
+2026-04-24T16:35:34.571580+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Contact-Ref', occurs=[1, 1])}
+2026-04-24T16:35:34.574697+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Contact', occurs=[1, 1])}
+2026-04-24T16:35:34.577798+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Supplementary-Data', occurs=[0, None])}
+2026-04-24T16:35:34.581677+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Relation', occurs=[0, None])}
+2026-04-24T16:35:34.584793+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Data-Table', occurs=[0, 1])}
+2026-04-24T16:35:34.587904+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.587914+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-04-24T16:35:34.587916+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Title', occurs=[1, 1])}
+2026-04-24T16:35:34.591039+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Technology', occurs=[1, 1])}
+2026-04-24T16:35:34.594151+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Distribution', occurs=[1, 1])}
+2026-04-24T16:35:34.598026+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Manufacturer', occurs=[1, 1])}
+2026-04-24T16:35:34.601119+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Manufacture-Protocol', occurs=[0, 1])}
+2026-04-24T16:35:34.604233+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Support', occurs=[0, 1])}
+2026-04-24T16:35:34.607396+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Coating', occurs=[0, 1])}
+2026-04-24T16:35:34.610507+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Web-Link', occurs=[0, None])}
+2026-04-24T16:35:34.614373+00:00 Matched with rule 9) complexType with choice -> subClassOf
+2026-04-24T16:35:34.614376+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Accession', occurs=[1, 1])}
+2026-04-24T16:35:34.617452+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Contributor-Ref', occurs=[1, 1])}
+2026-04-24T16:35:34.620472+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Contributor', occurs=[1, 1])}
+2026-04-24T16:35:34.623523+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Contact-Ref', occurs=[1, 1])}
+2026-04-24T16:35:34.627213+00:00 Platform is linked to {'child': XsdElement(name='MINiML:Contact', occurs=[1, 1])}
+XsdAttribute
+2026-04-24T16:35:34.630253+00:00 --> iid
+2026-04-24T16:35:34.630257+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdElement
+2026-04-24T16:35:34.630263+00:00 --> XsdComplexType
+2026-04-24T16:35:34.630265+00:00 --> Accession
+2026-04-24T16:35:34.630267+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.630269+00:00 Accession is linked to {}
+2026-04-24T16:35:34.633335+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.633338+00:00 Accession is linked to {'attribute': XsdAttribute(name='database')}
+2026-04-24T16:35:34.636534+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.636540+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.636543+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.636546+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:34.636551+00:00 --> XsdComplexType
+2026-04-24T16:35:34.636553+00:00 --> Status
+2026-04-24T16:35:34.636555+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.636557+00:00 Status is linked to {}
+2026-04-24T16:35:34.639728+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.639731+00:00 Status is linked to {'attribute': XsdAttribute(name='database')}
+2026-04-24T16:35:34.643626+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.643635+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.643640+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.643644+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:34.643650+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:34.643652+00:00 --> Title
+2026-04-24T16:35:34.643654+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:34.643656+00:00 Title is linked to {}
+2026-04-24T16:35:34.655950+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-04-24T16:35:34.655963+00:00 Title is linked to {'attribute': 'annotation'}
+XsdElement
+2026-04-24T16:35:34.659219+00:00 --> XsdComplexType
+2026-04-24T16:35:34.659222+00:00 --> Accession
+2026-04-24T16:35:34.659224+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.659226+00:00 Accession is linked to {}
+2026-04-24T16:35:34.662417+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.662421+00:00 Accession is linked to {'attribute': XsdAttribute(name='database')}
+2026-04-24T16:35:34.666212+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.666218+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.666221+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.666224+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:34.666228+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:34.666230+00:00 --> Technology
+2026-04-24T16:35:34.666233+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:34.666235+00:00 Technology is linked to {}
+2026-04-24T16:35:34.669423+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-04-24T16:35:34.669431+00:00 Technology is linked to {'attribute': 'annotation'}
+XsdElement
+2026-04-24T16:35:34.672666+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:34.672669+00:00 --> Distribution
+2026-04-24T16:35:34.672671+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:34.672673+00:00 Distribution is linked to {}
+2026-04-24T16:35:34.675844+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-04-24T16:35:34.675852+00:00 Distribution is linked to {'attribute': 'annotation'}
+XsdElement
+2026-04-24T16:35:34.679074+00:00 --> XsdComplexType
+2026-04-24T16:35:34.679077+00:00 --> Organism
+2026-04-24T16:35:34.679080+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.679082+00:00 Organism is linked to {}
+2026-04-24T16:35:34.683041+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.683044+00:00 Organism is linked to {'attribute': XsdAttribute(name='taxid')}
+2026-04-24T16:35:34.686258+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.686266+00:00 Organism is linked to {'attribute': 'annotation'}
+2026-04-24T16:35:34.689532+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.689536+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.689538+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:34.689542+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:34.689544+00:00 --> Manufacturer
+2026-04-24T16:35:34.689547+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:34.689548+00:00 Manufacturer is linked to {}
+2026-04-24T16:35:34.692785+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-04-24T16:35:34.692793+00:00 Manufacturer is linked to {'attribute': 'annotation'}
+XsdElement
+2026-04-24T16:35:34.696071+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:34.696074+00:00 --> Manufacture-Protocol
+2026-04-24T16:35:34.696076+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:34.696079+00:00 Manufacture-Protocol is linked to {}
+2026-04-24T16:35:34.700066+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-04-24T16:35:34.700074+00:00 Manufacture-Protocol is linked to {'attribute': 'annotation'}
+XsdElement
+2026-04-24T16:35:34.703338+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.703340+00:00 --> Catalog-Number
+XsdElement
+2026-04-24T16:35:34.703343+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:34.703345+00:00 --> Support
+2026-04-24T16:35:34.703348+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:34.703349+00:00 Support is linked to {}
+2026-04-24T16:35:34.706587+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-04-24T16:35:34.706594+00:00 Support is linked to {'attribute': 'annotation'}
+XsdElement
+2026-04-24T16:35:34.709829+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:34.709832+00:00 --> Coating
+2026-04-24T16:35:34.709834+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:34.709836+00:00 Coating is linked to {}
+2026-04-24T16:35:34.713779+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-04-24T16:35:34.713786+00:00 Coating is linked to {'attribute': 'annotation'}
+XsdElement
+2026-04-24T16:35:34.717013+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.717016+00:00 --> Description
+XsdElement
+2026-04-24T16:35:34.717019+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:34.717021+00:00 --> Web-Link
+2026-04-24T16:35:34.717023+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:34.717025+00:00 Web-Link is linked to {}
+2026-04-24T16:35:34.720248+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-04-24T16:35:34.720255+00:00 Web-Link is linked to {'attribute': 'annotation'}
+XsdElement
+2026-04-24T16:35:34.723549+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.723552+00:00 --> Pubmed-ID
+XsdElement
+2026-04-24T16:35:34.723555+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:34.723557+00:00 --> Citation
+XsdElement
+2026-04-24T16:35:34.723561+00:00 --> XsdComplexType
+2026-04-24T16:35:34.723562+00:00 --> Contributor-Ref
+2026-04-24T16:35:34.723564+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.723566+00:00 Contributor-Ref is linked to {}
+2026-04-24T16:35:34.726760+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.726763+00:00 Contributor-Ref is linked to {'attribute': XsdAttribute(name='ref')}
+2026-04-24T16:35:34.730835+00:00 Contributor-Ref is linked to {'attribute': XsdAttribute(name='position')}
+2026-04-24T16:35:34.734139+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.734147+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.734151+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.734154+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:34.734159+00:00 --> XsdComplexType
+2026-04-24T16:35:34.734161+00:00 --> Contributor
+2026-04-24T16:35:34.734163+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.734165+00:00 Contributor is linked to {}
+2026-04-24T16:35:34.737425+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.737428+00:00 Contributor is linked to {'attribute': XsdAttribute(name='iid')}
+2026-04-24T16:35:34.740786+00:00 Contributor is linked to {'attribute': XsdAttribute(name='position')}
+2026-04-24T16:35:34.744821+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.744834+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.744836+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Person', occurs=[1, 1])}
+2026-04-24T16:35:34.748114+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Address', occurs=[1, 1])}
+2026-04-24T16:35:34.751399+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Organization-Ref', occurs=[0, 1])}
+2026-04-24T16:35:34.754766+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.754774+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-04-24T16:35:34.754776+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Email', occurs=[0, 1])}
+2026-04-24T16:35:34.758074+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Web-Link', occurs=[0, 1])}
+2026-04-24T16:35:34.762140+00:00 Matched with rule 9) complexType with choice -> subClassOf
+2026-04-24T16:35:34.762142+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Person', occurs=[1, 1])}
+2026-04-24T16:35:34.765375+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Organization-Ref', occurs=[0, 1])}
+XsdElement
+2026-04-24T16:35:34.768619+00:00 --> XsdComplexType
+2026-04-24T16:35:34.768622+00:00 --> Contact-Ref
+2026-04-24T16:35:34.768624+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.768626+00:00 Contact-Ref is linked to {}
+2026-04-24T16:35:34.771932+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.771935+00:00 Contact-Ref is linked to {'attribute': XsdAttribute(name='ref')}
+2026-04-24T16:35:34.775932+00:00 Contact-Ref is linked to {'attribute': XsdAttribute(name='position')}
+2026-04-24T16:35:34.779242+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.779249+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.779253+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.779256+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:34.779261+00:00 --> XsdComplexType
+2026-04-24T16:35:34.779263+00:00 --> Contact
+2026-04-24T16:35:34.779265+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.779267+00:00 Contact is linked to {}
+2026-04-24T16:35:34.782566+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.782569+00:00 Contact is linked to {'attribute': XsdAttribute(name='iid')}
+2026-04-24T16:35:34.785966+00:00 Contact is linked to {'attribute': XsdAttribute(name='position')}
+2026-04-24T16:35:34.789317+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.789328+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.789330+00:00 Contact is linked to {'child': XsdElement(name='MINiML:Person', occurs=[1, 1])}
+2026-04-24T16:35:34.793450+00:00 Contact is linked to {'child': XsdElement(name='MINiML:Address', occurs=[1, 1])}
+2026-04-24T16:35:34.796891+00:00 Contact is linked to {'child': XsdElement(name='MINiML:Organization-Ref', occurs=[0, 1])}
+2026-04-24T16:35:34.800245+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.800253+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-04-24T16:35:34.800255+00:00 Contact is linked to {'child': XsdElement(name='MINiML:Email', occurs=[0, 1])}
+2026-04-24T16:35:34.803648+00:00 Contact is linked to {'child': XsdElement(name='MINiML:Web-Link', occurs=[0, 1])}
+2026-04-24T16:35:34.807810+00:00 Matched with rule 9) complexType with choice -> subClassOf
+2026-04-24T16:35:34.807813+00:00 Contact is linked to {'child': XsdElement(name='MINiML:Person', occurs=[1, 1])}
+2026-04-24T16:35:34.811178+00:00 Contact is linked to {'child': XsdElement(name='MINiML:Organization-Ref', occurs=[0, 1])}
+XsdElement
+2026-04-24T16:35:34.814564+00:00 --> XsdComplexType
+2026-04-24T16:35:34.814567+00:00 --> Supplementary-Data
+2026-04-24T16:35:34.814569+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.814571+00:00 Supplementary-Data is linked to {}
+2026-04-24T16:35:34.817926+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.817929+00:00 Supplementary-Data is linked to {'attribute': XsdAttribute(name='type')}
+2026-04-24T16:35:34.821420+00:00 Supplementary-Data is linked to {'attribute': XsdAttribute(name='checksum')}
+2026-04-24T16:35:34.834903+00:00 Supplementary-Data is linked to {'attribute': XsdAttribute(name='build')}
+2026-04-24T16:35:34.838546+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.838557+00:00 Supplementary-Data is linked to {'attribute': 'annotation'}
+2026-04-24T16:35:34.842121+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.842126+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.842129+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:34.842134+00:00 --> XsdComplexType
+2026-04-24T16:35:34.842136+00:00 --> Relation
+2026-04-24T16:35:34.842138+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.842140+00:00 Relation is linked to {}
+2026-04-24T16:35:34.845612+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.845615+00:00 Relation is linked to {'attribute': XsdAttribute(name='type')}
+2026-04-24T16:35:34.849798+00:00 Relation is linked to {'attribute': XsdAttribute(name='target')}
+2026-04-24T16:35:34.853329+00:00 Relation is linked to {'attribute': XsdAttribute(name='comment')}
+2026-04-24T16:35:34.856938+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.856945+00:00 Relation is linked to {'attribute': 'annotation'}
+2026-04-24T16:35:34.860514+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.860519+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.860522+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:34.860527+00:00 --> XsdComplexType
+2026-04-24T16:35:34.860529+00:00 --> Data-Table
+2026-04-24T16:35:34.860532+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.860534+00:00 Data-Table is linked to {}
+2026-04-24T16:35:34.864748+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.864752+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.864761+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.864763+00:00 Data-Table is linked to {'child': XsdElement(name='MINiML:External-File', occurs=[1, 1])}
+2026-04-24T16:35:34.868435+00:00 Data-Table is linked to {'child': XsdElement(name='MINiML:Column', occurs=[0, None])}
+2026-04-24T16:35:34.872120+00:00 Data-Table is linked to {'child': XsdElement(name='MINiML:Internal-Data', occurs=[1, 1])}
+2026-04-24T16:35:34.875790+00:00 Data-Table is linked to {'child': XsdElement(name='MINiML:External-Data', occurs=[1, 1])}
+2026-04-24T16:35:34.880180+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.880187+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-04-24T16:35:34.880190+00:00 Data-Table is linked to {'child': XsdElement(name='MINiML:Title', occurs=[0, 1])}
+2026-04-24T16:35:34.883920+00:00 Matched with rule 9) complexType with choice -> subClassOf
+2026-04-24T16:35:34.883922+00:00 Data-Table is linked to {'child': XsdElement(name='MINiML:External-File', occurs=[1, 1])}
+2026-04-24T16:35:34.887612+00:00 Data-Table is linked to {'child': XsdElement(name='MINiML:Internal-Data', occurs=[1, 1])}
+2026-04-24T16:35:34.891291+00:00 Data-Table is linked to {'child': XsdElement(name='MINiML:External-Data', occurs=[1, 1])}
+XsdElement
+2026-04-24T16:35:34.895669+00:00 --> XsdComplexType
+2026-04-24T16:35:34.895672+00:00 --> Sample
+2026-04-24T16:35:34.895675+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:34.895677+00:00 Sample is linked to {}
+2026-04-24T16:35:34.899377+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:34.899380+00:00 Sample is linked to {'attribute': XsdAttribute(name='iid')}
+2026-04-24T16:35:34.903151+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:34.903159+00:00 Sample is linked to {'attribute': 'annotation'}
+2026-04-24T16:35:34.906966+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:34.906969+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Accession', occurs=[1, 1])}
+2026-04-24T16:35:34.911421+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Status', occurs=[0, None])}
+2026-04-24T16:35:34.915140+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Accession', occurs=[0, None])}
+2026-04-24T16:35:34.918945+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Channel', occurs=[1, None])}
+2026-04-24T16:35:34.922763+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Platform-Ref', occurs=[0, 1])}
+2026-04-24T16:35:34.927260+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Instrument-Model', occurs=[1, 1])}
+2026-04-24T16:35:34.931033+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Contact-Ref', occurs=[1, 1])}
+2026-04-24T16:35:34.934776+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Contact', occurs=[1, 1])}
+2026-04-24T16:35:34.938549+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Supplementary-Data', occurs=[0, None])}
+2026-04-24T16:35:34.943138+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Raw-Data', occurs=[0, None])}
+2026-04-24T16:35:34.947181+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Relation', occurs=[0, None])}
+2026-04-24T16:35:34.951177+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Data-Table', occurs=[0, 1])}
+2026-04-24T16:35:34.956141+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:34.956164+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-04-24T16:35:34.956167+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Title', occurs=[1, 1])}
+2026-04-24T16:35:34.960282+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Type', occurs=[0, 1])}
+2026-04-24T16:35:34.964527+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Description', occurs=[0, 1])}
+2026-04-24T16:35:34.968459+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Data-Processing', occurs=[0, 1])}
+2026-04-24T16:35:34.973233+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Library-Strategy', occurs=[0, 1])}
+2026-04-24T16:35:34.977141+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Library-Source', occurs=[1, 1])}
+2026-04-24T16:35:34.981081+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Library-Selection', occurs=[1, 1])}
+2026-04-24T16:35:34.984871+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Barcode', occurs=[0, 1])}
+2026-04-24T16:35:34.989497+00:00 Matched with rule 9) complexType with choice -> subClassOf
+2026-04-24T16:35:34.989501+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Accession', occurs=[1, 1])}
+2026-04-24T16:35:34.993255+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Contact-Ref', occurs=[1, 1])}
+2026-04-24T16:35:34.997048+00:00 Sample is linked to {'child': XsdElement(name='MINiML:Contact', occurs=[1, 1])}
+XsdAttribute
+2026-04-24T16:35:35.000791+00:00 --> iid
+2026-04-24T16:35:35.000797+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdElement
+2026-04-24T16:35:35.000804+00:00 --> XsdComplexType
+2026-04-24T16:35:35.000806+00:00 --> Accession
+2026-04-24T16:35:35.000808+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:35.000810+00:00 Accession is linked to {}
+2026-04-24T16:35:35.005398+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:35.005402+00:00 Accession is linked to {'attribute': XsdAttribute(name='database')}
+2026-04-24T16:35:35.021655+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:35.021668+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:35.021671+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:35.021674+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:35.021681+00:00 --> XsdComplexType
+2026-04-24T16:35:35.021683+00:00 --> Status
+2026-04-24T16:35:35.021686+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:35.021688+00:00 Status is linked to {}
+2026-04-24T16:35:35.025605+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:35.025609+00:00 Status is linked to {'attribute': XsdAttribute(name='database')}
+2026-04-24T16:35:35.029451+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:35.029461+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:35.029471+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:35.029476+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:35.029482+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:35.029486+00:00 --> Title
+2026-04-24T16:35:35.029488+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:35.029490+00:00 Title is linked to {}
+2026-04-24T16:35:35.033739+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-04-24T16:35:35.033751+00:00 Title is linked to {'attribute': 'annotation'}
+XsdElement
+2026-04-24T16:35:35.037663+00:00 --> XsdComplexType
+2026-04-24T16:35:35.037666+00:00 --> Accession
+2026-04-24T16:35:35.037669+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:35.037671+00:00 Accession is linked to {}
+2026-04-24T16:35:35.041447+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:35.041451+00:00 Accession is linked to {'attribute': XsdAttribute(name='database')}
+2026-04-24T16:35:35.045272+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:35.045278+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:35.045281+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:35.045283+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:35.045288+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:35.045290+00:00 --> Type
+2026-04-24T16:35:35.045292+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:35.045294+00:00 Type is linked to {}
+2026-04-24T16:35:35.049724+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-04-24T16:35:35.049735+00:00 Type is linked to {'attribute': 'annotation'}
+XsdElement
+2026-04-24T16:35:35.053537+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:35.053542+00:00 --> Anchor
+XsdElement
+2026-04-24T16:35:35.053545+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:35.053547+00:00 --> Tag-Length
+XsdElement
+2026-04-24T16:35:35.053550+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:35.053552+00:00 --> Tag-Count
+XsdElement
+2026-04-24T16:35:35.053554+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:35.053556+00:00 --> Channel-Count
+XsdElement
+2026-04-24T16:35:35.053559+00:00 --> XsdComplexType
+2026-04-24T16:35:35.053561+00:00 --> Channel
+2026-04-24T16:35:35.053565+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:35.053567+00:00 Channel is linked to {}
+2026-04-24T16:35:35.057329+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:35.057335+00:00 Channel is linked to {'attribute': XsdAttribute(name='position')}
+2026-04-24T16:35:35.061190+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:35.061203+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:35.061205+00:00 Channel is linked to {'child': XsdElement(name='MINiML:Organism', occurs=[0, None])}
+2026-04-24T16:35:35.065808+00:00 Channel is linked to {'child': XsdElement(name='MINiML:Characteristics', occurs=[0, None])}
+2026-04-24T16:35:35.069698+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:35.069708+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-04-24T16:35:35.069711+00:00 Channel is linked to {'child': XsdElement(name='MINiML:Source', occurs=[1, 1])}
+2026-04-24T16:35:35.073573+00:00 Channel is linked to {'child': XsdElement(name='MINiML:Molecule', occurs=[1, 1])}
+2026-04-24T16:35:35.077387+00:00 Channel is linked to {'child': XsdElement(name='MINiML:Label', occurs=[0, 1])}
+XsdElement
+2026-04-24T16:35:35.082044+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:35.082047+00:00 --> Hybridization-Protocol
+XsdElement
+2026-04-24T16:35:35.082051+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:35.082052+00:00 --> Scan-Protocol
+XsdElement
+2026-04-24T16:35:35.082055+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:35.082057+00:00 --> Description
+2026-04-24T16:35:35.082059+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:35.082061+00:00 Description is linked to {}
+2026-04-24T16:35:35.085961+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-04-24T16:35:35.085971+00:00 Description is linked to {'attribute': 'annotation'}
+XsdElement
+2026-04-24T16:35:35.089908+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:35.089913+00:00 --> Data-Processing
+2026-04-24T16:35:35.089915+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:35.089917+00:00 Data-Processing is linked to {}
+2026-04-24T16:35:35.094538+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-04-24T16:35:35.094546+00:00 Data-Processing is linked to {'attribute': 'annotation'}
+XsdElement
+2026-04-24T16:35:35.098488+00:00 --> XsdComplexType
+2026-04-24T16:35:35.098491+00:00 --> Platform-Ref
+2026-04-24T16:35:35.098493+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:35.098495+00:00 Platform-Ref is linked to {}
+2026-04-24T16:35:35.102322+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:35.102328+00:00 Platform-Ref is linked to {'attribute': XsdAttribute(name='ref')}
+2026-04-24T16:35:35.106296+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:35.106303+00:00 Platform-Ref is linked to {'attribute': 'annotation'}
+2026-04-24T16:35:35.110966+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:35.110970+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:35.110974+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:35.110979+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:35.110984+00:00 --> Library-Strategy
+2026-04-24T16:35:35.110986+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:35.110988+00:00 Library-Strategy is linked to {}
+2026-04-24T16:35:35.114950+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-04-24T16:35:35.114959+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:35.114961+00:00 --> Library-Source
+2026-04-24T16:35:35.114964+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:35.114966+00:00 Library-Source is linked to {}
+2026-04-24T16:35:35.118918+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-04-24T16:35:35.118923+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:35.118928+00:00 --> Library-Selection
+2026-04-24T16:35:35.118930+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:35.118932+00:00 Library-Selection is linked to {}
+2026-04-24T16:35:35.122907+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-04-24T16:35:35.122913+00:00 --> XsdComplexType
+2026-04-24T16:35:35.122915+00:00 --> Instrument-Model
+2026-04-24T16:35:35.122917+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:35.122919+00:00 Instrument-Model is linked to {}
+2026-04-24T16:35:35.127530+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:35.127536+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:35.127543+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:35.127547+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:35.127554+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-04-24T16:35:35.127556+00:00 Instrument-Model is linked to {'child': XsdElement(name='MINiML:Predefined', occurs=[1, 1])}
+XsdElement
+2026-04-24T16:35:35.131585+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:35.131588+00:00 --> Barcode
+2026-04-24T16:35:35.131591+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:35.131593+00:00 Barcode is linked to {}
+2026-04-24T16:35:35.135592+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-04-24T16:35:35.135599+00:00 --> XsdComplexType
+2026-04-24T16:35:35.135601+00:00 --> Contact-Ref
+2026-04-24T16:35:35.135606+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:35.135608+00:00 Contact-Ref is linked to {}
+2026-04-24T16:35:35.139570+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:35.139573+00:00 Contact-Ref is linked to {'attribute': XsdAttribute(name='ref')}
+2026-04-24T16:35:35.144254+00:00 Contact-Ref is linked to {'attribute': XsdAttribute(name='position')}
+2026-04-24T16:35:35.148259+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:35.148266+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:35.148270+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:35.148273+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:35.148278+00:00 --> XsdComplexType
+2026-04-24T16:35:35.148280+00:00 --> Contact
+2026-04-24T16:35:35.148282+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:35.148284+00:00 Contact is linked to {}
+2026-04-24T16:35:35.152256+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:35.152259+00:00 Contact is linked to {'attribute': XsdAttribute(name='iid')}
+2026-04-24T16:35:35.156869+00:00 Contact is linked to {'attribute': XsdAttribute(name='position')}
+2026-04-24T16:35:35.160858+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:35.160870+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:35.160872+00:00 Contact is linked to {'child': XsdElement(name='MINiML:Person', occurs=[1, 1])}
+2026-04-24T16:35:35.164884+00:00 Contact is linked to {'child': XsdElement(name='MINiML:Address', occurs=[1, 1])}
+2026-04-24T16:35:35.168831+00:00 Contact is linked to {'child': XsdElement(name='MINiML:Organization-Ref', occurs=[0, 1])}
+2026-04-24T16:35:35.173486+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:35.173494+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-04-24T16:35:35.173496+00:00 Contact is linked to {'child': XsdElement(name='MINiML:Email', occurs=[0, 1])}
+2026-04-24T16:35:35.177491+00:00 Contact is linked to {'child': XsdElement(name='MINiML:Web-Link', occurs=[0, 1])}
+2026-04-24T16:35:35.181542+00:00 Matched with rule 9) complexType with choice -> subClassOf
+2026-04-24T16:35:35.181545+00:00 Contact is linked to {'child': XsdElement(name='MINiML:Person', occurs=[1, 1])}
+2026-04-24T16:35:35.185469+00:00 Contact is linked to {'child': XsdElement(name='MINiML:Organization-Ref', occurs=[0, 1])}
+XsdElement
+2026-04-24T16:35:35.200701+00:00 --> XsdComplexType
+2026-04-24T16:35:35.200707+00:00 --> Supplementary-Data
+2026-04-24T16:35:35.200710+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:35.200713+00:00 Supplementary-Data is linked to {}
+2026-04-24T16:35:35.204827+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:35.204831+00:00 Supplementary-Data is linked to {'attribute': XsdAttribute(name='type')}
+2026-04-24T16:35:35.208915+00:00 Supplementary-Data is linked to {'attribute': XsdAttribute(name='checksum')}
+2026-04-24T16:35:35.213427+00:00 Supplementary-Data is linked to {'attribute': XsdAttribute(name='build')}
+2026-04-24T16:35:35.217462+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:35.217474+00:00 Supplementary-Data is linked to {'attribute': 'annotation'}
+2026-04-24T16:35:35.221536+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:35.221540+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:35.221546+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:35.221550+00:00 --> XsdComplexType
+2026-04-24T16:35:35.221553+00:00 --> Raw-Data
+2026-04-24T16:35:35.221558+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:35.221560+00:00 Raw-Data is linked to {}
+2026-04-24T16:35:35.225576+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:35.225582+00:00 Raw-Data is linked to {'attribute': XsdAttribute(name='type')}
+2026-04-24T16:35:35.230336+00:00 Raw-Data is linked to {'attribute': XsdAttribute(name='checksum')}
+2026-04-24T16:35:35.234387+00:00 Raw-Data is linked to {'attribute': XsdAttribute(name='build')}
+2026-04-24T16:35:35.238456+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:35.238467+00:00 Raw-Data is linked to {'attribute': 'annotation'}
+2026-04-24T16:35:35.243138+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:35.243143+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:35.243145+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:35.243150+00:00 --> XsdComplexType
+2026-04-24T16:35:35.243151+00:00 --> Relation
+2026-04-24T16:35:35.243154+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:35.243156+00:00 Relation is linked to {}
+2026-04-24T16:35:35.247217+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:35.247223+00:00 Relation is linked to {'attribute': XsdAttribute(name='type')}
+2026-04-24T16:35:35.251279+00:00 Relation is linked to {'attribute': XsdAttribute(name='target')}
+2026-04-24T16:35:35.255330+00:00 Relation is linked to {'attribute': XsdAttribute(name='comment')}
+2026-04-24T16:35:35.260074+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:35.260084+00:00 Relation is linked to {'attribute': 'annotation'}
+2026-04-24T16:35:35.264118+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:35.264122+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:35.264126+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:35.264131+00:00 --> XsdComplexType
+2026-04-24T16:35:35.264133+00:00 --> Data-Table
+2026-04-24T16:35:35.264139+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:35.264141+00:00 Data-Table is linked to {}
+2026-04-24T16:35:35.268171+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:35.268174+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:35.268183+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:35.268186+00:00 Data-Table is linked to {'child': XsdElement(name='MINiML:External-File', occurs=[1, 1])}
+2026-04-24T16:35:35.272237+00:00 Data-Table is linked to {'child': XsdElement(name='MINiML:Column', occurs=[0, None])}
+2026-04-24T16:35:35.277032+00:00 Data-Table is linked to {'child': XsdElement(name='MINiML:Internal-Data', occurs=[1, 1])}
+2026-04-24T16:35:35.281036+00:00 Data-Table is linked to {'child': XsdElement(name='MINiML:External-Data', occurs=[1, 1])}
+2026-04-24T16:35:35.285064+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:35.285073+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-04-24T16:35:35.285076+00:00 Data-Table is linked to {'child': XsdElement(name='MINiML:Title', occurs=[0, 1])}
+2026-04-24T16:35:35.289948+00:00 Matched with rule 9) complexType with choice -> subClassOf
+2026-04-24T16:35:35.289951+00:00 Data-Table is linked to {'child': XsdElement(name='MINiML:External-File', occurs=[1, 1])}
+2026-04-24T16:35:35.293951+00:00 Data-Table is linked to {'child': XsdElement(name='MINiML:Internal-Data', occurs=[1, 1])}
+2026-04-24T16:35:35.297883+00:00 Data-Table is linked to {'child': XsdElement(name='MINiML:External-Data', occurs=[1, 1])}
+XsdElement
+2026-04-24T16:35:35.301843+00:00 --> XsdComplexType
+2026-04-24T16:35:35.301846+00:00 --> Series
+2026-04-24T16:35:35.301849+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:35.301851+00:00 Series is linked to {}
+2026-04-24T16:35:35.306529+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:35.306532+00:00 Series is linked to {'attribute': XsdAttribute(name='iid')}
+2026-04-24T16:35:35.310556+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:35.310564+00:00 Series is linked to {'attribute': 'annotation'}
+2026-04-24T16:35:35.314621+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:35.314624+00:00 Series is linked to {'child': XsdElement(name='MINiML:Accession', occurs=[1, 1])}
+2026-04-24T16:35:35.318661+00:00 Series is linked to {'child': XsdElement(name='MINiML:Status', occurs=[0, None])}
+2026-04-24T16:35:35.323478+00:00 Series is linked to {'child': XsdElement(name='MINiML:Accession', occurs=[0, None])}
+2026-04-24T16:35:35.327533+00:00 Series is linked to {'child': XsdElement(name='MINiML:Contributor-Ref', occurs=[1, 1])}
+2026-04-24T16:35:35.331710+00:00 Series is linked to {'child': XsdElement(name='MINiML:Contributor', occurs=[1, 1])}
+2026-04-24T16:35:35.336332+00:00 Series is linked to {'child': XsdElement(name='MINiML:Contact-Ref', occurs=[1, 1])}
+2026-04-24T16:35:35.340448+00:00 Series is linked to {'child': XsdElement(name='MINiML:Contact', occurs=[1, 1])}
+2026-04-24T16:35:35.344526+00:00 Series is linked to {'child': XsdElement(name='MINiML:Sample-Ref', occurs=[1, None])}
+2026-04-24T16:35:35.348542+00:00 Series is linked to {'child': XsdElement(name='MINiML:Variable', occurs=[0, None])}
+2026-04-24T16:35:35.353253+00:00 Series is linked to {'child': XsdElement(name='MINiML:Repeats', occurs=[0, None])}
+2026-04-24T16:35:35.357357+00:00 Series is linked to {'child': XsdElement(name='MINiML:Supplementary-Data', occurs=[0, None])}
+2026-04-24T16:35:35.361410+00:00 Series is linked to {'child': XsdElement(name='MINiML:Relation', occurs=[0, None])}
+2026-04-24T16:35:35.366020+00:00 Series is linked to {'child': XsdElement(name='MINiML:Data-Table', occurs=[0, None])}
+2026-04-24T16:35:35.381149+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:35.381165+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-04-24T16:35:35.381168+00:00 Series is linked to {'child': XsdElement(name='MINiML:Title', occurs=[1, 1])}
+2026-04-24T16:35:35.385344+00:00 Series is linked to {'child': XsdElement(name='MINiML:Web-Link', occurs=[0, None])}
+2026-04-24T16:35:35.389565+00:00 Series is linked to {'child': XsdElement(name='MINiML:Summary', occurs=[1, 1])}
+2026-04-24T16:35:35.394197+00:00 Series is linked to {'child': XsdElement(name='MINiML:Overall-Design', occurs=[0, 1])}
+2026-04-24T16:35:35.398274+00:00 Matched with rule 9) complexType with choice -> subClassOf
+2026-04-24T16:35:35.398280+00:00 Series is linked to {'child': XsdElement(name='MINiML:Accession', occurs=[1, 1])}
+2026-04-24T16:35:35.402243+00:00 Series is linked to {'child': XsdElement(name='MINiML:Contributor-Ref', occurs=[1, 1])}
+2026-04-24T16:35:35.406778+00:00 Series is linked to {'child': XsdElement(name='MINiML:Contributor', occurs=[1, 1])}
+2026-04-24T16:35:35.410721+00:00 Series is linked to {'child': XsdElement(name='MINiML:Contact-Ref', occurs=[1, 1])}
+2026-04-24T16:35:35.414734+00:00 Series is linked to {'child': XsdElement(name='MINiML:Contact', occurs=[1, 1])}
+XsdAttribute
+2026-04-24T16:35:35.418701+00:00 --> iid
+2026-04-24T16:35:35.418706+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdElement
+2026-04-24T16:35:35.418713+00:00 --> XsdComplexType
+2026-04-24T16:35:35.418715+00:00 --> Accession
+2026-04-24T16:35:35.418717+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:35.418719+00:00 Accession is linked to {}
+2026-04-24T16:35:35.423448+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:35.423451+00:00 Accession is linked to {'attribute': XsdAttribute(name='database')}
+2026-04-24T16:35:35.427548+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:35.427554+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:35.427557+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:35.427559+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:35.427568+00:00 --> XsdComplexType
+2026-04-24T16:35:35.427570+00:00 --> Status
+2026-04-24T16:35:35.427572+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:35.427574+00:00 Status is linked to {}
+2026-04-24T16:35:35.431611+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:35.431614+00:00 Status is linked to {'attribute': XsdAttribute(name='database')}
+2026-04-24T16:35:35.436264+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:35.436275+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:35.436280+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:35.436288+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:35.436294+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:35.436296+00:00 --> Title
+2026-04-24T16:35:35.436298+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:35.436300+00:00 Title is linked to {}
+2026-04-24T16:35:35.440343+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-04-24T16:35:35.440355+00:00 Title is linked to {'attribute': 'annotation'}
+XsdElement
+2026-04-24T16:35:35.444471+00:00 --> XsdComplexType
+2026-04-24T16:35:35.444475+00:00 --> Accession
+2026-04-24T16:35:35.444478+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:35.444481+00:00 Accession is linked to {}
+2026-04-24T16:35:35.448485+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:35.448488+00:00 Accession is linked to {'attribute': XsdAttribute(name='database')}
+2026-04-24T16:35:35.453324+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:35.453330+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:35.453332+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:35.453335+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:35.453339+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:35.453341+00:00 --> Pubmed-ID
+XsdElement
+2026-04-24T16:35:35.453345+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:35.453346+00:00 --> Citation
+XsdElement
+2026-04-24T16:35:35.453349+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:35.453351+00:00 --> Web-Link
+2026-04-24T16:35:35.453353+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:35.453355+00:00 Web-Link is linked to {}
+2026-04-24T16:35:35.457485+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-04-24T16:35:35.457492+00:00 Web-Link is linked to {'attribute': 'annotation'}
+XsdElement
+2026-04-24T16:35:35.461604+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:35.461606+00:00 --> Summary
+2026-04-24T16:35:35.461609+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:35.461613+00:00 Summary is linked to {}
+2026-04-24T16:35:35.465662+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-04-24T16:35:35.465669+00:00 Summary is linked to {'attribute': 'annotation'}
+XsdElement
+2026-04-24T16:35:35.470519+00:00 --> XsdAtomicRestriction
+2026-04-24T16:35:35.470522+00:00 --> Overall-Design
+2026-04-24T16:35:35.470524+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-04-24T16:35:35.470526+00:00 Overall-Design is linked to {}
+2026-04-24T16:35:35.474619+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-04-24T16:35:35.474626+00:00 Overall-Design is linked to {'attribute': 'annotation'}
+XsdElement
+2026-04-24T16:35:35.478716+00:00 --> XsdAtomicBuiltin
+2026-04-24T16:35:35.478721+00:00 --> Type
+XsdElement
+2026-04-24T16:35:35.478726+00:00 --> XsdComplexType
+2026-04-24T16:35:35.478727+00:00 --> Contributor-Ref
+2026-04-24T16:35:35.478730+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:35.478732+00:00 Contributor-Ref is linked to {}
+2026-04-24T16:35:35.483374+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:35.483377+00:00 Contributor-Ref is linked to {'attribute': XsdAttribute(name='ref')}
+2026-04-24T16:35:35.487480+00:00 Contributor-Ref is linked to {'attribute': XsdAttribute(name='position')}
+2026-04-24T16:35:35.491568+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:35.491576+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:35.491580+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:35.491583+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:35.491588+00:00 --> XsdComplexType
+2026-04-24T16:35:35.491592+00:00 --> Contributor
+2026-04-24T16:35:35.491595+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:35.491597+00:00 Contributor is linked to {}
+2026-04-24T16:35:35.495652+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:35.495655+00:00 Contributor is linked to {'attribute': XsdAttribute(name='iid')}
+2026-04-24T16:35:35.500327+00:00 Contributor is linked to {'attribute': XsdAttribute(name='position')}
+2026-04-24T16:35:35.504421+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:35.504435+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:35.504437+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Person', occurs=[1, 1])}
+2026-04-24T16:35:35.508600+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Address', occurs=[1, 1])}
+2026-04-24T16:35:35.513379+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Organization-Ref', occurs=[0, 1])}
+2026-04-24T16:35:35.517498+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:35.517506+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-04-24T16:35:35.517508+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Email', occurs=[0, 1])}
+2026-04-24T16:35:35.521633+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Web-Link', occurs=[0, 1])}
+2026-04-24T16:35:35.525781+00:00 Matched with rule 9) complexType with choice -> subClassOf
+2026-04-24T16:35:35.525784+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Person', occurs=[1, 1])}
+2026-04-24T16:35:35.530427+00:00 Contributor is linked to {'child': XsdElement(name='MINiML:Organization-Ref', occurs=[0, 1])}
+XsdElement
+2026-04-24T16:35:35.534441+00:00 --> XsdComplexType
+2026-04-24T16:35:35.534446+00:00 --> Contact-Ref
+2026-04-24T16:35:35.534449+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:35.534451+00:00 Contact-Ref is linked to {}
+2026-04-24T16:35:35.538619+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:35.538622+00:00 Contact-Ref is linked to {'attribute': XsdAttribute(name='ref')}
+2026-04-24T16:35:35.543385+00:00 Contact-Ref is linked to {'attribute': XsdAttribute(name='position')}
+2026-04-24T16:35:35.559335+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:35.559351+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:35.559355+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:35.559358+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:35.559364+00:00 --> XsdComplexType
+2026-04-24T16:35:35.559366+00:00 --> Contact
+2026-04-24T16:35:35.559369+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:35.559371+00:00 Contact is linked to {}
+2026-04-24T16:35:35.563536+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:35.563540+00:00 Contact is linked to {'attribute': XsdAttribute(name='iid')}
+2026-04-24T16:35:35.567654+00:00 Contact is linked to {'attribute': XsdAttribute(name='position')}
+2026-04-24T16:35:35.572348+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:35.572360+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:35.572362+00:00 Contact is linked to {'child': XsdElement(name='MINiML:Person', occurs=[1, 1])}
+2026-04-24T16:35:35.576462+00:00 Contact is linked to {'child': XsdElement(name='MINiML:Address', occurs=[1, 1])}
+2026-04-24T16:35:35.580550+00:00 Contact is linked to {'child': XsdElement(name='MINiML:Organization-Ref', occurs=[0, 1])}
+2026-04-24T16:35:35.585199+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:35.585207+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-04-24T16:35:35.585209+00:00 Contact is linked to {'child': XsdElement(name='MINiML:Email', occurs=[0, 1])}
+2026-04-24T16:35:35.589428+00:00 Contact is linked to {'child': XsdElement(name='MINiML:Web-Link', occurs=[0, 1])}
+2026-04-24T16:35:35.593512+00:00 Matched with rule 9) complexType with choice -> subClassOf
+2026-04-24T16:35:35.593515+00:00 Contact is linked to {'child': XsdElement(name='MINiML:Person', occurs=[1, 1])}
+2026-04-24T16:35:35.597524+00:00 Contact is linked to {'child': XsdElement(name='MINiML:Organization-Ref', occurs=[0, 1])}
+XsdElement
+2026-04-24T16:35:35.602268+00:00 --> XsdComplexType
+2026-04-24T16:35:35.602271+00:00 --> Sample-Ref
+2026-04-24T16:35:35.602273+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:35.602275+00:00 Sample-Ref is linked to {}
+2026-04-24T16:35:35.606365+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:35.606368+00:00 Sample-Ref is linked to {'attribute': XsdAttribute(name='ref')}
+2026-04-24T16:35:35.610412+00:00 Sample-Ref is linked to {'attribute': XsdAttribute(name='position')}
+2026-04-24T16:35:35.615173+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:35.615184+00:00 Sample-Ref is linked to {'attribute': 'annotation'}
+2026-04-24T16:35:35.619301+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:35.619305+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:35.619309+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:35.619314+00:00 --> XsdComplexType
+2026-04-24T16:35:35.619318+00:00 --> Variable
+2026-04-24T16:35:35.619321+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:35.619323+00:00 Variable is linked to {}
+2026-04-24T16:35:35.623458+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:35.623461+00:00 Variable is linked to {'attribute': XsdAttribute(name='position')}
+2026-04-24T16:35:35.627556+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:35.627564+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:35.627566+00:00 Variable is linked to {'child': XsdElement(name='MINiML:Sample-Ref', occurs=[1, None])}
+2026-04-24T16:35:35.632466+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:35.632472+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-04-24T16:35:35.632474+00:00 Variable is linked to {'child': XsdElement(name='MINiML:Factor', occurs=[1, 1])}
+XsdElement
+2026-04-24T16:35:35.636642+00:00 --> XsdComplexType
+2026-04-24T16:35:35.636645+00:00 --> Repeats
+2026-04-24T16:35:35.636647+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:35.636649+00:00 Repeats is linked to {}
+2026-04-24T16:35:35.640811+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:35.640814+00:00 Repeats is linked to {'attribute': XsdAttribute(name='position')}
+2026-04-24T16:35:35.645615+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:35.645625+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:35.645627+00:00 Repeats is linked to {'child': XsdElement(name='MINiML:Sample-Ref', occurs=[1, None])}
+2026-04-24T16:35:35.649789+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:35.649793+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-04-24T16:35:35.649795+00:00 Repeats is linked to {'child': XsdElement(name='MINiML:Factor', occurs=[1, 1])}
+XsdElement
+2026-04-24T16:35:35.654004+00:00 --> XsdComplexType
+2026-04-24T16:35:35.654007+00:00 --> Supplementary-Data
+2026-04-24T16:35:35.654009+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:35.654014+00:00 Supplementary-Data is linked to {}
+2026-04-24T16:35:35.658199+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:35.658202+00:00 Supplementary-Data is linked to {'attribute': XsdAttribute(name='type')}
+2026-04-24T16:35:35.663066+00:00 Supplementary-Data is linked to {'attribute': XsdAttribute(name='checksum')}
+2026-04-24T16:35:35.667236+00:00 Supplementary-Data is linked to {'attribute': XsdAttribute(name='build')}
+2026-04-24T16:35:35.671482+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:35.671489+00:00 Supplementary-Data is linked to {'attribute': 'annotation'}
+2026-04-24T16:35:35.676340+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:35.676346+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:35.676349+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:35.676353+00:00 --> XsdComplexType
+2026-04-24T16:35:35.676355+00:00 --> Relation
+2026-04-24T16:35:35.676357+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:35.676359+00:00 Relation is linked to {}
+2026-04-24T16:35:35.680545+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:35.680549+00:00 Relation is linked to {'attribute': XsdAttribute(name='type')}
+2026-04-24T16:35:35.684804+00:00 Relation is linked to {'attribute': XsdAttribute(name='target')}
+2026-04-24T16:35:35.689025+00:00 Relation is linked to {'attribute': XsdAttribute(name='comment')}
+2026-04-24T16:35:35.693905+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:35.693913+00:00 Relation is linked to {'attribute': 'annotation'}
+2026-04-24T16:35:35.698129+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:35.698133+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:35.698137+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-04-24T16:35:35.698142+00:00 --> XsdComplexType
+2026-04-24T16:35:35.698144+00:00 --> Data-Table
+2026-04-24T16:35:35.698146+00:00 Matched with rule 1) complexType -> Class
+2026-04-24T16:35:35.698148+00:00 Data-Table is linked to {}
+2026-04-24T16:35:35.702357+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-04-24T16:35:35.702360+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-04-24T16:35:35.702369+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-04-24T16:35:35.702371+00:00 Data-Table is linked to {'child': XsdElement(name='MINiML:External-File', occurs=[1, 1])}
+2026-04-24T16:35:35.707212+00:00 Data-Table is linked to {'child': XsdElement(name='MINiML:Column', occurs=[0, None])}
+2026-04-24T16:35:35.711528+00:00 Data-Table is linked to {'child': XsdElement(name='MINiML:Internal-Data', occurs=[1, 1])}
+2026-04-24T16:35:35.715787+00:00 Data-Table is linked to {'child': XsdElement(name='MINiML:External-Data', occurs=[1, 1])}
+2026-04-24T16:35:35.720547+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-04-24T16:35:35.720554+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-04-24T16:35:35.720556+00:00 Data-Table is linked to {'child': XsdElement(name='MINiML:Title', occurs=[0, 1])}
+2026-04-24T16:35:35.736656+00:00 Matched with rule 9) complexType with choice -> subClassOf
+2026-04-24T16:35:35.736663+00:00 Data-Table is linked to {'child': XsdElement(name='MINiML:External-File', occurs=[1, 1])}
+2026-04-24T16:35:35.740944+00:00 Data-Table is linked to {'child': XsdElement(name='MINiML:Internal-Data', occurs=[1, 1])}
+2026-04-24T16:35:35.745210+00:00 Data-Table is linked to {'child': XsdElement(name='MINiML:External-Data', occurs=[1, 1])}

@@ -27,6 +27,7 @@ def run_pipeline(pipeline, modules):
     if modules[0] != "RuBREx":
         print("WARNING!!! RuBREx is required as the 1st module, running your pipeline without this may lead to unseen errors")
     for m in modules:
+        print(f"Running {m} ...")
         getattr(pipeline, m)()
 
 
@@ -36,8 +37,10 @@ def main():
     schema = config["schema"]
     namespace = config["namespace"]
     prefix = config["prefix"]
-    pipeline = RELRaE(schema, namespace, prefix)
+    ontology_name = config["ontology_name"]
+    pipeline = RELRaE(ontology_name, schema, namespace, prefix, config)
     run_pipeline(pipeline, modules)
+    pipeline.serialise()
 
 
 if __name__ == "__main__":

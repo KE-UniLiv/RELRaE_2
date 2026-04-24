@@ -1,0 +1,1361 @@
+@prefix ani: <http://www.example.org/anitology/onto#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ani:hasAction a owl:DatatypeProperty ;
+    rdfs:label "hasAction"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Action"@en,
+        "AuditTrailEntry"@en ;
+    rdfs:comment "Type of change made (created, modified, ...)"@en ;
+    rdfs:domain ani:AuditTrailEntry ;
+    rdfs:range xsd:token .
+
+ani:hasAffiliation a owl:DatatypeProperty ;
+    rdfs:label "hasAffiliation"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Affiliation"@en,
+        "Author"@en ;
+    rdfs:comment "Organization the Author is affiliated with."@en ;
+    rdfs:domain ani:Author ;
+    rdfs:range xsd:string .
+
+ani:hasAuditTrailEntry a owl:ObjectProperty ;
+    rdfs:label "hasAuditTrailEntry"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "AuditTrailEntrySet"@en ;
+    rdfs:domain ani:AuditTrailEntrySet ;
+    rdfs:range ani:AuditTrailEntry .
+
+ani:hasAuditTrailEntrySet a owl:ObjectProperty ;
+    rdfs:label "hasAuditTrailEntrySet"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "AnIML"@en ;
+    rdfs:domain ani:AnIML ;
+    rdfs:range ani:AuditTrailEntrySet .
+
+ani:hasAuthor a owl:ObjectProperty ;
+    rdfs:label "hasAuthor"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "AuditTrailEntry"@en,
+        "Method"@en ;
+    rdfs:domain ani:AuditTrailEntry,
+        ani:Method ;
+    rdfs:range ani:Author .
+
+ani:hasAutoIncrementedValueSet a owl:ObjectProperty ;
+    rdfs:label "hasAutoIncrementedValueSet"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Series"@en ;
+    rdfs:domain ani:Series ;
+    rdfs:range ani:AutoIncrementedValueSet .
+
+ani:hasBarcode a owl:DatatypeProperty ;
+    rdfs:label "hasBarcode"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Sample"@en,
+        "barcode"@en ;
+    rdfs:comment "Value of barcode label that is attached to sample container."@en ;
+    rdfs:domain ani:Sample ;
+    rdfs:range xsd:token .
+
+ani:hasBoolean ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Boolean"@en ;
+    rdfs:comment "Individual boolean value."@en .
+
+ani:hasCategory a owl:ObjectProperty ;
+    rdfs:label "hasCategory"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Category"@en,
+        "Method"@en,
+        "Result"@en,
+        "Sample"@en ;
+    rdfs:domain ani:Category,
+        ani:Method,
+        ani:Result,
+        ani:Sample ;
+    rdfs:range ani:Category .
+
+ani:hasChangedItem a owl:DatatypeProperty ;
+    rdfs:label "hasChangedItem"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Diff"@en,
+        "changedItem"@en ;
+    rdfs:comment "ID of the SignableItem that was changed"@en ;
+    rdfs:domain ani:Diff ;
+    rdfs:range xsd:NCName .
+
+ani:hasComment a owl:DatatypeProperty ;
+    rdfs:label "hasComment"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "AuditTrailEntry"@en,
+        "Comment"@en,
+        "ExperimentStep"@en,
+        "Sample"@en,
+        "comment"@en ;
+    rdfs:comment "Human-readable comment further explaining the changes."@en,
+        "Unstructured text comment to further describe the ExperimentStep."@en,
+        "Unstructured text comment to further describe the Sample."@en ;
+    rdfs:domain ani:AuditTrailEntry,
+        ani:ExperimentStep,
+        ani:Sample ;
+    rdfs:range xsd:string .
+
+ani:hasContainerID a owl:DatatypeProperty ;
+    rdfs:label "hasContainerID"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Sample"@en,
+        "containerID"@en ;
+    rdfs:comment "Sample ID of container in which this sample is located."@en ;
+    rdfs:domain ani:Sample ;
+    rdfs:range xsd:token .
+
+ani:hasContainerType a owl:DatatypeProperty ;
+    rdfs:label "hasContainerType"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Sample"@en,
+        "containerType"@en ;
+    rdfs:comment "Whether this sample is also a container for other samples. Set to \"simple\" if not."@en ;
+    rdfs:domain ani:Sample ;
+    rdfs:range xsd:token .
+
+ani:hasD a owl:DatatypeProperty ;
+    rdfs:label "hasD"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "D"@en,
+        "EndValue"@en,
+        "Increment"@en,
+        "IndividualValueSet"@en,
+        "Parameter"@en,
+        "StartValue"@en ;
+    rdfs:comment "Individual 64-bit floating point value."@en ;
+    rdfs:domain ani:EndValue,
+        ani:Increment,
+        ani:IndividualValueSet,
+        ani:Parameter,
+        ani:StartValue ;
+    rdfs:range xsd:double .
+
+ani:hasDataPurpose a owl:DatatypeProperty ;
+    rdfs:label "hasDataPurpose"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "ExperimentDataAttributes"@en,
+        "ExperimentDataBulkReference"@en,
+        "ExperimentDataReference"@en ;
+    rdfs:domain ani:ExperimentDataBulkReference,
+        ani:ExperimentDataReference ;
+    rdfs:range xsd:token ;
+    rdfs:subPropertyOf ani:hasExperimentDataAttributes .
+
+ani:hasDateTime a owl:DatatypeProperty ;
+    rdfs:label "hasDateTime"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "DateTime"@en,
+        "IndividualValueSet"@en,
+        "Parameter"@en ;
+    rdfs:comment "Individual ISO date/time value."@en ;
+    rdfs:domain ani:IndividualValueSet,
+        ani:Parameter ;
+    rdfs:range xsd:dateTime .
+
+ani:hasDependency a owl:DatatypeProperty ;
+    rdfs:label "hasDependency"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Series"@en,
+        "dependency"@en ;
+    rdfs:comment "Specified whether the Series is independent or dependent."@en ;
+    rdfs:domain ani:Series ;
+    rdfs:range xsd:token .
+
+ani:hasDerived ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "derived"@en ;
+    rdfs:comment "Indicates whether this is a derived Sample. A derived Sample is a Sample that has been created by applying a Technique. (Sub-Sampling, Processing, ...)"@en .
+
+ani:hasDevice a owl:ObjectProperty ;
+    rdfs:label "hasDevice"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Method"@en ;
+    rdfs:domain ani:Method ;
+    rdfs:range ani:Device .
+
+ani:hasDeviceIdentifier a owl:DatatypeProperty ;
+    rdfs:label "hasDeviceIdentifier"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Device"@en,
+        "DeviceIdentifier"@en ;
+    rdfs:comment "Unique name or identifier of the device."@en ;
+    rdfs:domain ani:Device ;
+    rdfs:range xsd:token .
+
+ani:hasDiff a owl:ObjectProperty ;
+    rdfs:label "hasDiff"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "AuditTrailEntry"@en ;
+    rdfs:domain ani:AuditTrailEntry ;
+    rdfs:range ani:Diff .
+
+ani:hasEmail a owl:DatatypeProperty ;
+    rdfs:label "hasEmail"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Author"@en,
+        "Email"@en ;
+    rdfs:comment "RFC822-compliant email address."@en ;
+    rdfs:domain ani:Author ;
+    rdfs:range xsd:string .
+
+ani:hasEmbeddedXML a owl:DatatypeProperty ;
+    rdfs:label "hasEmbeddedXML"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "EmbeddedXML"@en,
+        "IndividualValueSet"@en,
+        "Parameter"@en ;
+    rdfs:comment "Value governed by a different XML Schema."@en ;
+    rdfs:domain ani:IndividualValueSet,
+        ani:Parameter ;
+    rdfs:range xsd:string .
+
+ani:hasEncodedValueSet a owl:ObjectProperty ;
+    rdfs:label "hasEncodedValueSet"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Series"@en ;
+    rdfs:domain ani:Series ;
+    rdfs:range ani:EncodedValueSet .
+
+ani:hasEndIndex a owl:DatatypeProperty ;
+    rdfs:label "hasEndIndex"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "AutoIncrementedValueSet"@en,
+        "EncodedValueSet"@en,
+        "IndividualValueSet"@en,
+        "ValueSet"@en,
+        "endIndex"@en ;
+    rdfs:comment "Zero-based index of the last entry in this Value Set. The specification is inclusive."@en ;
+    rdfs:domain ani:AutoIncrementedValueSet,
+        ani:EncodedValueSet,
+        ani:IndividualValueSet ;
+    rdfs:range xsd:int ;
+    rdfs:subPropertyOf ani:hasValueSet .
+
+ani:hasEndValue a owl:ObjectProperty ;
+    rdfs:label "hasEndValue"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "ParentDataPointReference"@en ;
+    rdfs:domain ani:ParentDataPointReference ;
+    rdfs:range ani:EndValue .
+
+ani:hasExperimentDataBulkReference a owl:ObjectProperty ;
+    rdfs:label "hasExperimentDataBulkReference"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "ExperimentDataReferenceSet"@en ;
+    rdfs:domain ani:ExperimentDataReferenceSet ;
+    rdfs:range ani:ExperimentDataBulkReference .
+
+ani:hasExperimentDataReference a owl:ObjectProperty ;
+    rdfs:label "hasExperimentDataReference"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "ExperimentDataReferenceSet"@en ;
+    rdfs:domain ani:ExperimentDataReferenceSet ;
+    rdfs:range ani:ExperimentDataReference .
+
+ani:hasExperimentDataReferenceSet a owl:ObjectProperty ;
+    rdfs:label "hasExperimentDataReferenceSet"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Infrastructure"@en ;
+    rdfs:domain ani:Infrastructure ;
+    rdfs:range ani:ExperimentDataReferenceSet .
+
+ani:hasExperimentStep a owl:ObjectProperty ;
+    rdfs:label "hasExperimentStep"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "ExperimentStepSet"@en ;
+    rdfs:domain ani:ExperimentStepSet ;
+    rdfs:range ani:ExperimentStep .
+
+ani:hasExperimentStepID a owl:DatatypeProperty ;
+    rdfs:label "hasExperimentStepID"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "ExperimentDataReference"@en,
+        "ExperimentStep"@en,
+        "experimentStepID"@en ;
+    rdfs:comment "Unique identifier for this ExperimentStep. Used to point to this step from an ExperimentDataReference."@en ;
+    rdfs:domain ani:ExperimentDataReference,
+        ani:ExperimentStep ;
+    rdfs:range xsd:token .
+
+ani:hasExperimentStepIDPrefix a owl:DatatypeProperty ;
+    rdfs:label "hasExperimentStepIDPrefix"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "ExperimentDataBulkReference"@en ;
+    rdfs:domain ani:ExperimentDataBulkReference ;
+    rdfs:range xsd:token .
+
+ani:hasExperimentStepSet a owl:ObjectProperty ;
+    rdfs:label "hasExperimentStepSet"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "AnIML"@en,
+        "Result"@en ;
+    rdfs:domain ani:AnIML,
+        ani:Result ;
+    rdfs:range ani:ExperimentStepSet .
+
+ani:hasExponent a owl:DatatypeProperty ;
+    rdfs:label "hasExponent"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "SIUnit"@en ;
+    rdfs:domain ani:SIUnit ;
+    rdfs:range xsd:double .
+
+ani:hasExtension a owl:ObjectProperty ;
+    rdfs:label "hasExtension"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Technique"@en ;
+    rdfs:domain ani:Technique ;
+    rdfs:range ani:Extension .
+
+ani:hasF a owl:DatatypeProperty ;
+    rdfs:label "hasF"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "EndValue"@en,
+        "F"@en,
+        "Increment"@en,
+        "IndividualValueSet"@en,
+        "Parameter"@en,
+        "StartValue"@en ;
+    rdfs:comment "Individual 32-bit floating point value."@en ;
+    rdfs:domain ani:EndValue,
+        ani:Increment,
+        ani:IndividualValueSet,
+        ani:Parameter,
+        ani:StartValue ;
+    rdfs:range xsd:float .
+
+ani:hasFactor a owl:DatatypeProperty ;
+    rdfs:label "hasFactor"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "SIUnit"@en ;
+    rdfs:domain ani:SIUnit ;
+    rdfs:range xsd:double .
+
+ani:hasFirmwareVersion a owl:DatatypeProperty ;
+    rdfs:label "hasFirmwareVersion"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Device"@en,
+        "FirmwareVersion"@en ;
+    rdfs:comment "Version identifier of firmware release."@en ;
+    rdfs:domain ani:Device ;
+    rdfs:range xsd:token .
+
+ani:hasI a owl:DatatypeProperty ;
+    rdfs:label "hasI"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "EndValue"@en,
+        "I"@en,
+        "Increment"@en,
+        "IndividualValueSet"@en,
+        "Parameter"@en,
+        "StartValue"@en ;
+    rdfs:comment "Individual integer value (32 bits, signed)."@en ;
+    rdfs:domain ani:EndValue,
+        ani:Increment,
+        ani:IndividualValueSet,
+        ani:Parameter,
+        ani:StartValue ;
+    rdfs:range xsd:int .
+
+ani:hasId a owl:DatatypeProperty ;
+    rdfs:label "hasId"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "AuditTrailEntry"@en,
+        "AuditTrailEntrySet"@en,
+        "Category"@en,
+        "ExperimentDataBulkReference"@en,
+        "ExperimentDataReference"@en,
+        "ExperimentDataReferenceSet"@en,
+        "ExperimentStep"@en,
+        "ExperimentStepSet"@en,
+        "Infrastructure"@en,
+        "Method"@en,
+        "Parameter"@en,
+        "ParentDataPointReference"@en,
+        "Result"@en,
+        "Sample"@en,
+        "SampleInheritance"@en,
+        "SampleReference"@en,
+        "SampleReferenceSet"@en,
+        "SampleSet"@en,
+        "Series"@en,
+        "SeriesSet"@en,
+        "SignableItem"@en,
+        "SignableItemWithName"@en,
+        "Signature"@en,
+        "Technique"@en,
+        "Template"@en,
+        "id"@en ;
+    rdfs:comment "Anchor point for digital signature. This identifier is referred to from the \"Reference\" element in a Signature. Unique per document."@en ;
+    rdfs:domain ani:AuditTrailEntry,
+        ani:AuditTrailEntrySet,
+        ani:Category,
+        ani:ExperimentDataBulkReference,
+        ani:ExperimentDataReference,
+        ani:ExperimentDataReferenceSet,
+        ani:ExperimentStep,
+        ani:ExperimentStepSet,
+        ani:Infrastructure,
+        ani:Method,
+        ani:Parameter,
+        ani:ParentDataPointReference,
+        ani:Result,
+        ani:Sample,
+        ani:SampleInheritance,
+        ani:SampleReference,
+        ani:SampleReferenceSet,
+        ani:SampleSet,
+        ani:Series,
+        ani:SeriesSet,
+        ani:Signature,
+        ani:Technique,
+        ani:Template ;
+    rdfs:range xsd:NCName ;
+    rdfs:subPropertyOf ani:hasSignableItem,
+        ani:hasSignableItemWithName .
+
+ani:hasIncrement a owl:ObjectProperty ;
+    rdfs:label "hasIncrement"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "AutoIncrementedValueSet"@en ;
+    rdfs:domain ani:AutoIncrementedValueSet ;
+    rdfs:range ani:Increment .
+
+ani:hasIndividualValueSet a owl:ObjectProperty ;
+    rdfs:label "hasIndividualValueSet"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Series"@en ;
+    rdfs:domain ani:Series ;
+    rdfs:range ani:IndividualValueSet .
+
+ani:hasInfrastructure a owl:ObjectProperty ;
+    rdfs:label "hasInfrastructure"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "ExperimentStep"@en,
+        "Template"@en ;
+    rdfs:domain ani:ExperimentStep,
+        ani:Template ;
+    rdfs:range ani:Infrastructure .
+
+ani:hasKeyInfo a owl:ObjectProperty ;
+    rdfs:label "hasKeyInfo"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Signature"@en ;
+    rdfs:domain ani:Signature ;
+    rdfs:range ani:KeyInfo .
+
+ani:hasL a owl:DatatypeProperty ;
+    rdfs:label "hasL"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "EndValue"@en,
+        "Increment"@en,
+        "IndividualValueSet"@en,
+        "L"@en,
+        "Parameter"@en,
+        "StartValue"@en ;
+    rdfs:comment "Individual long integer value (64 bits, signed)."@en ;
+    rdfs:domain ani:EndValue,
+        ani:Increment,
+        ani:IndividualValueSet,
+        ani:Parameter,
+        ani:StartValue ;
+    rdfs:range xsd:long .
+
+ani:hasLabel a owl:DatatypeProperty ;
+    rdfs:label "hasLabel"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Unit"@en,
+        "label"@en ;
+    rdfs:comment "Defines the visual representation of a particular Unit."@en ;
+    rdfs:domain ani:Unit ;
+    rdfs:range xsd:token .
+
+ani:hasLength a owl:DatatypeProperty ;
+    rdfs:label "hasLength"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "SeriesSet"@en,
+        "length"@en ;
+    rdfs:comment "Number of data points each Series contains."@en ;
+    rdfs:domain ani:SeriesSet ;
+    rdfs:range xsd:int .
+
+ani:hasLocation a owl:DatatypeProperty ;
+    rdfs:label "hasLocation"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Author"@en,
+        "Location"@en ;
+    rdfs:comment "Location or physical address."@en ;
+    rdfs:domain ani:Author ;
+    rdfs:range xsd:string .
+
+ani:hasLocationInContainer a owl:DatatypeProperty ;
+    rdfs:label "hasLocationInContainer"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Sample"@en,
+        "locationInContainer"@en ;
+    rdfs:comment "Coordinates of this sample within the enclosing container. In case of microplates or trays, the row is identified by letters and the column is identified by numbers (1-based) while in landscape orientation. Examples: A10 = 1st row, 10th column, Z1 = 26th row, 1st column, AB2 = 28th row, 2nd column."@en ;
+    rdfs:domain ani:Sample ;
+    rdfs:range xsd:token .
+
+ani:hasManufacturer a owl:DatatypeProperty ;
+    rdfs:label "hasManufacturer"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Device"@en,
+        "Manufacturer"@en,
+        "Software"@en ;
+    rdfs:comment "Company name."@en ;
+    rdfs:domain ani:Device,
+        ani:Software ;
+    rdfs:range xsd:token .
+
+ani:hasMethod a owl:ObjectProperty ;
+    rdfs:label "hasMethod"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "ExperimentStep"@en,
+        "Template"@en ;
+    rdfs:domain ani:ExperimentStep,
+        ani:Template ;
+    rdfs:range ani:Method .
+
+ani:hasName a owl:DatatypeProperty ;
+    rdfs:label "hasName"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Author"@en,
+        "Category"@en,
+        "Device"@en,
+        "ExperimentStep"@en,
+        "Extension"@en,
+        "Method"@en,
+        "Name"@en,
+        "Parameter"@en,
+        "Result"@en,
+        "Sample"@en,
+        "Series"@en,
+        "SeriesSet"@en,
+        "SignableItemWithName"@en,
+        "Software"@en,
+        "Tag"@en,
+        "Technique"@en,
+        "Template"@en,
+        "name"@en ;
+    rdfs:comment "Common name."@en,
+        "Name of Extension to be used. Must match Name given in Extension Definition file."@en,
+        "Optional method name, as defined in the instrument software."@en,
+        "Plain-text name of this item."@en ;
+    rdfs:domain ani:Author,
+        ani:Category,
+        ani:Device,
+        ani:ExperimentStep,
+        ani:Extension,
+        ani:Method,
+        ani:Parameter,
+        ani:Result,
+        ani:Sample,
+        ani:Series,
+        ani:SeriesSet,
+        ani:Software,
+        ani:Tag,
+        ani:Technique,
+        ani:Template ;
+    rdfs:range xsd:string,
+        xsd:token ;
+    rdfs:subPropertyOf ani:hasSignableItemWithName .
+
+ani:hasObject a owl:ObjectProperty ;
+    rdfs:label "hasObject"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Signature"@en ;
+    rdfs:domain ani:Signature ;
+    rdfs:range ani:Object .
+
+ani:hasOffset a owl:DatatypeProperty ;
+    rdfs:label "hasOffset"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "SIUnit"@en ;
+    rdfs:domain ani:SIUnit ;
+    rdfs:range xsd:double .
+
+ani:hasOperatingSystem a owl:DatatypeProperty ;
+    rdfs:label "hasOperatingSystem"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "OperatingSystem"@en,
+        "Software"@en ;
+    rdfs:comment "Operating system the software was running on."@en ;
+    rdfs:domain ani:Software ;
+    rdfs:range xsd:token .
+
+ani:hasPNG a owl:DatatypeProperty ;
+    rdfs:label "hasPNG"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "IndividualValueSet"@en,
+        "PNG"@en,
+        "Parameter"@en ;
+    rdfs:comment "Base 64 encoded PNG image."@en ;
+    rdfs:domain ani:IndividualValueSet,
+        ani:Parameter ;
+    rdfs:range xsd:base64Binary .
+
+ani:hasParameter a owl:ObjectProperty ;
+    rdfs:label "hasParameter"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Category"@en ;
+    rdfs:domain ani:Category ;
+    rdfs:range ani:Parameter .
+
+ani:hasParameterType a owl:DatatypeProperty ;
+    rdfs:label "hasParameterType"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Parameter"@en,
+        "parameterType"@en ;
+    rdfs:comment "Data type of this parameter"@en ;
+    rdfs:domain ani:Parameter ;
+    rdfs:range xsd:token .
+
+ani:hasParentDataPointReference a owl:ObjectProperty ;
+    rdfs:label "hasParentDataPointReference"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "ParentDataPointReferenceSet"@en ;
+    rdfs:domain ani:ParentDataPointReferenceSet ;
+    rdfs:range ani:ParentDataPointReference .
+
+ani:hasParentDataPointReferenceSet a owl:ObjectProperty ;
+    rdfs:label "hasParentDataPointReferenceSet"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Infrastructure"@en ;
+    rdfs:domain ani:Infrastructure ;
+    rdfs:range ani:ParentDataPointReferenceSet .
+
+ani:hasPhone a owl:DatatypeProperty ;
+    rdfs:label "hasPhone"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Author"@en,
+        "Phone"@en ;
+    rdfs:comment "Phone number."@en ;
+    rdfs:domain ani:Author ;
+    rdfs:range xsd:string .
+
+ani:hasPlotScale a owl:DatatypeProperty ;
+    rdfs:label "hasPlotScale"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Series"@en,
+        "plotScale"@en ;
+    rdfs:comment "Specifies whether the data in this Series is typically plotted on a linear or logarithmic scale."@en ;
+    rdfs:domain ani:Series ;
+    rdfs:range xsd:token .
+
+ani:hasQuantity a owl:DatatypeProperty ;
+    rdfs:label "hasQuantity"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Unit"@en,
+        "quantity"@en ;
+    rdfs:comment "Quantity the unit can be applied to"@en ;
+    rdfs:domain ani:Unit ;
+    rdfs:range xsd:token .
+
+ani:hasReason a owl:DatatypeProperty ;
+    rdfs:label "hasReason"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "AuditTrailEntry"@en,
+        "Reason"@en ;
+    rdfs:comment "Explanation why changes were made."@en ;
+    rdfs:domain ani:AuditTrailEntry ;
+    rdfs:range xsd:string .
+
+ani:hasReference a owl:DatatypeProperty ;
+    rdfs:label "hasReference"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "AuditTrailEntry"@en,
+        "Reference"@en ;
+    rdfs:comment "ID of the SignableItem that was affected. If none is specified, entire document is covered."@en ;
+    rdfs:domain ani:AuditTrailEntry ;
+    rdfs:range xsd:IDREF .
+
+ani:hasResult a owl:ObjectProperty ;
+    rdfs:label "hasResult"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "ExperimentStep"@en,
+        "Template"@en ;
+    rdfs:domain ani:ExperimentStep,
+        ani:Template ;
+    rdfs:range ani:Result .
+
+ani:hasRole a owl:DatatypeProperty ;
+    rdfs:label "hasRole"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Author"@en,
+        "ExperimentDataAttributes"@en,
+        "ExperimentDataBulkReference"@en,
+        "ExperimentDataReference"@en,
+        "Role"@en,
+        "SampleAttributes"@en,
+        "SampleInheritance"@en,
+        "SampleReference"@en,
+        "role"@en ;
+    rdfs:comment "Role the Author plays within the organization."@en,
+        "Role this sample plays within the current ExperimentStep."@en ;
+    rdfs:domain ani:Author,
+        ani:ExperimentDataBulkReference,
+        ani:ExperimentDataReference,
+        ani:SampleInheritance,
+        ani:SampleReference ;
+    rdfs:range xsd:string,
+        xsd:token ;
+    rdfs:subPropertyOf ani:hasExperimentDataAttributes,
+        ani:hasSampleAttributes .
+
+ani:hasS a owl:DatatypeProperty ;
+    rdfs:label "hasS"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "IndividualValueSet"@en,
+        "Parameter"@en,
+        "S"@en ;
+    rdfs:comment "Individual string value."@en ;
+    rdfs:domain ani:IndividualValueSet,
+        ani:Parameter ;
+    rdfs:range xsd:string .
+
+ani:hasSIUnit a owl:ObjectProperty ;
+    rdfs:label "hasSIUnit"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Unit"@en ;
+    rdfs:domain ani:Unit ;
+    rdfs:range ani:SIUnit .
+
+ani:hasSVG a owl:DatatypeProperty ;
+    rdfs:label "hasSVG"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "IndividualValueSet"@en,
+        "Parameter"@en,
+        "SVG"@en ;
+    rdfs:comment "Value governed by the SVG DTD. Used to represent vector graphic images."@en ;
+    rdfs:domain ani:IndividualValueSet,
+        ani:Parameter ;
+    rdfs:range xsd:string .
+
+ani:hasSample a owl:ObjectProperty ;
+    rdfs:label "hasSample"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "SampleSet"@en ;
+    rdfs:domain ani:SampleSet ;
+    rdfs:range ani:Sample .
+
+ani:hasSampleID a owl:DatatypeProperty ;
+    rdfs:label "hasSampleID"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Sample"@en,
+        "SampleReference"@en,
+        "sampleID"@en ;
+    rdfs:comment "SampleID of the Sample used in the current ExperimentStep. Refers to the sampleID within the SampleSet section of the document."@en ;
+    rdfs:domain ani:Sample,
+        ani:SampleReference ;
+    rdfs:range xsd:token .
+
+ani:hasSampleInheritance a owl:ObjectProperty ;
+    rdfs:label "hasSampleInheritance"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "SampleReferenceSet"@en ;
+    rdfs:domain ani:SampleReferenceSet ;
+    rdfs:range ani:SampleInheritance .
+
+ani:hasSamplePurpose a owl:DatatypeProperty ;
+    rdfs:label "hasSamplePurpose"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "SampleAttributes"@en,
+        "SampleInheritance"@en,
+        "SampleReference"@en,
+        "samplePurpose"@en ;
+    rdfs:comment "Specifies whether the referenced sample is produced or consumed by the current ExperimentStep."@en ;
+    rdfs:domain ani:SampleInheritance,
+        ani:SampleReference ;
+    rdfs:range xsd:token ;
+    rdfs:subPropertyOf ani:hasSampleAttributes .
+
+ani:hasSampleReference a owl:ObjectProperty ;
+    rdfs:label "hasSampleReference"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "SampleReferenceSet"@en ;
+    rdfs:domain ani:SampleReferenceSet ;
+    rdfs:range ani:SampleReference .
+
+ani:hasSampleReferenceSet a owl:ObjectProperty ;
+    rdfs:label "hasSampleReferenceSet"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Infrastructure"@en ;
+    rdfs:domain ani:Infrastructure ;
+    rdfs:range ani:SampleReferenceSet .
+
+ani:hasSampleSet a owl:ObjectProperty ;
+    rdfs:label "hasSampleSet"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "AnIML"@en ;
+    rdfs:domain ani:AnIML ;
+    rdfs:range ani:SampleSet .
+
+ani:hasScope a owl:DatatypeProperty ;
+    rdfs:label "hasScope"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Diff"@en,
+        "scope"@en ;
+    rdfs:comment "Scope of diff. May be \"element\" or \"attribute\"."@en ;
+    rdfs:domain ani:Diff ;
+    rdfs:range xsd:token .
+
+ani:hasSerialNumber a owl:DatatypeProperty ;
+    rdfs:label "hasSerialNumber"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Device"@en,
+        "SerialNumber"@en ;
+    rdfs:comment "Unique serial number of device."@en ;
+    rdfs:domain ani:Device ;
+    rdfs:range xsd:token .
+
+ani:hasSeries a owl:ObjectProperty ;
+    rdfs:label "hasSeries"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "SeriesSet"@en ;
+    rdfs:domain ani:SeriesSet ;
+    rdfs:range ani:Series .
+
+ani:hasSeriesID a owl:DatatypeProperty ;
+    rdfs:label "hasSeriesID"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "ParentDataPointReference"@en,
+        "Series"@en,
+        "seriesID"@en ;
+    rdfs:comment "Contains the ID of the Series referenced."@en,
+        "Identifies the Series. Used in References from subordinate ExperimentSteps. Unique per SeriesSet."@en ;
+    rdfs:domain ani:ParentDataPointReference,
+        ani:Series ;
+    rdfs:range xsd:token .
+
+ani:hasSeriesSet a owl:ObjectProperty ;
+    rdfs:label "hasSeriesSet"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Category"@en,
+        "Result"@en ;
+    rdfs:domain ani:Category,
+        ani:Result ;
+    rdfs:range ani:SeriesSet .
+
+ani:hasSeriesType a owl:DatatypeProperty ;
+    rdfs:label "hasSeriesType"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Series"@en,
+        "seriesType"@en ;
+    rdfs:comment "Data type used by all values in this Series."@en ;
+    rdfs:domain ani:Series ;
+    rdfs:range xsd:token .
+
+ani:hasSha256 a owl:DatatypeProperty ;
+    rdfs:label "hasSha256"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Extension"@en,
+        "Technique"@en,
+        "sha256"@en ;
+    rdfs:comment "SHA256 checksum of the referenced Extension. Hex encoded, lower cased. Similar to the output of the sha256 unix command."@en,
+        "SHA256 checksum of the referenced Technique Definition. Hex encoded, lower cased. Similar to the output of the sha256 unix command."@en ;
+    rdfs:domain ani:Extension,
+        ani:Technique ;
+    rdfs:range xsd:normalizedString .
+
+ani:hasSignature a owl:ObjectProperty ;
+    rdfs:label "hasSignature"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "SignatureSet"@en ;
+    rdfs:domain ani:SignatureSet ;
+    rdfs:range ani:Signature .
+
+ani:hasSignatureSet a owl:ObjectProperty ;
+    rdfs:label "hasSignatureSet"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "AnIML"@en ;
+    rdfs:domain ani:AnIML ;
+    rdfs:range ani:SignatureSet .
+
+ani:hasSignatureValue a owl:ObjectProperty ;
+    rdfs:label "hasSignatureValue"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Signature"@en ;
+    rdfs:domain ani:Signature ;
+    rdfs:range ani:SignatureValue .
+
+ani:hasSignedInfo a owl:ObjectProperty ;
+    rdfs:label "hasSignedInfo"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Signature"@en ;
+    rdfs:domain ani:Signature ;
+    rdfs:range ani:SignedInfo .
+
+ani:hasSoftware a owl:ObjectProperty ;
+    rdfs:label "hasSoftware"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "AuditTrailEntry"@en,
+        "Method"@en ;
+    rdfs:domain ani:AuditTrailEntry,
+        ani:Method ;
+    rdfs:range ani:Software .
+
+ani:hasStartIndex a owl:DatatypeProperty ;
+    rdfs:label "hasStartIndex"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "AutoIncrementedValueSet"@en,
+        "EncodedValueSet"@en,
+        "IndividualValueSet"@en,
+        "ValueSet"@en,
+        "startIndex"@en ;
+    rdfs:comment "Zero-based index of the first entry in this Value Set. The specification is inclusive."@en ;
+    rdfs:domain ani:AutoIncrementedValueSet,
+        ani:EncodedValueSet,
+        ani:IndividualValueSet ;
+    rdfs:range xsd:int ;
+    rdfs:subPropertyOf ani:hasValueSet .
+
+ani:hasStartValue a owl:ObjectProperty ;
+    rdfs:label "hasStartValue"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "AutoIncrementedValueSet"@en,
+        "ParentDataPointReference"@en ;
+    rdfs:domain ani:AutoIncrementedValueSet,
+        ani:ParentDataPointReference ;
+    rdfs:range ani:StartValue .
+
+ani:hasTag a owl:ObjectProperty ;
+    rdfs:label "hasTag"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "TagSet"@en ;
+    rdfs:domain ani:TagSet ;
+    rdfs:range ani:Tag .
+
+ani:hasTagSet a owl:ObjectProperty ;
+    rdfs:label "hasTagSet"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "ExperimentStep"@en,
+        "Sample"@en,
+        "Template"@en ;
+    rdfs:domain ani:ExperimentStep,
+        ani:Sample,
+        ani:Template ;
+    rdfs:range ani:TagSet .
+
+ani:hasTechnique a owl:ObjectProperty ;
+    rdfs:label "hasTechnique"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "ExperimentStep"@en,
+        "Template"@en ;
+    rdfs:domain ani:ExperimentStep,
+        ani:Template ;
+    rdfs:range ani:Technique .
+
+ani:hasTemplate a owl:ObjectProperty ;
+    rdfs:label "hasTemplate"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "ExperimentStepSet"@en ;
+    rdfs:domain ani:ExperimentStepSet ;
+    rdfs:range ani:Template .
+
+ani:hasTemplateID a owl:DatatypeProperty ;
+    rdfs:label "hasTemplateID"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Template"@en ;
+    rdfs:domain ani:Template ;
+    rdfs:range xsd:token .
+
+ani:hasTemplateUsed a owl:DatatypeProperty ;
+    rdfs:label "hasTemplateUsed"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "ExperimentStep"@en ;
+    rdfs:domain ani:ExperimentStep ;
+    rdfs:range xsd:token .
+
+ani:hasTimestamp a owl:DatatypeProperty ;
+    rdfs:label "hasTimestamp"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "AuditTrailEntry"@en,
+        "Infrastructure"@en,
+        "Timestamp"@en ;
+    rdfs:comment "Date and time of modification."@en ;
+    rdfs:domain ani:AuditTrailEntry,
+        ani:Infrastructure ;
+    rdfs:range xsd:dateTime .
+
+ani:hasUnit a owl:ObjectProperty ;
+    rdfs:label "hasUnit"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Parameter"@en,
+        "Series"@en ;
+    rdfs:domain ani:Parameter,
+        ani:Series ;
+    rdfs:range ani:Unit .
+
+ani:hasUri a owl:DatatypeProperty ;
+    rdfs:label "hasUri"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Extension"@en,
+        "Technique"@en,
+        "uri"@en ;
+    rdfs:comment "URI where Extension file can be fetched."@en,
+        "URI where Technique Definition file can be fetched."@en ;
+    rdfs:domain ani:Extension,
+        ani:Technique ;
+    rdfs:range xsd:anyURI .
+
+ani:hasUserType a owl:DatatypeProperty ;
+    rdfs:label "hasUserType"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Author"@en,
+        "userType"@en ;
+    rdfs:comment "Type of user (human, device, software)"@en ;
+    rdfs:domain ani:Author ;
+    rdfs:range xsd:token .
+
+ani:hasValue a owl:DatatypeProperty ;
+    rdfs:label "hasValue"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Tag"@en ;
+    rdfs:domain ani:Tag ;
+    rdfs:range xsd:string .
+
+ani:hasVersion a owl:DatatypeProperty ;
+    rdfs:label "hasVersion"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "AnIML"@en,
+        "Software"@en,
+        "Version"@en,
+        "version"@en ;
+    rdfs:comment "Version identifier of software release."@en,
+        "Version number of the AnIML Core Schema used in this document. Must be \"0.90\"."@en ;
+    rdfs:domain ani:AnIML,
+        ani:Software ;
+    rdfs:range xsd:string,
+        xsd:token .
+
+ani:hasVisible ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "visible"@en ;
+    rdfs:comment "Specifies whether data in this Series is to be displayed to the user by default."@en .
+
+ani:isBoolean a owl:DatatypeProperty ;
+    rdfs:label "isBoolean"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Boolean"@en,
+        "IndividualValueSet"@en,
+        "Parameter"@en ;
+    rdfs:domain ani:IndividualValueSet,
+        ani:Parameter ;
+    rdfs:range xsd:boolean .
+
+ani:isDerived a owl:DatatypeProperty ;
+    rdfs:label "isDerived"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Sample"@en ;
+    rdfs:domain ani:Sample ;
+    rdfs:range xsd:boolean .
+
+ani:isVisible a owl:DatatypeProperty ;
+    rdfs:label "isVisible"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Series"@en ;
+    rdfs:domain ani:Series ;
+    rdfs:range xsd:boolean .
+
+ani:hasSignableItem a owl:DatatypeProperty ;
+    rdfs:label "hasSignableItem"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "SignableItem"@en ;
+    rdfs:comment "ID for Signable Items."@en .
+
+ani:hasSourceDataLocation a owl:DatatypeProperty ;
+    rdfs:label "hasSourceDataLocation"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "ExperimentStep"@en,
+        "Sample"@en,
+        "SourceDataLocation"@en,
+        "Template"@en,
+        "sourceDataLocation"@en ;
+    rdfs:comment "Attribute group which points to the original data source."@en,
+        "Points to the original data source. May be a file name, uri, database ID, etc."@en ;
+    rdfs:domain ani:ExperimentStep,
+        ani:Sample,
+        ani:Template ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf ani:hasSourceDataLocation .
+
+ani:ParentDataPointReferenceSet a owl:Class ;
+    rdfs:label "ParentDataPointReferenceSet"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "ParentDataPointReferenceSet"@en ;
+    rdfs:comment "Contains references to the parent Result."@en .
+
+ani:SignatureSet a owl:Class ;
+    rdfs:label "SignatureSet"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "SignatureSet"@en ;
+    rdfs:comment "Container for digital signatures covering parts of this AnIML document."@en .
+
+ani:TagSet a owl:Class ;
+    rdfs:label "TagSet"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "TagSet"@en ;
+    rdfs:comment "Set of Tag elements."@en .
+
+ani:hasExperimentDataAttributes a owl:DatatypeProperty ;
+    rdfs:label "hasExperimentDataAttributes"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "ExperimentDataAttributes"@en ;
+    rdfs:comment "Common attributes for experiment data references"@en .
+
+ani:hasSampleAttributes a owl:DatatypeProperty ;
+    rdfs:label "hasSampleAttributes"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "SampleAttributes"@en ;
+    rdfs:comment "Common attributes for sample references."@en .
+
+ani:hasSignableItemWithName a owl:DatatypeProperty ;
+    rdfs:label "hasSignableItemWithName"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "SignableItemWithName"@en ;
+    rdfs:comment "ID and Name attribute for Signable Items."@en .
+
+ani:hasValueSet a owl:DatatypeProperty ;
+    rdfs:label "hasValueSet"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "ValueSet"@en ;
+    rdfs:comment "Start and End Index for this Set of Values (zero-based)."@en .
+
+ani:AuditTrailEntrySet a owl:Class ;
+    rdfs:label "AuditTrailEntrySet"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "AuditTrailEntrySet"@en ;
+    rdfs:comment "Container for audit trail entries describing changes to this document."@en .
+
+ani:Diff a owl:Class ;
+    rdfs:label "Diff"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Diff"@en ;
+    rdfs:comment "Machine-readable description of changes made."@en .
+
+ani:EncodedValueSet a owl:Class ;
+    rdfs:label "EncodedValueSet"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "EncodedValueSet"@en ;
+    rdfs:comment "Multiple numeric values encoded as a base64 binary string. Uses little-endian byte order."@en ;
+    rdfs:subClassOf ani:Series .
+
+ani:SampleSet a owl:Class ;
+    rdfs:label "SampleSet"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "SampleSet"@en ;
+    rdfs:comment "Container for Samples used in this AnIML document."@en .
+
+ani:Tag a owl:Class ;
+    rdfs:label "Tag"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Tag"@en ;
+    rdfs:comment "Tag to mark related data items. When a value is given, it may also serve as a reference to an external data system."@en .
+
+ani:ExperimentDataReferenceSet a owl:Class ;
+    rdfs:label "ExperimentDataReferenceSet"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "ExperimentDataReferenceSet"@en ;
+    rdfs:comment "Set of Experiment Steps consumed by this Experiment Step."@en .
+
+ani:ExperimentStepSet a owl:Class ;
+    rdfs:label "ExperimentStepSet"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "ExperimentStepSet"@en ;
+    rdfs:comment "Container for multiple ExperimentSteps that describe the process and results."@en .
+
+ani:Extension a owl:Class ;
+    rdfs:label "Extension"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Extension"@en ;
+    rdfs:comment "Reference to an Extension to amend the active Technique Definition."@en .
+
+ani:SIUnit a owl:Class ;
+    rdfs:label "SIUnit"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "SIUnit"@en ;
+    rdfs:comment "Combination of SI Units used to represent Scientific Unit."@en .
+
+ani:SampleInheritance a owl:Class ;
+    rdfs:label "SampleInheritance"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "SampleInheritance"@en ;
+    rdfs:comment "Indicates that a Sample was inherited from the parent ExperimentStep."@en .
+
+ani:SampleReferenceSet a owl:Class ;
+    rdfs:label "SampleReferenceSet"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "SampleReferenceSet"@en ;
+    rdfs:comment "Set of Samples used in this Experiment."@en .
+
+ani:Unit a owl:Class ;
+    rdfs:label "Unit"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Unit"@en ;
+    rdfs:comment "Definition of a Scientific Unit."@en .
+
+ani:AnIML a owl:Class ;
+    rdfs:label "AnIML"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "AnIML"@en ;
+    rdfs:comment "Root Element for AnIML documents."@en .
+
+ani:AutoIncrementedValueSet a owl:Class ;
+    rdfs:label "AutoIncrementedValueSet"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "AutoIncrementedValueSet"@en ;
+    rdfs:comment "Multiple values given in form of a start value and an increment."@en ;
+    rdfs:subClassOf ani:Series .
+
+ani:EndValue a owl:Class ;
+    rdfs:label "EndValue"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "EndValue"@en ;
+    rdfs:comment "Upper boundary of an interval."@en .
+
+ani:ExperimentDataBulkReference a owl:Class ;
+    rdfs:label "ExperimentDataBulkReference"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "ExperimentDataBulkReference"@en ;
+    rdfs:comment "Prefix-based reference to a set of Experiment Steps whose data are consumed."@en .
+
+ani:ExperimentDataReference a owl:Class ;
+    rdfs:label "ExperimentDataReference"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "ExperimentDataReference"@en ;
+    rdfs:comment "Reference to an Experiment Step whose data are consumed."@en .
+
+ani:Increment a owl:Class ;
+    rdfs:label "Increment"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Increment"@en ;
+    rdfs:comment "Increment value"@en .
+
+ani:ParentDataPointReference a owl:Class ;
+    rdfs:label "ParentDataPointReference"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "ParentDataPointReference"@en ;
+    rdfs:comment "Reference to a data point or value range in an independent Series in the parent Result."@en .
+
+ani:SampleReference a owl:Class ;
+    rdfs:label "SampleReference"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "SampleReference"@en ;
+    rdfs:comment "Reference to a Sample used in this Experiment."@en .
+
+ani:SeriesSet a owl:Class ;
+    rdfs:label "SeriesSet"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "SeriesSet"@en ;
+    rdfs:comment "Container for n-dimensional Data."@en .
+
+ani:Software a owl:Class ;
+    rdfs:label "Software"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Software"@en ;
+    rdfs:comment "Software used to author this."@en .
+
+ani:StartValue a owl:Class ;
+    rdfs:label "StartValue"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "StartValue"@en ;
+    rdfs:comment "Lower boundary of an interval or ValueSet."@en .
+
+ani:Category a owl:Class ;
+    rdfs:label "Category"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Category"@en ;
+    rdfs:comment "Contains multiple subcategories of Category."@en,
+        "Defines a category of Parameters and SeriesSets. Used to model hierarchies."@en .
+
+ani:Device a owl:Class ;
+    rdfs:label "Device"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Device"@en ;
+    rdfs:comment "Device used to perform experiment."@en .
+
+ani:Infrastructure a owl:Class ;
+    rdfs:label "Infrastructure"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Infrastructure"@en ;
+    rdfs:comment "Contains references to the context of this Experiment."@en .
+
+ani:Result a owl:Class ;
+    rdfs:label "Result"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Result"@en ;
+    rdfs:comment "Container for Data derived from Experiment."@en .
+
+ani:Signature a owl:Class ;
+    rdfs:label "Signature"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Signature"@en ;
+    rdfs:comment "Digital Signature that has been applied to a part of this AnIML document. Uses the W3C XML-DSIG specification."@en .
+
+ani:Technique a owl:Class ;
+    rdfs:label "Technique"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Technique"@en ;
+    rdfs:comment "Reference to Technique Definition used in this Experiment."@en .
+
+ani:Method a owl:Class ;
+    rdfs:label "Method"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Method"@en ;
+    rdfs:comment "Describes how this Experiment was performed."@en .
+
+ani:Author a owl:Class ;
+    rdfs:label "Author"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Author"@en ;
+    rdfs:comment "Information about a person, a device or a piece of software authoring AnIML files."@en .
+
+ani:AuditTrailEntry a owl:Class ;
+    rdfs:label "AuditTrailEntry"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "AuditTrailEntry"@en ;
+    rdfs:comment "Describes a set of changes made to the particular AnIML document by one user at a given time."@en .
+
+ani:Template a owl:Class ;
+    rdfs:label "Template"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Template"@en ;
+    rdfs:comment "Represents a template for an ExperimentStep."@en .
+
+ani:ExperimentStep a owl:Class ;
+    rdfs:label "ExperimentStep"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "ExperimentStep"@en ;
+    rdfs:comment "Container that documents a step in an experiment. Use one ExperimentStep per application of a Technique."@en .
+
+ani:IndividualValueSet a owl:Class ;
+    rdfs:label "IndividualValueSet"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "IndividualValueSet"@en ;
+    rdfs:comment "Multiple Values explicitly specified."@en ;
+    rdfs:subClassOf ani:Series .
+
+ani:Sample a owl:Class ;
+    rdfs:label "Sample"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Sample"@en ;
+    rdfs:comment "Individual Sample, referenced from other parts of this AnIML document."@en .
+
+ani:Parameter a owl:Class ;
+    rdfs:label "Parameter"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Parameter"@en ;
+    rdfs:comment "Name/Value Pair."@en .
+
+ani:Series a owl:Class ;
+    rdfs:label "Series"@en ;
+    ani:generatedBy "Rubrex"@en ;
+    ani:hasXSDSource "Series"@en ;
+    rdfs:comment "Container for multiple Values."@en .
+
