@@ -1,7 +1,7 @@
 import yaml
 from rdflib import Graph
 from utils import clean_namespace, parse_config
-from xmlschema.validators import XsdAnyAttribute
+from xmlschema.validators import XsdAnyAttribute, XsdGroup, XsdElement
 
 
 class RuBREx:
@@ -38,7 +38,8 @@ class RuBREx:
                 except Exception:
                     for a in concept.values():
                         attributes.append(a)
-
+        if attributes is not None:
+            print(f"Matched with rule {rule["name"]}")
         for a in attributes:
             if isinstance(a, str):
                 if getattr(concept, a, None):
@@ -48,46 +49,70 @@ class RuBREx:
                     continue
                 self.generate_fragment(concept, {"attribute": a})
 
+    def fetch_children(self, concept, selector):
+        children = []
+        c_type = selector["child_type"]
+        t = concept.type
+        if t.is_complex() and not t.has_simple_content() and t.content is not None:
+            descendents = list(t.content.iter_elements())
+        else:
+            descendents = []
+        for d in descendents:
+            if type(d.type).__name__ == c_type:
+                children.append(d)
+        return children
+
     def has_child(self, concept, rule):
         children = []
         selector = rule["selector"][0]
         if "child_type" in selector.keys():
-            c_type = selector["child_type"]
-            t = concept.type
-            if t.is_complex() and not t.has_simple_content() and t.content is not None:
-                descendents = list(t.content.iter_elements())
-            else:
-                descendents = []
-            for d in descendents:
-                if type(d.type).__name__ == c_type:
-                    children.append(d)
+            children = self.fetch_children(concept, selector)
 
+        if children is not None:
+            print(f"Matched with rule {rule["name"]}")
         for c in children:
             self.generate_fragment(concept, {"child": c})
 
     def has_choice(self, concept, rule):
-        # self.generate_fragment(concept, {})
-        pass
+        def walk(component, choice_seen):
+            if isinstance(component, XsdElement):
+                return choice_seen
+            if isinstance(component, XsdGroup):
+                choice_seen = choice_seen or (component.model == 'choice')
+                for item in component:
+                    if walk(item, choice_seen):
+                        return True
+            return False
 
-    def process_element(self, concept):
-        concept_type = type(concept.type).__name__
+        child_choice = []
+        selector = rule["selector"][0]
+        group = concept.type.model_group or concept.type.content
+        if not isinstance(group, XsdGroup):
+            return
+        if not walk(group, False):
+            return
+        else:
+            pot_children = self.fetch_children(concept, selector)
+
+        for c in pot_children:
+            parent = c.parent
+            if isinstance(parent, XsdGroup) and parent.model == 'choice':
+                child_choice.append(c)
+
+        if child_choice is not None and child_choice != []:
+            print(f"Matched with rule {rule["name"]}")
+        for c in child_choice:
+            self.generate_fragment(concept, {"child": c})
+
+    def process_concept(self, concept, concept_type):
         for rule in self.rules:
             if concept_type == rule["element_type"]:
                 if "selector" in rule:
                     getattr(self, rule["selector"][0]
                             ["pattern"])(concept, rule)
-                    print(f"Matched with rule {rule["name"]}")
                 else:
                     print(f"Matched with rule {rule["name"]}")
 
-    def process_attribute(self, concept):
-        pass
-
-    def process_attribute_group(self, concept):
-        pass
-
-    # FIX: Determine what arguments are required
-    # Likely kwargs
     def generate_fragment(self, concept, parts):
         print(f"{clean_namespace(concept.name)} is linked to {
               parts}")
@@ -99,17 +124,18 @@ class RuBREx:
             concept_type = type(concept).__name__
 
             if concept_type == "XsdElement":
+                clean_type = type(concept.type).__name__
                 print(concept_type)
                 print("--> " + type(concept.type).__name__)
                 print("--> " + clean_namespace(concept.name))
-                self.process_element(concept)
+                self.process_concept(concept, clean_type)
 
             if concept_type == "XsdAttribute":
                 print(concept_type)
                 print("--> " + clean_namespace(concept.name))
-                self.process_attribute(concept)
+                self.process_concept(concept, concept_type)
 
             if concept_type == "XsdAttributeGroup" and concept.name is not None:
                 print(concept_type)
                 print("--> " + clean_namespace(concept.name))
-                self.process_attribute_group(concept)
+                self.process_concept(concept, concept_type)

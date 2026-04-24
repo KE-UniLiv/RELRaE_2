@@ -1,4 +1,4 @@
 modules=RuBREx,LLM_Refinement_Loop,human_fix
-schema=MINiML.xsd
+schema=animl-core.xsd
 namespace=https://www.example.org/anitology/onto#
 prefix=ani
