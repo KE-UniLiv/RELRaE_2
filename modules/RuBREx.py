@@ -1,6 +1,7 @@
 import yaml
 from rdflib import Graph
 from utils import clean_namespace, parse_config
+from xmlschema.validators import XsdAnyAttribute
 
 
 class RuBREx:
@@ -25,13 +26,35 @@ class RuBREx:
             raise Exception
 
     def has_attribute(self, concept, rule):
-        self.generate_fragment(concept)
+        attributes = []
+        selector = rule["selector"][0]
+        if "attribute" in selector.keys():
+            if selector["attribute"] != "All":
+                attributes.append(selector["attribute"])
+            else:
+                try:
+                    for a in concept.attributes.values():
+                        attributes.append(a)
+                except Exception:
+                    for a in concept.values():
+                        attributes.append(a)
+
+        for a in attributes:
+            if isinstance(a, str):
+                if getattr(concept, a, None):
+                    self.generate_fragment(concept, {"attribute": a})
+            else:
+                if isinstance(a, XsdAnyAttribute):
+                    continue
+                self.generate_fragment(concept, {"attribute": a})
 
     def has_child(self, concept, rule):
-        self.generate_fragment(concept)
+        # self.generate_fragment(concept, {})
+        pass
 
     def has_choice(self, concept, rule):
-        self.generate_fragment(concept)
+        # self.generate_fragment(concept, {})
+        pass
 
     def process_element(self, concept):
         concept_type = type(concept.type).__name__
@@ -41,10 +64,8 @@ class RuBREx:
                     getattr(self, rule["selector"][0]
                             ["pattern"])(concept, rule)
                     print(f"Matched with rule {rule["name"]}")
-                    self.generate_fragment(concept)
                 else:
                     print(f"Matched with rule {rule["name"]}")
-                    self.generate_fragment(concept)
 
     def process_attribute(self, concept):
         pass
@@ -54,8 +75,9 @@ class RuBREx:
 
     # FIX: Determine what arguments are required
     # Likely kwargs
-    def generate_fragment(self, concept):
-        pass
+    def generate_fragment(self, concept, parts):
+        print(f"{clean_namespace(concept.name)} has attribute {
+              parts["attribute"]}")
 
     def match_concepts(self):
         # NOTE: Only XML 1.0 supported currently
