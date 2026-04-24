@@ -49,8 +49,21 @@ class RuBREx:
                 self.generate_fragment(concept, {"attribute": a})
 
     def has_child(self, concept, rule):
-        # self.generate_fragment(concept, {})
-        pass
+        children = []
+        selector = rule["selector"][0]
+        if "child_type" in selector.keys():
+            c_type = selector["child_type"]
+            t = concept.type
+            if t.is_complex() and not t.has_simple_content() and t.content is not None:
+                descendents = list(t.content.iter_elements())
+            else:
+                descendents = []
+            for d in descendents:
+                if type(d.type).__name__ == c_type:
+                    children.append(d)
+
+        for c in children:
+            self.generate_fragment(concept, {"child": c})
 
     def has_choice(self, concept, rule):
         # self.generate_fragment(concept, {})
@@ -76,8 +89,8 @@ class RuBREx:
     # FIX: Determine what arguments are required
     # Likely kwargs
     def generate_fragment(self, concept, parts):
-        print(f"{clean_namespace(concept.name)} has attribute {
-              parts["attribute"]}")
+        print(f"{clean_namespace(concept.name)} is linked to {
+              parts}")
 
     def match_concepts(self):
         # NOTE: Only XML 1.0 supported currently
