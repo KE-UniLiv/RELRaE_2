@@ -1,0 +1,1004 @@
+@prefix min: <http://www.example.org/minimology/onto#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+min:hasAccession a owl:ObjectProperty ;
+    rdfs:label "hasAccession"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Platform"@en,
+        "Sample"@en,
+        "Series"@en ;
+    rdfs:domain min:Platform,
+        min:Sample,
+        min:Series ;
+    rdfs:range min:Accession .
+
+min:hasAddress a owl:ObjectProperty ;
+    rdfs:label "hasAddress"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Contact"@en,
+        "Contributor"@en,
+        "Organization"@en ;
+    rdfs:domain min:Contact,
+        min:Contributor,
+        min:Organization ;
+    rdfs:range min:Address .
+
+min:hasBarcode a owl:DatatypeProperty ;
+    rdfs:label "hasBarcode"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Barcode"@en,
+        "Sample"@en ;
+    rdfs:domain min:Sample ;
+    rdfs:range xsd:string .
+
+min:hasBuild a owl:DatatypeProperty ;
+    rdfs:label "hasBuild"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "External-File"@en,
+        "Raw-Data"@en,
+        "Supplementary-Data"@en ;
+    rdfs:domain min:External-File,
+        min:Raw-Data,
+        min:Supplementary-Data ;
+    rdfs:range xsd:normalizedString .
+
+min:hasChannel a owl:ObjectProperty ;
+    rdfs:label "hasChannel"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Sample"@en ;
+    rdfs:domain min:Sample ;
+    rdfs:range min:Channel .
+
+min:hasCharacteristics a owl:ObjectProperty ;
+    rdfs:label "hasCharacteristics"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Channel"@en ;
+    rdfs:domain min:Channel ;
+    rdfs:range min:Characteristics .
+
+min:hasChecksum a owl:DatatypeProperty ;
+    rdfs:label "hasChecksum"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "External-File"@en,
+        "Raw-Data"@en,
+        "Supplementary-Data"@en ;
+    rdfs:domain min:External-File,
+        min:Raw-Data,
+        min:Supplementary-Data ;
+    rdfs:range xsd:string .
+
+min:hasCoating a owl:DatatypeProperty ;
+    rdfs:label "hasCoating"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Coating"@en,
+        "Platform"@en ;
+    rdfs:comment """
+              Submission Guidelines: Provide the coating of the Platform,
+              e.g., aminosilane, quartz, polysine, unknown.
+            """@en ;
+    rdfs:domain min:Platform ;
+    rdfs:range xsd:token .
+
+min:hasColumn a owl:ObjectProperty ;
+    rdfs:label "hasColumn"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Data-Table"@en ;
+    rdfs:domain min:Data-Table ;
+    rdfs:range min:Column .
+
+min:hasComment a owl:DatatypeProperty ;
+    rdfs:label "hasComment"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Relation"@en ;
+    rdfs:domain min:Relation ;
+    rdfs:range xsd:normalizedString .
+
+min:hasContact a owl:ObjectProperty ;
+    rdfs:label "hasContact"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Platform"@en,
+        "Sample"@en,
+        "Series"@en ;
+    rdfs:domain min:Platform,
+        min:Sample,
+        min:Series ;
+    rdfs:range min:Contact .
+
+min:hasContact-Ref a owl:ObjectProperty ;
+    rdfs:label "hasContact-Ref"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Platform"@en,
+        "Sample"@en,
+        "Series"@en ;
+    rdfs:domain min:Platform,
+        min:Sample,
+        min:Series ;
+    rdfs:range min:Contact-Ref .
+
+min:hasContributor a owl:ObjectProperty ;
+    rdfs:label "hasContributor"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "MINiML"@en,
+        "Platform"@en,
+        "Series"@en ;
+    rdfs:domain min:MINiML,
+        min:Platform,
+        min:Series ;
+    rdfs:range min:Contributor .
+
+min:hasContributor-Ref a owl:ObjectProperty ;
+    rdfs:label "hasContributor-Ref"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Platform"@en,
+        "Series"@en ;
+    rdfs:domain min:Platform,
+        min:Series ;
+    rdfs:range min:Contributor-Ref .
+
+min:hasData-Processing a owl:DatatypeProperty ;
+    rdfs:label "hasData-Processing"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Data-Processing"@en,
+        "Sample"@en ;
+    rdfs:comment """
+             Submission Guidelines: Provide details of how data in the 
+             VALUE column of your data table were generated and calculated, 
+             i.e., normalization method, data selection procedures and 
+             parameters, transformation algorithm and scaling parameters. 
+           """@en ;
+    rdfs:domain min:Sample ;
+    rdfs:range xsd:string .
+
+min:hasData-Table a owl:ObjectProperty ;
+    rdfs:label "hasData-Table"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Platform"@en,
+        "Sample"@en,
+        "Series"@en ;
+    rdfs:domain min:Platform,
+        min:Sample,
+        min:Series ;
+    rdfs:range min:Data-Table .
+
+min:hasDatabase a owl:DatatypeProperty,
+        owl:ObjectProperty ;
+    rdfs:label "hasDatabase"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Accession"@en,
+        "MINiML"@en,
+        "Status"@en ;
+    rdfs:domain min:Accession,
+        min:MINiML,
+        min:Status ;
+    rdfs:range min:Database,
+        xsd:NCName .
+
+min:hasDescription a owl:DatatypeProperty ;
+    rdfs:label "hasDescription"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Description"@en,
+        "Sample"@en ;
+    rdfs:comment """
+             Submission Guidelines: Include any additional information not 
+             provided in the other fields, or paste in broad descriptions 
+             that cannot be easily dissected into the other fields.
+           """@en ;
+    rdfs:domain min:Sample ;
+    rdfs:range xsd:string .
+
+min:hasDistribution a owl:DatatypeProperty ;
+    rdfs:label "hasDistribution"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Distribution"@en,
+        "Platform"@en ;
+    rdfs:comment """
+              Submission Guidelines: Microarrays are commercial,
+              non-commercial, or custom-commercial in accordance with
+              how the array was manufactured. Use virtual only if
+              creating a virtual definition for
+              MS, MPSS, SARST, or RT-PCR data.
+            """@en ;
+    rdfs:domain min:Platform ;
+    rdfs:range xsd:token .
+
+min:hasEmail a owl:DatatypeProperty ;
+    rdfs:label "hasEmail"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Contact"@en,
+        "Contributor"@en,
+        "Database"@en,
+        "Email"@en ;
+    rdfs:domain min:Contact,
+        min:Contributor,
+        min:Database ;
+    rdfs:range xsd:token .
+
+min:hasExternal-Data a owl:ObjectProperty ;
+    rdfs:label "hasExternal-Data"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Data-Table"@en ;
+    rdfs:domain min:Data-Table ;
+    rdfs:range min:External-Data .
+
+min:hasExternal-File a owl:ObjectProperty ;
+    rdfs:label "hasExternal-File"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Data-Table"@en ;
+    rdfs:domain min:Data-Table ;
+    rdfs:range min:External-File .
+
+min:hasFactor a owl:DatatypeProperty ;
+    rdfs:label "hasFactor"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Factor"@en,
+        "Repeats"@en,
+        "Variable"@en ;
+    rdfs:domain min:Repeats,
+        min:Variable ;
+    rdfs:range xsd:token .
+
+min:hasIid a owl:DatatypeProperty ;
+    rdfs:label "hasIid"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Contact"@en,
+        "Contributor"@en,
+        "Database"@en,
+        "Organization"@en,
+        "Platform"@en,
+        "Sample"@en,
+        "Series"@en ;
+    rdfs:domain min:Contact,
+        min:Contributor,
+        min:Database,
+        min:Organization,
+        min:Platform,
+        min:Sample,
+        min:Series ;
+    rdfs:range xsd:NCName .
+
+min:hasInstrument-Model a owl:ObjectProperty ;
+    rdfs:label "hasInstrument-Model"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Sample"@en ;
+    rdfs:domain min:Sample ;
+    rdfs:range min:Instrument-Model .
+
+min:hasInternal-Data a owl:ObjectProperty ;
+    rdfs:label "hasInternal-Data"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Data-Table"@en ;
+    rdfs:domain min:Data-Table ;
+    rdfs:range min:Internal-Data .
+
+min:hasLabel a owl:DatatypeProperty ;
+    rdfs:label "hasLabel"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Channel"@en,
+        "Label"@en ;
+    rdfs:comment """
+          Submission Guidelines: Specify the compound used to label
+          the extract e.g., biotin, Cy3, Cy5, 33P.
+        """@en ;
+    rdfs:domain min:Channel ;
+    rdfs:range xsd:token .
+
+min:hasLibrary-Selection a owl:DatatypeProperty ;
+    rdfs:label "hasLibrary-Selection"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Library-Selection"@en,
+        "Sample"@en ;
+    rdfs:domain min:Sample ;
+    rdfs:range xsd:token .
+
+min:hasLibrary-Source a owl:DatatypeProperty ;
+    rdfs:label "hasLibrary-Source"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Library-Source"@en,
+        "Sample"@en ;
+    rdfs:domain min:Sample ;
+    rdfs:range xsd:token .
+
+min:hasLibrary-Strategy a owl:DatatypeProperty ;
+    rdfs:label "hasLibrary-Strategy"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Library-Strategy"@en,
+        "Sample"@en ;
+    rdfs:domain min:Sample ;
+    rdfs:range xsd:token .
+
+min:hasManufacture-Protocol a owl:DatatypeProperty ;
+    rdfs:label "hasManufacture-Protocol"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Manufacture-Protocol"@en,
+        "Platform"@en ;
+    rdfs:comment """
+              Submission Guidelines: Describe the Platform manufacture
+              protocol Include as much detail as possible, e.g.,
+              clone/primer set identification and preparation,
+              strandedness/length, arrayer hardware/software, spotting
+              protocols. It is strongly recommended that complete
+              protocol descriptions are provided within your
+              submission. References to published protocol
+              descriptions are acceptable - please provide complete
+              citation information. Links to web sites that provide
+              protocol information are not recommended since web
+              addresses and content often change.
+            """@en ;
+    rdfs:domain min:Platform ;
+    rdfs:range xsd:string .
+
+min:hasManufacturer a owl:DatatypeProperty ;
+    rdfs:label "hasManufacturer"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Manufacturer"@en,
+        "Platform"@en ;
+    rdfs:comment """
+              Submission Guidelines: Provide the name of the company, facility 
+              or laboratory where the Platform was manufactured or produced.
+            """@en ;
+    rdfs:domain min:Platform ;
+    rdfs:range xsd:token .
+
+min:hasMolecule a owl:DatatypeProperty ;
+    rdfs:label "hasMolecule"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Channel"@en,
+        "Molecule"@en ;
+    rdfs:comment """
+          Submission Guidelines: Specify the type of molecule that was
+          extracted from the biological material.
+        """@en ;
+    rdfs:domain min:Channel ;
+    rdfs:range xsd:token .
+
+min:hasOrganism a owl:ObjectProperty ;
+    rdfs:label "hasOrganism"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Channel"@en,
+        "Platform"@en ;
+    rdfs:domain min:Channel,
+        min:Platform ;
+    rdfs:range min:Organism .
+
+min:hasOrganization a owl:ObjectProperty ;
+    rdfs:label "hasOrganization"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "MINiML"@en ;
+    rdfs:domain min:MINiML ;
+    rdfs:range min:Organization .
+
+min:hasOrganization-Ref a owl:ObjectProperty ;
+    rdfs:label "hasOrganization-Ref"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Contact"@en,
+        "Contributor"@en,
+        "Database"@en ;
+    rdfs:domain min:Contact,
+        min:Contributor,
+        min:Database ;
+    rdfs:range min:Organization-Ref .
+
+min:hasOverall-Design a owl:DatatypeProperty ;
+    rdfs:label "hasOverall-Design"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Overall-Design"@en,
+        "Series"@en ;
+    rdfs:comment """
+             Submission Guidelines:  Provide a brief description of the 
+             experimental design. Indicate how many Samples are analyzed, 
+             if replicates are included, are there control and/or reference 
+             Samples, dye-swaps, etc.
+           """@en ;
+    rdfs:domain min:Series ;
+    rdfs:range xsd:string .
+
+min:hasPerson a owl:ObjectProperty ;
+    rdfs:label "hasPerson"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Contact"@en,
+        "Contributor"@en ;
+    rdfs:domain min:Contact,
+        min:Contributor ;
+    rdfs:range min:Person .
+
+min:hasPlatform a owl:ObjectProperty ;
+    rdfs:label "hasPlatform"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "MINiML"@en ;
+    rdfs:domain min:MINiML ;
+    rdfs:range min:Platform .
+
+min:hasPlatform-Ref a owl:ObjectProperty ;
+    rdfs:label "hasPlatform-Ref"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Sample"@en ;
+    rdfs:domain min:Sample ;
+    rdfs:range min:Platform-Ref .
+
+min:hasPosition a owl:DatatypeProperty ;
+    rdfs:label "hasPosition"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Channel"@en,
+        "Column"@en,
+        "Contact"@en,
+        "Contact-Ref"@en,
+        "Contributor"@en,
+        "Contributor-Ref"@en,
+        "Repeats"@en,
+        "Sample-Ref"@en,
+        "Variable"@en ;
+    rdfs:domain min:Channel,
+        min:Column,
+        min:Contact,
+        min:Contact-Ref,
+        min:Contributor,
+        min:Contributor-Ref,
+        min:Repeats,
+        min:Sample-Ref,
+        min:Variable ;
+    rdfs:range xsd:integer .
+
+min:hasPredefined a owl:DatatypeProperty ;
+    rdfs:label "hasPredefined"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Instrument-Model"@en,
+        "Predefined"@en ;
+    rdfs:domain min:Instrument-Model ;
+    rdfs:range xsd:token .
+
+min:hasRaw-Data a owl:ObjectProperty ;
+    rdfs:label "hasRaw-Data"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Sample"@en ;
+    rdfs:domain min:Sample ;
+    rdfs:range min:Raw-Data .
+
+min:hasRef a owl:DatatypeProperty ;
+    rdfs:label "hasRef"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Contact-Ref"@en,
+        "Contributor-Ref"@en,
+        "Organization-Ref"@en,
+        "Platform-Ref"@en,
+        "Sample-Ref"@en ;
+    rdfs:domain min:Contact-Ref,
+        min:Contributor-Ref,
+        min:Organization-Ref,
+        min:Platform-Ref,
+        min:Sample-Ref ;
+    rdfs:range xsd:NCName .
+
+min:hasRelation a owl:ObjectProperty ;
+    rdfs:label "hasRelation"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Platform"@en,
+        "Sample"@en,
+        "Series"@en ;
+    rdfs:domain min:Platform,
+        min:Sample,
+        min:Series ;
+    rdfs:range min:Relation .
+
+min:hasRepeats a owl:ObjectProperty ;
+    rdfs:label "hasRepeats"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Series"@en ;
+    rdfs:domain min:Series ;
+    rdfs:range min:Repeats .
+
+min:hasRows a owl:DatatypeProperty ;
+    rdfs:label "hasRows"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "External-Data"@en,
+        "Internal-Data"@en ;
+    rdfs:domain min:External-Data,
+        min:Internal-Data ;
+    rdfs:range xsd:nonNegativeInteger .
+
+min:hasSample a owl:ObjectProperty ;
+    rdfs:label "hasSample"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "MINiML"@en ;
+    rdfs:domain min:MINiML ;
+    rdfs:range min:Sample .
+
+min:hasSample-Ref a owl:ObjectProperty ;
+    rdfs:label "hasSample-Ref"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Repeats"@en,
+        "Series"@en,
+        "Variable"@en ;
+    rdfs:domain min:Repeats,
+        min:Series,
+        min:Variable ;
+    rdfs:range min:Sample-Ref .
+
+min:hasSeries a owl:ObjectProperty ;
+    rdfs:label "hasSeries"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "MINiML"@en ;
+    rdfs:domain min:MINiML ;
+    rdfs:range min:Series .
+
+min:hasSource a owl:DatatypeProperty ;
+    rdfs:label "hasSource"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Channel"@en,
+        "Source"@en ;
+    rdfs:comment """
+          Submission Guidelines: Briefly identify the biological
+          material and the experimental variable(s) for this Sample,
+          e.g., vastus lateralis muscle, exercised, 60 min.
+        """@en ;
+    rdfs:domain min:Channel ;
+    rdfs:range xsd:token .
+
+min:hasStatus a owl:ObjectProperty ;
+    rdfs:label "hasStatus"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Platform"@en,
+        "Sample"@en,
+        "Series"@en ;
+    rdfs:domain min:Platform,
+        min:Sample,
+        min:Series ;
+    rdfs:range min:Status .
+
+min:hasSummary a owl:DatatypeProperty ;
+    rdfs:label "hasSummary"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Series"@en,
+        "Summary"@en ;
+    rdfs:comment """
+             Submission Guidelines: Summarize the goals and objectives of 
+             this study. The abstract from the associated publication may be 
+             suitable.
+           """@en ;
+    rdfs:domain min:Series ;
+    rdfs:range xsd:string .
+
+min:hasSupplementary-Data a owl:ObjectProperty ;
+    rdfs:label "hasSupplementary-Data"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Platform"@en,
+        "Sample"@en,
+        "Series"@en ;
+    rdfs:domain min:Platform,
+        min:Sample,
+        min:Series ;
+    rdfs:range min:Supplementary-Data .
+
+min:hasSupport a owl:DatatypeProperty ;
+    rdfs:label "hasSupport"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Platform"@en,
+        "Support"@en ;
+    rdfs:comment """
+              Submission Guidelines: Provide the surface type of the Platform, 
+              e.g., glass, nitrocellulose, nylon, silicon, unknown.
+            """@en ;
+    rdfs:domain min:Platform ;
+    rdfs:range xsd:token .
+
+min:hasTag a owl:DatatypeProperty ;
+    rdfs:label "hasTag"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Characteristics"@en ;
+    rdfs:domain min:Characteristics ;
+    rdfs:range xsd:token .
+
+min:hasTarget a owl:DatatypeProperty ;
+    rdfs:label "hasTarget"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Relation"@en ;
+    rdfs:domain min:Relation ;
+    rdfs:range xsd:normalizedString .
+
+min:hasTaxid a owl:DatatypeProperty ;
+    rdfs:label "hasTaxid"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Organism"@en ;
+    rdfs:domain min:Organism ;
+    rdfs:range xsd:nonNegativeInteger .
+
+min:hasTechnology a owl:DatatypeProperty ;
+    rdfs:label "hasTechnology"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Platform"@en,
+        "Technology"@en ;
+    rdfs:comment """
+              Submission Guidelines: Select the category that best
+              describes the Platform technology.
+            """@en ;
+    rdfs:domain min:Platform ;
+    rdfs:range xsd:token .
+
+min:hasTitle a owl:DatatypeProperty ;
+    rdfs:label "hasTitle"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Data-Table"@en,
+        "Platform"@en,
+        "Sample"@en,
+        "Series"@en,
+        "Title"@en ;
+    rdfs:comment """
+              Submission Guidelines: Provide a unique title that describes your 
+              Platform. We suggest that you use the system 
+              [institution/lab][species][number of features][version], 
+              e.g., "FHCRC Mouse 15K v1.0".
+            """@en,
+        """
+             Submission Guidelines: Provide a unique title that
+             describes this Sample. We suggest that you use the system
+             [biomaterial][condition(s)][replicate number] e.g.,
+             Muscle_exercised_60min_rep2.
+           """@en,
+        """
+             Submission Guidelines: Provide a unique title that describes 
+             the overall study.
+           """@en ;
+    rdfs:domain min:Data-Table,
+        min:Platform,
+        min:Sample,
+        min:Series ;
+    rdfs:range xsd:token .
+
+min:hasType a owl:DatatypeProperty ;
+    rdfs:label "hasType"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "External-File"@en,
+        "Raw-Data"@en,
+        "Relation"@en,
+        "Sample"@en,
+        "Supplementary-Data"@en,
+        "Type"@en ;
+    rdfs:comment """
+             Submission Guidelines: Supply for SAGE submissions only
+             (this field is derived automatically for other Sample
+             types using the Molecule type).
+           """@en ;
+    rdfs:domain min:External-File,
+        min:Raw-Data,
+        min:Relation,
+        min:Sample,
+        min:Supplementary-Data ;
+    rdfs:range xsd:normalizedString,
+        xsd:token .
+
+min:hasVariable a owl:ObjectProperty ;
+    rdfs:label "hasVariable"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Series"@en ;
+    rdfs:domain min:Series ;
+    rdfs:range min:Variable .
+
+min:hasVersion a owl:DatatypeProperty ;
+    rdfs:label "hasVersion"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "MINiML"@en ;
+    rdfs:domain min:MINiML ;
+    rdfs:range xsd:normalizedString .
+
+min:hasWeb-Link a owl:DatatypeProperty ;
+    rdfs:label "hasWeb-Link"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Contact"@en,
+        "Contributor"@en,
+        "Database"@en,
+        "Platform"@en,
+        "Series"@en,
+        "Web-Link"@en ;
+    rdfs:comment """
+              Submission Guidelines: Specify a web link(s) that directs 
+              users to supplementary information about the Platform. Please 
+              restrict to web sites that you know are stable. 
+            """@en,
+        """
+             Submission Guidelines: Specify a web link(s) that directs users 
+             to supplementary information about the study. Please restrict to 
+             web sites that you know are stable. 
+           """@en ;
+    rdfs:domain min:Contact,
+        min:Contributor,
+        min:Database,
+        min:Platform,
+        min:Series ;
+    rdfs:range xsd:anyURI .
+
+min:hasZip-Code a owl:DatatypeProperty ;
+    rdfs:label "hasZip-Code"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Address"@en,
+        "Zip-Code"@en ;
+    rdfs:domain min:Address ;
+    rdfs:range xsd:token .
+
+min:Person a owl:Class ;
+    rdfs:label "Person"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Person"@en ;
+    rdfs:subClassOf min:Contact,
+        min:Contributor .
+
+min:Accession a owl:Class ;
+    rdfs:label "Accession"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Accession"@en ;
+    rdfs:subClassOf min:Platform,
+        min:Sample,
+        min:Series .
+
+min:Address a owl:Class ;
+    rdfs:label "Address"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Address"@en .
+
+min:Characteristics a owl:Class ;
+    rdfs:label "Characteristics"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Characteristics"@en ;
+    rdfs:comment """
+          Submission Guidelines: List all available characteristics of the 
+          biological source, e.g.,
+          Strain: C57BL/6 
+          Gender: female 
+          Age: 45 days
+          Tissue: bladder tumor
+          Tumor stage: Ta
+        """@en .
+
+min:Column a owl:Class ;
+    rdfs:label "Column"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Column"@en .
+
+min:External-Data a owl:Class ;
+    rdfs:label "External-Data"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "External-Data"@en ;
+    rdfs:subClassOf min:Data-Table .
+
+min:Instrument-Model a owl:Class ;
+    rdfs:label "Instrument-Model"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Instrument-Model"@en .
+
+min:Internal-Data a owl:Class ;
+    rdfs:label "Internal-Data"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Internal-Data"@en ;
+    rdfs:subClassOf min:Data-Table .
+
+min:Organism a owl:Class ;
+    rdfs:label "Organism"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Organism"@en ;
+    rdfs:comment """
+              Submission Guidelines: Identify the organism(s) from which the 
+              features on the Platform were designed or derived. Use standard 
+              NCBI Taxonomy nomenclature.
+            """@en,
+        """
+          Submission Guidelines: Identify the organism(s) from which
+          the biological material was derived. Use standard NCBI
+          Taxonomy nomenclature.
+        """@en .
+
+min:Organization-Ref a owl:Class ;
+    rdfs:label "Organization-Ref"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Organization-Ref"@en ;
+    rdfs:subClassOf min:Contact,
+        min:Contributor,
+        min:Database .
+
+min:Platform-Ref a owl:Class ;
+    rdfs:label "Platform-Ref"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Platform-Ref"@en ;
+    rdfs:comment """
+             Submission Guidelines: Reference the Platform iid upon which 
+             this Sample is based.
+           """@en .
+
+min:Status a owl:Class ;
+    rdfs:label "Status"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Status"@en .
+
+min:Contact-Ref a owl:Class ;
+    rdfs:label "Contact-Ref"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Contact-Ref"@en ;
+    rdfs:subClassOf min:Platform,
+        min:Sample,
+        min:Series .
+
+min:Contributor-Ref a owl:Class ;
+    rdfs:label "Contributor-Ref"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Contributor-Ref"@en ;
+    rdfs:subClassOf min:Platform,
+        min:Series .
+
+min:Organization a owl:Class ;
+    rdfs:label "Organization"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Organization"@en ;
+    rdfs:comment """
+      The Organization element provides a central location for defining the
+      organization to which one or more of the the contributors belong. An
+      organaztion only needs to be defined once in the document.
+    """@en .
+
+min:Sample-Ref a owl:Class ;
+    rdfs:label "Sample-Ref"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Sample-Ref"@en ;
+    rdfs:comment """
+             Submission Guidelines: Reference all the Sample iid that make 
+             up this Series.
+           """@en .
+
+min:External-File a owl:Class ;
+    rdfs:label "External-File"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "External-File"@en ;
+    rdfs:subClassOf min:Data-Table .
+
+min:Raw-Data a owl:Class ;
+    rdfs:label "Raw-Data"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Raw-Data"@en ;
+    rdfs:comment """
+             Submission Guidelines: SRA raw data files.
+           """@en .
+
+min:Relation a owl:Class ;
+    rdfs:label "Relation"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Relation"@en ;
+    rdfs:comment """
+              A relation defines a relationship this platform has with
+              another object.
+            """@en,
+        """
+              A relation defines a relationship this series has with
+              another object.
+            """@en,
+        """
+             A relation defines a relationship this sample has with
+             another object.
+           """@en .
+
+min:Repeats a owl:Class ;
+    rdfs:label "Repeats"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Repeats"@en .
+
+min:Supplementary-Data a owl:Class ;
+    rdfs:label "Supplementary-Data"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Supplementary-Data"@en ;
+    rdfs:comment """
+              Submission Guidelines: Examples of Platform supplementary 
+              data include original GAL and CSV files. Supplementary files 
+              can be zipped or tarred together with the MINiML file at time 
+              of submission. 
+            """@en,
+        """
+             Submission Guidelines: Examples of Sample supplementary 
+             data include original GPR, CEL, EXP, RPT, CAB, and TIFF 
+             files. Supplementary files can be zipped or tarred together 
+             with the MINiML file at time of submission. 
+           """@en,
+        """
+             Submission Guidelines: Series supplementary data is usually 
+             a TAR file that GEO staff generate from all Platform and 
+             Sample supplementary files associated with this Series. 
+             It is not necessary for submitters to generate this TAR file.
+           """@en .
+
+min:Variable a owl:Class ;
+    rdfs:label "Variable"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Variable"@en .
+
+min:Database a owl:Class ;
+    rdfs:label "Database"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Database"@en ;
+    rdfs:comment """
+       The database element is used to define the databases which give 
+       context to the accessions.
+    """@en .
+
+min:Channel a owl:Class ;
+    rdfs:label "Channel"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Channel"@en .
+
+min:Data-Table a owl:Class ;
+    rdfs:label "Data-Table"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Data-Table"@en .
+
+min:Contact a owl:Class ;
+    rdfs:label "Contact"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Contact"@en ;
+    rdfs:subClassOf min:Platform,
+        min:Sample,
+        min:Series .
+
+min:Contributor a owl:Class ;
+    rdfs:label "Contributor"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Contributor"@en ;
+    rdfs:subClassOf min:Platform,
+        min:Series .
+
+min:MINiML a owl:Class ;
+    rdfs:label "MINiML"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "MINiML"@en ;
+    rdfs:comment """
+      This is the top element of an MINiML document. For easier processing,
+      elements should be arranged so that each is defined before it is
+      referenced. This order is enforced for the Database, Organization and
+      Contributor elements, but not for the Platform, Sample and Series
+      elements.
+
+      This element is extensible with vendor or application specific elements.
+      These may appear after the standard elements. If possible, these elements
+      will be validated as conforming to their schema.
+    """@en .
+
+min:Series a owl:Class ;
+    rdfs:label "Series"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Series"@en ;
+    rdfs:comment """
+      An series is a collection of related samples and a description of
+      how they form an series.
+
+      This element is extensible with vendor or application specific elements.
+      These may appear after the standard elements. If possible, these elements
+      will be validated as conforming to their schema. Additionally, vender and 
+      application specific attributes may be added.
+    """@en ;
+    rdfs:subClassOf min:MINiML .
+
+min:Sample a owl:Class ;
+    rdfs:label "Sample"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Sample"@en ;
+    rdfs:comment """
+      A Sample describes the properties of one sample. A sample has
+      one or more channels and a data table of measured values.
+
+      This element is extensible with vendor or application specific
+      elements. These may appear after the standard elements. If
+      possible, these elements will be validated as conforming to
+      their schema. Additionally, vender and application specific
+      attributes may be added.
+    """@en ;
+    rdfs:subClassOf min:MINiML .
+
+min:Platform a owl:Class ;
+    rdfs:label "Platform"@en ;
+    min:generatedBy "Rubrex"@en ;
+    min:hasXSDSource "Platform"@en ;
+    rdfs:comment """
+      A platform describes the platform that forms the basis of a Sample. Some
+      platforms are virtual and do not phyiscal exists, e.g. SAGE platforms.
+
+      This element is extensible with vendor or application specific elements.
+      These may appear after the standard elements. If possible, these elements
+      will be validated as conforming to their schema. Additionally, vender and 
+      application specific attributes may be added.
+    """@en ;
+    rdfs:subClassOf min:MINiML .
+

@@ -2,7 +2,7 @@ import yaml
 from lxml.etree import QName
 from rdflib import Graph
 from rdflib.namespace import RDF, RDFS, OWL
-from utils import clean_namespace, parse_config, generate_provenance, lower_first_char, capitalise_first_char, generate_preamble, normalise_string, get_now
+from utils import clean_namespace, parse_config, generate_provenance, lower_first_char, capitalise_first_char, generate_preamble, normalise_string, get_now, normalise_label
 from xmlschema.validators import XsdAnyAttribute, XsdGroup, XsdElement, XsdAtomicBuiltin
 
 CONFIG = "config/RuBREx_conf.txt"
@@ -200,3 +200,109 @@ class RuBREx:
                 self.log.append(get_now() + " --> " +
                                 clean_namespace(concept.name))
                 self.process_concept(concept, concept_type)
+
+    def build_checklist(self):
+        components_to_check = []
+        simples = [
+            "XsdSimpleType",
+            "XsdAtomicRestricton",
+            "XsdAtomicBuiltIn",
+            "XsdList",
+            "XsdUnion"
+        ]
+        for component in self.schema.iter_components():
+            onto_check = []
+            main_type = type(component).__name__
+            if main_type == "XsdElement":
+                defined_type = type(component.type).__name__
+                if defined_type == "XsdComplexType":
+                    onto_check = [
+                        clean_namespace(component.name),
+                        "class_check"
+                    ]
+                elif defined_type in simples:
+                    onto_check = [
+                        clean_namespace(component.name),
+                        "datetype_property_check"
+                    ]
+            elif main_type == "XsdAttribute":
+                onto_check = [
+                    clean_namespace(component.name),
+                    "datatype_property_check"
+                ]
+            elif main_type == "XsdAttributeGroup" and component.name is not None:
+                onto_check = [
+                    clean_namespace(component.name),
+                    "datatype_property_check"
+                ]
+            if onto_check:
+                components_to_check.append(onto_check)
+        self.log.append(f"Coverage checklist generated containing {
+                        len(components_to_check)} checks")
+        return components_to_check
+
+    def run_class_check(self, candidate):
+        response = ["fail", f"Unknown concept {candidate}"]
+        query = """
+        PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+
+        SELECT ?class ?label
+        WHERE {
+            ?class rdf:type owl:Class .
+        OPTIONAL { ?class rdfs:label ?label . }
+        }
+        """
+        classes = self.onto.query(query)
+        classes_list = []
+        for c in classes:
+            classes_list.append(normalise_label(str(c.label)))
+
+        if normalise_label(candidate) in classes_list:
+            response = ["pass", "Class found"]
+        else:
+            response = ["fail", f"Expected missing class {candidate}"]
+
+        return response
+
+    def run_data_property_check(self, candidate):
+        response = ["fail", f"Unknown concept {candidate}"]
+        query = """
+        PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+
+        SELECT ?property ?label
+        WHERE {
+          ?property rdf:type owl:DatatypeProperty .
+          OPTIONAL { ?property rdfs:label ?label . }
+        }
+        """
+        properties = self.onto.query(query)
+        properties_list = []
+        for p in properties:
+            properties_list.append(normalise_label(str(p.label)))
+
+        if any(normalise_label(candidate) in prop for prop in properties_list):
+            response = ["pass", "Datatype property found"]
+        else:
+            response = [
+                "fail", f"Expected missing datatype property {candidate}"]
+
+        return response
+
+    def schema_coverage(self):
+        checks = self.build_checklist()
+        for c in checks:
+            if c[1] == "class_check":
+                check = self.run_class_check(c[0])
+            elif c[1] == "datatype_property_check":
+                check = self.run_data_property_check(c[0])
+            else:
+                print("Check type missing")
+                continue
+
+            if check[0] == "fail":
+                self.errors.append([c[0], check[1]])
+        self.log.append("Coverage checks complete")

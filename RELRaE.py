@@ -30,6 +30,7 @@ class RELRaE:
     def RuBREx(self):
         m_rubrex = RuBREx(self.schema, self.onto, self.prefix, self.namespace)
         m_rubrex.match_concepts()
+        m_rubrex.schema_coverage()
 
         self.configs.append({"RuBREx": m_rubrex.config})
         self.logs["RuBREx"] = m_rubrex.log

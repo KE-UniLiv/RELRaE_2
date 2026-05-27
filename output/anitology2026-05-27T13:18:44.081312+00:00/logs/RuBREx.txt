@@ -1,0 +1,2352 @@
+2026-05-27T13:18:39.508004+00:00 Ruleset rules/SXPF_General_0_1.yaml succesfully loaded
+XsdAttribute
+2026-05-27T13:18:39.508068+00:00 --> version
+2026-05-27T13:18:39.508075+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:39.508084+00:00 version is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:39.510749+00:00 --> XsdComplexType
+2026-05-27T13:18:39.510754+00:00 --> SampleSet
+2026-05-27T13:18:39.510758+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.510761+00:00 SampleSet is linked to {}
+2026-05-27T13:18:39.511442+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.511446+00:00 SampleSet is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:39.512210+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.512221+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.512224+00:00 SampleSet is linked to {'child': XsdElement(ref='Sample', occurs=[1, None])}
+2026-05-27T13:18:39.513034+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.513040+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:39.513048+00:00 --> XsdComplexType
+2026-05-27T13:18:39.513050+00:00 --> ExperimentStepSet
+2026-05-27T13:18:39.513053+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.513059+00:00 ExperimentStepSet is linked to {}
+2026-05-27T13:18:39.513782+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.513785+00:00 ExperimentStepSet is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:39.514658+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.514666+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.514668+00:00 ExperimentStepSet is linked to {'child': XsdElement(ref='Template', occurs=[0, None])}
+2026-05-27T13:18:39.515480+00:00 ExperimentStepSet is linked to {'child': XsdElement(ref='ExperimentStep', occurs=[1, None])}
+2026-05-27T13:18:39.516350+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.516355+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:39.516362+00:00 --> XsdComplexType
+2026-05-27T13:18:39.516364+00:00 --> AuditTrailEntrySet
+2026-05-27T13:18:39.516367+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.516369+00:00 AuditTrailEntrySet is linked to {}
+2026-05-27T13:18:39.517150+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.517154+00:00 AuditTrailEntrySet is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:39.518059+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.518067+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.518069+00:00 AuditTrailEntrySet is linked to {'child': XsdElement(ref='AuditTrailEntry', occurs=[0, None])}
+2026-05-27T13:18:39.518952+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.518957+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:39.518962+00:00 --> XsdComplexType
+2026-05-27T13:18:39.518965+00:00 --> SignatureSet
+2026-05-27T13:18:39.518967+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.518969+00:00 SignatureSet is linked to {}
+2026-05-27T13:18:39.519876+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.519879+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.519886+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.519888+00:00 SignatureSet is linked to {'child': XsdElement(ref='Signature', occurs=[1, None])}
+2026-05-27T13:18:39.520835+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.520840+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdAttribute
+2026-05-27T13:18:39.520850+00:00 --> id
+2026-05-27T13:18:39.520854+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:39.520861+00:00 id is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:39.521899+00:00 --> XsdComplexType
+2026-05-27T13:18:39.521902+00:00 --> Sample
+2026-05-27T13:18:39.521905+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.521907+00:00 Sample is linked to {}
+2026-05-27T13:18:39.522928+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.522932+00:00 Sample is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:39.524451+00:00 Sample is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:39.525487+00:00 Sample is linked to {'attribute': XsdAttribute(name='sampleID')}
+2026-05-27T13:18:39.526504+00:00 Sample is linked to {'attribute': XsdAttribute(name='barcode')}
+2026-05-27T13:18:39.527549+00:00 Sample is linked to {'attribute': XsdAttribute(name='comment')}
+2026-05-27T13:18:39.528631+00:00 Sample is linked to {'attribute': XsdAttribute(name='derived')}
+2026-05-27T13:18:39.529700+00:00 Sample is linked to {'attribute': XsdAttribute(name='containerType')}
+2026-05-27T13:18:39.530849+00:00 Sample is linked to {'attribute': XsdAttribute(name='containerID')}
+2026-05-27T13:18:39.532055+00:00 Sample is linked to {'attribute': XsdAttribute(name='locationInContainer')}
+2026-05-27T13:18:39.533253+00:00 Sample is linked to {'attribute': XsdAttribute(name='sourceDataLocation')}
+2026-05-27T13:18:39.534482+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.534491+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.534493+00:00 Sample is linked to {'child': XsdElement(ref='TagSet', occurs=[0, 1])}
+2026-05-27T13:18:39.535739+00:00 Sample is linked to {'child': XsdElement(ref='Category', occurs=[0, None])}
+2026-05-27T13:18:39.537087+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.537092+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdAttribute
+2026-05-27T13:18:39.537100+00:00 --> id
+2026-05-27T13:18:39.537104+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:39.537106+00:00 id is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:39.538454+00:00 --> XsdComplexType
+2026-05-27T13:18:39.538456+00:00 --> Template
+2026-05-27T13:18:39.538459+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.538461+00:00 Template is linked to {}
+2026-05-27T13:18:39.539735+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.539739+00:00 Template is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:39.541789+00:00 Template is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:39.543105+00:00 Template is linked to {'attribute': XsdAttribute(name='templateID')}
+2026-05-27T13:18:39.544413+00:00 Template is linked to {'attribute': XsdAttribute(name='sourceDataLocation')}
+2026-05-27T13:18:39.545764+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.545773+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.545776+00:00 Template is linked to {'child': XsdElement(ref='TagSet', occurs=[0, 1])}
+2026-05-27T13:18:39.547061+00:00 Template is linked to {'child': XsdElement(ref='Technique', occurs=[0, 1])}
+2026-05-27T13:18:39.548425+00:00 Template is linked to {'child': XsdElement(ref='Infrastructure', occurs=[0, 1])}
+2026-05-27T13:18:39.549829+00:00 Template is linked to {'child': XsdElement(ref='Method', occurs=[0, 1])}
+2026-05-27T13:18:39.551218+00:00 Template is linked to {'child': XsdElement(ref='Result', occurs=[0, None])}
+2026-05-27T13:18:39.552672+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.552677+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:39.552683+00:00 --> XsdComplexType
+2026-05-27T13:18:39.552685+00:00 --> ExperimentStep
+2026-05-27T13:18:39.552687+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.552689+00:00 ExperimentStep is linked to {}
+2026-05-27T13:18:39.554126+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.554129+00:00 ExperimentStep is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:39.555646+00:00 ExperimentStep is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:39.557137+00:00 ExperimentStep is linked to {'attribute': XsdAttribute(name='experimentStepID')}
+2026-05-27T13:18:39.559427+00:00 ExperimentStep is linked to {'attribute': XsdAttribute(name='templateUsed')}
+2026-05-27T13:18:39.560997+00:00 ExperimentStep is linked to {'attribute': XsdAttribute(name='comment')}
+2026-05-27T13:18:39.562571+00:00 ExperimentStep is linked to {'attribute': XsdAttribute(name='sourceDataLocation')}
+2026-05-27T13:18:39.564155+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.564165+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.564167+00:00 ExperimentStep is linked to {'child': XsdElement(ref='TagSet', occurs=[0, 1])}
+2026-05-27T13:18:39.565792+00:00 ExperimentStep is linked to {'child': XsdElement(ref='Technique', occurs=[0, 1])}
+2026-05-27T13:18:39.567361+00:00 ExperimentStep is linked to {'child': XsdElement(ref='Infrastructure', occurs=[0, 1])}
+2026-05-27T13:18:39.568959+00:00 ExperimentStep is linked to {'child': XsdElement(ref='Method', occurs=[0, 1])}
+2026-05-27T13:18:39.570606+00:00 ExperimentStep is linked to {'child': XsdElement(ref='Result', occurs=[0, None])}
+2026-05-27T13:18:39.572198+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.572204+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdAttribute
+2026-05-27T13:18:39.572215+00:00 --> id
+2026-05-27T13:18:39.572218+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:39.572220+00:00 id is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:39.573922+00:00 --> XsdComplexType
+2026-05-27T13:18:39.573925+00:00 --> AuditTrailEntry
+2026-05-27T13:18:39.573928+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.573930+00:00 AuditTrailEntry is linked to {}
+2026-05-27T13:18:39.576359+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.576362+00:00 AuditTrailEntry is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:39.578028+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.578040+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.578042+00:00 AuditTrailEntry is linked to {'child': XsdElement(ref='Author', occurs=[1, 1])}
+2026-05-27T13:18:39.579720+00:00 AuditTrailEntry is linked to {'child': XsdElement(ref='Software', occurs=[0, 1])}
+2026-05-27T13:18:39.581447+00:00 AuditTrailEntry is linked to {'child': XsdElement(ref='Diff', occurs=[0, None])}
+2026-05-27T13:18:39.583156+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.583162+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-05-27T13:18:39.583164+00:00 AuditTrailEntry is linked to {'child': XsdElement(ref='Timestamp', occurs=[1, 1])}
+2026-05-27T13:18:39.584883+00:00 AuditTrailEntry is linked to {'child': XsdElement(ref='Action', occurs=[1, 1])}
+2026-05-27T13:18:39.586655+00:00 AuditTrailEntry is linked to {'child': XsdElement(ref='Reason', occurs=[0, 1])}
+2026-05-27T13:18:39.588475+00:00 AuditTrailEntry is linked to {'child': XsdElement(ref='Comment', occurs=[0, 1])}
+2026-05-27T13:18:39.590318+00:00 AuditTrailEntry is linked to {'child': XsdElement(ref='Reference', occurs=[0, None])}
+XsdElement
+2026-05-27T13:18:39.592242+00:00 --> XsdComplexType
+2026-05-27T13:18:39.592245+00:00 --> Signature
+2026-05-27T13:18:39.592247+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.592250+00:00 Signature is linked to {}
+2026-05-27T13:18:39.594910+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.594913+00:00 Signature is linked to {'attribute': XsdAttribute(name='Id')}
+2026-05-27T13:18:39.596877+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.596885+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.596888+00:00 Signature is linked to {'child': XsdElement(ref='ds:SignedInfo', occurs=[1, 1])}
+2026-05-27T13:18:39.598791+00:00 Signature is linked to {'child': XsdElement(ref='ds:SignatureValue', occurs=[1, 1])}
+2026-05-27T13:18:39.600703+00:00 Signature is linked to {'child': XsdElement(ref='ds:KeyInfo', occurs=[0, 1])}
+2026-05-27T13:18:39.602690+00:00 Signature is linked to {'child': XsdElement(ref='ds:Object', occurs=[0, None])}
+2026-05-27T13:18:39.604653+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.604659+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdAttribute
+2026-05-27T13:18:39.604670+00:00 --> id
+2026-05-27T13:18:39.604673+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:39.604675+00:00 id is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:39.606705+00:00 --> name
+2026-05-27T13:18:39.606709+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:39.606716+00:00 name is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:39.608787+00:00 --> sampleID
+2026-05-27T13:18:39.608791+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-05-27T13:18:39.608796+00:00 --> barcode
+2026-05-27T13:18:39.608799+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:39.608805+00:00 barcode is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:39.611660+00:00 --> comment
+2026-05-27T13:18:39.611664+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:39.611671+00:00 comment is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:39.613718+00:00 --> derived
+2026-05-27T13:18:39.613722+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:39.613728+00:00 derived is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:39.615812+00:00 --> containerType
+2026-05-27T13:18:39.615816+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:39.615822+00:00 containerType is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:39.617864+00:00 --> containerID
+2026-05-27T13:18:39.617868+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:39.617874+00:00 containerID is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:39.619970+00:00 --> locationInContainer
+2026-05-27T13:18:39.619973+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:39.619979+00:00 locationInContainer is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:39.622075+00:00 --> sourceDataLocation
+2026-05-27T13:18:39.622079+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:39.622085+00:00 sourceDataLocation is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:39.624243+00:00 --> XsdComplexType
+2026-05-27T13:18:39.624246+00:00 --> TagSet
+2026-05-27T13:18:39.624249+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.624251+00:00 TagSet is linked to {}
+2026-05-27T13:18:39.626387+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.626390+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.626397+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.626399+00:00 TagSet is linked to {'child': XsdElement(ref='Tag', occurs=[0, None])}
+2026-05-27T13:18:39.629396+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.629402+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:39.629408+00:00 --> XsdComplexType
+2026-05-27T13:18:39.629411+00:00 --> Category
+2026-05-27T13:18:39.629413+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.629415+00:00 Category is linked to {}
+2026-05-27T13:18:39.638354+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.638360+00:00 Category is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:39.640668+00:00 Category is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:39.642944+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.642955+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.642957+00:00 Category is linked to {'child': XsdElement(ref='Parameter', occurs=[0, None])}
+2026-05-27T13:18:39.645224+00:00 Category is linked to {'child': XsdElement(ref='SeriesSet', occurs=[0, None])}
+2026-05-27T13:18:39.647488+00:00 Category is linked to {'child': XsdElement(ref='Category', occurs=[0, None])}
+2026-05-27T13:18:39.649775+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.649781+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdAttribute
+2026-05-27T13:18:39.649790+00:00 --> id
+2026-05-27T13:18:39.649793+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:39.649795+00:00 id is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:39.652820+00:00 --> name
+2026-05-27T13:18:39.652827+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:39.652830+00:00 name is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:39.655182+00:00 --> experimentStepID
+2026-05-27T13:18:39.655187+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:39.655194+00:00 experimentStepID is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:39.657468+00:00 --> templateUsed
+2026-05-27T13:18:39.657472+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-05-27T13:18:39.657476+00:00 --> comment
+2026-05-27T13:18:39.657478+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:39.657484+00:00 comment is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:39.659976+00:00 --> sourceDataLocation
+2026-05-27T13:18:39.659985+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:39.659989+00:00 sourceDataLocation is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:39.662512+00:00 --> XsdComplexType
+2026-05-27T13:18:39.662516+00:00 --> TagSet
+2026-05-27T13:18:39.662519+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.662521+00:00 TagSet is linked to {}
+2026-05-27T13:18:39.664847+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.664851+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.664862+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.664864+00:00 TagSet is linked to {'child': XsdElement(ref='Tag', occurs=[0, None])}
+2026-05-27T13:18:39.668130+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.668136+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:39.668141+00:00 --> XsdComplexType
+2026-05-27T13:18:39.668143+00:00 --> Technique
+2026-05-27T13:18:39.668146+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.668148+00:00 Technique is linked to {}
+2026-05-27T13:18:39.670512+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.670515+00:00 Technique is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:39.672913+00:00 Technique is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:39.675336+00:00 Technique is linked to {'attribute': XsdAttribute(name='uri')}
+2026-05-27T13:18:39.677787+00:00 Technique is linked to {'attribute': XsdAttribute(name='sha256')}
+2026-05-27T13:18:39.680246+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.680255+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.680257+00:00 Technique is linked to {'child': XsdElement(ref='Extension', occurs=[0, None])}
+2026-05-27T13:18:39.682752+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.682757+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:39.682762+00:00 --> XsdComplexType
+2026-05-27T13:18:39.682764+00:00 --> Infrastructure
+2026-05-27T13:18:39.682767+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.682769+00:00 Infrastructure is linked to {}
+2026-05-27T13:18:39.686130+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.686133+00:00 Infrastructure is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:39.688654+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.688662+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.688665+00:00 Infrastructure is linked to {'child': XsdElement(ref='SampleReferenceSet', occurs=[0, 1])}
+2026-05-27T13:18:39.691192+00:00 Infrastructure is linked to {'child': XsdElement(ref='ParentDataPointReferenceSet', occurs=[0, 1])}
+2026-05-27T13:18:39.693712+00:00 Infrastructure is linked to {'child': XsdElement(ref='ExperimentDataReferenceSet', occurs=[0, 1])}
+2026-05-27T13:18:39.696253+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.696258+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-05-27T13:18:39.696261+00:00 Infrastructure is linked to {'child': XsdElement(ref='Timestamp', occurs=[0, 1])}
+XsdElement
+2026-05-27T13:18:39.698900+00:00 --> XsdComplexType
+2026-05-27T13:18:39.698903+00:00 --> Method
+2026-05-27T13:18:39.698905+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.698907+00:00 Method is linked to {}
+2026-05-27T13:18:39.702315+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.702318+00:00 Method is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:39.704928+00:00 Method is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:39.707504+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.707513+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.707515+00:00 Method is linked to {'child': XsdElement(ref='Author', occurs=[0, 1])}
+2026-05-27T13:18:39.710241+00:00 Method is linked to {'child': XsdElement(ref='Device', occurs=[0, 1])}
+2026-05-27T13:18:39.712882+00:00 Method is linked to {'child': XsdElement(ref='Software', occurs=[0, 1])}
+2026-05-27T13:18:39.715562+00:00 Method is linked to {'child': XsdElement(ref='Category', occurs=[0, None])}
+2026-05-27T13:18:39.719080+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.719086+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:39.719091+00:00 --> XsdComplexType
+2026-05-27T13:18:39.719093+00:00 --> Result
+2026-05-27T13:18:39.719096+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.719098+00:00 Result is linked to {}
+2026-05-27T13:18:39.721755+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.721758+00:00 Result is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:39.724466+00:00 Result is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:39.727139+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.727148+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.727150+00:00 Result is linked to {'child': XsdElement(ref='SeriesSet', occurs=[0, 1])}
+2026-05-27T13:18:39.729893+00:00 Result is linked to {'child': XsdElement(ref='Category', occurs=[0, None])}
+2026-05-27T13:18:39.732663+00:00 Result is linked to {'child': XsdElement(ref='ExperimentStepSet', occurs=[0, 1])}
+2026-05-27T13:18:39.736258+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.736264+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdAttribute
+2026-05-27T13:18:39.736273+00:00 --> id
+2026-05-27T13:18:39.736277+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:39.736279+00:00 id is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:39.739138+00:00 --> name
+2026-05-27T13:18:39.739142+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:39.739145+00:00 name is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:39.741922+00:00 --> templateID
+2026-05-27T13:18:39.741926+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-05-27T13:18:39.741930+00:00 --> sourceDataLocation
+2026-05-27T13:18:39.741933+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:39.741935+00:00 sourceDataLocation is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:39.744711+00:00 --> XsdComplexType
+2026-05-27T13:18:39.744714+00:00 --> TagSet
+2026-05-27T13:18:39.744716+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.744718+00:00 TagSet is linked to {}
+2026-05-27T13:18:39.747448+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.747452+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.747458+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.747461+00:00 TagSet is linked to {'child': XsdElement(ref='Tag', occurs=[0, None])}
+2026-05-27T13:18:39.750377+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.750382+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:39.750387+00:00 --> XsdComplexType
+2026-05-27T13:18:39.750389+00:00 --> Technique
+2026-05-27T13:18:39.750391+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.750393+00:00 Technique is linked to {}
+2026-05-27T13:18:39.753985+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.753989+00:00 Technique is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:39.756742+00:00 Technique is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:39.759502+00:00 Technique is linked to {'attribute': XsdAttribute(name='uri')}
+2026-05-27T13:18:39.762257+00:00 Technique is linked to {'attribute': XsdAttribute(name='sha256')}
+2026-05-27T13:18:39.765099+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.765107+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.765109+00:00 Technique is linked to {'child': XsdElement(ref='Extension', occurs=[0, None])}
+2026-05-27T13:18:39.767881+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.767886+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:39.767891+00:00 --> XsdComplexType
+2026-05-27T13:18:39.767893+00:00 --> Infrastructure
+2026-05-27T13:18:39.767895+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.767897+00:00 Infrastructure is linked to {}
+2026-05-27T13:18:39.771501+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.771504+00:00 Infrastructure is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:39.774249+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.774257+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.774259+00:00 Infrastructure is linked to {'child': XsdElement(ref='SampleReferenceSet', occurs=[0, 1])}
+2026-05-27T13:18:39.777002+00:00 Infrastructure is linked to {'child': XsdElement(ref='ParentDataPointReferenceSet', occurs=[0, 1])}
+2026-05-27T13:18:39.779746+00:00 Infrastructure is linked to {'child': XsdElement(ref='ExperimentDataReferenceSet', occurs=[0, 1])}
+2026-05-27T13:18:39.782528+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.782534+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-05-27T13:18:39.782536+00:00 Infrastructure is linked to {'child': XsdElement(ref='Timestamp', occurs=[0, 1])}
+XsdElement
+2026-05-27T13:18:39.786142+00:00 --> XsdComplexType
+2026-05-27T13:18:39.786145+00:00 --> Method
+2026-05-27T13:18:39.786147+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.786149+00:00 Method is linked to {}
+2026-05-27T13:18:39.788842+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.788845+00:00 Method is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:39.791665+00:00 Method is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:39.794406+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.794414+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.794417+00:00 Method is linked to {'child': XsdElement(ref='Author', occurs=[0, 1])}
+2026-05-27T13:18:39.797228+00:00 Method is linked to {'child': XsdElement(ref='Device', occurs=[0, 1])}
+2026-05-27T13:18:39.799985+00:00 Method is linked to {'child': XsdElement(ref='Software', occurs=[0, 1])}
+2026-05-27T13:18:39.803579+00:00 Method is linked to {'child': XsdElement(ref='Category', occurs=[0, None])}
+2026-05-27T13:18:39.806340+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.806345+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:39.806351+00:00 --> XsdComplexType
+2026-05-27T13:18:39.806353+00:00 --> Result
+2026-05-27T13:18:39.806355+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.806357+00:00 Result is linked to {}
+2026-05-27T13:18:39.809073+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.809076+00:00 Result is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:39.811854+00:00 Result is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:39.814633+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.814641+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.814643+00:00 Result is linked to {'child': XsdElement(ref='SeriesSet', occurs=[0, 1])}
+2026-05-27T13:18:39.817482+00:00 Result is linked to {'child': XsdElement(ref='Category', occurs=[0, None])}
+2026-05-27T13:18:39.829629+00:00 Result is linked to {'child': XsdElement(ref='ExperimentStepSet', occurs=[0, 1])}
+2026-05-27T13:18:39.832564+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.832570+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdAttribute
+2026-05-27T13:18:39.832582+00:00 --> id
+2026-05-27T13:18:39.832586+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:39.832588+00:00 id is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:39.835433+00:00 --> name
+2026-05-27T13:18:39.835438+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:39.835446+00:00 name is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:39.838211+00:00 --> XsdComplexType
+2026-05-27T13:18:39.838214+00:00 --> Author
+2026-05-27T13:18:39.838216+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.838219+00:00 Author is linked to {}
+2026-05-27T13:18:39.840942+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.840946+00:00 Author is linked to {'attribute': XsdAttribute(name='userType')}
+2026-05-27T13:18:39.844449+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.844458+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.844463+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.844468+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-05-27T13:18:39.844470+00:00 Author is linked to {'child': XsdElement(ref='Name', occurs=[1, 1])}
+2026-05-27T13:18:39.847356+00:00 Author is linked to {'child': XsdElement(ref='Affiliation', occurs=[0, 1])}
+2026-05-27T13:18:39.850215+00:00 Author is linked to {'child': XsdElement(ref='Role', occurs=[0, 1])}
+2026-05-27T13:18:39.853096+00:00 Author is linked to {'child': XsdElement(ref='Email', occurs=[0, 1])}
+2026-05-27T13:18:39.855976+00:00 Author is linked to {'child': XsdElement(ref='Phone', occurs=[0, 1])}
+2026-05-27T13:18:39.859689+00:00 Author is linked to {'child': XsdElement(ref='Location', occurs=[0, 1])}
+XsdElement
+2026-05-27T13:18:39.862652+00:00 --> XsdComplexType
+2026-05-27T13:18:39.862655+00:00 --> Device
+2026-05-27T13:18:39.862658+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.862660+00:00 Device is linked to {}
+2026-05-27T13:18:39.865623+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.865626+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.865634+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.865639+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.865644+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-05-27T13:18:39.865646+00:00 Device is linked to {'child': XsdElement(ref='DeviceIdentifier', occurs=[0, 1])}
+2026-05-27T13:18:39.868641+00:00 Device is linked to {'child': XsdElement(ref='Manufacturer', occurs=[0, 1])}
+2026-05-27T13:18:39.871660+00:00 Device is linked to {'child': XsdElement(ref='Name', occurs=[1, 1])}
+2026-05-27T13:18:39.875508+00:00 Device is linked to {'child': XsdElement(ref='FirmwareVersion', occurs=[0, 1])}
+2026-05-27T13:18:39.878599+00:00 Device is linked to {'child': XsdElement(ref='SerialNumber', occurs=[0, 1])}
+XsdElement
+2026-05-27T13:18:39.881744+00:00 --> XsdComplexType
+2026-05-27T13:18:39.881747+00:00 --> Software
+2026-05-27T13:18:39.881749+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.881751+00:00 Software is linked to {}
+2026-05-27T13:18:39.884834+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.884838+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.884845+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.884850+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.884855+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-05-27T13:18:39.884857+00:00 Software is linked to {'child': XsdElement(ref='Manufacturer', occurs=[0, 1])}
+2026-05-27T13:18:39.888082+00:00 Software is linked to {'child': XsdElement(ref='Name', occurs=[1, 1])}
+2026-05-27T13:18:39.892084+00:00 Software is linked to {'child': XsdElement(ref='Version', occurs=[0, 1])}
+2026-05-27T13:18:39.895294+00:00 Software is linked to {'child': XsdElement(ref='OperatingSystem', occurs=[0, 1])}
+XsdElement
+2026-05-27T13:18:39.898506+00:00 --> XsdComplexType
+2026-05-27T13:18:39.898509+00:00 --> Category
+2026-05-27T13:18:39.898511+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.898513+00:00 Category is linked to {}
+2026-05-27T13:18:39.901708+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.901711+00:00 Category is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:39.904983+00:00 Category is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:39.908961+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.908970+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.908972+00:00 Category is linked to {'child': XsdElement(ref='Parameter', occurs=[0, None])}
+2026-05-27T13:18:39.912221+00:00 Category is linked to {'child': XsdElement(ref='SeriesSet', occurs=[0, None])}
+2026-05-27T13:18:39.915443+00:00 Category is linked to {'child': XsdElement(ref='Category', occurs=[0, None])}
+2026-05-27T13:18:39.918636+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.918642+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdAttribute
+2026-05-27T13:18:39.918651+00:00 --> id
+2026-05-27T13:18:39.918654+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:39.918656+00:00 id is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:39.921888+00:00 --> XsdComplexType
+2026-05-27T13:18:39.921891+00:00 --> SampleReferenceSet
+2026-05-27T13:18:39.921894+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.921895+00:00 SampleReferenceSet is linked to {}
+2026-05-27T13:18:39.925827+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.925831+00:00 SampleReferenceSet is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:39.929076+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.929084+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.929087+00:00 SampleReferenceSet is linked to {'child': XsdElement(ref='SampleReference', occurs=[0, None])}
+2026-05-27T13:18:39.932321+00:00 SampleReferenceSet is linked to {'child': XsdElement(ref='SampleInheritance', occurs=[0, None])}
+2026-05-27T13:18:39.935582+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.935587+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:39.935592+00:00 --> XsdComplexType
+2026-05-27T13:18:39.935594+00:00 --> ParentDataPointReferenceSet
+2026-05-27T13:18:39.935597+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.935599+00:00 ParentDataPointReferenceSet is linked to {}
+2026-05-27T13:18:39.938848+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.938851+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.938857+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.938860+00:00 ParentDataPointReferenceSet is linked to {'child': XsdElement(ref='ParentDataPointReference', occurs=[1, None])}
+2026-05-27T13:18:39.942967+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.942972+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:39.942977+00:00 --> XsdComplexType
+2026-05-27T13:18:39.942979+00:00 --> ExperimentDataReferenceSet
+2026-05-27T13:18:39.942981+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.942983+00:00 ExperimentDataReferenceSet is linked to {}
+2026-05-27T13:18:39.946272+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.946275+00:00 ExperimentDataReferenceSet is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:39.949697+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.949705+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.949707+00:00 ExperimentDataReferenceSet is linked to {'child': XsdElement(ref='ExperimentDataReference', occurs=[0, None])}
+2026-05-27T13:18:39.953089+00:00 ExperimentDataReferenceSet is linked to {'child': XsdElement(ref='ExperimentDataBulkReference', occurs=[0, None])}
+2026-05-27T13:18:39.957229+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.957234+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:39.957239+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:39.957241+00:00 --> Timestamp
+2026-05-27T13:18:39.957244+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:39.957246+00:00 Timestamp is linked to {}
+2026-05-27T13:18:39.960688+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdAttribute
+2026-05-27T13:18:39.960697+00:00 --> id
+2026-05-27T13:18:39.960701+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:39.960703+00:00 id is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:39.964206+00:00 --> XsdComplexType
+2026-05-27T13:18:39.964208+00:00 --> SampleReference
+2026-05-27T13:18:39.964211+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.964213+00:00 SampleReference is linked to {}
+2026-05-27T13:18:39.967642+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.967645+00:00 SampleReference is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:39.971070+00:00 SampleReference is linked to {'attribute': XsdAttribute(name='sampleID')}
+2026-05-27T13:18:39.975310+00:00 SampleReference is linked to {'attribute': XsdAttribute(name='role')}
+2026-05-27T13:18:39.978777+00:00 SampleReference is linked to {'attribute': XsdAttribute(name='samplePurpose')}
+2026-05-27T13:18:39.982252+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.982259+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.982263+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.982267+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:39.982272+00:00 --> XsdComplexType
+2026-05-27T13:18:39.982273+00:00 --> SampleInheritance
+2026-05-27T13:18:39.982276+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:39.982278+00:00 SampleInheritance is linked to {}
+2026-05-27T13:18:39.985844+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:39.985847+00:00 SampleInheritance is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:39.990328+00:00 SampleInheritance is linked to {'attribute': XsdAttribute(name='role')}
+2026-05-27T13:18:39.993886+00:00 SampleInheritance is linked to {'attribute': XsdAttribute(name='samplePurpose')}
+2026-05-27T13:18:39.997446+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:39.997453+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:39.997457+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:39.997460+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdAttribute
+2026-05-27T13:18:39.997470+00:00 --> id
+2026-05-27T13:18:39.997473+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:39.997475+00:00 id is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.001149+00:00 --> name
+2026-05-27T13:18:40.001153+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.001155+00:00 name is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.005536+00:00 --> uri
+2026-05-27T13:18:40.005540+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.005548+00:00 uri is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.018935+00:00 --> sha256
+2026-05-27T13:18:40.018942+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.018951+00:00 sha256 is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:40.022663+00:00 --> XsdComplexType
+2026-05-27T13:18:40.022666+00:00 --> Extension
+2026-05-27T13:18:40.022669+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:40.022670+00:00 Extension is linked to {}
+2026-05-27T13:18:40.026719+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:40.026743+00:00 Extension is linked to {'attribute': XsdAttribute(name='uri')}
+2026-05-27T13:18:40.031368+00:00 Extension is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:40.035106+00:00 Extension is linked to {'attribute': XsdAttribute(name='sha256')}
+2026-05-27T13:18:40.038942+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:40.038959+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:40.038964+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:40.038968+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdAttribute
+2026-05-27T13:18:40.038981+00:00 --> uri
+2026-05-27T13:18:40.038985+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.038994+00:00 uri is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.042921+00:00 --> name
+2026-05-27T13:18:40.042926+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.042934+00:00 name is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.047598+00:00 --> sha256
+2026-05-27T13:18:40.047603+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.047611+00:00 sha256 is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:40.051392+00:00 --> XsdComplexType
+2026-05-27T13:18:40.051395+00:00 --> ParentDataPointReference
+2026-05-27T13:18:40.051398+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:40.051404+00:00 ParentDataPointReference is linked to {}
+2026-05-27T13:18:40.055113+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:40.055117+00:00 ParentDataPointReference is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:40.058943+00:00 ParentDataPointReference is linked to {'attribute': XsdAttribute(name='seriesID')}
+2026-05-27T13:18:40.063496+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:40.063505+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:40.063508+00:00 ParentDataPointReference is linked to {'child': XsdElement(ref='StartValue', occurs=[1, 1])}
+2026-05-27T13:18:40.067268+00:00 ParentDataPointReference is linked to {'child': XsdElement(ref='EndValue', occurs=[0, 1])}
+2026-05-27T13:18:40.071163+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:40.071168+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdAttribute
+2026-05-27T13:18:40.071178+00:00 --> id
+2026-05-27T13:18:40.071183+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.071185+00:00 id is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.075118+00:00 --> seriesID
+2026-05-27T13:18:40.075123+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.075131+00:00 seriesID is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:40.079723+00:00 --> XsdComplexType
+2026-05-27T13:18:40.079725+00:00 --> StartValue
+2026-05-27T13:18:40.079728+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:40.079730+00:00 StartValue is linked to {}
+2026-05-27T13:18:40.083522+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:40.083525+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:40.083534+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:40.083539+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:40.083543+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-05-27T13:18:40.083549+00:00 StartValue is linked to {'child': XsdElement(ref='I', occurs=[1, 1])}
+2026-05-27T13:18:40.087505+00:00 StartValue is linked to {'child': XsdElement(ref='L', occurs=[1, 1])}
+2026-05-27T13:18:40.091369+00:00 StartValue is linked to {'child': XsdElement(ref='F', occurs=[1, 1])}
+2026-05-27T13:18:40.095986+00:00 StartValue is linked to {'child': XsdElement(ref='D', occurs=[1, 1])}
+XsdElement
+2026-05-27T13:18:40.099970+00:00 --> XsdComplexType
+2026-05-27T13:18:40.099973+00:00 --> EndValue
+2026-05-27T13:18:40.099975+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:40.099977+00:00 EndValue is linked to {}
+2026-05-27T13:18:40.103970+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:40.103973+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:40.103981+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:40.103986+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:40.103990+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-05-27T13:18:40.103992+00:00 EndValue is linked to {'child': XsdElement(ref='I', occurs=[1, 1])}
+2026-05-27T13:18:40.108017+00:00 EndValue is linked to {'child': XsdElement(ref='L', occurs=[1, 1])}
+2026-05-27T13:18:40.112685+00:00 EndValue is linked to {'child': XsdElement(ref='F', occurs=[1, 1])}
+2026-05-27T13:18:40.116652+00:00 EndValue is linked to {'child': XsdElement(ref='D', occurs=[1, 1])}
+XsdAttribute
+2026-05-27T13:18:40.120802+00:00 --> id
+2026-05-27T13:18:40.120809+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.120811+00:00 id is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.125496+00:00 --> sampleID
+2026-05-27T13:18:40.125500+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.125507+00:00 sampleID is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.129527+00:00 --> role
+2026-05-27T13:18:40.129531+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.129538+00:00 role is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.133645+00:00 --> samplePurpose
+2026-05-27T13:18:40.133651+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.133660+00:00 samplePurpose is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.137748+00:00 --> id
+2026-05-27T13:18:40.137752+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.137755+00:00 id is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.142520+00:00 --> role
+2026-05-27T13:18:40.142526+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.142528+00:00 role is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.146626+00:00 --> samplePurpose
+2026-05-27T13:18:40.146632+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.146635+00:00 samplePurpose is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.150705+00:00 --> id
+2026-05-27T13:18:40.150710+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.150712+00:00 id is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:40.154868+00:00 --> XsdComplexType
+2026-05-27T13:18:40.154874+00:00 --> ExperimentDataReference
+2026-05-27T13:18:40.154877+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:40.154879+00:00 ExperimentDataReference is linked to {}
+2026-05-27T13:18:40.159608+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:40.159612+00:00 ExperimentDataReference is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:40.163717+00:00 ExperimentDataReference is linked to {'attribute': XsdAttribute(name='role')}
+2026-05-27T13:18:40.167974+00:00 ExperimentDataReference is linked to {'attribute': XsdAttribute(name='dataPurpose')}
+2026-05-27T13:18:40.172839+00:00 ExperimentDataReference is linked to {'attribute': XsdAttribute(name='experimentStepID')}
+2026-05-27T13:18:40.177109+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:40.177119+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:40.177123+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:40.177127+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:40.177133+00:00 --> XsdComplexType
+2026-05-27T13:18:40.177135+00:00 --> ExperimentDataBulkReference
+2026-05-27T13:18:40.177138+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:40.177139+00:00 ExperimentDataBulkReference is linked to {}
+2026-05-27T13:18:40.181339+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:40.181342+00:00 ExperimentDataBulkReference is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:40.185588+00:00 ExperimentDataBulkReference is linked to {'attribute': XsdAttribute(name='role')}
+2026-05-27T13:18:40.203008+00:00 ExperimentDataBulkReference is linked to {'attribute': XsdAttribute(name='dataPurpose')}
+2026-05-27T13:18:40.207370+00:00 ExperimentDataBulkReference is linked to {'attribute': XsdAttribute(name='experimentStepIDPrefix')}
+2026-05-27T13:18:40.211590+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:40.211600+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:40.211604+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:40.211607+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdAttribute
+2026-05-27T13:18:40.211618+00:00 --> id
+2026-05-27T13:18:40.211621+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.211623+00:00 id is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.216479+00:00 --> role
+2026-05-27T13:18:40.216485+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-05-27T13:18:40.216489+00:00 --> dataPurpose
+2026-05-27T13:18:40.216492+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-05-27T13:18:40.216494+00:00 --> experimentStepID
+2026-05-27T13:18:40.216497+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-05-27T13:18:40.216504+00:00 --> id
+2026-05-27T13:18:40.216507+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.216509+00:00 id is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.220787+00:00 --> role
+2026-05-27T13:18:40.220793+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-05-27T13:18:40.220796+00:00 --> dataPurpose
+2026-05-27T13:18:40.220798+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-05-27T13:18:40.220801+00:00 --> experimentStepIDPrefix
+2026-05-27T13:18:40.220803+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-05-27T13:18:40.220810+00:00 --> id
+2026-05-27T13:18:40.220813+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.220815+00:00 id is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.225062+00:00 --> name
+2026-05-27T13:18:40.225066+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.225068+00:00 name is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:40.229828+00:00 --> XsdComplexType
+2026-05-27T13:18:40.229834+00:00 --> SeriesSet
+2026-05-27T13:18:40.229836+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:40.229838+00:00 SeriesSet is linked to {}
+2026-05-27T13:18:40.234020+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:40.234026+00:00 SeriesSet is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:40.238294+00:00 SeriesSet is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:40.242610+00:00 SeriesSet is linked to {'attribute': XsdAttribute(name='length')}
+2026-05-27T13:18:40.247582+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:40.247597+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:40.247599+00:00 SeriesSet is linked to {'child': XsdElement(ref='Series', occurs=[1, None])}
+2026-05-27T13:18:40.251941+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:40.251946+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:40.251952+00:00 --> XsdComplexType
+2026-05-27T13:18:40.251954+00:00 --> Category
+2026-05-27T13:18:40.251956+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:40.251958+00:00 Category is linked to {}
+2026-05-27T13:18:40.256267+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:40.256270+00:00 Category is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:40.261242+00:00 Category is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:40.265592+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:40.265603+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:40.265605+00:00 Category is linked to {'child': XsdElement(ref='Parameter', occurs=[0, None])}
+2026-05-27T13:18:40.269923+00:00 Category is linked to {'child': XsdElement(ref='SeriesSet', occurs=[0, None])}
+2026-05-27T13:18:40.274236+00:00 Category is linked to {'child': XsdElement(ref='Category', occurs=[0, None])}
+2026-05-27T13:18:40.279266+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:40.279272+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:40.279277+00:00 --> XsdComplexType
+2026-05-27T13:18:40.279279+00:00 --> ExperimentStepSet
+2026-05-27T13:18:40.279281+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:40.279283+00:00 ExperimentStepSet is linked to {}
+2026-05-27T13:18:40.283612+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:40.283615+00:00 ExperimentStepSet is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:40.287937+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:40.287945+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:40.287947+00:00 ExperimentStepSet is linked to {'child': XsdElement(ref='Template', occurs=[0, None])}
+2026-05-27T13:18:40.293056+00:00 ExperimentStepSet is linked to {'child': XsdElement(ref='ExperimentStep', occurs=[1, None])}
+2026-05-27T13:18:40.297329+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:40.297336+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdAttribute
+2026-05-27T13:18:40.297345+00:00 --> id
+2026-05-27T13:18:40.297353+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.297355+00:00 id is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.301673+00:00 --> name
+2026-05-27T13:18:40.301677+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.301679+00:00 name is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.305961+00:00 --> length
+2026-05-27T13:18:40.305965+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.305976+00:00 length is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:40.310955+00:00 --> XsdComplexType
+2026-05-27T13:18:40.310958+00:00 --> Series
+2026-05-27T13:18:40.310961+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:40.310962+00:00 Series is linked to {}
+2026-05-27T13:18:40.315157+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:40.315160+00:00 Series is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:40.319600+00:00 Series is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:40.324626+00:00 Series is linked to {'attribute': XsdAttribute(name='dependency')}
+2026-05-27T13:18:40.329048+00:00 Series is linked to {'attribute': XsdAttribute(name='seriesID')}
+2026-05-27T13:18:40.333475+00:00 Series is linked to {'attribute': XsdAttribute(name='visible')}
+2026-05-27T13:18:40.338416+00:00 Series is linked to {'attribute': XsdAttribute(name='plotScale')}
+2026-05-27T13:18:40.342825+00:00 Series is linked to {'attribute': XsdAttribute(name='seriesType')}
+2026-05-27T13:18:40.347301+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:40.347311+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:40.347314+00:00 Series is linked to {'child': XsdElement(ref='IndividualValueSet', occurs=[1, None])}
+2026-05-27T13:18:40.352362+00:00 Series is linked to {'child': XsdElement(ref='EncodedValueSet', occurs=[1, None])}
+2026-05-27T13:18:40.356906+00:00 Series is linked to {'child': XsdElement(ref='AutoIncrementedValueSet', occurs=[1, None])}
+2026-05-27T13:18:40.361472+00:00 Series is linked to {'child': XsdElement(ref='Unit', occurs=[0, 1])}
+2026-05-27T13:18:40.366642+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:40.366649+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-05-27T13:18:40.366662+00:00 Matched with rule 9) complexType with choice -> subClassOf
+2026-05-27T13:18:40.366665+00:00 Series is linked to {'child': XsdElement(ref='IndividualValueSet', occurs=[1, None])}
+2026-05-27T13:18:40.383525+00:00 Series is linked to {'child': XsdElement(ref='EncodedValueSet', occurs=[1, None])}
+2026-05-27T13:18:40.388173+00:00 Series is linked to {'child': XsdElement(ref='AutoIncrementedValueSet', occurs=[1, None])}
+XsdAttribute
+2026-05-27T13:18:40.392741+00:00 --> id
+2026-05-27T13:18:40.392747+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.392749+00:00 id is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.397943+00:00 --> name
+2026-05-27T13:18:40.397947+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.397950+00:00 name is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.402631+00:00 --> dependency
+2026-05-27T13:18:40.402635+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.402643+00:00 dependency is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.407251+00:00 --> seriesID
+2026-05-27T13:18:40.407255+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.407262+00:00 seriesID is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.412733+00:00 --> visible
+2026-05-27T13:18:40.412738+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.412744+00:00 visible is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.417366+00:00 --> plotScale
+2026-05-27T13:18:40.417371+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.417378+00:00 plotScale is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.422068+00:00 --> seriesType
+2026-05-27T13:18:40.422072+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.422078+00:00 seriesType is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:40.427472+00:00 --> XsdComplexType
+2026-05-27T13:18:40.427475+00:00 --> IndividualValueSet
+2026-05-27T13:18:40.427477+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:40.427479+00:00 IndividualValueSet is linked to {}
+2026-05-27T13:18:40.432102+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:40.432107+00:00 IndividualValueSet is linked to {'attribute': XsdAttribute(name='startIndex')}
+2026-05-27T13:18:40.436995+00:00 IndividualValueSet is linked to {'attribute': XsdAttribute(name='endIndex')}
+2026-05-27T13:18:40.442407+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:40.442420+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:40.442430+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:40.442435+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-05-27T13:18:40.442438+00:00 IndividualValueSet is linked to {'child': XsdElement(ref='I', occurs=[1, 1])}
+2026-05-27T13:18:40.447219+00:00 IndividualValueSet is linked to {'child': XsdElement(ref='L', occurs=[1, 1])}
+2026-05-27T13:18:40.452054+00:00 IndividualValueSet is linked to {'child': XsdElement(ref='F', occurs=[1, 1])}
+2026-05-27T13:18:40.457421+00:00 IndividualValueSet is linked to {'child': XsdElement(ref='D', occurs=[1, 1])}
+2026-05-27T13:18:40.462233+00:00 IndividualValueSet is linked to {'child': XsdElement(ref='S', occurs=[1, 1])}
+2026-05-27T13:18:40.467079+00:00 IndividualValueSet is linked to {'child': XsdElement(ref='Boolean', occurs=[1, 1])}
+2026-05-27T13:18:40.472472+00:00 IndividualValueSet is linked to {'child': XsdElement(ref='DateTime', occurs=[1, 1])}
+2026-05-27T13:18:40.477347+00:00 IndividualValueSet is linked to {'child': XsdElement(ref='PNG', occurs=[1, 1])}
+2026-05-27T13:18:40.482635+00:00 IndividualValueSet is linked to {'child': XsdElement(ref='EmbeddedXML', occurs=[1, 1])}
+2026-05-27T13:18:40.487574+00:00 IndividualValueSet is linked to {'child': XsdElement(ref='SVG', occurs=[1, 1])}
+XsdElement
+2026-05-27T13:18:40.492580+00:00 --> XsdComplexType
+2026-05-27T13:18:40.492583+00:00 --> EncodedValueSet
+2026-05-27T13:18:40.492585+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:40.492588+00:00 EncodedValueSet is linked to {}
+2026-05-27T13:18:40.498044+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:40.498050+00:00 EncodedValueSet is linked to {'attribute': XsdAttribute(name='startIndex')}
+2026-05-27T13:18:40.503143+00:00 EncodedValueSet is linked to {'attribute': XsdAttribute(name='endIndex')}
+2026-05-27T13:18:40.508146+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:40.508157+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:40.508161+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:40.508164+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:40.508168+00:00 --> XsdComplexType
+2026-05-27T13:18:40.508170+00:00 --> AutoIncrementedValueSet
+2026-05-27T13:18:40.508172+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:40.508174+00:00 AutoIncrementedValueSet is linked to {}
+2026-05-27T13:18:40.513687+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:40.513690+00:00 AutoIncrementedValueSet is linked to {'attribute': XsdAttribute(name='startIndex')}
+2026-05-27T13:18:40.518762+00:00 AutoIncrementedValueSet is linked to {'attribute': XsdAttribute(name='endIndex')}
+2026-05-27T13:18:40.523757+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:40.523766+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:40.523768+00:00 AutoIncrementedValueSet is linked to {'child': XsdElement(ref='StartValue', occurs=[1, 1])}
+2026-05-27T13:18:40.529298+00:00 AutoIncrementedValueSet is linked to {'child': XsdElement(ref='Increment', occurs=[1, 1])}
+2026-05-27T13:18:40.534430+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:40.534435+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:40.534441+00:00 --> XsdComplexType
+2026-05-27T13:18:40.534445+00:00 --> Unit
+2026-05-27T13:18:40.534448+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:40.534449+00:00 Unit is linked to {}
+2026-05-27T13:18:40.539958+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:40.539961+00:00 Unit is linked to {'attribute': XsdAttribute(name='label')}
+2026-05-27T13:18:40.558226+00:00 Unit is linked to {'attribute': XsdAttribute(name='quantity')}
+2026-05-27T13:18:40.563558+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:40.563569+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:40.563572+00:00 Unit is linked to {'child': XsdElement(ref='SIUnit', occurs=[0, None])}
+2026-05-27T13:18:40.569137+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:40.569146+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:40.569160+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:40.569163+00:00 --> I
+2026-05-27T13:18:40.569166+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:40.569168+00:00 I is linked to {}
+2026-05-27T13:18:40.574408+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:40.574414+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:40.574416+00:00 --> L
+2026-05-27T13:18:40.574419+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:40.574421+00:00 L is linked to {}
+2026-05-27T13:18:40.579628+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:40.579636+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:40.579638+00:00 --> F
+2026-05-27T13:18:40.579640+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:40.579642+00:00 F is linked to {}
+2026-05-27T13:18:40.585385+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:40.585392+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:40.585398+00:00 --> D
+2026-05-27T13:18:40.585401+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:40.585403+00:00 D is linked to {}
+2026-05-27T13:18:40.590628+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:40.590633+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:40.590635+00:00 --> S
+2026-05-27T13:18:40.590637+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:40.590639+00:00 S is linked to {}
+2026-05-27T13:18:40.596295+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:40.596301+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:40.596303+00:00 --> Boolean
+2026-05-27T13:18:40.596305+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:40.596307+00:00 Boolean is linked to {}
+2026-05-27T13:18:40.601568+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:40.601573+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:40.601575+00:00 --> DateTime
+2026-05-27T13:18:40.601578+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:40.601579+00:00 DateTime is linked to {}
+2026-05-27T13:18:40.606843+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:40.606850+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:40.606852+00:00 --> PNG
+2026-05-27T13:18:40.606855+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:40.606857+00:00 PNG is linked to {}
+2026-05-27T13:18:40.612623+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:40.612629+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:40.612631+00:00 --> EmbeddedXML
+2026-05-27T13:18:40.612633+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:40.612635+00:00 EmbeddedXML is linked to {}
+2026-05-27T13:18:40.617855+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:40.617860+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:40.617862+00:00 --> SVG
+2026-05-27T13:18:40.617864+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:40.617866+00:00 SVG is linked to {}
+2026-05-27T13:18:40.623414+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdAttribute
+2026-05-27T13:18:40.623425+00:00 --> startIndex
+2026-05-27T13:18:40.623428+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.623437+00:00 startIndex is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.628852+00:00 --> endIndex
+2026-05-27T13:18:40.628857+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.628864+00:00 endIndex is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.634169+00:00 --> startIndex
+2026-05-27T13:18:40.634173+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.634176+00:00 startIndex is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.640038+00:00 --> endIndex
+2026-05-27T13:18:40.640042+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.640044+00:00 endIndex is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:40.645367+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:40.645370+00:00 --> I
+2026-05-27T13:18:40.645372+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:40.645374+00:00 I is linked to {}
+2026-05-27T13:18:40.650983+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:40.650988+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:40.650990+00:00 --> L
+2026-05-27T13:18:40.650993+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:40.650995+00:00 L is linked to {}
+2026-05-27T13:18:40.656323+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:40.656328+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:40.656330+00:00 --> F
+2026-05-27T13:18:40.656333+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:40.656334+00:00 F is linked to {}
+2026-05-27T13:18:40.661547+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:40.661552+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:40.661554+00:00 --> D
+2026-05-27T13:18:40.661557+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:40.661559+00:00 D is linked to {}
+2026-05-27T13:18:40.667291+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdAttribute
+2026-05-27T13:18:40.667306+00:00 --> startIndex
+2026-05-27T13:18:40.667309+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.667311+00:00 startIndex is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.672602+00:00 --> endIndex
+2026-05-27T13:18:40.672605+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.672611+00:00 endIndex is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:40.677918+00:00 --> XsdComplexType
+2026-05-27T13:18:40.677921+00:00 --> StartValue
+2026-05-27T13:18:40.677923+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:40.677925+00:00 StartValue is linked to {}
+2026-05-27T13:18:40.683642+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:40.683646+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:40.683655+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:40.683660+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:40.683664+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-05-27T13:18:40.683666+00:00 StartValue is linked to {'child': XsdElement(ref='I', occurs=[1, 1])}
+2026-05-27T13:18:40.688972+00:00 StartValue is linked to {'child': XsdElement(ref='L', occurs=[1, 1])}
+2026-05-27T13:18:40.694659+00:00 StartValue is linked to {'child': XsdElement(ref='F', occurs=[1, 1])}
+2026-05-27T13:18:40.699984+00:00 StartValue is linked to {'child': XsdElement(ref='D', occurs=[1, 1])}
+XsdElement
+2026-05-27T13:18:40.705328+00:00 --> XsdComplexType
+2026-05-27T13:18:40.705333+00:00 --> Increment
+2026-05-27T13:18:40.705336+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:40.705338+00:00 Increment is linked to {}
+2026-05-27T13:18:40.725139+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:40.725147+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:40.725160+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:40.725165+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:40.725170+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-05-27T13:18:40.725172+00:00 Increment is linked to {'child': XsdElement(ref='I', occurs=[1, 1])}
+2026-05-27T13:18:40.730594+00:00 Increment is linked to {'child': XsdElement(ref='L', occurs=[1, 1])}
+2026-05-27T13:18:40.736393+00:00 Increment is linked to {'child': XsdElement(ref='F', occurs=[1, 1])}
+2026-05-27T13:18:40.741749+00:00 Increment is linked to {'child': XsdElement(ref='D', occurs=[1, 1])}
+XsdAttribute
+2026-05-27T13:18:40.747095+00:00 --> label
+2026-05-27T13:18:40.747100+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.747108+00:00 label is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.753197+00:00 --> quantity
+2026-05-27T13:18:40.753201+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.753208+00:00 quantity is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:40.758595+00:00 --> XsdComplexType
+2026-05-27T13:18:40.758600+00:00 --> SIUnit
+2026-05-27T13:18:40.758603+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:40.758605+00:00 SIUnit is linked to {}
+2026-05-27T13:18:40.764419+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:40.764422+00:00 SIUnit is linked to {'attribute': XsdAttribute(name='factor')}
+2026-05-27T13:18:40.770038+00:00 SIUnit is linked to {'attribute': XsdAttribute(name='exponent')}
+2026-05-27T13:18:40.775455+00:00 SIUnit is linked to {'attribute': XsdAttribute(name='offset')}
+2026-05-27T13:18:40.781509+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:40.781520+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:40.781524+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:40.781527+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdAttribute
+2026-05-27T13:18:40.781537+00:00 --> factor
+2026-05-27T13:18:40.781540+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-05-27T13:18:40.781544+00:00 --> exponent
+2026-05-27T13:18:40.781546+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-05-27T13:18:40.781549+00:00 --> offset
+2026-05-27T13:18:40.781551+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-05-27T13:18:40.781556+00:00 --> id
+2026-05-27T13:18:40.781559+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.781561+00:00 id is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:40.787181+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:40.787184+00:00 --> Timestamp
+2026-05-27T13:18:40.787187+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:40.787189+00:00 Timestamp is linked to {}
+2026-05-27T13:18:40.793070+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:40.793076+00:00 --> XsdComplexType
+2026-05-27T13:18:40.793078+00:00 --> Author
+2026-05-27T13:18:40.793081+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:40.793083+00:00 Author is linked to {}
+2026-05-27T13:18:40.798547+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:40.798550+00:00 Author is linked to {'attribute': XsdAttribute(name='userType')}
+2026-05-27T13:18:40.804060+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:40.804069+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:40.804074+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:40.804079+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-05-27T13:18:40.804081+00:00 Author is linked to {'child': XsdElement(ref='Name', occurs=[1, 1])}
+2026-05-27T13:18:40.810111+00:00 Author is linked to {'child': XsdElement(ref='Affiliation', occurs=[0, 1])}
+2026-05-27T13:18:40.815551+00:00 Author is linked to {'child': XsdElement(ref='Role', occurs=[0, 1])}
+2026-05-27T13:18:40.821430+00:00 Author is linked to {'child': XsdElement(ref='Email', occurs=[0, 1])}
+2026-05-27T13:18:40.826890+00:00 Author is linked to {'child': XsdElement(ref='Phone', occurs=[0, 1])}
+2026-05-27T13:18:40.832373+00:00 Author is linked to {'child': XsdElement(ref='Location', occurs=[0, 1])}
+XsdElement
+2026-05-27T13:18:40.838377+00:00 --> XsdComplexType
+2026-05-27T13:18:40.838380+00:00 --> Software
+2026-05-27T13:18:40.838382+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:40.838384+00:00 Software is linked to {}
+2026-05-27T13:18:40.843788+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:40.843791+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:40.843799+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:40.843803+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:40.843808+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-05-27T13:18:40.843810+00:00 Software is linked to {'child': XsdElement(ref='Manufacturer', occurs=[0, 1])}
+2026-05-27T13:18:40.849631+00:00 Software is linked to {'child': XsdElement(ref='Name', occurs=[1, 1])}
+2026-05-27T13:18:40.855160+00:00 Software is linked to {'child': XsdElement(ref='Version', occurs=[0, 1])}
+2026-05-27T13:18:40.860955+00:00 Software is linked to {'child': XsdElement(ref='OperatingSystem', occurs=[0, 1])}
+XsdElement
+2026-05-27T13:18:40.866427+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:40.866430+00:00 --> Action
+2026-05-27T13:18:40.866432+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:40.866434+00:00 Action is linked to {}
+2026-05-27T13:18:40.871962+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:40.871967+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:40.871969+00:00 --> Reason
+2026-05-27T13:18:40.871972+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:40.871973+00:00 Reason is linked to {}
+2026-05-27T13:18:40.892314+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:40.892326+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:40.892329+00:00 --> Comment
+2026-05-27T13:18:40.892332+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:40.892334+00:00 Comment is linked to {}
+2026-05-27T13:18:40.897848+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:40.897854+00:00 --> XsdComplexType
+2026-05-27T13:18:40.897857+00:00 --> Diff
+2026-05-27T13:18:40.897859+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:40.897861+00:00 Diff is linked to {}
+2026-05-27T13:18:40.903703+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:40.903707+00:00 Diff is linked to {'attribute': XsdAttribute(name='scope')}
+2026-05-27T13:18:40.909313+00:00 Diff is linked to {'attribute': XsdAttribute(name='changedItem')}
+2026-05-27T13:18:40.914925+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:40.914935+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:40.914940+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:40.914944+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:40.914949+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:40.914951+00:00 --> Reference
+2026-05-27T13:18:40.914954+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:40.914956+00:00 Reference is linked to {}
+2026-05-27T13:18:40.921159+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdAttribute
+2026-05-27T13:18:40.921175+00:00 --> scope
+2026-05-27T13:18:40.921178+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.921186+00:00 scope is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.926885+00:00 --> changedItem
+2026-05-27T13:18:40.926889+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.926895+00:00 changedItem is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:40.932904+00:00 --> XsdAtomicBuiltin
+2026-05-27T13:18:40.932907+00:00 --> OldValue
+XsdElement
+2026-05-27T13:18:40.932910+00:00 --> XsdAtomicBuiltin
+2026-05-27T13:18:40.932912+00:00 --> NewValue
+XsdAttribute
+2026-05-27T13:18:40.932919+00:00 --> id
+2026-05-27T13:18:40.932922+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.932924+00:00 id is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:40.938582+00:00 --> name
+2026-05-27T13:18:40.938589+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:40.938591+00:00 name is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:40.944228+00:00 --> XsdComplexType
+2026-05-27T13:18:40.944231+00:00 --> Parameter
+2026-05-27T13:18:40.944234+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:40.944236+00:00 Parameter is linked to {}
+2026-05-27T13:18:40.950277+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:40.950280+00:00 Parameter is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:40.955934+00:00 Parameter is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:40.962198+00:00 Parameter is linked to {'attribute': XsdAttribute(name='parameterType')}
+2026-05-27T13:18:40.967776+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:40.967789+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:40.967791+00:00 Parameter is linked to {'child': XsdElement(ref='Unit', occurs=[0, 1])}
+2026-05-27T13:18:40.973506+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:40.973515+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-05-27T13:18:40.973517+00:00 Parameter is linked to {'child': XsdElement(ref='I', occurs=[1, 1])}
+2026-05-27T13:18:40.979796+00:00 Parameter is linked to {'child': XsdElement(ref='L', occurs=[1, 1])}
+2026-05-27T13:18:40.985416+00:00 Parameter is linked to {'child': XsdElement(ref='F', occurs=[1, 1])}
+2026-05-27T13:18:40.991526+00:00 Parameter is linked to {'child': XsdElement(ref='D', occurs=[1, 1])}
+2026-05-27T13:18:40.997167+00:00 Parameter is linked to {'child': XsdElement(ref='S', occurs=[1, 1])}
+2026-05-27T13:18:41.003201+00:00 Parameter is linked to {'child': XsdElement(ref='Boolean', occurs=[1, 1])}
+2026-05-27T13:18:41.008917+00:00 Parameter is linked to {'child': XsdElement(ref='DateTime', occurs=[1, 1])}
+2026-05-27T13:18:41.014563+00:00 Parameter is linked to {'child': XsdElement(ref='PNG', occurs=[1, 1])}
+2026-05-27T13:18:41.020754+00:00 Parameter is linked to {'child': XsdElement(ref='EmbeddedXML', occurs=[1, 1])}
+2026-05-27T13:18:41.026489+00:00 Parameter is linked to {'child': XsdElement(ref='SVG', occurs=[1, 1])}
+XsdElement
+2026-05-27T13:18:41.032886+00:00 --> XsdComplexType
+2026-05-27T13:18:41.032889+00:00 --> SeriesSet
+2026-05-27T13:18:41.032892+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:41.032894+00:00 SeriesSet is linked to {}
+2026-05-27T13:18:41.038734+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:41.038737+00:00 SeriesSet is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:41.044942+00:00 SeriesSet is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:41.065202+00:00 SeriesSet is linked to {'attribute': XsdAttribute(name='length')}
+2026-05-27T13:18:41.071292+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:41.071305+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:41.071307+00:00 SeriesSet is linked to {'child': XsdElement(ref='Series', occurs=[1, None])}
+2026-05-27T13:18:41.077531+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:41.077537+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:41.077543+00:00 --> XsdComplexType
+2026-05-27T13:18:41.077545+00:00 --> Category
+2026-05-27T13:18:41.077548+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:41.077550+00:00 Category is linked to {}
+2026-05-27T13:18:41.083313+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:41.083316+00:00 Category is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:41.089651+00:00 Category is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:41.095546+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:41.095556+00:00 Category is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:41.101845+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:41.101849+00:00 Category is linked to {'child': XsdElement(ref='Parameter', occurs=[0, None])}
+2026-05-27T13:18:41.107722+00:00 Category is linked to {'child': XsdElement(ref='SeriesSet', occurs=[0, None])}
+2026-05-27T13:18:41.113902+00:00 Category is linked to {'child': XsdElement(ref='Category', occurs=[0, None])}
+2026-05-27T13:18:41.119817+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:41.119822+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:41.119833+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:41.119835+00:00 --> I
+2026-05-27T13:18:41.119838+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:41.119840+00:00 I is linked to {}
+2026-05-27T13:18:41.125754+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:41.125763+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:41.125765+00:00 --> L
+2026-05-27T13:18:41.125767+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:41.125769+00:00 L is linked to {}
+2026-05-27T13:18:41.132235+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:41.132241+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:41.132243+00:00 --> F
+2026-05-27T13:18:41.132245+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:41.132247+00:00 F is linked to {}
+2026-05-27T13:18:41.138138+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:41.138145+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:41.138148+00:00 --> D
+2026-05-27T13:18:41.138150+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:41.138152+00:00 D is linked to {}
+2026-05-27T13:18:41.144388+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:41.144394+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:41.144396+00:00 --> S
+2026-05-27T13:18:41.144399+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:41.144401+00:00 S is linked to {}
+2026-05-27T13:18:41.150159+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:41.150164+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:41.150166+00:00 --> Boolean
+2026-05-27T13:18:41.150169+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:41.150171+00:00 Boolean is linked to {}
+2026-05-27T13:18:41.156323+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:41.156328+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:41.156330+00:00 --> DateTime
+2026-05-27T13:18:41.156333+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:41.156334+00:00 DateTime is linked to {}
+2026-05-27T13:18:41.162054+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:41.162059+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:41.162061+00:00 --> PNG
+2026-05-27T13:18:41.162064+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:41.162065+00:00 PNG is linked to {}
+2026-05-27T13:18:41.167822+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:41.167835+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:41.167838+00:00 --> EmbeddedXML
+2026-05-27T13:18:41.167840+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:41.167843+00:00 EmbeddedXML is linked to {}
+2026-05-27T13:18:41.174168+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:41.174174+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:41.174176+00:00 --> SVG
+2026-05-27T13:18:41.174178+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:41.174180+00:00 SVG is linked to {}
+2026-05-27T13:18:41.179898+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdAttribute
+2026-05-27T13:18:41.179909+00:00 --> id
+2026-05-27T13:18:41.179912+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:41.179915+00:00 id is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:41.186143+00:00 --> name
+2026-05-27T13:18:41.186148+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:41.186150+00:00 name is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:41.191932+00:00 --> parameterType
+2026-05-27T13:18:41.191936+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:41.191943+00:00 parameterType is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:41.198012+00:00 --> XsdComplexType
+2026-05-27T13:18:41.198015+00:00 --> Unit
+2026-05-27T13:18:41.198018+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:41.198019+00:00 Unit is linked to {}
+2026-05-27T13:18:41.203879+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:41.203883+00:00 Unit is linked to {'attribute': XsdAttribute(name='label')}
+2026-05-27T13:18:41.209689+00:00 Unit is linked to {'attribute': XsdAttribute(name='quantity')}
+2026-05-27T13:18:41.231094+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:41.231116+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:41.231119+00:00 Unit is linked to {'child': XsdElement(ref='SIUnit', occurs=[0, None])}
+2026-05-27T13:18:41.237124+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:41.237130+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:41.237153+00:00 --> XsdComplexType
+2026-05-27T13:18:41.237155+00:00 --> Tag
+2026-05-27T13:18:41.237158+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:41.237160+00:00 Tag is linked to {}
+2026-05-27T13:18:41.243419+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:41.243422+00:00 Tag is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:41.249266+00:00 Tag is linked to {'attribute': XsdAttribute(name='value')}
+2026-05-27T13:18:41.255573+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:41.255584+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:41.255588+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:41.255592+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdAttribute
+2026-05-27T13:18:41.255601+00:00 --> name
+2026-05-27T13:18:41.255604+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-05-27T13:18:41.255607+00:00 --> value
+2026-05-27T13:18:41.255610+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-05-27T13:18:41.255615+00:00 --> userType
+2026-05-27T13:18:41.255618+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:41.255626+00:00 userType is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:41.261623+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:41.261626+00:00 --> Name
+2026-05-27T13:18:41.261628+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:41.261630+00:00 Name is linked to {}
+2026-05-27T13:18:41.267815+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:41.267821+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:41.267823+00:00 --> Affiliation
+2026-05-27T13:18:41.267825+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:41.267827+00:00 Affiliation is linked to {}
+2026-05-27T13:18:41.273744+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:41.273749+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:41.273751+00:00 --> Role
+2026-05-27T13:18:41.273753+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:41.273755+00:00 Role is linked to {}
+2026-05-27T13:18:41.279573+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:41.279578+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:41.279580+00:00 --> Email
+2026-05-27T13:18:41.279582+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:41.279584+00:00 Email is linked to {}
+2026-05-27T13:18:41.286036+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:41.286042+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:41.286044+00:00 --> Phone
+2026-05-27T13:18:41.286046+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:41.286048+00:00 Phone is linked to {}
+2026-05-27T13:18:41.292010+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:41.292016+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:41.292018+00:00 --> Location
+2026-05-27T13:18:41.292020+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:41.292022+00:00 Location is linked to {}
+2026-05-27T13:18:41.298556+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:41.298569+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:41.298571+00:00 --> DeviceIdentifier
+2026-05-27T13:18:41.298574+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:41.298575+00:00 DeviceIdentifier is linked to {}
+2026-05-27T13:18:41.304497+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:41.304502+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:41.304504+00:00 --> Manufacturer
+2026-05-27T13:18:41.304506+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:41.304508+00:00 Manufacturer is linked to {}
+2026-05-27T13:18:41.310886+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:41.310892+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:41.310893+00:00 --> Name
+2026-05-27T13:18:41.310896+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:41.310898+00:00 Name is linked to {}
+2026-05-27T13:18:41.316767+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:41.316772+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:41.316774+00:00 --> FirmwareVersion
+2026-05-27T13:18:41.316776+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:41.316778+00:00 FirmwareVersion is linked to {}
+2026-05-27T13:18:41.322661+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:41.322666+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:41.322668+00:00 --> SerialNumber
+2026-05-27T13:18:41.322671+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:41.322673+00:00 SerialNumber is linked to {}
+2026-05-27T13:18:41.329184+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:41.329195+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:41.329197+00:00 --> Manufacturer
+2026-05-27T13:18:41.329199+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:41.329201+00:00 Manufacturer is linked to {}
+2026-05-27T13:18:41.335097+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:41.335102+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:41.335104+00:00 --> Name
+2026-05-27T13:18:41.335106+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:41.335108+00:00 Name is linked to {}
+2026-05-27T13:18:41.341456+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:41.341461+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:41.341463+00:00 --> Version
+2026-05-27T13:18:41.341465+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:41.341467+00:00 Version is linked to {}
+2026-05-27T13:18:41.347359+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdElement
+2026-05-27T13:18:41.347364+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:41.347366+00:00 --> OperatingSystem
+2026-05-27T13:18:41.347368+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:41.347370+00:00 OperatingSystem is linked to {}
+2026-05-27T13:18:41.353549+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+XsdAttributeGroup
+2026-05-27T13:18:41.353571+00:00 --> SampleAttributes
+2026-05-27T13:18:41.353578+00:00 Matched with rule 4) attributeGroups -> DatatypeProperty (superProperty)
+2026-05-27T13:18:41.353581+00:00 SampleAttributes is linked to {'attribute': XsdAttribute(name='role')}
+2026-05-27T13:18:41.359573+00:00 SampleAttributes is linked to {'attribute': XsdAttribute(name='samplePurpose')}
+2026-05-27T13:18:41.365962+00:00 Matched with rule 5d) annotation (attributeGroup) -> comment
+2026-05-27T13:18:41.365972+00:00 SampleAttributes is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:41.371984+00:00 --> role
+2026-05-27T13:18:41.371989+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:41.371991+00:00 role is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:41.378375+00:00 --> samplePurpose
+2026-05-27T13:18:41.378380+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:41.378382+00:00 samplePurpose is linked to {'attribute': 'annotation'}
+XsdAttributeGroup
+2026-05-27T13:18:41.399607+00:00 --> ExperimentDataAttributes
+2026-05-27T13:18:41.399619+00:00 Matched with rule 4) attributeGroups -> DatatypeProperty (superProperty)
+2026-05-27T13:18:41.399623+00:00 ExperimentDataAttributes is linked to {'attribute': XsdAttribute(name='role')}
+2026-05-27T13:18:41.405803+00:00 ExperimentDataAttributes is linked to {'attribute': XsdAttribute(name='dataPurpose')}
+2026-05-27T13:18:41.412390+00:00 Matched with rule 5d) annotation (attributeGroup) -> comment
+2026-05-27T13:18:41.412402+00:00 ExperimentDataAttributes is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:41.418417+00:00 --> role
+2026-05-27T13:18:41.418421+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttribute
+2026-05-27T13:18:41.418425+00:00 --> dataPurpose
+2026-05-27T13:18:41.418427+00:00 Matched with rule 5c) annotation (attribute) -> comment
+XsdAttributeGroup
+2026-05-27T13:18:41.418431+00:00 --> ValueSet
+2026-05-27T13:18:41.418435+00:00 Matched with rule 4) attributeGroups -> DatatypeProperty (superProperty)
+2026-05-27T13:18:41.418438+00:00 ValueSet is linked to {'attribute': XsdAttribute(name='startIndex')}
+2026-05-27T13:18:41.424935+00:00 ValueSet is linked to {'attribute': XsdAttribute(name='endIndex')}
+2026-05-27T13:18:41.431137+00:00 Matched with rule 5d) annotation (attributeGroup) -> comment
+2026-05-27T13:18:41.431146+00:00 ValueSet is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:41.437808+00:00 --> startIndex
+2026-05-27T13:18:41.437813+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:41.437815+00:00 startIndex is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:41.444027+00:00 --> endIndex
+2026-05-27T13:18:41.444031+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:41.444033+00:00 endIndex is linked to {'attribute': 'annotation'}
+XsdAttributeGroup
+2026-05-27T13:18:41.450513+00:00 --> SignableItem
+2026-05-27T13:18:41.450519+00:00 Matched with rule 4) attributeGroups -> DatatypeProperty (superProperty)
+2026-05-27T13:18:41.450522+00:00 SignableItem is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:41.456777+00:00 Matched with rule 5d) annotation (attributeGroup) -> comment
+2026-05-27T13:18:41.456785+00:00 SignableItem is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:41.463349+00:00 --> id
+2026-05-27T13:18:41.463353+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:41.463356+00:00 id is linked to {'attribute': 'annotation'}
+XsdAttributeGroup
+2026-05-27T13:18:41.469611+00:00 --> SignableItemWithName
+2026-05-27T13:18:41.469618+00:00 Matched with rule 4) attributeGroups -> DatatypeProperty (superProperty)
+2026-05-27T13:18:41.469620+00:00 SignableItemWithName is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:41.476280+00:00 SignableItemWithName is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:41.482511+00:00 Matched with rule 5d) annotation (attributeGroup) -> comment
+2026-05-27T13:18:41.482519+00:00 SignableItemWithName is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:41.489083+00:00 --> id
+2026-05-27T13:18:41.489088+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:41.489091+00:00 id is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:41.495390+00:00 --> name
+2026-05-27T13:18:41.495394+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:41.495397+00:00 name is linked to {'attribute': 'annotation'}
+XsdAttributeGroup
+2026-05-27T13:18:41.501899+00:00 --> SourceDataLocation
+2026-05-27T13:18:41.501904+00:00 Matched with rule 4) attributeGroups -> DatatypeProperty (superProperty)
+2026-05-27T13:18:41.501907+00:00 SourceDataLocation is linked to {'attribute': XsdAttribute(name='sourceDataLocation')}
+2026-05-27T13:18:41.508243+00:00 Matched with rule 5d) annotation (attributeGroup) -> comment
+2026-05-27T13:18:41.508253+00:00 SourceDataLocation is linked to {'attribute': 'annotation'}
+XsdAttribute
+2026-05-27T13:18:41.514866+00:00 --> sourceDataLocation
+2026-05-27T13:18:41.514871+00:00 Matched with rule 5c) annotation (attribute) -> comment
+2026-05-27T13:18:41.514874+00:00 sourceDataLocation is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:41.521116+00:00 --> XsdComplexType
+2026-05-27T13:18:41.521119+00:00 --> AnIML
+2026-05-27T13:18:41.521121+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:41.521123+00:00 AnIML is linked to {}
+2026-05-27T13:18:41.527658+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:41.527661+00:00 AnIML is linked to {'attribute': XsdAttribute(name='version')}
+2026-05-27T13:18:41.533946+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:41.533954+00:00 AnIML is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:41.540699+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:41.540703+00:00 AnIML is linked to {'child': XsdElement(ref='SampleSet', occurs=[0, 1])}
+2026-05-27T13:18:41.563468+00:00 AnIML is linked to {'child': XsdElement(ref='ExperimentStepSet', occurs=[0, 1])}
+2026-05-27T13:18:41.569868+00:00 AnIML is linked to {'child': XsdElement(ref='AuditTrailEntrySet', occurs=[0, 1])}
+2026-05-27T13:18:41.576636+00:00 AnIML is linked to {'child': XsdElement(ref='SignatureSet', occurs=[0, 1])}
+2026-05-27T13:18:41.582973+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:41.582980+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:41.582989+00:00 --> XsdComplexType
+2026-05-27T13:18:41.582991+00:00 --> SampleSet
+2026-05-27T13:18:41.582993+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:41.582995+00:00 SampleSet is linked to {}
+2026-05-27T13:18:41.589744+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:41.589748+00:00 SampleSet is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:41.596183+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:41.596193+00:00 SampleSet is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:41.602968+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:41.602971+00:00 SampleSet is linked to {'child': XsdElement(ref='Sample', occurs=[1, None])}
+2026-05-27T13:18:41.609414+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:41.609419+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:41.609425+00:00 --> XsdComplexType
+2026-05-27T13:18:41.609427+00:00 --> ExperimentStepSet
+2026-05-27T13:18:41.609429+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:41.609431+00:00 ExperimentStepSet is linked to {}
+2026-05-27T13:18:41.616095+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:41.616098+00:00 ExperimentStepSet is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:41.622521+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:41.622528+00:00 ExperimentStepSet is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:41.629370+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:41.629374+00:00 ExperimentStepSet is linked to {'child': XsdElement(ref='Template', occurs=[0, None])}
+2026-05-27T13:18:41.635742+00:00 ExperimentStepSet is linked to {'child': XsdElement(ref='ExperimentStep', occurs=[1, None])}
+2026-05-27T13:18:41.642542+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:41.642547+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:41.642554+00:00 --> XsdComplexType
+2026-05-27T13:18:41.642556+00:00 --> AuditTrailEntrySet
+2026-05-27T13:18:41.642558+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:41.642560+00:00 AuditTrailEntrySet is linked to {}
+2026-05-27T13:18:41.648878+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:41.648881+00:00 AuditTrailEntrySet is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:41.655611+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:41.655618+00:00 AuditTrailEntrySet is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:41.662051+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:41.662054+00:00 AuditTrailEntrySet is linked to {'child': XsdElement(ref='AuditTrailEntry', occurs=[0, None])}
+2026-05-27T13:18:41.668769+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:41.668774+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:41.668779+00:00 --> XsdComplexType
+2026-05-27T13:18:41.668781+00:00 --> SignatureSet
+2026-05-27T13:18:41.668783+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:41.668785+00:00 SignatureSet is linked to {}
+2026-05-27T13:18:41.675169+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:41.675172+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:41.675178+00:00 SignatureSet is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:41.681887+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:41.681890+00:00 SignatureSet is linked to {'child': XsdElement(ref='Signature', occurs=[1, None])}
+2026-05-27T13:18:41.688215+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:41.688219+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:41.688225+00:00 --> XsdComplexType
+2026-05-27T13:18:41.688227+00:00 --> Sample
+2026-05-27T13:18:41.688229+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:41.688231+00:00 Sample is linked to {}
+2026-05-27T13:18:41.694975+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:41.694978+00:00 Sample is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:41.701395+00:00 Sample is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:41.724174+00:00 Sample is linked to {'attribute': XsdAttribute(name='sampleID')}
+2026-05-27T13:18:41.730722+00:00 Sample is linked to {'attribute': XsdAttribute(name='barcode')}
+2026-05-27T13:18:41.737649+00:00 Sample is linked to {'attribute': XsdAttribute(name='comment')}
+2026-05-27T13:18:41.744171+00:00 Sample is linked to {'attribute': XsdAttribute(name='derived')}
+2026-05-27T13:18:41.751044+00:00 Sample is linked to {'attribute': XsdAttribute(name='containerType')}
+2026-05-27T13:18:41.757594+00:00 Sample is linked to {'attribute': XsdAttribute(name='containerID')}
+2026-05-27T13:18:41.764427+00:00 Sample is linked to {'attribute': XsdAttribute(name='locationInContainer')}
+2026-05-27T13:18:41.770781+00:00 Sample is linked to {'attribute': XsdAttribute(name='sourceDataLocation')}
+2026-05-27T13:18:41.777673+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:41.777685+00:00 Sample is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:41.784090+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:41.784093+00:00 Sample is linked to {'child': XsdElement(ref='TagSet', occurs=[0, 1])}
+2026-05-27T13:18:41.790976+00:00 Sample is linked to {'child': XsdElement(ref='Category', occurs=[0, None])}
+2026-05-27T13:18:41.797395+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:41.797401+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:41.797410+00:00 --> XsdComplexType
+2026-05-27T13:18:41.797412+00:00 --> ExperimentStep
+2026-05-27T13:18:41.797414+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:41.797416+00:00 ExperimentStep is linked to {}
+2026-05-27T13:18:41.804229+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:41.804233+00:00 ExperimentStep is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:41.810691+00:00 ExperimentStep is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:41.817444+00:00 ExperimentStep is linked to {'attribute': XsdAttribute(name='experimentStepID')}
+2026-05-27T13:18:41.823841+00:00 ExperimentStep is linked to {'attribute': XsdAttribute(name='templateUsed')}
+2026-05-27T13:18:41.830627+00:00 ExperimentStep is linked to {'attribute': XsdAttribute(name='comment')}
+2026-05-27T13:18:41.837136+00:00 ExperimentStep is linked to {'attribute': XsdAttribute(name='sourceDataLocation')}
+2026-05-27T13:18:41.843975+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:41.843984+00:00 ExperimentStep is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:41.850357+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:41.850360+00:00 ExperimentStep is linked to {'child': XsdElement(ref='TagSet', occurs=[0, 1])}
+2026-05-27T13:18:41.857107+00:00 ExperimentStep is linked to {'child': XsdElement(ref='Technique', occurs=[0, 1])}
+2026-05-27T13:18:41.863490+00:00 ExperimentStep is linked to {'child': XsdElement(ref='Infrastructure', occurs=[0, 1])}
+2026-05-27T13:18:41.886633+00:00 ExperimentStep is linked to {'child': XsdElement(ref='Method', occurs=[0, 1])}
+2026-05-27T13:18:41.893199+00:00 ExperimentStep is linked to {'child': XsdElement(ref='Result', occurs=[0, None])}
+2026-05-27T13:18:41.900023+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:41.900030+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:41.900038+00:00 --> XsdComplexType
+2026-05-27T13:18:41.900040+00:00 --> Template
+2026-05-27T13:18:41.900043+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:41.900045+00:00 Template is linked to {}
+2026-05-27T13:18:41.906471+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:41.906475+00:00 Template is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:41.913388+00:00 Template is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:41.919878+00:00 Template is linked to {'attribute': XsdAttribute(name='templateID')}
+2026-05-27T13:18:41.926717+00:00 Template is linked to {'attribute': XsdAttribute(name='sourceDataLocation')}
+2026-05-27T13:18:41.933181+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:41.933192+00:00 Template is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:41.940009+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:41.940012+00:00 Template is linked to {'child': XsdElement(ref='TagSet', occurs=[0, 1])}
+2026-05-27T13:18:41.946555+00:00 Template is linked to {'child': XsdElement(ref='Technique', occurs=[0, 1])}
+2026-05-27T13:18:41.953369+00:00 Template is linked to {'child': XsdElement(ref='Infrastructure', occurs=[0, 1])}
+2026-05-27T13:18:41.959789+00:00 Template is linked to {'child': XsdElement(ref='Method', occurs=[0, 1])}
+2026-05-27T13:18:41.966649+00:00 Template is linked to {'child': XsdElement(ref='Result', occurs=[0, None])}
+2026-05-27T13:18:41.973085+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:41.973091+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:41.973098+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:41.973100+00:00 --> Timestamp
+2026-05-27T13:18:41.973102+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:41.973104+00:00 Timestamp is linked to {}
+2026-05-27T13:18:41.979961+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:41.979969+00:00 Timestamp is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:41.986534+00:00 --> XsdComplexType
+2026-05-27T13:18:41.986537+00:00 --> Method
+2026-05-27T13:18:41.986540+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:41.986541+00:00 Method is linked to {}
+2026-05-27T13:18:41.993292+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:41.993295+00:00 Method is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:41.999681+00:00 Method is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:42.006427+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:42.006435+00:00 Method is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:42.012913+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:42.012916+00:00 Method is linked to {'child': XsdElement(ref='Author', occurs=[0, 1])}
+2026-05-27T13:18:42.019619+00:00 Method is linked to {'child': XsdElement(ref='Device', occurs=[0, 1])}
+2026-05-27T13:18:42.026088+00:00 Method is linked to {'child': XsdElement(ref='Software', occurs=[0, 1])}
+2026-05-27T13:18:42.050445+00:00 Method is linked to {'child': XsdElement(ref='Category', occurs=[0, None])}
+2026-05-27T13:18:42.057005+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:42.057012+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:42.057019+00:00 --> XsdComplexType
+2026-05-27T13:18:42.057022+00:00 --> Infrastructure
+2026-05-27T13:18:42.057024+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:42.057026+00:00 Infrastructure is linked to {}
+2026-05-27T13:18:42.063819+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:42.063824+00:00 Infrastructure is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:42.070208+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:42.070218+00:00 Infrastructure is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:42.077087+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:42.077090+00:00 Infrastructure is linked to {'child': XsdElement(ref='SampleReferenceSet', occurs=[0, 1])}
+2026-05-27T13:18:42.083515+00:00 Infrastructure is linked to {'child': XsdElement(ref='ParentDataPointReferenceSet', occurs=[0, 1])}
+2026-05-27T13:18:42.090344+00:00 Infrastructure is linked to {'child': XsdElement(ref='ExperimentDataReferenceSet', occurs=[0, 1])}
+2026-05-27T13:18:42.096749+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:42.096755+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-05-27T13:18:42.096758+00:00 Infrastructure is linked to {'child': XsdElement(ref='Timestamp', occurs=[0, 1])}
+XsdElement
+2026-05-27T13:18:42.103585+00:00 --> XsdComplexType
+2026-05-27T13:18:42.103588+00:00 --> SampleReferenceSet
+2026-05-27T13:18:42.103590+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:42.103592+00:00 SampleReferenceSet is linked to {}
+2026-05-27T13:18:42.110016+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:42.110019+00:00 SampleReferenceSet is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:42.116846+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:42.116854+00:00 SampleReferenceSet is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:42.123398+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:42.123401+00:00 SampleReferenceSet is linked to {'child': XsdElement(ref='SampleReference', occurs=[0, None])}
+2026-05-27T13:18:42.130319+00:00 SampleReferenceSet is linked to {'child': XsdElement(ref='SampleInheritance', occurs=[0, None])}
+2026-05-27T13:18:42.136714+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:42.136720+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:42.136725+00:00 --> XsdComplexType
+2026-05-27T13:18:42.136727+00:00 --> Technique
+2026-05-27T13:18:42.136730+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:42.136731+00:00 Technique is linked to {}
+2026-05-27T13:18:42.143559+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:42.143562+00:00 Technique is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:42.149987+00:00 Technique is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:42.156821+00:00 Technique is linked to {'attribute': XsdAttribute(name='uri')}
+2026-05-27T13:18:42.163254+00:00 Technique is linked to {'attribute': XsdAttribute(name='sha256')}
+2026-05-27T13:18:42.170153+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:42.170160+00:00 Technique is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:42.176669+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:42.176672+00:00 Technique is linked to {'child': XsdElement(ref='Extension', occurs=[0, None])}
+2026-05-27T13:18:42.183494+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:42.183499+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:42.183505+00:00 --> XsdComplexType
+2026-05-27T13:18:42.183507+00:00 --> Extension
+2026-05-27T13:18:42.183509+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:42.183511+00:00 Extension is linked to {}
+2026-05-27T13:18:42.189895+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:42.189898+00:00 Extension is linked to {'attribute': XsdAttribute(name='uri')}
+2026-05-27T13:18:42.213293+00:00 Extension is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:42.219881+00:00 Extension is linked to {'attribute': XsdAttribute(name='sha256')}
+2026-05-27T13:18:42.226710+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:42.226721+00:00 Extension is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:42.233278+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:42.233284+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:42.233288+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:42.233295+00:00 --> XsdComplexType
+2026-05-27T13:18:42.233297+00:00 --> ParentDataPointReferenceSet
+2026-05-27T13:18:42.233300+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:42.233301+00:00 ParentDataPointReferenceSet is linked to {}
+2026-05-27T13:18:42.240127+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:42.240131+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:42.240138+00:00 ParentDataPointReferenceSet is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:42.246654+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:42.246658+00:00 ParentDataPointReferenceSet is linked to {'child': XsdElement(ref='ParentDataPointReference', occurs=[1, None])}
+2026-05-27T13:18:42.253539+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:42.253544+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:42.253550+00:00 --> XsdComplexType
+2026-05-27T13:18:42.253552+00:00 --> ParentDataPointReference
+2026-05-27T13:18:42.253554+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:42.253556+00:00 ParentDataPointReference is linked to {}
+2026-05-27T13:18:42.259977+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:42.259980+00:00 ParentDataPointReference is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:42.266947+00:00 ParentDataPointReference is linked to {'attribute': XsdAttribute(name='seriesID')}
+2026-05-27T13:18:42.273609+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:42.273619+00:00 ParentDataPointReference is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:42.280597+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:42.280602+00:00 ParentDataPointReference is linked to {'child': XsdElement(ref='StartValue', occurs=[1, 1])}
+2026-05-27T13:18:42.287080+00:00 ParentDataPointReference is linked to {'child': XsdElement(ref='EndValue', occurs=[0, 1])}
+2026-05-27T13:18:42.294018+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:42.294024+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:42.294030+00:00 --> XsdComplexType
+2026-05-27T13:18:42.294032+00:00 --> SampleReference
+2026-05-27T13:18:42.294035+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:42.294037+00:00 SampleReference is linked to {}
+2026-05-27T13:18:42.300451+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:42.300455+00:00 SampleReference is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:42.307301+00:00 SampleReference is linked to {'attribute': XsdAttribute(name='sampleID')}
+2026-05-27T13:18:42.313843+00:00 SampleReference is linked to {'attribute': XsdAttribute(name='role')}
+2026-05-27T13:18:42.320665+00:00 SampleReference is linked to {'attribute': XsdAttribute(name='samplePurpose')}
+2026-05-27T13:18:42.327101+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:42.327108+00:00 SampleReference is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:42.333997+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:42.334002+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:42.334006+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:42.334011+00:00 --> XsdComplexType
+2026-05-27T13:18:42.334013+00:00 --> SampleInheritance
+2026-05-27T13:18:42.334015+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:42.334017+00:00 SampleInheritance is linked to {}
+2026-05-27T13:18:42.340496+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:42.340500+00:00 SampleInheritance is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:42.347363+00:00 SampleInheritance is linked to {'attribute': XsdAttribute(name='role')}
+2026-05-27T13:18:42.353924+00:00 SampleInheritance is linked to {'attribute': XsdAttribute(name='samplePurpose')}
+2026-05-27T13:18:42.377411+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:42.377427+00:00 SampleInheritance is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:42.384064+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:42.384070+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:42.384074+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:42.384081+00:00 --> XsdComplexType
+2026-05-27T13:18:42.384083+00:00 --> ExperimentDataReferenceSet
+2026-05-27T13:18:42.384086+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:42.384088+00:00 ExperimentDataReferenceSet is linked to {}
+2026-05-27T13:18:42.390936+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:42.390941+00:00 ExperimentDataReferenceSet is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:42.397514+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:42.397523+00:00 ExperimentDataReferenceSet is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:42.404461+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:42.404464+00:00 ExperimentDataReferenceSet is linked to {'child': XsdElement(ref='ExperimentDataReference', occurs=[0, None])}
+2026-05-27T13:18:42.410952+00:00 ExperimentDataReferenceSet is linked to {'child': XsdElement(ref='ExperimentDataBulkReference', occurs=[0, None])}
+2026-05-27T13:18:42.417852+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:42.417858+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:42.417866+00:00 --> XsdComplexType
+2026-05-27T13:18:42.417868+00:00 --> ExperimentDataReference
+2026-05-27T13:18:42.417871+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:42.417873+00:00 ExperimentDataReference is linked to {}
+2026-05-27T13:18:42.424420+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:42.424423+00:00 ExperimentDataReference is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:42.431395+00:00 ExperimentDataReference is linked to {'attribute': XsdAttribute(name='role')}
+2026-05-27T13:18:42.437955+00:00 ExperimentDataReference is linked to {'attribute': XsdAttribute(name='dataPurpose')}
+2026-05-27T13:18:42.444890+00:00 ExperimentDataReference is linked to {'attribute': XsdAttribute(name='experimentStepID')}
+2026-05-27T13:18:42.451456+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:42.451464+00:00 ExperimentDataReference is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:42.458441+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:42.458446+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:42.458450+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:42.458455+00:00 --> XsdComplexType
+2026-05-27T13:18:42.458457+00:00 --> ExperimentDataBulkReference
+2026-05-27T13:18:42.458460+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:42.458461+00:00 ExperimentDataBulkReference is linked to {}
+2026-05-27T13:18:42.464999+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:42.465002+00:00 ExperimentDataBulkReference is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:42.471780+00:00 ExperimentDataBulkReference is linked to {'attribute': XsdAttribute(name='role')}
+2026-05-27T13:18:42.478349+00:00 ExperimentDataBulkReference is linked to {'attribute': XsdAttribute(name='dataPurpose')}
+2026-05-27T13:18:42.485212+00:00 ExperimentDataBulkReference is linked to {'attribute': XsdAttribute(name='experimentStepIDPrefix')}
+2026-05-27T13:18:42.491678+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:42.491689+00:00 ExperimentDataBulkReference is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:42.498510+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:42.498515+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:42.498519+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:42.498525+00:00 --> XsdComplexType
+2026-05-27T13:18:42.498526+00:00 --> Result
+2026-05-27T13:18:42.498529+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:42.498530+00:00 Result is linked to {}
+2026-05-27T13:18:42.504998+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:42.505001+00:00 Result is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:42.511830+00:00 Result is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:42.518270+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:42.518278+00:00 Result is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:42.541759+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:42.541776+00:00 Result is linked to {'child': XsdElement(ref='SeriesSet', occurs=[0, 1])}
+2026-05-27T13:18:42.548349+00:00 Result is linked to {'child': XsdElement(ref='Category', occurs=[0, None])}
+2026-05-27T13:18:42.555241+00:00 Result is linked to {'child': XsdElement(ref='ExperimentStepSet', occurs=[0, 1])}
+2026-05-27T13:18:42.561892+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:42.561898+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:42.561906+00:00 --> XsdComplexType
+2026-05-27T13:18:42.561908+00:00 --> SeriesSet
+2026-05-27T13:18:42.561911+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:42.561913+00:00 SeriesSet is linked to {}
+2026-05-27T13:18:42.568770+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:42.568774+00:00 SeriesSet is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:42.575263+00:00 SeriesSet is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:42.582106+00:00 SeriesSet is linked to {'attribute': XsdAttribute(name='length')}
+2026-05-27T13:18:42.588648+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:42.588659+00:00 SeriesSet is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:42.595562+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:42.595566+00:00 SeriesSet is linked to {'child': XsdElement(ref='Series', occurs=[1, None])}
+2026-05-27T13:18:42.602106+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:42.602111+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:42.602117+00:00 --> XsdComplexType
+2026-05-27T13:18:42.602119+00:00 --> Series
+2026-05-27T13:18:42.602121+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:42.602123+00:00 Series is linked to {}
+2026-05-27T13:18:42.608965+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:42.608968+00:00 Series is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:42.615447+00:00 Series is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:42.622351+00:00 Series is linked to {'attribute': XsdAttribute(name='dependency')}
+2026-05-27T13:18:42.628842+00:00 Series is linked to {'attribute': XsdAttribute(name='seriesID')}
+2026-05-27T13:18:42.635767+00:00 Series is linked to {'attribute': XsdAttribute(name='visible')}
+2026-05-27T13:18:42.642170+00:00 Series is linked to {'attribute': XsdAttribute(name='plotScale')}
+2026-05-27T13:18:42.648945+00:00 Series is linked to {'attribute': XsdAttribute(name='seriesType')}
+2026-05-27T13:18:42.655383+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:42.655392+00:00 Series is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:42.662109+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:42.662114+00:00 Series is linked to {'child': XsdElement(ref='IndividualValueSet', occurs=[1, None])}
+2026-05-27T13:18:42.668986+00:00 Series is linked to {'child': XsdElement(ref='EncodedValueSet', occurs=[1, None])}
+2026-05-27T13:18:42.675405+00:00 Series is linked to {'child': XsdElement(ref='AutoIncrementedValueSet', occurs=[1, None])}
+2026-05-27T13:18:42.682199+00:00 Series is linked to {'child': XsdElement(ref='Unit', occurs=[0, 1])}
+2026-05-27T13:18:42.705214+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:42.705227+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-05-27T13:18:42.705238+00:00 Matched with rule 9) complexType with choice -> subClassOf
+2026-05-27T13:18:42.705241+00:00 Series is linked to {'child': XsdElement(ref='IndividualValueSet', occurs=[1, None])}
+2026-05-27T13:18:42.711743+00:00 Series is linked to {'child': XsdElement(ref='EncodedValueSet', occurs=[1, None])}
+2026-05-27T13:18:42.718516+00:00 Series is linked to {'child': XsdElement(ref='AutoIncrementedValueSet', occurs=[1, None])}
+XsdElement
+2026-05-27T13:18:42.725404+00:00 --> XsdComplexType
+2026-05-27T13:18:42.725407+00:00 --> IndividualValueSet
+2026-05-27T13:18:42.725410+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:42.725412+00:00 IndividualValueSet is linked to {}
+2026-05-27T13:18:42.731863+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:42.731868+00:00 IndividualValueSet is linked to {'attribute': XsdAttribute(name='startIndex')}
+2026-05-27T13:18:42.738796+00:00 IndividualValueSet is linked to {'attribute': XsdAttribute(name='endIndex')}
+2026-05-27T13:18:42.745341+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:42.745352+00:00 IndividualValueSet is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:42.752441+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:42.752448+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:42.752455+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-05-27T13:18:42.752466+00:00 IndividualValueSet is linked to {'child': XsdElement(ref='I', occurs=[1, 1])}
+2026-05-27T13:18:42.759064+00:00 IndividualValueSet is linked to {'child': XsdElement(ref='L', occurs=[1, 1])}
+2026-05-27T13:18:42.766017+00:00 IndividualValueSet is linked to {'child': XsdElement(ref='F', occurs=[1, 1])}
+2026-05-27T13:18:42.772598+00:00 IndividualValueSet is linked to {'child': XsdElement(ref='D', occurs=[1, 1])}
+2026-05-27T13:18:42.779520+00:00 IndividualValueSet is linked to {'child': XsdElement(ref='S', occurs=[1, 1])}
+2026-05-27T13:18:42.786075+00:00 IndividualValueSet is linked to {'child': XsdElement(ref='Boolean', occurs=[1, 1])}
+2026-05-27T13:18:42.793044+00:00 IndividualValueSet is linked to {'child': XsdElement(ref='DateTime', occurs=[1, 1])}
+2026-05-27T13:18:42.799546+00:00 IndividualValueSet is linked to {'child': XsdElement(ref='PNG', occurs=[1, 1])}
+2026-05-27T13:18:42.806450+00:00 IndividualValueSet is linked to {'child': XsdElement(ref='EmbeddedXML', occurs=[1, 1])}
+2026-05-27T13:18:42.813044+00:00 IndividualValueSet is linked to {'child': XsdElement(ref='SVG', occurs=[1, 1])}
+XsdElement
+2026-05-27T13:18:42.819957+00:00 --> XsdComplexType
+2026-05-27T13:18:42.819960+00:00 --> EncodedValueSet
+2026-05-27T13:18:42.819963+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:42.819965+00:00 EncodedValueSet is linked to {}
+2026-05-27T13:18:42.826378+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:42.826382+00:00 EncodedValueSet is linked to {'attribute': XsdAttribute(name='startIndex')}
+2026-05-27T13:18:42.833321+00:00 EncodedValueSet is linked to {'attribute': XsdAttribute(name='endIndex')}
+2026-05-27T13:18:42.839880+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:42.839889+00:00 EncodedValueSet is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:42.863082+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:42.863090+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:42.863094+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:42.863100+00:00 --> XsdComplexType
+2026-05-27T13:18:42.863102+00:00 --> StartValue
+2026-05-27T13:18:42.863105+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:42.863107+00:00 StartValue is linked to {}
+2026-05-27T13:18:42.869766+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:42.869770+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:42.869778+00:00 StartValue is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:42.876768+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:42.876774+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:42.876779+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-05-27T13:18:42.876781+00:00 StartValue is linked to {'child': XsdElement(ref='I', occurs=[1, 1])}
+2026-05-27T13:18:42.883314+00:00 StartValue is linked to {'child': XsdElement(ref='L', occurs=[1, 1])}
+2026-05-27T13:18:42.890261+00:00 StartValue is linked to {'child': XsdElement(ref='F', occurs=[1, 1])}
+2026-05-27T13:18:42.896764+00:00 StartValue is linked to {'child': XsdElement(ref='D', occurs=[1, 1])}
+XsdElement
+2026-05-27T13:18:42.903726+00:00 --> XsdComplexType
+2026-05-27T13:18:42.903729+00:00 --> EndValue
+2026-05-27T13:18:42.903732+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:42.903734+00:00 EndValue is linked to {}
+2026-05-27T13:18:42.910304+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:42.910308+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:42.910315+00:00 EndValue is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:42.917245+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:42.917252+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:42.917256+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-05-27T13:18:42.917259+00:00 EndValue is linked to {'child': XsdElement(ref='I', occurs=[1, 1])}
+2026-05-27T13:18:42.923880+00:00 EndValue is linked to {'child': XsdElement(ref='L', occurs=[1, 1])}
+2026-05-27T13:18:42.930817+00:00 EndValue is linked to {'child': XsdElement(ref='F', occurs=[1, 1])}
+2026-05-27T13:18:42.937483+00:00 EndValue is linked to {'child': XsdElement(ref='D', occurs=[1, 1])}
+XsdElement
+2026-05-27T13:18:42.944404+00:00 --> XsdComplexType
+2026-05-27T13:18:42.944407+00:00 --> Increment
+2026-05-27T13:18:42.944410+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:42.944412+00:00 Increment is linked to {}
+2026-05-27T13:18:42.950909+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:42.950913+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:42.950919+00:00 Increment is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:42.958003+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:42.958010+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:42.958015+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-05-27T13:18:42.958017+00:00 Increment is linked to {'child': XsdElement(ref='I', occurs=[1, 1])}
+2026-05-27T13:18:42.964529+00:00 Increment is linked to {'child': XsdElement(ref='L', occurs=[1, 1])}
+2026-05-27T13:18:42.971520+00:00 Increment is linked to {'child': XsdElement(ref='F', occurs=[1, 1])}
+2026-05-27T13:18:42.977984+00:00 Increment is linked to {'child': XsdElement(ref='D', occurs=[1, 1])}
+XsdElement
+2026-05-27T13:18:42.984852+00:00 --> XsdComplexType
+2026-05-27T13:18:42.984855+00:00 --> AutoIncrementedValueSet
+2026-05-27T13:18:42.984858+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:42.984860+00:00 AutoIncrementedValueSet is linked to {}
+2026-05-27T13:18:42.991437+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:42.991441+00:00 AutoIncrementedValueSet is linked to {'attribute': XsdAttribute(name='startIndex')}
+2026-05-27T13:18:42.998343+00:00 AutoIncrementedValueSet is linked to {'attribute': XsdAttribute(name='endIndex')}
+2026-05-27T13:18:43.004964+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:43.004972+00:00 AutoIncrementedValueSet is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:43.028765+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:43.028772+00:00 AutoIncrementedValueSet is linked to {'child': XsdElement(ref='StartValue', occurs=[1, 1])}
+2026-05-27T13:18:43.035405+00:00 AutoIncrementedValueSet is linked to {'child': XsdElement(ref='Increment', occurs=[1, 1])}
+2026-05-27T13:18:43.042468+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:43.042474+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:43.042482+00:00 --> XsdComplexType
+2026-05-27T13:18:43.042484+00:00 --> Unit
+2026-05-27T13:18:43.042487+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:43.042489+00:00 Unit is linked to {}
+2026-05-27T13:18:43.048993+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:43.048998+00:00 Unit is linked to {'attribute': XsdAttribute(name='label')}
+2026-05-27T13:18:43.055936+00:00 Unit is linked to {'attribute': XsdAttribute(name='quantity')}
+2026-05-27T13:18:43.062480+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:43.062491+00:00 Unit is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:43.069430+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:43.069433+00:00 Unit is linked to {'child': XsdElement(ref='SIUnit', occurs=[0, None])}
+2026-05-27T13:18:43.076083+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:43.076088+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:43.076094+00:00 --> XsdComplexType
+2026-05-27T13:18:43.076096+00:00 --> SIUnit
+2026-05-27T13:18:43.076099+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:43.076100+00:00 SIUnit is linked to {}
+2026-05-27T13:18:43.083028+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:43.083032+00:00 SIUnit is linked to {'attribute': XsdAttribute(name='factor')}
+2026-05-27T13:18:43.089518+00:00 SIUnit is linked to {'attribute': XsdAttribute(name='exponent')}
+2026-05-27T13:18:43.096432+00:00 SIUnit is linked to {'attribute': XsdAttribute(name='offset')}
+2026-05-27T13:18:43.103373+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:43.103381+00:00 SIUnit is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:43.109899+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:43.109903+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:43.109906+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:43.109911+00:00 --> XsdComplexType
+2026-05-27T13:18:43.109913+00:00 --> AuditTrailEntry
+2026-05-27T13:18:43.109915+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:43.109917+00:00 AuditTrailEntry is linked to {}
+2026-05-27T13:18:43.116789+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:43.116792+00:00 AuditTrailEntry is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:43.123313+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:43.123321+00:00 AuditTrailEntry is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:43.130233+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:43.130236+00:00 AuditTrailEntry is linked to {'child': XsdElement(ref='Author', occurs=[1, 1])}
+2026-05-27T13:18:43.136754+00:00 AuditTrailEntry is linked to {'child': XsdElement(ref='Software', occurs=[0, 1])}
+2026-05-27T13:18:43.143665+00:00 AuditTrailEntry is linked to {'child': XsdElement(ref='Diff', occurs=[0, None])}
+2026-05-27T13:18:43.150200+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:43.150206+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-05-27T13:18:43.150209+00:00 AuditTrailEntry is linked to {'child': XsdElement(ref='Timestamp', occurs=[1, 1])}
+2026-05-27T13:18:43.157095+00:00 AuditTrailEntry is linked to {'child': XsdElement(ref='Action', occurs=[1, 1])}
+2026-05-27T13:18:43.163563+00:00 AuditTrailEntry is linked to {'child': XsdElement(ref='Reason', occurs=[0, 1])}
+2026-05-27T13:18:43.186658+00:00 AuditTrailEntry is linked to {'child': XsdElement(ref='Comment', occurs=[0, 1])}
+2026-05-27T13:18:43.193301+00:00 AuditTrailEntry is linked to {'child': XsdElement(ref='Reference', occurs=[0, None])}
+XsdElement
+2026-05-27T13:18:43.200273+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:43.200276+00:00 --> Action
+2026-05-27T13:18:43.200279+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:43.200281+00:00 Action is linked to {}
+2026-05-27T13:18:43.206907+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:43.206917+00:00 Action is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:43.213899+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:43.213902+00:00 --> Reason
+2026-05-27T13:18:43.213905+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:43.213907+00:00 Reason is linked to {}
+2026-05-27T13:18:43.220437+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:43.220445+00:00 Reason is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:43.227391+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:43.227394+00:00 --> Comment
+2026-05-27T13:18:43.227396+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:43.227398+00:00 Comment is linked to {}
+2026-05-27T13:18:43.233904+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:43.233911+00:00 Comment is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:43.240906+00:00 --> XsdComplexType
+2026-05-27T13:18:43.240909+00:00 --> Diff
+2026-05-27T13:18:43.240912+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:43.240914+00:00 Diff is linked to {}
+2026-05-27T13:18:43.247513+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:43.247517+00:00 Diff is linked to {'attribute': XsdAttribute(name='scope')}
+2026-05-27T13:18:43.254497+00:00 Diff is linked to {'attribute': XsdAttribute(name='changedItem')}
+2026-05-27T13:18:43.261147+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:43.261154+00:00 Diff is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:43.268109+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:43.268114+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:43.268118+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:43.268124+00:00 --> XsdAtomicBuiltin
+2026-05-27T13:18:43.268126+00:00 --> OldValue
+XsdElement
+2026-05-27T13:18:43.268129+00:00 --> XsdAtomicBuiltin
+2026-05-27T13:18:43.268131+00:00 --> NewValue
+XsdElement
+2026-05-27T13:18:43.268133+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:43.268135+00:00 --> Reference
+2026-05-27T13:18:43.268137+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:43.268139+00:00 Reference is linked to {}
+2026-05-27T13:18:43.274750+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:43.274757+00:00 Reference is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:43.281772+00:00 --> XsdComplexType
+2026-05-27T13:18:43.281774+00:00 --> Signature
+2026-05-27T13:18:43.281786+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:43.281788+00:00 Signature is linked to {}
+2026-05-27T13:18:43.288298+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:43.288302+00:00 Signature is linked to {'attribute': XsdAttribute(name='Id')}
+2026-05-27T13:18:43.295270+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:43.295277+00:00 Signature is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:43.301804+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:43.301807+00:00 Signature is linked to {'child': XsdElement(ref='ds:SignedInfo', occurs=[1, 1])}
+2026-05-27T13:18:43.308781+00:00 Signature is linked to {'child': XsdElement(ref='ds:SignatureValue', occurs=[1, 1])}
+2026-05-27T13:18:43.315402+00:00 Signature is linked to {'child': XsdElement(ref='ds:KeyInfo', occurs=[0, 1])}
+2026-05-27T13:18:43.322255+00:00 Signature is linked to {'child': XsdElement(ref='ds:Object', occurs=[0, None])}
+2026-05-27T13:18:43.328813+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:43.328818+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:43.328824+00:00 --> XsdComplexType
+2026-05-27T13:18:43.328826+00:00 --> Category
+2026-05-27T13:18:43.328828+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:43.328830+00:00 Category is linked to {}
+2026-05-27T13:18:43.352312+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:43.352319+00:00 Category is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:43.359036+00:00 Category is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:43.366002+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:43.366012+00:00 Category is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:43.372677+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:43.372680+00:00 Category is linked to {'child': XsdElement(ref='Parameter', occurs=[0, None])}
+2026-05-27T13:18:43.379728+00:00 Category is linked to {'child': XsdElement(ref='SeriesSet', occurs=[0, None])}
+2026-05-27T13:18:43.386642+00:00 Category is linked to {'child': XsdElement(ref='Category', occurs=[0, None])}
+2026-05-27T13:18:43.393180+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:43.393186+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:43.393194+00:00 --> XsdComplexType
+2026-05-27T13:18:43.393196+00:00 --> Parameter
+2026-05-27T13:18:43.393198+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:43.393200+00:00 Parameter is linked to {}
+2026-05-27T13:18:43.400136+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:43.400140+00:00 Parameter is linked to {'attribute': XsdAttribute(name='id')}
+2026-05-27T13:18:43.406766+00:00 Parameter is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:43.413775+00:00 Parameter is linked to {'attribute': XsdAttribute(name='parameterType')}
+2026-05-27T13:18:43.420500+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:43.420507+00:00 Parameter is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:43.427541+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:43.427544+00:00 Parameter is linked to {'child': XsdElement(ref='Unit', occurs=[0, 1])}
+2026-05-27T13:18:43.434135+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:43.434143+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-05-27T13:18:43.434145+00:00 Parameter is linked to {'child': XsdElement(ref='I', occurs=[1, 1])}
+2026-05-27T13:18:43.441241+00:00 Parameter is linked to {'child': XsdElement(ref='L', occurs=[1, 1])}
+2026-05-27T13:18:43.447818+00:00 Parameter is linked to {'child': XsdElement(ref='F', occurs=[1, 1])}
+2026-05-27T13:18:43.454783+00:00 Parameter is linked to {'child': XsdElement(ref='D', occurs=[1, 1])}
+2026-05-27T13:18:43.461331+00:00 Parameter is linked to {'child': XsdElement(ref='S', occurs=[1, 1])}
+2026-05-27T13:18:43.468245+00:00 Parameter is linked to {'child': XsdElement(ref='Boolean', occurs=[1, 1])}
+2026-05-27T13:18:43.474906+00:00 Parameter is linked to {'child': XsdElement(ref='DateTime', occurs=[1, 1])}
+2026-05-27T13:18:43.481836+00:00 Parameter is linked to {'child': XsdElement(ref='PNG', occurs=[1, 1])}
+2026-05-27T13:18:43.488359+00:00 Parameter is linked to {'child': XsdElement(ref='EmbeddedXML', occurs=[1, 1])}
+2026-05-27T13:18:43.511644+00:00 Parameter is linked to {'child': XsdElement(ref='SVG', occurs=[1, 1])}
+XsdElement
+2026-05-27T13:18:43.518318+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:43.518322+00:00 --> I
+2026-05-27T13:18:43.518325+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:43.518327+00:00 I is linked to {}
+2026-05-27T13:18:43.525356+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:43.525366+00:00 I is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:43.531970+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:43.531974+00:00 --> L
+2026-05-27T13:18:43.531977+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:43.531979+00:00 L is linked to {}
+2026-05-27T13:18:43.539050+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:43.539058+00:00 L is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:43.545692+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:43.545695+00:00 --> F
+2026-05-27T13:18:43.545698+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:43.545700+00:00 F is linked to {}
+2026-05-27T13:18:43.552626+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:43.552633+00:00 F is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:43.559274+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:43.559277+00:00 --> D
+2026-05-27T13:18:43.559280+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:43.559282+00:00 D is linked to {}
+2026-05-27T13:18:43.566305+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:43.566312+00:00 D is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:43.572887+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:43.572890+00:00 --> S
+2026-05-27T13:18:43.572892+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:43.572894+00:00 S is linked to {}
+2026-05-27T13:18:43.579876+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:43.579883+00:00 S is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:43.586463+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:43.586466+00:00 --> Boolean
+2026-05-27T13:18:43.586469+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:43.586471+00:00 Boolean is linked to {}
+2026-05-27T13:18:43.593418+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:43.593425+00:00 Boolean is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:43.600445+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:43.600448+00:00 --> DateTime
+2026-05-27T13:18:43.600450+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:43.600452+00:00 DateTime is linked to {}
+2026-05-27T13:18:43.607117+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:43.607123+00:00 DateTime is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:43.614229+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:43.614232+00:00 --> PNG
+2026-05-27T13:18:43.614235+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:43.614237+00:00 PNG is linked to {}
+2026-05-27T13:18:43.620811+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:43.620817+00:00 PNG is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:43.627796+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:43.627798+00:00 --> EmbeddedXML
+2026-05-27T13:18:43.627801+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:43.627803+00:00 EmbeddedXML is linked to {}
+2026-05-27T13:18:43.634455+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:43.634462+00:00 EmbeddedXML is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:43.641470+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:43.641472+00:00 --> SVG
+2026-05-27T13:18:43.641475+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:43.641477+00:00 SVG is linked to {}
+2026-05-27T13:18:43.648100+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:43.648106+00:00 SVG is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:43.671911+00:00 --> XsdComplexType
+2026-05-27T13:18:43.671918+00:00 --> TagSet
+2026-05-27T13:18:43.671922+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:43.671924+00:00 TagSet is linked to {}
+2026-05-27T13:18:43.678677+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:43.678682+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:43.678691+00:00 TagSet is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:43.685764+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:43.685768+00:00 TagSet is linked to {'child': XsdElement(ref='Tag', occurs=[0, None])}
+2026-05-27T13:18:43.692539+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:43.692544+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:43.692551+00:00 --> XsdComplexType
+2026-05-27T13:18:43.692553+00:00 --> Tag
+2026-05-27T13:18:43.692555+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:43.692557+00:00 Tag is linked to {}
+2026-05-27T13:18:43.699584+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:43.699588+00:00 Tag is linked to {'attribute': XsdAttribute(name='name')}
+2026-05-27T13:18:43.706304+00:00 Tag is linked to {'attribute': XsdAttribute(name='value')}
+2026-05-27T13:18:43.713418+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:43.713426+00:00 Tag is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:43.720209+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:43.720214+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:43.720217+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+XsdElement
+2026-05-27T13:18:43.720223+00:00 --> XsdComplexType
+2026-05-27T13:18:43.720225+00:00 --> Author
+2026-05-27T13:18:43.720227+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:43.720229+00:00 Author is linked to {}
+2026-05-27T13:18:43.727301+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:43.727304+00:00 Author is linked to {'attribute': XsdAttribute(name='userType')}
+2026-05-27T13:18:43.734047+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:43.734054+00:00 Author is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:43.741154+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:43.741161+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:43.741166+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-05-27T13:18:43.741168+00:00 Author is linked to {'child': XsdElement(ref='Name', occurs=[1, 1])}
+2026-05-27T13:18:43.747967+00:00 Author is linked to {'child': XsdElement(ref='Affiliation', occurs=[0, 1])}
+2026-05-27T13:18:43.755059+00:00 Author is linked to {'child': XsdElement(ref='Role', occurs=[0, 1])}
+2026-05-27T13:18:43.762137+00:00 Author is linked to {'child': XsdElement(ref='Email', occurs=[0, 1])}
+2026-05-27T13:18:43.768772+00:00 Author is linked to {'child': XsdElement(ref='Phone', occurs=[0, 1])}
+2026-05-27T13:18:43.775820+00:00 Author is linked to {'child': XsdElement(ref='Location', occurs=[0, 1])}
+XsdElement
+2026-05-27T13:18:43.782474+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:43.782477+00:00 --> Name
+2026-05-27T13:18:43.782480+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:43.782482+00:00 Name is linked to {}
+2026-05-27T13:18:43.789512+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:43.789519+00:00 Name is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:43.796164+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:43.796167+00:00 --> Affiliation
+2026-05-27T13:18:43.796170+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:43.796172+00:00 Affiliation is linked to {}
+2026-05-27T13:18:43.803136+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:43.803143+00:00 Affiliation is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:43.809770+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:43.809773+00:00 --> Role
+2026-05-27T13:18:43.809775+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:43.809777+00:00 Role is linked to {}
+2026-05-27T13:18:43.833301+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:43.833318+00:00 Role is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:43.840125+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:43.840129+00:00 --> Email
+2026-05-27T13:18:43.840132+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:43.840134+00:00 Email is linked to {}
+2026-05-27T13:18:43.847248+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:43.847256+00:00 Email is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:43.854004+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:43.854007+00:00 --> Phone
+2026-05-27T13:18:43.854010+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:43.854012+00:00 Phone is linked to {}
+2026-05-27T13:18:43.861127+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:43.861135+00:00 Phone is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:43.867913+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:43.867916+00:00 --> Location
+2026-05-27T13:18:43.867918+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:43.867920+00:00 Location is linked to {}
+2026-05-27T13:18:43.875024+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:43.875031+00:00 Location is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:43.881794+00:00 --> XsdComplexType
+2026-05-27T13:18:43.881797+00:00 --> Device
+2026-05-27T13:18:43.881800+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:43.881802+00:00 Device is linked to {}
+2026-05-27T13:18:43.888823+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:43.888827+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:43.888832+00:00 Device is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:43.895612+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:43.895618+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:43.895623+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-05-27T13:18:43.895625+00:00 Device is linked to {'child': XsdElement(ref='DeviceIdentifier', occurs=[0, 1])}
+2026-05-27T13:18:43.902672+00:00 Device is linked to {'child': XsdElement(ref='Manufacturer', occurs=[0, 1])}
+2026-05-27T13:18:43.909747+00:00 Device is linked to {'child': XsdElement(ref='Name', occurs=[1, 1])}
+2026-05-27T13:18:43.916477+00:00 Device is linked to {'child': XsdElement(ref='FirmwareVersion', occurs=[0, 1])}
+2026-05-27T13:18:43.923576+00:00 Device is linked to {'child': XsdElement(ref='SerialNumber', occurs=[0, 1])}
+XsdElement
+2026-05-27T13:18:43.930257+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:43.930260+00:00 --> DeviceIdentifier
+2026-05-27T13:18:43.930262+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:43.930264+00:00 DeviceIdentifier is linked to {}
+2026-05-27T13:18:43.937352+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:43.937359+00:00 DeviceIdentifier is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:43.944060+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:43.944063+00:00 --> Manufacturer
+2026-05-27T13:18:43.944066+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:43.944068+00:00 Manufacturer is linked to {}
+2026-05-27T13:18:43.951082+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:43.951088+00:00 Manufacturer is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:43.957808+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:43.957811+00:00 --> FirmwareVersion
+2026-05-27T13:18:43.957813+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:43.957815+00:00 FirmwareVersion is linked to {}
+2026-05-27T13:18:43.964851+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:43.964858+00:00 FirmwareVersion is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:43.971530+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:43.971533+00:00 --> SerialNumber
+2026-05-27T13:18:43.971535+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:43.971537+00:00 SerialNumber is linked to {}
+2026-05-27T13:18:43.995158+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:43.995173+00:00 SerialNumber is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:44.002042+00:00 --> XsdComplexType
+2026-05-27T13:18:44.002045+00:00 --> Software
+2026-05-27T13:18:44.002048+00:00 Matched with rule 1) complexType -> Class
+2026-05-27T13:18:44.002051+00:00 Software is linked to {}
+2026-05-27T13:18:44.009223+00:00 Matched with rule 3) attribute -> DatatypeProperty
+2026-05-27T13:18:44.009227+00:00 Matched with rule 5a) annotation (complexType) -> comment
+2026-05-27T13:18:44.009234+00:00 Software is linked to {'attribute': 'annotation'}
+2026-05-27T13:18:44.016055+00:00 Matched with rule 6) complexType and element ref -> ObjectProperty
+2026-05-27T13:18:44.016061+00:00 Matched with rule 7) complexType and simple element ref -> DatatypeProperty
+2026-05-27T13:18:44.016066+00:00 Matched with rule 8) complexType and atomicRestriction ref -> DataypeProperty
+2026-05-27T13:18:44.016068+00:00 Software is linked to {'child': XsdElement(ref='Manufacturer', occurs=[0, 1])}
+2026-05-27T13:18:44.023235+00:00 Software is linked to {'child': XsdElement(ref='Name', occurs=[1, 1])}
+2026-05-27T13:18:44.030688+00:00 Software is linked to {'child': XsdElement(ref='Version', occurs=[0, 1])}
+2026-05-27T13:18:44.037700+00:00 Software is linked to {'child': XsdElement(ref='OperatingSystem', occurs=[0, 1])}
+XsdElement
+2026-05-27T13:18:44.045041+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:44.045045+00:00 --> OperatingSystem
+2026-05-27T13:18:44.045048+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:44.045050+00:00 OperatingSystem is linked to {}
+2026-05-27T13:18:44.051816+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:44.051824+00:00 OperatingSystem is linked to {'attribute': 'annotation'}
+XsdElement
+2026-05-27T13:18:44.059186+00:00 --> XsdAtomicRestriction
+2026-05-27T13:18:44.059189+00:00 --> Version
+2026-05-27T13:18:44.059192+00:00 Matched with rule 2b) simpleType(Restriction) -> DatatypeProperty
+2026-05-27T13:18:44.059194+00:00 Version is linked to {}
+2026-05-27T13:18:44.065988+00:00 Matched with rule 5b.b) annotation (simpleType) -> comment
+2026-05-27T13:18:44.065995+00:00 Version is linked to {'attribute': 'annotation'}

@@ -1,5 +1,6 @@
 from datetime import datetime
 import pytz
+import re
 
 
 def parse_config(path):
@@ -73,6 +74,14 @@ def normalise_string(string):
     norm_str = string.replace("\\", "\\\\").replace(
         "\n", "\\n").replace("'", '"')
     return norm_str
+
+
+def normalise_label(label):
+    label = re.sub(r'(?<!^)(?=[A-Z])', ' ', label)
+    label = re.sub(r'[_\-]+', ' ', label)
+    label = label.lower()
+    label = re.sub(r'\s+', ' ', label).strip()
+    return label
 
 
 def get_now():
