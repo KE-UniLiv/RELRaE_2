@@ -5,7 +5,7 @@ import os
 
 
 from modules.RuBREx import RuBREx
-from modules.LLM_Ref import LLM_Refinement
+from modules.LLM_Ref import LLMRefinement
 from modules.human_fix import human_fix
 from utils import get_now
 
@@ -40,7 +40,9 @@ class RELRaE:
 
     def LLM_Refinement_Loop(self):
         # TODO:
-        LLM_Refinement()
+        m_LLM_ref = LLMRefinement(
+            self.schema, self.onto, self.prefix, self.namespace)
+        m_LLM_ref.evaluate_relations()
 
     def human_fix(self):
         # TODO:

@@ -1,0 +1,2 @@
+refinement_loops=10
+eval_llm=gemma4:31b,none,{"temperature":1.0,"top_p"=0.95,"top_k"=64}
