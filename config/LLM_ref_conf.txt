@@ -1,2 +1,7 @@
 refinement_loops=10
-eval_llm=gemma4:31b,none,{"temperature":1.0,"top_p"=0.95,"top_k"=64}
+eval_llm=gemma4:31b,none,{"temperature":1.0,"top_p":0.95,"top_k":64}
+eval_prompt_strat=few
+eval_repeats=3
+ref_llm=gemma4:31,none,{"temperature":1.0,"top_p":0.95,"top_k":64}
+ref_prompt_strat=few
+ref_repeats=1

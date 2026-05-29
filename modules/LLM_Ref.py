@@ -1,6 +1,7 @@
 from typing import Literal
 from pydantic import BaseModel, Field
 from utils import parse_config
+from random import randint
 
 
 CONFIG = "config/LLM_ref_conf.txt"
@@ -11,6 +12,7 @@ class LLMRefinement:
     def __init__(self, schema, onto, prefix, namespace):
         self.log = []
         self.config = parse_config(CONFIG)
+        print(self.config)
         self.errors = []
         self.schema = schema
         self.onto = onto
@@ -42,7 +44,6 @@ class LLMRefinement:
         property_list = []
         for r in qres:
             property_list.append(r.property)
-        print(f"Retrieved {len(property_list)} properties")
         self.log.append(f"Retrieved {len(property_list)} properties")
         return property_list
 
@@ -67,18 +68,39 @@ class LLMRefinement:
         """
         qres = self.onto.query(query)
         rel_info = {str(relation): []}
-        print(str(relation))
         for r in qres:
             rel_info[str(relation)].append({str(r.predicate): str(r.object)})
-            print(f"----->     {str(r.predicate)} -> {str(r.object)}")
-        print("""
-
-
-              """)
+        self.log.append(f"Retrieved info for relation {str(relation)}")
         return rel_info
+
+    def get_examples(self, model_role, strat):
+        if model_role == "eval":
+            examples = EVAL_EXAMPLES
+        else:
+            examples = REF_EXAMPLES
+
+        shots = {"zero": None,
+                 "one": 0,
+                 "few": 4}
+
+        if strat == "zero":
+            return
+
+        examples_list = examples[0:shots[strat]]
+        return examples_list
 
     def evaluate_relations(self):
         relations = self.get_relations()
+
+        eval_m = LLM(self.config["eval_llm"],
+                     EvaluatorResponse,
+                     self.config["eval_repeats"])
+        eval_ex = self.get_examples("eval", self.config["eval_prompt_strat"])
+
+        ref_m = LLM(self.config["ref_llm"],
+                    RefinerResponse,
+                    self.config["ref_repeats"])
+        ref_ex = self.get_examples("ref", self.config["ref_prompt_strat"])
 
         for rel in relations:
             rel_info = self.get_relation_info(rel)
@@ -97,5 +119,19 @@ class RefinerResponse(BaseModel):
 
 class LLM:
 
-    def __init__(self) -> None:
-        pass
+    def __init__(self, settings, format, repeats):
+        self.gen_seeds(repeats)
+        self.model = settings[0]
+        self.api_key = settings[1]
+        self.params = settings[2]
+        self.r_format = format
+
+    def gen_seeds(self, n):
+        self.seeds = []
+        for i in range(n-1):
+            self.seeds.append(randint(1, 9999))
+
+
+EVAL_EXAMPLES = []
+
+REF_EXAMPLES = []
