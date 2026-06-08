@@ -89,6 +89,38 @@ class LLMRefinement:
         examples_list = examples[0:shots[strat]]
         return examples_list
 
+    def evaluation_loop(self, relation, evaluator, refiner, info):
+        accepted = False
+        rejected_labels = []
+        loops = 0
+        active_label = relation
+
+        while not accepted and loops < self.config["refinement_loops"]:
+            eval_model = evaluator[0]
+            eval_prompt = eval_model.build_eval_prompt(
+                active_label, info, rejected_labels, evaluator[1])
+            full_eval = eval_model.run_prompt(eval_prompt)
+            eval = full_eval[0]
+            self.log.append(full_eval[1])
+            if eval["evaluation"] == "Yes":
+                self.log.append("Label accepted")
+                break
+
+            self.log.append("Label rejected")
+            ref_model = refiner[0]
+            ref_prompt = ref_model.build_ref_prompt(
+                active_label, info, rejected_labels, refiner[1])
+            full_ref = eval_model.run_prompt(ref_prompt)
+            ref = full_ref[0]
+            self.log.append(full_ref[1])
+            active_label = ref["relationship_label"]
+
+        if accepted:
+            self.replace_relation(relation, active_label)
+            return ["refined", rejected_labels]
+        else:
+            return ["unrefined", rejected_labels]
+
     def evaluate_relations(self):
         relations = self.get_relations()
 
@@ -104,6 +136,14 @@ class LLMRefinement:
 
         for rel in relations:
             rel_info = self.get_relation_info(rel)
+            response = self.evaluation_loop(rel, [eval_m, eval_ex], [
+                                            ref_m, ref_ex], rel_info)
+            if response[0] == "unrefined":
+                self.errors.append([rel, rel_info, response[1]])
+
+    def replace_relation(self, orignal, new):
+        # TODO:
+        pass
 
 
 class EvaluatorResponse(BaseModel):
@@ -130,6 +170,18 @@ class LLM:
         self.seeds = []
         for i in range(n-1):
             self.seeds.append(randint(1, 9999))
+
+    def build_eval_prompt(self, relation, info, rejected_label, examples):
+        # TODO:
+        pass
+
+    def build_ref_prompt(self, relation, info, rejected_label, examples):
+        # TODO:
+        pass
+
+    def run_prompt(self, messages):
+        # TODO:
+        pass
 
 
 EVAL_EXAMPLES = []
