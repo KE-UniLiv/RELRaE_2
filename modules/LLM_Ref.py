@@ -75,9 +75,9 @@ class LLMRefinement:
 
     def get_examples(self, model_role, strat):
         if model_role == "eval":
-            examples = EVAL_EXAMPLES
+            examples = self.config["eval_examples"]
         else:
-            examples = REF_EXAMPLES
+            examples = self.config["ref_examples"]
 
         shots = {"zero": None,
                  "one": 0,
@@ -98,7 +98,11 @@ class LLMRefinement:
         while not accepted and loops < self.config["refinement_loops"]:
             eval_model = evaluator[0]
             eval_prompt = eval_model.build_eval_prompt(
-                active_label, info, rejected_labels, evaluator[1])
+                active_label,
+                info,
+                rejected_labels,
+                self.config["eval_messages"],
+                evaluator[1])
             full_eval = eval_model.run_prompt(eval_prompt)
             eval = full_eval[0]
             self.log.append(full_eval[1])
@@ -109,7 +113,11 @@ class LLMRefinement:
             self.log.append("Label rejected")
             ref_model = refiner[0]
             ref_prompt = ref_model.build_ref_prompt(
-                active_label, info, rejected_labels, refiner[1])
+                active_label,
+                info,
+                rejected_labels,
+                self.config["reg_messages"],
+                refiner[1])
             full_ref = eval_model.run_prompt(ref_prompt)
             ref = full_ref[0]
             self.log.append(full_ref[1])
@@ -171,19 +179,14 @@ class LLM:
         for i in range(n-1):
             self.seeds.append(randint(1, 9999))
 
-    def build_eval_prompt(self, relation, info, rejected_label, examples):
+    def build_eval_prompt(self, relation, info, rejected_label, prompt, examples):
         # TODO:
         pass
 
-    def build_ref_prompt(self, relation, info, rejected_label, examples):
+    def build_ref_prompt(self, relation, info, rejected_label, prompt, examples):
         # TODO:
         pass
 
     def run_prompt(self, messages):
         # TODO:
         pass
-
-
-EVAL_EXAMPLES = []
-
-REF_EXAMPLES = []
