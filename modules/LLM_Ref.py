@@ -71,6 +71,7 @@ class LLMRefinement:
         for r in qres:
             rel_info[str(relation)].append({str(r.predicate): str(r.object)})
         self.log.append(f"Retrieved info for relation {str(relation)}")
+        print(rel_info)
         return rel_info
 
     def get_examples(self, model_role, strat):
@@ -95,7 +96,7 @@ class LLMRefinement:
         loops = 0
         active_label = relation
 
-        while not accepted and loops < self.config["refinement_loops"]:
+        while not accepted and loops < int(self.config["refinement_loops"]):
             eval_model = evaluator[0]
             eval_prompt = eval_model.build_eval_prompt(
                 active_label,
@@ -176,7 +177,7 @@ class LLM:
 
     def gen_seeds(self, n):
         self.seeds = []
-        for i in range(n-1):
+        for i in range(int(n)-1):
             self.seeds.append(randint(1, 9999))
 
     def build_eval_prompt(self, relation, info, rejected_label, prompt, examples):
