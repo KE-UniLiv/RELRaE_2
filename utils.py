@@ -1,6 +1,51 @@
 from datetime import datetime
+import ast
 import pytz
 import re
+
+
+def split_top_level(value):
+    parts = []
+    current = []
+    depth = 0
+    quote = None
+
+    for char in value:
+        if quote:
+            current.append(char)
+            if char == quote:
+                quote = None
+        elif char in ("'", '"'):
+            current.append(char)
+            quote = char
+        elif char in "[{(":
+            current.append(char)
+            depth += 1
+        elif char in "]})":
+            current.append(char)
+            depth -= 1
+        elif char == "," and depth == 0:
+            parts.append("".join(current).strip())
+            current = []
+        else:
+            current.append(char)
+
+    parts.append("".join(current).strip())
+    return parts
+
+
+def parse_config_value(value):
+    value = value.strip()
+
+    if "," in value:
+        parts = split_top_level(value)
+        if len(parts) > 1:
+            return [parse_config_value(part) for part in parts]
+
+    try:
+        return ast.literal_eval(value)
+    except (ValueError, SyntaxError):
+        return value
 
 
 def parse_config(path):
@@ -15,10 +60,7 @@ def parse_config(path):
 
             key, value = line.split("=", 1)
 
-            if "," in value:
-                value = [v.strip() for v in value.split(",")]
-
-            config[key.strip()] = value
+            config[key.strip()] = parse_config_value(value)
 
     return config
 
@@ -26,6 +68,25 @@ def parse_config(path):
 def clean_namespace(label):
     clean_label = label.split('}')[-1]
     return clean_label
+
+
+def namespace_to_prefix(value, namespace, prefix):
+    namespace = str(namespace)
+    value = str(value)
+
+    if value.startswith(namespace):
+        return f"{prefix}:{value[len(namespace):]}"
+    return value
+
+
+def prefix_to_namespace(value, namespace, prefix):
+    namespace = str(namespace)
+    value = str(value)
+    prefix_marker = f"{prefix}:"
+
+    if value.startswith(prefix_marker):
+        return f"{namespace}{value[len(prefix_marker):]}"
+    return value
 
 
 def generate_provenance(prefix, tool, source):
