@@ -1,11 +1,13 @@
 import json
 import os
+import re
 from urllib import request
 from urllib.error import URLError
 from typing import Literal
 from pydantic import BaseModel, Field
 from utils import namespace_to_prefix, parse_config
 from random import randint
+import numpy as np
 
 
 CONFIG = "config/LLM_ref_conf.txt"
@@ -83,6 +85,27 @@ class LLMRefinement:
         # print(rel_info)
         return rel_info
 
+    def normalise_relation_label(self, label):
+        label = namespace_to_prefix(label, self.namespace, self.prefix).strip()
+        prefix_marker = f"{self.prefix}:"
+
+        if ":" in label:
+            prefix, label = label.split(":", 1)
+            if prefix != self.prefix:
+                prefix = self.prefix
+        else:
+            prefix = self.prefix
+
+        words = re.findall(r"[A-Za-z0-9]+", label)
+        if not words:
+            raise ValueError(f"Cannot normalise empty relation label: {label}")
+
+        camel_label = words[0].lower()
+        for word in words[1:]:
+            camel_label += word[:1].upper() + word[1:].lower()
+
+        return f"{prefix_marker}{camel_label}"
+
     def get_examples(self, model_role, strat):
         if model_role == "eval":
             examples = self.config["eval_examples"]
@@ -100,6 +123,27 @@ class LLMRefinement:
         examples_list = examples[0:shots[strat]]
         return examples_list
 
+    def average_eval(self, responses):
+        evals = []
+        confs = []
+        for r in responses:
+            if r["evaluation"] == "Yes":
+                evals.append(1)
+            else:
+                evals.append(0)
+            confs.append(r["confidence"])
+        mean_evals = round((sum(evals)/len(evals)), 0)
+        if int(mean_evals) == 1:
+            eval = "Yes"
+        else:
+            eval = "No"
+        avg_eval = {
+            "evaluation": eval,
+            "confidence": round(sum(confs)/len(confs), 3),
+            "variance": round(float(np.var(evals)), 3)
+        }
+        return avg_eval
+
     def evaluation_loop(self, relation, evaluator, refiner, info):
         accepted = False
         rejected_labels = []
@@ -107,35 +151,52 @@ class LLMRefinement:
         active_label = relation
 
         while not accepted and loops < int(self.config["refinement_loops"]):
+            loops += 1
             eval_model = evaluator[0]
             eval_prompt = eval_model.build_eval_prompt(
                 namespace_to_prefix(active_label, self.namespace, self.prefix),
                 self.config["domain"],
+                self.config["source"],
                 info,
                 rejected_labels,
                 self.config["eval_messages"],
                 evaluator[1])
+            # print(eval_prompt)
             full_eval = eval_model.run_prompt(eval_prompt)
-            print(full_eval)
-            eval = full_eval[0]
-            self.log.append(full_eval[1])
-            if eval["evaluation"] == "Yes":
-                self.log.append("Label accepted")
-                break
+            if full_eval[0] == "Error":
+                self.log.append("Error: LLM could not generate valid response")
+            else:
+                avg_eval = self.average_eval(full_eval[0])
+                print("\n=======================\n")
+                print(avg_eval)
+                print("\n=======================\n")
+                print(full_eval[1])
 
-            self.log.append("Label rejected")
+                self.log.append(full_eval[1])
+                if avg_eval["evaluation"] == "Yes":
+                    self.log.append("Label accepted")
+                    break
+
+                self.log.append("Label rejected")
+            print("\n ==== Rejected -> Refining ==== \n")
             ref_model = refiner[0]
             ref_prompt = ref_model.build_ref_prompt(
                 namespace_to_prefix(active_label, self.namespace, self.prefix),
                 self.config["domain"],
+                self.config["source"],
                 info,
                 rejected_labels,
-                self.config["reg_messages"],
+                self.config["ref_messages"],
                 refiner[1])
-            full_ref = eval_model.run_prompt(ref_prompt)
-            ref = full_ref[0]
+            full_ref = ref_model.run_prompt(ref_prompt)
+            ref = full_ref[0][0]
+            print(ref)
+            print("\n=======================\n")
+            print(full_ref[1])
+            print("\n=======================\n")
             self.log.append(full_ref[1])
-            active_label = ref["relationship_label"]
+            active_label = self.normalise_relation_label(
+                ref["relationship_label"])
 
         if accepted:
             self.replace_relation(relation, active_label)
@@ -163,8 +224,9 @@ class LLMRefinement:
             if response[0] == "unrefined":
                 self.errors.append([rel, rel_info, response[1]])
 
-    def replace_relation(self, orignal, new):
+    def replace_relation(self, original, new):
         # TODO:
+        self.log.append(f"Relationship {original} updated to {new}.")
         pass
 
 
@@ -219,48 +281,59 @@ class LLM:
         context_list = []
         for l in context.keys():
             for r in context[l]:
+                if r[0] == "http://www.w3.org/2000/01/rdf-schema#label":
+                    continue
                 triple = [l, r[0], r[1]]
                 context_list.append(triple)
         return context_list
 
-    def build_eval_prompt(self, relation, domain, info, rejected_label, prompt, examples):
+    def build_eval_prompt(self, relation, domain, source, info, rejected_label, prompt, examples):
         active = {"role": "user", "content": f"relation: {relation}, context: {
-            self.process_context(info)}, domain: {domain}, rejected labels: {rejected_label}"}
+            self.process_context(info)}, domain: {domain}, source: {source}, rejected labels: {rejected_label}"}
 
         messages = self.build_messages(prompt[0], examples, active)
         return messages
 
-    def build_ref_prompt(self, relation, domain, info, rejected_label, prompt, examples):
-        # TODO:
-        pass
+    def build_ref_prompt(self, relation, domain, source, info, rejected_label, prompt, examples):
+        active = {"role": "user", "content": f"relation: {relation}, context: {
+            self.process_context(info)}, domain: {domain}, source: {source}, rejected_labels: {rejected_label}"}
+
+        messages = self.build_messages(prompt[0], examples, active)
+        return messages
 
     def run_prompt(self, messages):
         results = []
         logs = []
 
         for seed in self.seeds:
-            try:
-                raw_response = self.call_provider(messages, seed)
-                parsed_response = self.parse_response(raw_response)
-                results.append(parsed_response)
-                logs.append({
-                    "provider": self.provider,
-                    "model": self.model,
-                    "seed": seed,
-                    "response": parsed_response,
-                })
-            except Exception as exc:
-                logs.append({
-                    "provider": self.provider,
-                    "model": self.model,
-                    "seed": seed,
-                    "error": str(exc),
-                })
+            retrys = 10
+            valid = False
+            while not valid and retrys > 0:
+                try:
+                    raw_response = self.call_provider(messages, seed)
+                    parsed_response = self.parse_response(raw_response)
+                    results.append(parsed_response)
+                    logs.append({
+                        "provider": self.provider,
+                        "model": self.model,
+                        "seed": seed,
+                        "response": parsed_response,
+                    })
+                    valid = True
+                    retrys -= 1
+                except Exception as exc:
+                    logs.append({
+                        "provider": self.provider,
+                        "model": self.model,
+                        "seed": seed,
+                        "error": str(exc),
+                    })
+                    retrys -= 1
 
         if not results:
-            raise RuntimeError(f"No successful LLM responses: {logs}")
+            results = "Error"
 
-        return [results[0], logs]
+        return [results, logs]
 
     def call_provider(self, messages, seed):
         if self.provider == "ollama":
