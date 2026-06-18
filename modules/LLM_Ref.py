@@ -167,6 +167,7 @@ class LLMRefinement:
                 self.log.append("Error: LLM could not generate valid response")
             else:
                 avg_eval = self.average_eval(full_eval[0])
+                print(active_label)
                 print("\n=======================\n")
                 print(avg_eval)
                 print("\n=======================\n")
@@ -178,6 +179,8 @@ class LLMRefinement:
                     break
 
                 self.log.append("Label rejected")
+            rejected_labels.append(namespace_to_prefix(
+                active_label, self.namespace, self.prefix))
             print("\n ==== Rejected -> Refining ==== \n")
             ref_model = refiner[0]
             ref_prompt = ref_model.build_ref_prompt(
@@ -191,6 +194,7 @@ class LLMRefinement:
             full_ref = ref_model.run_prompt(ref_prompt)
             ref = full_ref[0][0]
             print(ref)
+            print(rejected_labels)
             print("\n=======================\n")
             print(full_ref[1])
             print("\n=======================\n")
@@ -209,12 +213,16 @@ class LLMRefinement:
 
         eval_m = LLM(self.config["eval_llm"],
                      EvaluatorResponse,
-                     self.config["eval_repeats"])
+                     self.config["eval_repeats"],
+                     self.namespace,
+                     self.prefix)
         eval_ex = self.get_examples("eval", self.config["eval_prompt_strat"])
 
         ref_m = LLM(self.config["ref_llm"],
                     RefinerResponse,
-                    self.config["ref_repeats"])
+                    self.config["ref_repeats"],
+                    self.namespace,
+                    self.prefix)
         ref_ex = self.get_examples("ref", self.config["ref_prompt_strat"])
 
         for rel in relations:
@@ -243,18 +251,21 @@ class RefinerResponse(BaseModel):
 
 class LLM:
 
-    def __init__(self, settings, format, repeats):
-        self.gen_seeds(repeats)
+    def __init__(self, settings, format, repeats, ns, pr):
+        self.repeats = repeats
         self.model = settings[0]
         self.api_key = settings[1]
         self.params = settings[2]
         self.provider = self.get_provider(settings)
         self.r_format = format
+        self.onto_ns = ns
+        self.onto_pr = pr
 
     def gen_seeds(self, n):
-        self.seeds = []
+        seeds = []
         for i in range(int(n)):
-            self.seeds.append(randint(1, 9999))
+            seeds.append(randint(1, 9999))
+        return seeds
 
     def get_provider(self, settings):
         if len(settings) > 3:
@@ -279,12 +290,18 @@ class LLM:
 
     def process_context(self, context):
         context_list = []
+        reject_relations = [
+            "http://www.w3.org/2000/01/rdf-schema#label",
+            f"{self.onto_pr}:generatedBy",
+            f"{self.onto_pr}:hasXSDSource"
+        ]
         for l in context.keys():
             for r in context[l]:
-                if r[0] == "http://www.w3.org/2000/01/rdf-schema#label":
+                if r[0] in reject_relations:
                     continue
                 triple = [l, r[0], r[1]]
                 context_list.append(triple)
+        print(context_list)
         return context_list
 
     def build_eval_prompt(self, relation, domain, source, info, rejected_label, prompt, examples):
@@ -304,28 +321,33 @@ class LLM:
     def run_prompt(self, messages):
         results = []
         logs = []
+        seeds = []
+        seed = 0
 
-        for seed in self.seeds:
+        while seed < self.repeats:
             retrys = 10
             valid = False
             while not valid and retrys > 0:
+                c_seed = randint(1, 9999)
                 try:
-                    raw_response = self.call_provider(messages, seed)
+                    raw_response = self.call_provider(messages, c_seed)
                     parsed_response = self.parse_response(raw_response)
                     results.append(parsed_response)
                     logs.append({
                         "provider": self.provider,
                         "model": self.model,
-                        "seed": seed,
+                        "seed": c_seed,
                         "response": parsed_response,
                     })
                     valid = True
+                    seeds.append(c_seed)
+                    seed += 1
                     retrys -= 1
                 except Exception as exc:
                     logs.append({
                         "provider": self.provider,
                         "model": self.model,
-                        "seed": seed,
+                        "seed": c_seed,
                         "error": str(exc),
                     })
                     retrys -= 1
