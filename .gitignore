@@ -6,4 +6,7 @@ __pycache__
 
 AGENTS.MD
 
-output/
+examples/animl/relrae_components/config/*
+examples/miniml/relrae_components/config/*
+examples/animl/relrae_components/output/*
+examples/miniml/relrae_components/output/*

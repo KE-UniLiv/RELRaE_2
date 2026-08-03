@@ -1,0 +1,13 @@
+domain=""
+source="XML Schema"
+refinement_loops=10
+eval_llm=gemma4:e4b,none,{"temperature":1.0,"top_p":0.95,"top_k":64}
+eval_prompt_strat=few
+eval_repeats=3
+eval_examples=[[{"role":"user","content":"relation: ex:hasComponent, context: [[ex:hasComponent a owl:ObjectProperty], [ex:hasComponent rdfs:domain ex:Car], [ex:hasComponent rdfs:range ex:Engine]], domain: Automotive Engineering, rejected labels:[ex:pieceOf]"},{"role":"assistant","content":"evaluation: Yes, justification: It is tacitly understood that an engine is a key part of a car and ex:hasComponent accurately describes this relationship., confidence: 0.97"}],[],[],[],[]]
+eval_messages=["Is the relation given an accurate label to describe the relationship defined in an ontology represeting the same domain shown by the attached context surrounding the relationship, considering the domain? The original source of this relationship has been provided. A list of labels for this relationship that have been rejected previously have been provided, if a label has been previously rejected, DO NOT accept it"]
+ref_llm=gemma4:e4b,none,{"temperature":1.0,"top_p":0.95,"top_k":64}
+ref_prompt_strat=few
+ref_repeats=1
+ref_examples=[[{"role":"user","content":"relation: ex:pieceOf, domain: Automotive Engineering, context: [[ex:hasComponent a owl:ObjectProperty], [ex:hasComponent rdfs:domain ex:Car], [ex:hasComponent rdfs:range ex:Engine]], rejected_labels=[]"},{"role":"assistant","content":"relationship_label: ex:hasComponent, justification: Whilst ex:pieceOf does describe the relationship between ex:Car and ex:Engine, it doesn't represent the role of an engine in running a car, where ex:hasComponent does."}],[],[],[],[]]
+ref_messages=["Improve the label for the given rdf relation, considering the domain, the intended use of the relationship in an ontology, as well as the following context describing this relationship. The source of this information has been provided. A list of rejected labels for this relation has been provided, DO NOT GENERATE REPEATS OF THESE LABELS."]
