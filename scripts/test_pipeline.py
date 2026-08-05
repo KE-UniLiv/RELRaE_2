@@ -17,11 +17,8 @@ Modules can be called manually as methods with individual config files
  -> config/Human_conf.txt
 """
 
-from utils import parse_config
-from RELRaE import RELRaE
-
-
-CONFIG = "config/pipeline_conf.txt"
+import configparser
+from relrae.RELRaE import RELRaE
 
 
 def run_pipeline(pipeline, modules):
@@ -33,13 +30,14 @@ def run_pipeline(pipeline, modules):
 
 
 def main():
-    config = parse_config(CONFIG)
-    modules = config["modules"]
-    schema = config["schema"]
-    namespace = config["namespace"]
-    prefix = config["prefix"]
-    ontology_name = config["ontology_name"]
-    pipeline = RELRaE(ontology_name, schema, namespace, prefix, config)
+    cfg = configparser.ConfigParser()
+    cfg.read("config/pipeline_conf.txt")
+    modules = cfg["MAIN"]["modules"]
+    schema = cfg["MAIN"]["schema"]
+    namespace = cfg["MAIN"]["namespace"]
+    prefix = cfg["MAIN"]["prefix"]
+    ontology_name = cfg["MAIN"]["ontology_name"]
+    pipeline = RELRaE(ontology_name, schema, namespace, prefix, cfg["MAIN"])
     run_pipeline(pipeline, modules)
     pipeline.serialise()
 
