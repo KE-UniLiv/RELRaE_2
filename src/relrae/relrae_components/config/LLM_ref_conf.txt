@@ -1,3 +1,4 @@
+[MAIN]
 domain=""
 source="XML Schema"
 refinement_loops=10

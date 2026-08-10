@@ -1,22 +1,3 @@
-# NOTE: DEPRECATED
-"""
-RELRaE Framework
-Relationship Extraction, Labelling, Refinement, and Evaluation
-
-Usage quick-guide:
- - Set up correct config files in config/
- - Instantiate a RELRaE object
- - Call modules as methods of the object
-
-This file is an entry point to use framework from a static pipeline config file
- -> Defined in config/pipeline_conf.txt
-
-Modules can be called manually as methods with individual config files
- -> config/RuBREx_conf.txt
- -> config/LLM_Refinement_conf.txt
- -> config/Human_conf.txt
-"""
-
 import configparser
 from relrae.RELRaE import RELRaE
 
