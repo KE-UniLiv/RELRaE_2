@@ -12,7 +12,7 @@ def run_pipeline(pipeline, modules):
 
 def main():
     cfg = configparser.ConfigParser()
-    cfg.read("config/pipeline_conf.txt")
+    cfg.read("relrae_components/config/pipeline_conf.txt")
     modules = cfg["MAIN"]["modules"]
     schema = cfg["MAIN"]["schema"]
     namespace = cfg["MAIN"]["namespace"]
