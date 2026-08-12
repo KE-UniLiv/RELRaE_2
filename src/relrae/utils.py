@@ -1,6 +1,5 @@
-from datetime import datetime
+from datetime import datetime, timezone
 import ast
-import pytz
 import re
 
 
@@ -146,4 +145,4 @@ def normalise_label(label):
 
 
 def get_now():
-    return datetime.now(pytz.utc).isoformat()
+    return datetime.now(timezone.utc).isoformat()

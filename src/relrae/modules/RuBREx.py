@@ -1,19 +1,24 @@
 import configparser
+from pathlib import Path
 import yaml
 from lxml.etree import QName
 from rdflib import Graph
 from rdflib.namespace import RDF, RDFS, OWL
-from utils import clean_namespace, generate_provenance, lower_first_char, capitalise_first_char, generate_preamble, normalise_string, get_now, normalise_label
+from ..utils import clean_namespace, generate_provenance, lower_first_char, capitalise_first_char, generate_preamble, normalise_string, get_now, normalise_label
 from xmlschema.validators import XsdAnyAttribute, XsdGroup, XsdElement, XsdAtomicBuiltin
 
 
 class RuBREx:
 
-    def __init__(self, schema, onto, prefix, namespace):
+    def __init__(self, schema, onto, prefix, namespace,
+                 components_root="relrae_components"):
         self.log = []
-        self.load_rules()
+        self.components_root = Path(components_root)
         self.config = configparser.ConfigParser()
-        self.config = self.config.read("relrae_components/config/RuBREx_conf.txt")
+        config_path = self.components_root / "config" / "RuBREx_conf.txt"
+        if not self.config.read(config_path):
+            raise FileNotFoundError(f"RuBREx configuration not found: {config_path}")
+        self.load_rules()
         self.errors = []
         self.schema = schema
         self.onto = onto
@@ -22,7 +27,9 @@ class RuBREx:
 
     def load_rules(self):
         self.rules = None
-        rulset_path = f"relrae_components/rules/{self.config["MAIN"]["ruleset"]}"
+        rulset_path = (
+            self.components_root / "rules" / self.config["MAIN"]["ruleset"]
+        )
         with open(rulset_path) as file:
             try:
                 self.rules = yaml.safe_load(file).get("rules", [])

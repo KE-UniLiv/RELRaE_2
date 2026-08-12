@@ -5,19 +5,18 @@ from urllib import request
 from urllib.error import URLError
 from typing import Literal
 from pydantic import BaseModel, Field
-from utils import namespace_to_prefix, parse_config
+from ..utils import namespace_to_prefix, parse_config
 from random import randint
 import numpy as np
 
 
-CONFIG = "config/LLM_ref_conf.txt"
-
-
 class LLMRefinement:
 
-    def __init__(self, schema, onto, prefix, namespace):
+    def __init__(self, schema, onto, prefix, namespace,
+                 components_root="relrae_components"):
         self.log = []
-        self.config = parse_config(CONFIG)
+        self.config = parse_config(
+            os.path.join(components_root, "config", "LLM_ref_conf.txt"))
         # print(self.config)
         self.errors = []
         self.schema = schema

@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "relrae"
+version = "0.0.1"
+description = "Relationship Extraction, Labelling, Refinement, and Evaluation"
+requires-python = ">=3.12"
+dependencies = [
+    "lxml",
+    "numpy",
+    "pydantic",
+    "PyYAML",
+    "rdflib",
+    "xmlschema",
+]
+
+[project.scripts]
+relrae = "relrae.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+relrae = ["relrae_components/config/*.txt", "relrae_components/rules/*.yaml"]
