@@ -1,11 +1,13 @@
 import json
 import os
 import re
+import configparser
+from pathlib import Path
 from urllib import request
 from urllib.error import URLError
 from typing import Literal
-from pydantic import BaseModel, Field
-from ..utils import namespace_to_prefix, parse_config
+from pydantic import BaseModel, Field, config
+from ..utils import namespace_to_prefix
 from random import randint
 import numpy as np
 
@@ -15,9 +17,9 @@ class LLMRefinement:
     def __init__(self, schema, onto, prefix, namespace,
                  components_root="relrae_components"):
         self.log = []
-        self.config = parse_config(
-            os.path.join(components_root, "config", "LLM_ref_conf.txt"))
-        # print(self.config)
+        cfg = configparser.ConfigParser()
+        cfg.read(Path(components_root) / "config" / "LLM_ref_conf.txt")
+        self.config = cfg["MAIN"]
         self.errors = []
         self.schema = schema
         self.onto = onto
@@ -323,7 +325,7 @@ class LLM:
         seeds = []
         seed = 0
 
-        while seed < self.repeats:
+        while seed < int(self.repeats):
             retrys = 10
             valid = False
             while not valid and retrys > 0:

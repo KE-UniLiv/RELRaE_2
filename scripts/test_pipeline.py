@@ -11,6 +11,7 @@ from relrae.RELRaE import RELRaE
 
 
 def run_pipeline(pipeline, modules):
+    print(modules)
     if modules[0] != "RuBREx":
         print("WARNING!!! RuBREx is required as the 1st module, running your pipeline without this may lead to unseen errors")
     for m in modules:
