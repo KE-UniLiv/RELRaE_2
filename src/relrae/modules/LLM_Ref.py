@@ -2,6 +2,7 @@ import json
 import os
 import re
 import configparser
+from utils import get_now
 from pathlib import Path
 from urllib import request
 from urllib.error import URLError
@@ -10,7 +11,9 @@ from pydantic import BaseModel, Field, config
 from ..utils import namespace_to_prefix
 from random import randint
 import numpy as np
-
+from rdflib.namespace import RDFS
+from rdflib import URIRef
+import rdflib
 
 class LLMRefinement:
 
@@ -27,6 +30,7 @@ class LLMRefinement:
         self.namespace = namespace
         self.set_models()
 
+    # NOTE: This might not be neccessary
     def set_models(self):
         pass
 
@@ -234,10 +238,47 @@ class LLMRefinement:
                 self.errors.append([rel, rel_info, response[1]])
 
     def replace_relation(self, original, new):
-        # TODO:
-        self.log.append(f"Relationship {original} updated to {new}.")
-        pass
+        query = f"""
+        PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX owl:  <http://www.w3.org/2002/07/owl#>
 
+        SELECT ?s ?p ?o WHERE{{
+            ?s ?p ?o
+            FITLER(
+                ?s = <{self.namespace}{original}> ||
+                ?p = <{self.namespace}{original}> ||
+                ?o = <{self.namespace}{original}>
+            )
+        }}
+        """
+        qres = self.onto.query(query)
+
+        for r in qres:
+
+            if r.p == str(RDFS.label):
+                n_sub = URIRef(f"{self.namespace}{new}")
+                n_obj = rdflib.Literal(new)
+                self.onto.remove((r.s, r.p, r.o))
+                self.onto.add((n_sub, r.p, n_obj))
+            elif r.s == f"{self.namespace}{original}":
+                n_sub = URIRef(f"{self.namespace}{new}")
+                self.onto.remove((r.s, r.p, r.o))
+                self.onto.add((n_sub, r.p, r.o))
+            elif r.p == f"{self.namespace}{original}":
+                n_pred = URIRef(f"{self.namespace}{new}")
+                self.onto.remove((r.s, r.p, r.o))
+                self.onto.add((r.s, n_pred, r.o))
+            elif r.o == f"{self.namespace}{original}":
+                n_obj = URIRef(f"{self.namespace}{new}")
+                self.onto.remove((r.s, r.p, r.o))
+                self.onto.add((r.s, r.p, n_obj))
+
+        s = URIRef(f"{self.namespace}{new}")
+        p = URIRef(f"{self.namespace}editedBy")
+        o = URIRef(f"{self.config["eval_llm"]} @ {get_now()}")
+        self.onto.add([s, p, o])
+        self.log.append(f"Relationship {original} updated to {new}.")
 
 class EvaluatorResponse(BaseModel):
     evaluation: Literal["Yes", "No"]
