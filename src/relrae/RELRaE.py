@@ -6,7 +6,7 @@ from pathlib import Path
 
 from .modules.RuBREx import RuBREx
 from .modules.LLM_Ref import LLMRefinement
-from .modules.human_fix import human_fix
+from .modules.human_fix import HumanFix
 from .utils import get_now
 
 
@@ -23,6 +23,7 @@ class RELRaE:
         self.onto_name = onto_name
         self.onto = Graph()
         self.errors = []
+        self.config = config
         self.configs = [{"Pipeline": config}]
         self.logs = {}
 
@@ -46,15 +47,20 @@ class RELRaE:
         self.errors.append(m_rubrex.errors)
 
     def LLM_Refinement_Loop(self):
-        # TODO:
         m_LLM_ref = LLMRefinement(
             self.schema, self.onto, self.prefix, self.namespace,
             self.components_root)
         m_LLM_ref.evaluate_relations()
+        self.errors.append(m_LLM_ref.errors)
 
     def human_fix(self):
         # TODO:
-        human_fix()
+        m_human_fix = HumanFix(
+            self.schema, self.onto, self.prefix, self.namespace,
+            self.components_root, self.errors, self.config["modules"]
+        )
+        m_human_fix.set_user_info()
+        m_human_fix.fix_errors()
 
     def write_logs(self, path):
         for key, values in self.logs.items():
