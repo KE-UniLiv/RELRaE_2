@@ -61,6 +61,7 @@ class RELRaE:
         )
         m_human_fix.set_user_info()
         m_human_fix.fix_errors()
+        m_human_fix.concepts_to_add_output(path)
 
     def write_logs(self, path):
         for key, values in self.logs.items():
