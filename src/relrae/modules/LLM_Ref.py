@@ -276,7 +276,7 @@ class LLMRefinement:
 
         s = URIRef(f"{self.namespace}{new}")
         p = URIRef(f"{self.namespace}editedBy")
-        o = URIRef(f"{self.config["eval_llm"]} @ {get_now()}")
+        o = rdflib.Literal(f"{self.config["eval_llm"]} @ {get_now()}")
         self.onto.add([s, p, o])
         self.log.append(f"Relationship {original} updated to {new}.")
 
