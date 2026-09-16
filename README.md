@@ -65,22 +65,6 @@ from relrae import RELRaE
 See [`scripts/test_pipeline.py`](scripts/test_pipeline.py) for an end-to-end
 pipeline example using the sample data under `examples/`.
 
-## Building distributions
-
-Install the build frontend and create both source and wheel distributions:
-
-```console
-python -m pip install build
-python -m build
-```
-
-The publication artifacts are written to `dist/`. Check them before upload:
-
-```console
-python -m pip install twine
-python -m twine check dist/*
-```
-
 ## Project links
 
 - [Source repository](https://github.com/KE-UniLiv/RELRaE_2)
