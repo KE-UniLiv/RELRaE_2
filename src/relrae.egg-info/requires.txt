@@ -1,0 +1,6 @@
+lxml
+numpy
+pydantic
+PyYAML
+rdflib
+xmlschema

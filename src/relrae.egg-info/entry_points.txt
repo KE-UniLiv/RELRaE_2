@@ -1,0 +1,2 @@
+[console_scripts]
+relrae = relrae.cli:main

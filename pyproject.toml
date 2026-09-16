@@ -4,9 +4,32 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "relrae"
-version = "0.0.1"
+version = "0.9.0"
 description = "Relationship Extraction, Labelling, Refinement, and Evaluation"
+readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.12"
+authors = [
+    { name = "George Hannah" },
+]
+keywords = [
+    "knowledge-graphs",
+    "ontology",
+    "relationship-extraction",
+    "semantic-web",
+    "xml-schema",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
 dependencies = [
     "lxml",
     "numpy",
@@ -16,11 +39,20 @@ dependencies = [
     "xmlschema",
 ]
 
+[project.urls]
+Homepage = "https://github.com/KE-UniLiv/RELRaE_2"
+Repository = "https://github.com/KE-UniLiv/RELRaE_2.git"
+Issues = "https://github.com/KE-UniLiv/RELRaE_2/issues"
+
 [project.scripts]
 relrae = "relrae.cli:main"
 
+[tool.setuptools]
+include-package-data = true
+
 [tool.setuptools.packages.find]
 where = ["src"]
+include = ["relrae*"]
 
 [tool.setuptools.package-data]
 relrae = ["relrae_components/config/*.txt", "relrae_components/rules/*.yaml"]
