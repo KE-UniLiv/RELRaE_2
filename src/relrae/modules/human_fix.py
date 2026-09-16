@@ -1,6 +1,6 @@
 from operator import index
 
-from utils import get_now
+from ..utils import get_now
 from rdflib import Graph, URIRef, Literal, Namespace
 from rdflib.namespace import FOAF, RDF, OWL, RDFS
 
@@ -246,4 +246,3 @@ class User:
             URIRef(f"{namespace}hasReviewerRole"),
             URIRef(f"{namespace}{self.role}")
         ))
-

@@ -3,6 +3,7 @@ pyproject.toml
 src/relrae/RELRaE.py
 src/relrae/__init__.py
 src/relrae/__main__.py
+src/relrae/_version.py
 src/relrae/cli.py
 src/relrae/utils.py
 src/relrae.egg-info/PKG-INFO

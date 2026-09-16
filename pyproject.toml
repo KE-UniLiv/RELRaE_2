@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "relrae"
-version = "0.9.0"
+dynamic = ["version"]
 description = "Relationship Extraction, Labelling, Refinement, and Evaluation"
 readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.12"
@@ -56,3 +56,6 @@ include = ["relrae*"]
 
 [tool.setuptools.package-data]
 relrae = ["relrae_components/config/*.txt", "relrae_components/rules/*.yaml"]
+
+[tool.setuptools.dynamic]
+version = { attr = "relrae._version.__version__" }

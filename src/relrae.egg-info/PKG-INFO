@@ -1,13 +1,13 @@
 Metadata-Version: 2.4
 Name: relrae
-Version: 0.0.1
+Version: 0.9.0
 Summary: Relationship Extraction, Labelling, Refinement, and Evaluation
 Author: George Hannah
 Project-URL: Homepage, https://github.com/KE-UniLiv/RELRaE_2
 Project-URL: Repository, https://github.com/KE-UniLiv/RELRaE_2.git
 Project-URL: Issues, https://github.com/KE-UniLiv/RELRaE_2/issues
 Keywords: knowledge-graphs,ontology,relationship-extraction,semantic-web,xml-schema
-Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Development Status :: 4 - Beta
 Classifier: Environment :: Console
 Classifier: Intended Audience :: Developers
 Classifier: Intended Audience :: Science/Research

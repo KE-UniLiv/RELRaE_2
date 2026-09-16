@@ -2,13 +2,12 @@ import json
 import os
 import re
 import configparser
-from utils import get_now
 from pathlib import Path
 from urllib import request
 from urllib.error import URLError
 from typing import Literal
 from pydantic import BaseModel, Field, config
-from ..utils import namespace_to_prefix
+from ..utils import get_now, namespace_to_prefix
 from random import randint
 import numpy as np
 from rdflib.namespace import RDFS
