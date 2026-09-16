@@ -1,5 +1,5 @@
 [MAIN]
-domain=""
+domain="Analytical chemistry experiment logs for experiments completed by robots"
 source="XML Schema"
 refinement_loops=10
 eval_llm=gemma4:e4b,none,{"temperature":1.0,"top_p":0.95,"top_k":64}

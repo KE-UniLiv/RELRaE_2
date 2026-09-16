@@ -1,0 +1,6 @@
+[MAIN]
+modules=RuBREx,LLM_Refinement_Loop
+schema=animl-core.xsd
+namespace=http://www.example.org/anitology/onto#
+prefix=ani
+ontology_name=anitology
