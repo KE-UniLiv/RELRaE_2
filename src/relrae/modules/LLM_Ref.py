@@ -86,7 +86,6 @@ class LLMRefinement:
                 namespace_to_prefix(r.object, self.namespace, self.prefix)
             ])
         self.log.append(f"Retrieved info for relation {str(relation)}")
-        # print(rel_info)
         return rel_info
 
     def normalise_relation_label(self, label):
@@ -116,7 +115,6 @@ class LLMRefinement:
         else:
             examples = self.config["ref_examples"]
 
-        # print(examples)
         shots = {"zero": None,
                  "one": 0,
                  "few": 4}
@@ -165,7 +163,6 @@ class LLMRefinement:
                 rejected_labels,
                 self.config["eval_messages"],
                 evaluator[1])
-            # print(eval_prompt)
             full_eval = eval_model.run_prompt(eval_prompt)
             if full_eval[0] == "Error":
                 self.log.append("Error: LLM could not generate valid response")
@@ -207,6 +204,7 @@ class LLMRefinement:
                 ref["relationship_label"])
 
         if accepted:
+            self.log.append(f"{active_label} accepted after {loops} iterations")
             self.replace_relation(relation, active_label)
             return ["refined", rejected_labels]
         else:
@@ -342,7 +340,6 @@ class LLM:
                     continue
                 triple = [l, r[0], r[1]]
                 context_list.append(triple)
-        print(context_list)
         return context_list
 
     def build_eval_prompt(self, relation, domain, source, info, rejected_label, prompt, examples):

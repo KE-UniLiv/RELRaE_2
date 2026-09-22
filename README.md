@@ -131,18 +131,18 @@ and GoogleAI.
 
 The Human Fix module, implements a human-in-the-loop solution into a RELRaE pipeline.
 As a module runs, any errors identified during representation are recorded and are
-then provided to the human reviewer. The user must input their data for provenance so
-any changes are recorded in the schema.
+then provided to the human reviewer. The user must input their data for
+provenance so any changes are recorded in the schema.
 
 For RuBREx errors, concepts in the XML schema that have not been represented are
-provided to the user. The user can then chose if a concept should be represented or note.
-Currently this outputs a text file along the final ontology with a list of the concepts to
-represent. In future we aim to implements a system allowing the user to create and inject
-the required RDF during execution.
+provided to the user. The user can then chose if a concept should be represented
+or not. Currently this outputs a text file along the final ontology with a list
+of the concepts to represent. In future we aim to implements a system allowing
+the user to create and inject the required RDF during execution.
 
-For LLM Refinement Loop errors, the user is presented with relationships that the LLMs could
-not generate suitable labels for. The user can then enter their own label for this relation
-and the ontology is updated accordingly.
+For LLM Refinement Loop errors, the user is presented with relationships that
+the LLMs could not generate suitable labels for. The user can then enter their
+own label for this relation and the ontology is updated accordingly.
 
 ## Python API
 
@@ -151,6 +151,18 @@ The main pipeline class is available from the package root:
 ```python
 from relrae import RELRaE
 ```
+
+The `RELRaE` class requires the following parameters:
+*Note: we recommend reading these parameters from the pipeline config file for consistency*
+
+- `onto_name`: The name of the ontology file.
+- `schema`: The name of the schema file used. Looks in `components_root` by default.
+- `namespace`: The namespace of the output ontology.
+- `prefix`: The abbreviation of the namespace used for readability.
+- `config`: The name of the pipeline config file.
+- `components_root`: The directory RELRaE will look in configs, output, rules,
+  and schema. (Defaults to `relrae_components`)
+- `output_root`: The directory RELRaE will save outputs to. (Defaults to `ouput`)
 
 See [`scripts/test_pipeline.py`](scripts/test_pipeline.py) for an end-to-end
 pipeline example using the sample data under `examples/`.
