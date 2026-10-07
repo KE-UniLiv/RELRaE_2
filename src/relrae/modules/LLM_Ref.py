@@ -248,7 +248,7 @@ class LLMRefinement:
 
         SELECT ?s ?p ?o WHERE{{
             ?s ?p ?o
-            FITLER(
+            FILTER(
                 ?s = <{self.namespace}{original}> ||
                 ?p = <{self.namespace}{original}> ||
                 ?o = <{self.namespace}{original}>
