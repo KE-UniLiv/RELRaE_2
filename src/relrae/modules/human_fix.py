@@ -17,11 +17,11 @@ class HumanFix:
         modules
     ):
         self.log = []
-        self.schema = schema,
-        self.onto = onto,
-        self.prefix = prefix,
-        self.namespace = namespace,
-        self.components_root = components_root,
+        self.schema = schema
+        self.onto = onto
+        self.prefix = prefix
+        self.namespace = namespace
+        self.components_root = components_root
         self.errors = errors
         self.modules = modules
         self.user = User()
