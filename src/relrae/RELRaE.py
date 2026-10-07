@@ -27,6 +27,9 @@ class RELRaE:
         self.configs = [{"Pipeline": config}]
         self.logs = {}
 
+        self.timestamp = get_now().replace(":", "-")
+        self.main_path = self.output_root / f"{self.onto_name}{self.timestamp}"
+
         self.onto.bind('rdf', RDF)
         self.onto.bind('rdfs', RDFS)
         self.onto.bind('owl', OWL)
@@ -61,7 +64,7 @@ class RELRaE:
         )
         m_human_fix.set_user_info()
         m_human_fix.fix_errors()
-        m_human_fix.concepts_to_add_output(path)
+        m_human_fix.concepts_to_add_output(self.main_path)
 
     def write_logs(self, path):
         for key, values in self.logs.items():
@@ -79,13 +82,11 @@ class RELRaE:
                 f.write("\n\n")
 
     def serialise(self):
-        timestamp = get_now().replace(":", "-")
-        main_path = self.output_root / f"{self.onto_name}{timestamp}"
-        log_path = main_path / "logs"
+        log_path = self.main_path / "logs"
         log_path.mkdir(parents=True)
         self.write_logs(log_path)
-        self.write_metadata(main_path)
+        self.write_metadata(self.main_path)
         self.onto.serialize(
-            destination=main_path / f"{self.onto_name}.ttl",
+            destination=self.main_path / f"{self.onto_name}.ttl",
             format="ttl",
         )
