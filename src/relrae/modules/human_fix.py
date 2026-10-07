@@ -90,41 +90,34 @@ class HumanFix:
 
 
     def replace_relation(self, original, new):
-        query = f"""
+        original_uri = URIRef(
+            str(original) if str(original).startswith(str(self.namespace))
+            else f"{self.namespace}{original}"
+        )
+        new_uri = URIRef(f"{self.namespace}{new}")
+        query = """
         PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX owl:  <http://www.w3.org/2002/07/owl#>
 
-        SELECT ?s ?p ?o WHERE{{
-            ?s ?p ?o
+        SELECT ?s ?p ?o WHERE{
+            ?s ?p ?o .
             FILTER(
-                ?s = <{self.namespace}{original}> ||
-                ?p = <{self.namespace}{original}> ||
-                ?o = <{self.namespace}{original}>
+                ?s = ?original ||
+                ?p = ?original ||
+                ?o = ?original
             )
-        }}
+        }
         """
-        qres = self.onto.query(query)
+        qres = list(self.onto.query(query, initBindings={"original": original_uri}))
 
         for r in qres:
 
-            if r.p == str(RDFS.label):
-                n_sub = URIRef(f"{self.namespace}{new}")
-                n_obj = Literal(new)
-                self.onto.remove((r.s, r.p, r.o))
-                self.onto.add((n_sub, r.p, n_obj))
-            elif r.s == f"{self.namespace}{original}":
-                n_sub = URIRef(f"{self.namespace}{new}")
-                self.onto.remove((r.s, r.p, r.o))
-                self.onto.add((n_sub, r.p, r.o))
-            elif r.p == f"{self.namespace}{original}":
-                n_pred = URIRef(f"{self.namespace}{new}")
-                self.onto.remove((r.s, r.p, r.o))
-                self.onto.add((r.s, n_pred, r.o))
-            elif r.o == f"{self.namespace}{original}":
-                n_obj = URIRef(f"{self.namespace}{new}")
-                self.onto.remove((r.s, r.p, r.o))
-                self.onto.add((r.s, r.p, n_obj))
+            replacement = tuple(new_uri if term == original_uri else term for term in r)
+            if r.s == original_uri and r.p == RDFS.label:
+                replacement = (new_uri, r.p, Literal(new))
+            self.onto.remove(tuple(r))
+            self.onto.add(replacement)
 
         s = URIRef(f"{self.namespace}{new}")
         p = URIRef(f"{self.namespace}editedBy")
@@ -157,7 +150,7 @@ class HumanFix:
 
             """)
             user_lab = input("Please enter an accurate label for this relationship: ")
-            self.replace_relation(e[1], user_lab)
+            self.replace_relation(e[0], user_lab)
 
 
     def fix_errors(self):
