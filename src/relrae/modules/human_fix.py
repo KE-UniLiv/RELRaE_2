@@ -97,7 +97,7 @@ class HumanFix:
 
         SELECT ?s ?p ?o WHERE{{
             ?s ?p ?o
-            FITLER(
+            FILTER(
                 ?s = <{self.namespace}{original}> ||
                 ?p = <{self.namespace}{original}> ||
                 ?o = <{self.namespace}{original}>
@@ -156,7 +156,7 @@ class HumanFix:
             Rejected Labels: {e[2]}
 
             """)
-            user_lab = input("Please enter an accurate label for this relationship")
+            user_lab = input("Please enter an accurate label for this relationship: ")
             self.replace_relation(e[1], user_lab)
 
 

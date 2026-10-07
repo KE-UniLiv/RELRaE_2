@@ -181,6 +181,7 @@ class LLMRefinement:
 
                 self.log.append(full_eval[1])
                 if avg_eval["evaluation"] == "Yes":
+                    accepted = True
                     self.log.append("Label accepted")
                     break
 
