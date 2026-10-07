@@ -168,7 +168,7 @@ class HumanFix:
         ]
         # NOTE: Additional functions required for additional modules
         for r in self.errors:
-            mod = modules[self.errors[r].index()]
+            mod = modules[self.errors.index(r)]
             if mod == "RuBREx":
                 self.fix_rubrex(r)
             elif mod == "LLM_Refinement_Loop":
