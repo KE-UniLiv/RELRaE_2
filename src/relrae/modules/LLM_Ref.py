@@ -19,9 +19,14 @@ class LLMRefinement:
     def __init__(self, schema, onto, prefix, namespace,
                  components_root="relrae_components"):
         self.log = []
-        cfg = configparser.ConfigParser()
+        cfg = configparser.ConfigParser(interpolation=None)
         cfg.read(Path(components_root) / "config" / "LLM_ref_conf.txt")
-        self.config = cfg["MAIN"]
+        self.config = dict(cfg["MAIN"])
+        for key in ("eval_examples", "ref_examples", "eval_messages", "ref_messages"):
+            try:
+                self.config[key] = json.loads(self.config[key])
+            except (ValueError, KeyError) as exc:
+                raise ValueError(f"Invalid JSON configuration for {key}") from exc
         self.errors = []
         self.schema = schema
         self.onto = onto
@@ -116,7 +121,7 @@ class LLMRefinement:
             examples = self.config["ref_examples"]
 
         shots = {"zero": None,
-                 "one": 0,
+                 "one": 1,
                  "few": 4}
 
         if strat == "zero":
@@ -291,7 +296,10 @@ class RefinerResponse(BaseModel):
 class LLM:
 
     def __init__(self, settings, format, repeats, ns, pr):
-        self.repeats = repeats
+        settings = self.parse_settings(settings)
+        self.repeats = int(repeats)
+        if self.repeats < 1:
+            raise ValueError("LLM repeats must be a positive integer")
         self.model = settings[0]
         self.api_key = settings[1]
         self.params = settings[2]
@@ -299,6 +307,34 @@ class LLM:
         self.r_format = format
         self.onto_ns = ns
         self.onto_pr = pr
+
+    @staticmethod
+    def parse_settings(settings):
+        if isinstance(settings, str):
+            try:
+                if settings.strip().startswith("["):
+                    settings = json.loads(settings)
+                else:
+                    model, api_key, remainder = settings.split(",", 2)
+                    remainder = remainder.strip()
+                    params, end = json.JSONDecoder().raw_decode(remainder)
+                    suffix = remainder[end:].strip()
+                    settings = [model.strip(), api_key.strip(), params]
+                    if suffix:
+                        if not suffix.startswith(","):
+                            raise ValueError("Invalid provider suffix")
+                        settings.append(suffix[1:].strip())
+            except ValueError as exc:
+                raise ValueError("Invalid LLM settings: expected model,api_key,JSON parameters[,provider]") from exc
+        if not isinstance(settings, (list, tuple)) or len(settings) not in (3, 4):
+            raise ValueError("LLM settings must contain model, API key, parameters and optionally provider")
+        if not isinstance(settings[0], str) or not settings[0].strip():
+            raise ValueError("LLM model name must be a nonempty string")
+        if not isinstance(settings[2], dict):
+            raise ValueError("LLM parameters must be a JSON object")
+        if len(settings) == 4 and (not isinstance(settings[3], str) or not settings[3].strip()):
+            raise ValueError("LLM provider must be a nonempty string")
+        return settings
 
     def gen_seeds(self, n):
         seeds = []
@@ -311,8 +347,6 @@ class LLM:
             return str(settings[3]).lower()
         if isinstance(self.params, dict) and self.params.get("provider"):
             return str(self.params["provider"]).lower()
-        if str(self.api_key).lower() in ("", "none", "ollama"):
-            return "ollama"
         if str(self.model).lower().startswith(("gpt", "o1", "o3", "o4")):
             return "openai"
         if str(self.model).lower().startswith(("gemini", "models/gemini")):
@@ -360,12 +394,8 @@ class LLM:
         results = []
         logs = []
         seeds = []
-        seed = 0
-
-        while seed < int(self.repeats):
-            retrys = 10
-            valid = False
-            while not valid and retrys > 0:
+        for repeat in range(self.repeats):
+            for attempt in range(10):
                 c_seed = randint(1, 9999)
                 try:
                     raw_response = self.call_provider(messages, c_seed)
@@ -377,18 +407,21 @@ class LLM:
                         "seed": c_seed,
                         "response": parsed_response,
                     })
-                    valid = True
                     seeds.append(c_seed)
-                    seed += 1
-                    retrys -= 1
+                    break
                 except Exception as exc:
+                    exc_last = exc
                     logs.append({
                         "provider": self.provider,
                         "model": self.model,
                         "seed": c_seed,
                         "error": str(exc),
                     })
-                    retrys -= 1
+            else:
+                raise RuntimeError(
+                    f"LLM provider {self.provider!r}, model {self.model!r} failed "
+                    f"after 10 attempts for repeat {repeat + 1}"
+                ) from exc_last
 
         if not results:
             results = "Error"

@@ -107,6 +107,16 @@ and GoogleAI.
 
 #### Config File: `LLM_ref_conf.txt`
 
+Model settings use `model_name,api_key,{"temperature":1.0}` with an optional
+fourth field for the provider (`openai`, `google`, or `ollama`). Parameters must
+be a JSON object. For example, `gpt-4.1,none,{"temperature":1.0},openai`
+uses `OPENAI_API_KEY` from the environment; Google uses `GEMINI_API_KEY`.
+OpenAI and Gemini model names select their providers even when the key is
+supplied through the environment. Prompt messages and examples must be JSON
+arrays; examples are arrays of conversations, each containing message objects.
+Each requested response has at most ten attempts, including invalid responses.
+Exhausting those attempts raises an error and stops the refinement stage.
+
 - `domain`: The domain that the XML schema represents.
 - `source`: The input file type (currently only XML schema supported)
 - `refinement_loops`: Number of refinement attempts the modules has per relation.
