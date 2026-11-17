@@ -546,12 +546,8 @@ class LLM:
             contents=self.messages_to_text(messages),
             config={
                 **params,
-                "response_format": {
-                    "text": {
-                        "mime_type": "application/json",
-                        "schema": self.r_format.model_json_schema(),
-                    }
-                },
+                "response_mime_type": "application/json",
+                "schema": self.r_format.model_json_schema(),
             },
         )
         return response.text
